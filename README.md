@@ -10,3 +10,5 @@ You can view the parties on map, register and mark parties you’re going to tak
 See you there! 
 
 Please note: Parties for WWDC is created by an independent developer, who is in no way affiliated with Apple, Inc.
+
+#### We are currently rewriting the app with Swift and iOS 8 support, stay tuned!
