@@ -1,0 +1,19 @@
+PODS:
+  - Bolts (1.1.0)
+  - Facebook-iOS-SDK (3.14.1):
+    - Bolts
+  - GoogleAnalytics-iOS-SDK (3.0.7)
+  - Parse-iOS-SDK (1.2.19):
+    - Facebook-iOS-SDK (~> 3.7)
+
+DEPENDENCIES:
+  - GoogleAnalytics-iOS-SDK
+  - Parse-iOS-SDK
+
+SPEC CHECKSUMS:
+  Bolts: dc620a31cf67c29bce3e3d14a07a12e797a1a154
+  Facebook-iOS-SDK: 97e68fb37468bee2d90201fd0c9e4dccce5683d9
+  GoogleAnalytics-iOS-SDK: 594702aaf93e6ee497140fd31e758c2e2fa44315
+  Parse-iOS-SDK: 48e366fb9a8956c4e50d93cfd16243176938fae1
+
+COCOAPODS: 0.32.1
