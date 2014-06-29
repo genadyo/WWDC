@@ -1,7 +1,8 @@
 Parties for WWDC
 ====
 
-###[Read the story behind Parties for WWDC](https://medium.com/p/86d13d4cad7d)
+[Read the story behind Parties for WWDC](https://medium.com/p/86d13d4cad7d)
+====
 
 [Parties for WWDC](https://itunes.apple.com/us/app/parties-for-wwdc/id879924066?mt=8) is an aggregator of developers parties happening in San Francisco mostly exclusively for participators of WWDC 2014. 
 
