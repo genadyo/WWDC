@@ -1,7 +1,7 @@
 Parties for WWDC
 ====
 
-[Read the story behind Parties for WWDC](https://medium.com/p/86d13d4cad7d)
+###[Read the story behind Parties for WWDC](https://medium.com/p/86d13d4cad7d)
 
 =====
 
