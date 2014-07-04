@@ -28,8 +28,6 @@
 		B2D4AF0319276A1E00C5B0E8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AF0219276A1E00C5B0E8 /* XCTest.framework */; };
 		B2D4AF0419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AF0519276A1E00C5B0E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */; };
-		B2D4AF0D19276A1E00C5B0E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AF0B19276A1E00C5B0E8 /* InfoPlist.strings */; };
-		B2D4AF0F19276A1E00C5B0E8 /* WWDCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF0E19276A1E00C5B0E8 /* WWDCTests.m */; };
 		B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */; };
 		B2EC211619630654006F7926 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2EC211519630654006F7926 /* Configuration.plist */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
@@ -78,9 +76,6 @@
 		B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2D4AF0119276A1E00C5B0E8 /* SFPartiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFPartiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4AF0219276A1E00C5B0E8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		B2D4AF0A19276A1E00C5B0E8 /* WWDCTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WWDCTests-Info.plist"; sourceTree = "<group>"; };
-		B2D4AF0C19276A1E00C5B0E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B2D4AF0E19276A1E00C5B0E8 /* WWDCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWDCTests.m; sourceTree = "<group>"; };
 		B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartiesTVC.h; sourceTree = "<group>"; };
 		B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartiesTVC.m; sourceTree = "<group>"; };
 		B2EC211519630654006F7926 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
@@ -122,7 +117,6 @@
 				B2EC211519630654006F7926 /* Configuration.plist */,
 				B2F9A382195216A8008FA5EF /* SFParties.entitlements */,
 				B2D4AEE919276A1E00C5B0E8 /* WWDC */,
-				B2D4AF0819276A1E00C5B0E8 /* WWDCTests */,
 				B2D4AEE219276A1E00C5B0E8 /* Frameworks */,
 				B2D4AEE119276A1E00C5B0E8 /* Products */,
 				7D39D3F8E0E6462DAC94FF28 /* Pods.xcconfig */,
@@ -189,24 +183,6 @@
 				B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */,
 				B2D4AEEF19276A1E00C5B0E8 /* main.m */,
 				B2D4AEF119276A1E00C5B0E8 /* SFParties-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B2D4AF0819276A1E00C5B0E8 /* WWDCTests */ = {
-			isa = PBXGroup;
-			children = (
-				B2D4AF0E19276A1E00C5B0E8 /* WWDCTests.m */,
-				B2D4AF0919276A1E00C5B0E8 /* Supporting Files */,
-			);
-			path = WWDCTests;
-			sourceTree = "<group>";
-		};
-		B2D4AF0919276A1E00C5B0E8 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B2D4AF0A19276A1E00C5B0E8 /* WWDCTests-Info.plist */,
-				B2D4AF0B19276A1E00C5B0E8 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -316,7 +292,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2D4AF0D19276A1E00C5B0E8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2D4AF0F19276A1E00C5B0E8 /* WWDCTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,14 +393,6 @@
 				B2D4AEF619276A1E00C5B0E8 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B2D4AF0B19276A1E00C5B0E8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2D4AF0C19276A1E00C5B0E8 /* en */,
-			);
-			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
