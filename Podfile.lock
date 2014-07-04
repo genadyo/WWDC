@@ -1,19 +1,22 @@
 PODS:
   - Bolts (1.1.0)
-  - Facebook-iOS-SDK (3.14.1):
+  - Facebook-iOS-SDK (3.15.0):
     - Bolts
   - GoogleAnalytics-iOS-SDK (3.0.7)
   - Parse-iOS-SDK (1.2.19):
     - Facebook-iOS-SDK (~> 3.7)
+  - TMCache (1.2.0)
 
 DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
   - Parse-iOS-SDK
+  - TMCache
 
 SPEC CHECKSUMS:
-  Bolts: dc620a31cf67c29bce3e3d14a07a12e797a1a154
-  Facebook-iOS-SDK: 97e68fb37468bee2d90201fd0c9e4dccce5683d9
-  GoogleAnalytics-iOS-SDK: 594702aaf93e6ee497140fd31e758c2e2fa44315
-  Parse-iOS-SDK: 48e366fb9a8956c4e50d93cfd16243176938fae1
+  Bolts: 91c2af8eae1d44e1dd75946a5b0ae04a43ea43e4
+  Facebook-iOS-SDK: d67a9aa373f28b581e00cefdfd5a1ab8f883ac14
+  GoogleAnalytics-iOS-SDK: bb285d8eef15a682f1b82971becd0d22edd0e53b
+  Parse-iOS-SDK: 5e1f7e649a02f1cc19e73cc95bd43d7778848314
+  TMCache: ea1c509badaf9a1245422aabf3c975b3277ab138
 
-COCOAPODS: 0.32.1
+COCOAPODS: 0.33.1
