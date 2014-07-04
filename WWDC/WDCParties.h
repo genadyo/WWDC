@@ -15,6 +15,6 @@
 - (void)saveGoing;
 
 @property (strong, nonatomic) NSMutableArray *going;
-@property (readonly, nonatomic) BOOL disableCache;
+@property (assign, nonatomic) BOOL disableCache;
 
 @end

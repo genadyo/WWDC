@@ -11,13 +11,15 @@
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
+#import "JVObserver.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCParties.h"
+#import "WDCPartiesTVC.h"
 #import "WDCMapDayViewController.h"
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate>
 
-@property (weak, nonatomic) IBOutlet PFImageView *logoImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -28,6 +30,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *address3Label;
 @property (weak, nonatomic) IBOutlet UIButton *goingButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *titleCell;
+@property (strong, nonatomic) JVObserver *observer;
 
 @end
 
@@ -42,10 +45,14 @@
     [tracker set:kGAIScreenName value:@"WDCPartyTableViewController"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
-    self.logoImageView.file = self.party.logo;
-    [self.logoImageView loadInBackground:^(UIImage *image, NSError *error) {
-        self.logoImageView.image = [UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:image.imageOrientation];
+    self.observer = [JVObserver observerForObject:self.party keyPath:@"logo" target:self block:^(__weak typeof(self) self) {
+        if (self.party.logo) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.logoImageView.image = self.party.logo;
+            });
+        }
     }];
+
     self.titleLabel.text = self.party.title;
     [self.titleLabel sizeToFit];
 
@@ -85,6 +92,17 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+{
+    [super traitCollectionDidChange:previousTraitCollection];
+
+    if (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass) {
+        [self.titleLabel sizeToFit];
+        [self.detailsTextView sizeToFit];
+        [self.tableView reloadData];
+    }
+}
+
 - (void)refreshGoing
 {
     if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
@@ -109,6 +127,14 @@
     }
     [self refreshGoing];
     [[WDCParties sharedInstance] saveGoing];
+
+    if ([self.splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = self.splitViewController.viewControllers[0];
+        if ([navigationController.topViewController isKindOfClass:[WDCPartiesTVC class]]) {
+            WDCPartiesTVC *partiesTVC = (WDCPartiesTVC *)navigationController.topViewController;
+            [partiesTVC updateFilteredParties];
+        }
+    }
 }
 
 - (IBAction)openMaps:(id)sender

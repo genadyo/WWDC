@@ -10,4 +10,6 @@
 
 @interface WDCPartiesTVC : UITableViewController
 
+- (void)updateFilteredParties;
+
 @end

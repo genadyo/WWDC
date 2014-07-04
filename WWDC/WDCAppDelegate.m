@@ -8,7 +8,6 @@
 
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
-//#import "TestFlight.h"
 #import <Crashlytics/Crashlytics.h>
 #import "GAI.h"
 
@@ -16,19 +15,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Parse
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
-    [Parse setApplicationId:@"" clientKey:@""];
-    [WDCParty registerSubclass];
-
-    // TestFlight
-//    [TestFlight takeOff:@""];
+    // Configuration
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
+    NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    // Push Notifications
+    [application registerForRemoteNotifications];
+    [Parse setApplicationId:configuration[@"PARSE_API"] clientKey:configuration[@"PARSE_KEY"]];
 
     // GAI
-    [[GAI sharedInstance] trackerWithTrackingId:@""];
+    [[GAI sharedInstance] trackerWithTrackingId:configuration[@"GOOGLE_ANALYTICS_API"]];
 
     // Crashlytics
-    [Crashlytics startWithAPIKey:@""];
+    [Crashlytics startWithAPIKey:configuration[@"CRASHLYTICS_API"]];
 
     // Global Tint Color
     [[UIView appearance] setTintColor:[UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f]];
@@ -69,11 +68,28 @@
     PFInstallation *installation = [PFInstallation currentInstallation];
     [installation setDeviceTokenFromData:deviceToken];
     [installation saveInBackground];
+
+    CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"start > %@", [NSDate date]];
+    CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Notification" predicate:predicate options:CKSubscriptionOptionsFiresOnRecordCreation];
+    CKNotificationInfo *notification = [[CKNotificationInfo alloc] init];
+    notification.desiredKeys = @[@"message"];
+    subscription.notificationInfo = notification;
+    [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
+        if (error) {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        } else {
+            NSLog(@"Subscription: %@", subscription);
+        }
+    }];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [PFPush handlePush:userInfo];
+
+    [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
+}
 }
 
 @end

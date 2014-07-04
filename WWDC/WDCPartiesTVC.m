@@ -10,6 +10,7 @@
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
+#import "JVObserver.h"
 #import "WDCPartiesTVC.h"
 #import "WDCParty.h"
 #import "WDCParties.h"
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) NSArray *parties;
 @property (strong, nonatomic) NSArray *filteredParties;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *goingSegmentedControl;
+@property (strong, nonatomic) NSMutableArray *observers;
 
 @end
 
@@ -43,6 +45,7 @@
 
     self.tableView.tableFooterView = [[UIView alloc] init];
 
+    self.observers = [[NSMutableArray alloc] init];
     self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
     [self.refreshControl beginRefreshing];
     [self refresh:self];
@@ -56,6 +59,15 @@
     [self updateFilteredParties];
 }
 
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+{
+    [super traitCollectionDidChange:previousTraitCollection];
+
+    if (self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass) {
+        [self.tableView reloadData];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -67,10 +79,6 @@
         if (succeeded) {
             NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
             for (WDCParty *party in parties) {
-                [party.logo getDataInBackgroundWithBlock:nil];
-                [party.icon getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                    [self.tableView reloadData];
-                }];
                 if (![dict objectForKey:[party sortDate]]) {
                     [dict setObject:[[NSMutableArray alloc] init] forKey:[party sortDate]];
                 }
@@ -231,11 +239,21 @@
         } else {
             partyCell.goingImageView.hidden = NO;
         }
-        partyCell.iconImageView.file = party.icon;
-        partyCell.iconImageView.image = nil;
-        [partyCell.iconImageView loadInBackground:^(UIImage *image, NSError *error) {
-            partyCell.iconImageView.image = [UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:image.imageOrientation];
-        }];
+        
+        partyCell.iconImageView.image = party.icon;
+        if (!party.icon) {
+            __weak typeof(party) weakParty = party;
+            __weak typeof(indexPath) weakIndexPath = indexPath;
+            JVObserver *observer = [JVObserver observerForObject:party keyPath:@"icon" target:self block:^(__weak typeof(self) self) {
+                if (weakParty.icon) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self.tableView reloadRowsAtIndexPaths:@[weakIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                    });
+                };
+            }];
+            [self.observers addObject:observer];
+        }
+
         if (indexPath.row != [self.filteredParties[indexPath.section] count]-1) {
             UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1)];
             seperator.opaque = YES;
@@ -291,12 +309,14 @@
 {
     if ([segue.identifier isEqualToString:@"party"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        WDCPartyTableViewController *destController = segue.destinationViewController;
+        UINavigationController *navigationController = segue.destinationViewController;
+        WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
         destController.party = (self.filteredParties[indexPath.section])[indexPath.row];
     } else if ([segue.identifier isEqualToString:@"map"]) {
         if ([sender isKindOfClass:[NSNumber class]]) {
             NSInteger tag = [(NSNumber *)sender integerValue];
-            WDCMapDayViewController *destController = segue.destinationViewController;
+            UINavigationController *navigationController = segue.destinationViewController;
+            WDCMapDayViewController *destController = (WDCMapDayViewController *)[navigationController topViewController];
             destController.parties = self.filteredParties[tag];
         }
     }
