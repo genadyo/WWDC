@@ -10,6 +10,13 @@
 #import "WDCParty.h"
 #import <Crashlytics/Crashlytics.h>
 #import "GAI.h"
+#import "WDCPartiesTVC.h"
+#import "AAPLTraitOverrideViewController.h"
+
+@interface WDCAppDelegate () <UISplitViewControllerDelegate>
+
+@end
+
 
 @implementation WDCAppDelegate
 
@@ -31,8 +38,27 @@
 
     // Global Tint Color
     [[UIView appearance] setTintColor:[UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f]];
-    
-    // Override point for customization after application launch.
+
+    // Split View Controller
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *master = [storyboard instantiateViewControllerWithIdentifier:@"master"];
+    UIViewController *detail = [[UIViewController alloc] init];
+    detail.view.backgroundColor = [UIColor whiteColor];
+
+    UISplitViewController *controller = [[UISplitViewController alloc] init];
+    controller.viewControllers = @[master, detail];
+    controller.preferredDisplayMode = UISplitViewControllerDisplayModeAllVisible;
+    controller.preferredPrimaryColumnWidthFraction = 0.45f;
+    controller.delegate = self;
+
+    AAPLTraitOverrideViewController *traitController = [[AAPLTraitOverrideViewController alloc] init];
+    traitController.viewController = controller;
+    self.window.rootViewController = traitController;
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							
@@ -90,6 +116,27 @@
 
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
 }
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (BOOL)splitViewController:(UISplitViewController *)splitViewController collapseSecondaryViewController:(UIViewController *)secondaryViewController ontoPrimaryViewController:(UIViewController *)primaryViewController
+{
+    if ([secondaryViewController isKindOfClass:[UINavigationController class]]) {
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
+- (UIViewController *)splitViewController:(UISplitViewController *)splitViewController separateSecondaryViewControllerFromPrimaryViewController:(UIViewController *)primaryViewController
+{
+    if ([[(UINavigationController *)primaryViewController topViewController] isKindOfClass:[WDCPartiesTVC class]]) {
+        UIViewController *vc = [[UIViewController alloc] init];
+        vc.view.backgroundColor = [UIColor whiteColor];
+        return vc;
+    } else {
+        return nil;
+    }
 }
 
 @end

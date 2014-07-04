@@ -16,6 +16,7 @@
 		B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B246425A1927A2F200DF2E06 /* MapKit.framework */; };
 		B269702D194224E200D5FD4D /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B269702C194224E200D5FD4D /* WDCParties.m */; };
 		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
+		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
 		B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */; };
@@ -61,6 +62,8 @@
 		B269702C194224E200D5FD4D /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
 		B286140D1958CA51006FA1D3 /* JVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVObserver.h; sourceTree = "<group>"; };
 		B286140E1958CA51006FA1D3 /* JVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVObserver.m; sourceTree = "<group>"; };
+		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
+		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* SFParties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFParties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -157,6 +160,8 @@
 				B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */,
 				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
+				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
+				B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */,
 				B24642511927777D00DF2E06 /* WDCParty.h */,
 				B24642521927777D00DF2E06 /* WDCParty.m */,
 				B269702B194224E200D5FD4D /* WDCParties.h */,
@@ -371,6 +376,7 @@
 				B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */,
 				B269702D194224E200D5FD4D /* WDCParties.m in Sources */,
 				B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */,
+				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
 				B28614101958CA51006FA1D3 /* JVObserver.m in Sources */,
 				B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */,
 				B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */,
@@ -514,8 +520,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -536,8 +544,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
