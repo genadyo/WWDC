@@ -6,20 +6,27 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-@interface WDCParty : PFObject<PFSubclassing>
+@import CloudKit;
+@interface WDCParty : NSObject<NSCoding>
 
-@property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *details;
-@property (strong, nonatomic) NSString *address1;
-@property (strong, nonatomic) NSString *address2;
-@property (strong, nonatomic) NSString *address3;
-@property (strong, nonatomic) NSString *url;
-@property (strong, nonatomic) NSNumber *latitude;
-@property (strong, nonatomic) NSNumber *longitude;
-@property (strong, nonatomic) PFFile *icon;
-@property (strong, nonatomic) PFFile *logo;
-@property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *endDate;
+@property (readonly, strong, nonatomic) NSString *title;
+@property (readonly, strong, nonatomic) NSString *details;
+@property (readonly, strong, nonatomic) NSString *address1;
+@property (readonly, strong, nonatomic) NSString *address2;
+@property (readonly, strong, nonatomic) NSString *address3;
+@property (readonly, strong, nonatomic) NSString *url;
+@property (readonly, strong, nonatomic) NSNumber *latitude;
+@property (readonly, strong, nonatomic) NSNumber *longitude;
+@property (readonly, strong, nonatomic) UIImage *icon;
+@property (readonly, strong, nonatomic) UIImage *logo;
+@property (readonly, strong, nonatomic) NSDate *startDate;
+@property (readonly, strong, nonatomic) NSDate *endDate;
+@property (readonly, assign, nonatomic) BOOL show;
+@property (readonly, strong, nonatomic) NSString *objectId;
+
+- (instancetype)initWithCKRecord:(CKRecord *)record;
+- (void)setLogoWithData:(NSData *)data;
+- (void)setIconWithData:(NSData *)data;
 
 - (NSString *)sortDate;
 - (NSString *)date;
