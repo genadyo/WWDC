@@ -14,6 +14,8 @@
 		B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464255192788A200DF2E06 /* WDCPartyTVC.m */; };
 		B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */; };
 		B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B246425A1927A2F200DF2E06 /* MapKit.framework */; };
+		B268E09F196700B000038686 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = B268E09D196700B000038686 /* Configuration.plist */; };
+		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
 		B269702D194224E200D5FD4D /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B269702C194224E200D5FD4D /* WDCParties.m */; };
 		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
 		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
@@ -25,23 +27,9 @@
 		B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */; };
 		B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */; };
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
-		B2D4AF0319276A1E00C5B0E8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AF0219276A1E00C5B0E8 /* XCTest.framework */; };
-		B2D4AF0419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
-		B2D4AF0519276A1E00C5B0E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */; };
 		B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */; };
-		B2EC211619630654006F7926 /* Configuration.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2EC211519630654006F7926 /* Configuration.plist */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B2D4AF0619276A1E00C5B0E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2D4AEDF19276A1E00C5B0E8;
-			remoteInfo = WWDC;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7D39D3F8E0E6462DAC94FF28 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -56,6 +44,8 @@
 		B246425719279DE200DF2E06 /* WDCPartyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartyTableViewController.h; sourceTree = "<group>"; };
 		B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartyTableViewController.m; sourceTree = "<group>"; };
 		B246425A1927A2F200DF2E06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		B268E09D196700B000038686 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
+		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
 		B269702B194224E200D5FD4D /* WDCParties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParties.h; sourceTree = "<group>"; };
 		B269702C194224E200D5FD4D /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
 		B286140D1958CA51006FA1D3 /* JVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVObserver.h; sourceTree = "<group>"; };
@@ -74,12 +64,9 @@
 		B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCAppDelegate.m; sourceTree = "<group>"; };
 		B2D4AEF619276A1E00C5B0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B2D4AF0119276A1E00C5B0E8 /* SFPartiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SFPartiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4AF0219276A1E00C5B0E8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartiesTVC.h; sourceTree = "<group>"; };
 		B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartiesTVC.m; sourceTree = "<group>"; };
-		B2EC211519630654006F7926 /* Configuration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Configuration.plist; sourceTree = "<group>"; };
-		B2F9A382195216A8008FA5EF /* SFParties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,24 +85,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2D4AEFE19276A1E00C5B0E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2D4AF0319276A1E00C5B0E8 /* XCTest.framework in Frameworks */,
-				B2D4AF0519276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
-				B2D4AF0419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		B2D4AED719276A1E00C5B0E8 = {
 			isa = PBXGroup;
 			children = (
-				B2EC211519630654006F7926 /* Configuration.plist */,
-				B2F9A382195216A8008FA5EF /* SFParties.entitlements */,
 				B2D4AEE919276A1E00C5B0E8 /* WWDC */,
 				B2D4AEE219276A1E00C5B0E8 /* Frameworks */,
 				B2D4AEE119276A1E00C5B0E8 /* Products */,
@@ -128,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEE019276A1E00C5B0E8 /* SFParties.app */,
-				B2D4AF0119276A1E00C5B0E8 /* SFPartiesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +153,8 @@
 		B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B268E09D196700B000038686 /* Configuration.plist */,
+				B268E09E196700B000038686 /* SFParties.entitlements */,
 				B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */,
 				B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */,
 				B2D4AEEF19276A1E00C5B0E8 /* main.m */,
@@ -210,24 +186,6 @@
 			productReference = B2D4AEE019276A1E00C5B0E8 /* SFParties.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B2D4AF0019276A1E00C5B0E8 /* SFPartiesTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B2D4AF1519276A1E00C5B0E8 /* Build configuration list for PBXNativeTarget "SFPartiesTests" */;
-			buildPhases = (
-				B2D4AEFD19276A1E00C5B0E8 /* Sources */,
-				B2D4AEFE19276A1E00C5B0E8 /* Frameworks */,
-				B2D4AEFF19276A1E00C5B0E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B2D4AF0719276A1E00C5B0E8 /* PBXTargetDependency */,
-			);
-			name = SFPartiesTests;
-			productName = WWDCTests;
-			productReference = B2D4AF0119276A1E00C5B0E8 /* SFPartiesTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -252,9 +210,6 @@
 							};
 						};
 					};
-					B2D4AF0019276A1E00C5B0E8 = {
-						TestTargetID = B2D4AEDF19276A1E00C5B0E8;
-					};
 				};
 			};
 			buildConfigurationList = B2D4AEDB19276A1E00C5B0E8 /* Build configuration list for PBXProject "SFParties" */;
@@ -271,7 +226,6 @@
 			projectRoot = "";
 			targets = (
 				B2D4AEDF19276A1E00C5B0E8 /* SFParties */,
-				B2D4AF0019276A1E00C5B0E8 /* SFPartiesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,16 +236,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */,
-				B2EC211619630654006F7926 /* Configuration.plist in Resources */,
+				B268E0A0196700B000038686 /* SFParties.entitlements in Resources */,
+				B268E09F196700B000038686 /* Configuration.plist in Resources */,
 				B2D4AEEE19276A1E00C5B0E8 /* InfoPlist.strings in Resources */,
 				B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2D4AEFF19276A1E00C5B0E8 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,22 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2D4AEFD19276A1E00C5B0E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B2D4AF0719276A1E00C5B0E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B2D4AEDF19276A1E00C5B0E8 /* SFParties */;
-			targetProxy = B2D4AF0619276A1E00C5B0E8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */ = {
@@ -476,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = SFParties.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -500,7 +433,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = SFParties.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -515,46 +448,6 @@
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		B2D4AF1619276A1E00C5B0E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WWDC.app/WWDC";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WWDC/WWDC-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WWDCTests/WWDCTests-Info.plist";
-				PRODUCT_NAME = SFPartiesTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		B2D4AF1719276A1E00C5B0E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WWDC.app/WWDC";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WWDC/WWDC-Prefix.pch";
-				INFOPLIST_FILE = "WWDCTests/WWDCTests-Info.plist";
-				PRODUCT_NAME = SFPartiesTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -575,15 +468,6 @@
 			buildConfigurations = (
 				B2D4AF1319276A1E00C5B0E8 /* Debug */,
 				B2D4AF1419276A1E00C5B0E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B2D4AF1519276A1E00C5B0E8 /* Build configuration list for PBXNativeTarget "SFPartiesTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2D4AF1619276A1E00C5B0E8 /* Debug */,
-				B2D4AF1719276A1E00C5B0E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
