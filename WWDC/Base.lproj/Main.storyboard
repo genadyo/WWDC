@@ -45,7 +45,7 @@
                                                 <constraint firstAttribute="width" constant="13" id="yG0-vv-rMu"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="366" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="354" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
                                             <rect key="frame" x="86" y="8" width="354" height="41"/>
                                             <string key="text">Title
 Title 2</string>
@@ -260,10 +260,11 @@ Title 2</string>
                         <viewControllerLayoutGuide type="bottom" id="LEE-6M-lL4"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lgk-xS-U4w">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Party Selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="140" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-uK-Ydz">
-                                <rect key="frame" x="0.0" y="96" width="217" height="35"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Party Selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="122" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-uK-Ydz">
+                                <rect key="frame" x="179" y="231" width="122" height="18"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -275,22 +276,10 @@ Title 2</string>
                             <constraint firstAttribute="centerY" secondItem="iFq-uK-Ydz" secondAttribute="centerY" id="oA9-oG-20b"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="iFq-uK-Ydz"/>
-                            </mask>
+                        <variation key="heightClass=compact">
                             <mask key="constraints">
                                 <exclude reference="m6F-wh-9b8"/>
                                 <exclude reference="oA9-oG-20b"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="subviews">
-                                <include reference="iFq-uK-Ydz"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="m6F-wh-9b8"/>
-                                <include reference="oA9-oG-20b"/>
                             </mask>
                         </variation>
                     </view>
