@@ -81,6 +81,22 @@
     self.address2Label.text = self.party.address2;
     self.address3Label.text = self.party.address3;
     [self refreshGoing];
+
+    // I hope to find better way to do it
+    CGRect frame = self.view.frame;
+    if (self.splitViewController) {
+        if (self.splitViewController.viewControllers.count == 2) {
+            frame = [self.splitViewController.viewControllers[1] view].frame;
+        }
+    }
+    CGRect detailsTextViewFrame = self.detailsTextView.frame;
+    CGFloat width = frame.size.width-30.0f;
+    detailsTextViewFrame.size.width = width;
+    detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.detailsTextView.frame = detailsTextViewFrame;
+        [self.tableView reloadData];
+    });
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -94,10 +110,10 @@
 {
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
+    // I hope to find better way to do it
     [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
         CGRect detailsTextViewFrame = self.detailsTextView.frame;
         detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
-
         dispatch_async(dispatch_get_main_queue(), ^{
             self.detailsTextView.frame = detailsTextViewFrame;
             [self.tableView reloadData];
