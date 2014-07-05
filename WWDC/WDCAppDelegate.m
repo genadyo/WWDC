@@ -44,8 +44,7 @@
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *master = [storyboard instantiateViewControllerWithIdentifier:@"master"];
-    UIViewController *detail = [[UIViewController alloc] init];
-    detail.view.backgroundColor = [UIColor whiteColor];
+    UIViewController *detail = [storyboard instantiateViewControllerWithIdentifier: @"noparty"];
 
     UISplitViewController *controller = [[UISplitViewController alloc] init];
     controller.viewControllers = @[master, detail];
@@ -131,8 +130,7 @@
 - (UIViewController *)splitViewController:(UISplitViewController *)splitViewController separateSecondaryViewControllerFromPrimaryViewController:(UIViewController *)primaryViewController
 {
     if ([[(UINavigationController *)primaryViewController topViewController] isKindOfClass:[WDCPartiesTVC class]]) {
-        UIViewController *vc = [[UIViewController alloc] init];
-        vc.view.backgroundColor = [UIColor whiteColor];
+        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier: @"noparty"];
         return vc;
     } else {
         return nil;

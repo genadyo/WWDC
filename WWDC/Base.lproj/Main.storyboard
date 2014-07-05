@@ -251,6 +251,54 @@ Title 2</string>
             </objects>
             <point key="canvasLocation" x="1500" y="294"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Idf-9B-kox">
+            <objects>
+                <viewController storyboardIdentifier="noparty" id="oyH-P0-QSP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lMI-yf-cEs"/>
+                        <viewControllerLayoutGuide type="bottom" id="LEE-6M-lL4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lgk-xS-U4w">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Party Selected" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="140" translatesAutoresizingMaskIntoConstraints="NO" id="iFq-uK-Ydz">
+                                <rect key="frame" x="0.0" y="96" width="217" height="35"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <color key="textColor" red="0.72941176470000002" green="0.72941176470000002" blue="0.72941176470000002" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iFq-uK-Ydz" secondAttribute="centerX" id="m6F-wh-9b8"/>
+                            <constraint firstAttribute="centerY" secondItem="iFq-uK-Ydz" secondAttribute="centerY" id="oA9-oG-20b"/>
+                        </constraints>
+                        <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="iFq-uK-Ydz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="m6F-wh-9b8"/>
+                                <exclude reference="oA9-oG-20b"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact">
+                            <mask key="subviews">
+                                <include reference="iFq-uK-Ydz"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="m6F-wh-9b8"/>
+                                <include reference="oA9-oG-20b"/>
+                            </mask>
+                        </variation>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fQ-Ls-6UJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="-1014"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z8D-IW-uVH">
             <objects>
