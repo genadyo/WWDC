@@ -59,9 +59,9 @@
     [self updateFilteredParties];
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
 {
-    [super traitCollectionDidChange:previousTraitCollection];
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
