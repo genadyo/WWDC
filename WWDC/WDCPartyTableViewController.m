@@ -93,9 +93,16 @@
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 {
     [super traitCollectionDidChange:previousTraitCollection];
-    
-    self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width;
+
+    CGRect detailsTextViewFrame = self.detailsTextView.frame;
+    detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
+
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.detailsTextView.frame = detailsTextViewFrame;
+        [self.tableView reloadData];
+    });
 }
+
 
 - (void)refreshGoing
 {
