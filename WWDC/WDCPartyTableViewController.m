@@ -90,19 +90,20 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
 {
-    [super traitCollectionDidChange:previousTraitCollection];
+    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
-    CGRect detailsTextViewFrame = self.detailsTextView.frame;
-    detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
+    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
+        CGRect detailsTextViewFrame = self.detailsTextView.frame;
+        detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
 
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.detailsTextView.frame = detailsTextViewFrame;
-        [self.tableView reloadData];
-    });
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.detailsTextView.frame = detailsTextViewFrame;
+            [self.tableView reloadData];
+        });
+    }];
 }
-
 
 - (void)refreshGoing
 {
