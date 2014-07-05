@@ -59,10 +59,14 @@
     [self updateFilteredParties];
 }
 
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
+- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
 {
-    [super traitCollectionDidChange:previousTraitCollection];
+    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
+    [coordinator animateAlongsideTransition:^(id <UIViewControllerTransitionCoordinatorContext> context) {
+        [self.tableView reloadData];
+    } completion:nil];
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -195,6 +199,10 @@
 {
     CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
 
+    if (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
+        height = 90;
+    }
+
     if ((self.goingSegmentedControl.selectedSegmentIndex == 1) && ([self.filteredParties count] == 0)) {
         height = [[UIScreen mainScreen] bounds].size.height-2*(self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height);
     } else if (indexPath.section == [self.filteredParties count]) {
@@ -251,16 +259,17 @@
             [self.observers addObject:observer];
         }
 
+        [partyCell.seperator removeFromSuperview];
         if (indexPath.row != [self.filteredParties[indexPath.section] count]-1) {
-            UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1)];
-            seperator.opaque = YES;
-            seperator.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
-            [partyCell addSubview:seperator];
+            partyCell.seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1)];
+            partyCell.seperator.opaque = YES;
+            partyCell.seperator.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
+            [partyCell addSubview:partyCell.seperator];
         } else {
-            UIView *seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1.0f)];
-            seperator.opaque = YES;
-            seperator.backgroundColor = [UIColor whiteColor];
-            [partyCell addSubview:seperator];
+            partyCell.seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1.0f)];
+            partyCell.seperator.opaque = YES;
+            partyCell.seperator.backgroundColor = [UIColor whiteColor];
+            [partyCell addSubview:partyCell.seperator];
         }
         cell = partyCell;
     }
