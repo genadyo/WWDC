@@ -54,7 +54,6 @@
     }];
 
     self.titleLabel.text = self.party.title;
-    [self.titleLabel sizeToFit];
 
     NSMutableAttributedString *attributedDetails = [[NSMutableAttributedString alloc]initWithString:self.party.details];
     UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f];
@@ -67,7 +66,6 @@
     UIColor *color = [UIColor colorWithRed:146.0f/255.0f green:146.0f/255.0f blue:146.0f/255.0f alpha:1.0f];
     [attributedDetails addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, self.party.details.length)];
     self.detailsTextView.attributedText = attributedDetails;
-    [self.detailsTextView sizeToFit];
     self.dateLabel.text = [self.party date];
     self.hoursLabel.text = [self.party hours];
     MKCoordinateRegion region;
@@ -95,12 +93,8 @@
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 {
     [super traitCollectionDidChange:previousTraitCollection];
-
-    if (self.traitCollection.horizontalSizeClass != previousTraitCollection.horizontalSizeClass) {
-        [self.titleLabel sizeToFit];
-        [self.detailsTextView sizeToFit];
-        [self.tableView reloadData];
-    }
+    
+    self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.frame.size.width;
 }
 
 - (void)refreshGoing

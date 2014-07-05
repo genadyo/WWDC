@@ -29,13 +29,8 @@
                                                 <constraint firstAttribute="height" constant="74" id="hWF-4p-5jy"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="353" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
-                                            <rect key="frame" x="86" y="8" width="353" height="41"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="41" id="PPg-UI-K0s">
-                                                    <variation key="heightClass=compact" constant="29"/>
-                                                </constraint>
-                                            </constraints>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="354" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
+                                            <rect key="frame" x="86" y="8" width="354" height="41"/>
                                             <string key="text">Title
 Title 2</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -44,7 +39,7 @@ Title 2</string>
                                             <variation key="heightClass=compact"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-oL-S4e">
-                                            <rect key="frame" x="86" y="55" width="32" height="15"/>
+                                            <rect key="frame" x="86" y="55" width="354" height="15"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -59,7 +54,7 @@ Title 2</string>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="top" secondItem="tl9-99-CA5" secondAttribute="bottom" constant="6" id="4mX-tD-dcg"/>
-                                        <constraint firstItem="zeO-9u-zeL" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="8" id="Aj7-Io-qJR"/>
+                                        <constraint firstItem="zeO-9u-zeL" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="7" id="Aj7-Io-qJR"/>
                                         <constraint firstAttribute="centerY" secondItem="zeO-9u-zeL" secondAttribute="centerY" id="CEf-Of-3OG"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="HH8-gK-N2n"/>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="K5o-Jc-YCQ"/>
@@ -67,7 +62,7 @@ Title 2</string>
                                         <constraint firstAttribute="centerY" secondItem="wSf-jz-91p" secondAttribute="centerY" id="PPx-ER-Htj"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
-                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Mz-oL-S4e" secondAttribute="trailing" constant="8" id="z6U-lW-rVw"/>
+                                        <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>

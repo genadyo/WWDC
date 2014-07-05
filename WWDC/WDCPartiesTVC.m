@@ -62,10 +62,6 @@
 - (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection
 {
     [super traitCollectionDidChange:previousTraitCollection];
-
-    if (self.traitCollection.verticalSizeClass != previousTraitCollection.verticalSizeClass) {
-        [self.tableView reloadData];
-    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -233,6 +229,7 @@
         WDCPartyTVC *partyCell = [tableView dequeueReusableCellWithIdentifier:@"party" forIndexPath:indexPath];
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         partyCell.titleLabel.text = party.title;
+        partyCell.titleLabel.preferredMaxLayoutWidth = partyCell.titleLabel.bounds.size.width;
         partyCell.hoursLabel.text = [party hours];
         if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] == NSNotFound) {
             partyCell.goingImageView.hidden = YES;
