@@ -3,5 +3,5 @@ inhibit_all_warnings!
 
 pod 'Parse-iOS-SDK'
 pod 'GoogleAnalytics-iOS-SDK'
-#pod 'TestFlightSDK'
 pod 'TMCache'
+pod 'Tweaks'
