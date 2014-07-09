@@ -29,6 +29,8 @@
     NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     
     // Push Notifications
+    UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
+    [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     [Parse setApplicationId:configuration[@"PARSE_API"] clientKey:configuration[@"PARSE_KEY"]];
 
@@ -104,9 +106,9 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    PFInstallation *installation = [PFInstallation currentInstallation];
-    [installation setDeviceTokenFromData:deviceToken];
-    [installation saveInBackground];
+//    PFInstallation *installation = [PFInstallation currentInstallation];
+//    [installation setDeviceTokenFromData:deviceToken];
+//    [installation saveInBackground];
 
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"start > %@", [NSDate date]];
@@ -125,7 +127,7 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [PFPush handlePush:userInfo];
+//    [PFPush handlePush:userInfo];
 
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
 }
