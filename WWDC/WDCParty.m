@@ -25,6 +25,9 @@
 @property (strong, nonatomic) NSDate *endDate;
 @property (assign, nonatomic) BOOL show;
 @property (strong, nonatomic) NSString *objectId;
+@property (strong, nonatomic) NSString *sortDate;
+@property (strong, nonatomic) NSString *date;
+@property (strong, nonatomic) NSString *hours;
 
 @end
 
@@ -129,36 +132,45 @@
 
 - (NSString *)sortDate
 {
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:locale];
-    [dateFormatter setDateFormat:@"d"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
-    return [dateFormatter stringFromDate:self.startDate];
+    if (!_sortDate) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setLocale:locale];
+        [dateFormatter setDateFormat:@"d"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        return [dateFormatter stringFromDate:self.startDate];
+    }
+    return _sortDate;
 }
 
 - (NSString *)date
 {
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setLocale:locale];
-    [dateFormatter setDateFormat:@"EEEE, MMMM d"];
-    [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
-    return [dateFormatter stringFromDate:self.startDate];
+    if (!_date) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setLocale:locale];
+        [dateFormatter setDateFormat:@"EEEE, MMMM d"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        _date = [dateFormatter stringFromDate:self.startDate];
+    }
+    return _date;
 }
 
 - (NSString *)hours
 {
-    NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-    NSDateFormatter *dateFormatterStart = [[NSDateFormatter alloc] init];
-    [dateFormatterStart setLocale:locale];
-    [dateFormatterStart setDateFormat:@"h:mm a"];
-    [dateFormatterStart setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
-    NSDateFormatter *dateFormatterEnd = [[NSDateFormatter alloc] init];
-    [dateFormatterEnd setLocale:locale];
-    [dateFormatterEnd setDateFormat:@"h:mm a"];
-    [dateFormatterEnd setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
-    return [NSString stringWithFormat:@"%@ to %@", [dateFormatterStart stringFromDate:self.startDate], [dateFormatterEnd stringFromDate:self.endDate]];
+    if (!_hours) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        NSDateFormatter *dateFormatterStart = [[NSDateFormatter alloc] init];
+        [dateFormatterStart setLocale:locale];
+        [dateFormatterStart setDateFormat:@"h:mm a"];
+        [dateFormatterStart setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        NSDateFormatter *dateFormatterEnd = [[NSDateFormatter alloc] init];
+        [dateFormatterEnd setLocale:locale];
+        [dateFormatterEnd setDateFormat:@"h:mm a"];
+        [dateFormatterEnd setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        _hours = [NSString stringWithFormat:@"%@ to %@", [dateFormatterStart stringFromDate:self.startDate], [dateFormatterEnd stringFromDate:self.endDate]];
+    }
+    return _hours;
 }
 
 @end

@@ -23,13 +23,14 @@
 @property (readonly, strong, nonatomic) NSDate *endDate;
 @property (readonly, assign, nonatomic) BOOL show;
 @property (readonly, strong, nonatomic) NSString *objectId;
+@property (readonly, strong, nonatomic) NSString *sortDate;
+@property (readonly, strong, nonatomic) NSString *date;
+@property (readonly, strong, nonatomic) NSString *hours;
 
 - (instancetype)initWithCKRecord:(CKRecord *)record;
 - (void)setLogoWithData:(NSData *)data;
 - (void)setIconWithData:(NSData *)data;
 
-- (NSString *)sortDate;
-- (NSString *)date;
-- (NSString *)hours;
+
 
 @end
