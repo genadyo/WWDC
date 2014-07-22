@@ -106,15 +106,12 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-//    PFInstallation *installation = [PFInstallation currentInstallation];
-//    [installation setDeviceTokenFromData:deviceToken];
-//    [installation saveInBackground];
-
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"start > %@", [NSDate date]];
     CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Notification" predicate:predicate options:CKSubscriptionOptionsFiresOnRecordCreation];
     CKNotificationInfo *notification = [[CKNotificationInfo alloc] init];
-    notification.desiredKeys = @[@"message"];
+    notification.alertLocalizationKey = @"%@";
+    notification.alertLocalizationArgs = @[@"message"];
     subscription.notificationInfo = notification;
     [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
         if (error) {
@@ -127,8 +124,6 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-//    [PFPush handlePush:userInfo];
-
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
 }
 
