@@ -118,6 +118,24 @@
                                   }];
 }
 
+- (BOOL)isLogoCached
+{
+    if ([[TMCache sharedCache] objectForKey:[self logoCacheKey]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)isIconCached
+{
+    if ([[TMCache sharedCache] objectForKey:[self iconCacheKey]]) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 - (void)setLogoWithData:(NSData *)data
 {
     self.logo = [[UIImage alloc] initWithData:data scale:[UIScreen mainScreen].scale];

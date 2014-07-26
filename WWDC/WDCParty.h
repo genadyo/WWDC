@@ -30,7 +30,7 @@
 - (instancetype)initWithCKRecord:(CKRecord *)record;
 - (void)setLogoWithData:(NSData *)data;
 - (void)setIconWithData:(NSData *)data;
-
-
+- (BOOL)isLogoCached;
+- (BOOL)isIconCached;
 
 @end

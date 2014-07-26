@@ -49,21 +49,25 @@
     queryOperation.recordFetchedBlock = ^(CKRecord *record) {
         WDCParty *party = [[WDCParty alloc] initWithCKRecord:record];
 
-        [self getDataForRecordID:record.recordID desiredKey:@"icon" queuePriority:NSOperationQueuePriorityHigh block:^(NSData *data, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            } else {
-                [party setIconWithData:data];
-            }
-        }];
+        if (![party isIconCached]) {
+            [self getDataForRecordID:record.recordID desiredKey:@"icon" queuePriority:NSOperationQueuePriorityHigh block:^(NSData *data, NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                } else {
+                    [party setIconWithData:data];
+                }
+            }];
+        }
 
-        [self getDataForRecordID:record.recordID desiredKey:@"logo" queuePriority:NSOperationQueuePriorityNormal block:^(NSData *data, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-            } else {
-                [party setLogoWithData:data];
-            }
-        }];
+        if (![party isLogoCached]) {
+            [self getDataForRecordID:record.recordID desiredKey:@"logo" queuePriority:NSOperationQueuePriorityNormal block:^(NSData *data, NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                } else {
+                    [party setLogoWithData:data];
+                }
+            }];
+        }
 
         [parties addObject:party];
     };
