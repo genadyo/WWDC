@@ -56,7 +56,11 @@
     [tweak addObserver:self];
 
     // Split View Controller
+#ifdef DEBUG
     self.window = [[FBTweakShakeWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#else
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+#endif
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *master = [storyboard instantiateViewControllerWithIdentifier:@"master"];
