@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
-		B22E933419CD6DFF0078B306 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933319CD6DFF0078B306 /* libAdIdAccess.a */; };
-		B22E933619CD6E960078B306 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933519CD6E960078B306 /* AdSupport.framework */; };
+		B22E933719CD6F250078B306 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933319CD6DFF0078B306 /* libAdIdAccess.a */; };
+		B22E933819CD6F2A0078B306 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933519CD6E960078B306 /* AdSupport.framework */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
 		B24642531927777D00DF2E06 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B24642521927777D00DF2E06 /* WDCParty.m */; };
@@ -78,11 +78,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B22E933619CD6E960078B306 /* AdSupport.framework in Frameworks */,
 				B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */,
-				B22E933419CD6DFF0078B306 /* libAdIdAccess.a in Frameworks */,
 				B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */,
+				B22E933819CD6F2A0078B306 /* AdSupport.framework in Frameworks */,
 				B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
+				B22E933719CD6F250078B306 /* libAdIdAccess.a in Frameworks */,
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
 				B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
 				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
@@ -425,6 +425,10 @@
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -448,6 +452,10 @@
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
