@@ -10,11 +10,4 @@
 
 @implementation WDCPartyTVC
 
-- (void)layoutSubviews
-{
-    [super layoutSubviews];
-    self.titleLabel.preferredMaxLayoutWidth = self.titleLabel.bounds.size.width;
-    [super layoutSubviews];
-}
-
 @end
