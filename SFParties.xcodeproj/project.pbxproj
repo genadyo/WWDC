@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
-		B22E933719CD6F250078B306 /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933319CD6DFF0078B306 /* libAdIdAccess.a */; };
-		B22E933819CD6F2A0078B306 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B22E933519CD6E960078B306 /* AdSupport.framework */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
 		B24642531927777D00DF2E06 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B24642521927777D00DF2E06 /* WDCParty.m */; };
@@ -36,8 +34,6 @@
 /* Begin PBXFileReference section */
 		7D39D3F8E0E6462DAC94FF28 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		8F6A897ED3134CF8B77019B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B22E933319CD6DFF0078B306 /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
-		B22E933519CD6E960078B306 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
@@ -80,9 +76,7 @@
 			files = (
 				B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */,
 				B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */,
-				B22E933819CD6F2A0078B306 /* AdSupport.framework in Frameworks */,
 				B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
-				B22E933719CD6F250078B306 /* libAdIdAccess.a in Frameworks */,
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
 				B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
 				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
@@ -115,7 +109,6 @@
 		B2D4AEE219276A1E00C5B0E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B22E933519CD6E960078B306 /* AdSupport.framework */,
 				B2F9A38719521714008FA5EF /* CloudKit.framework */,
 				B23AFA88192814F100C2A060 /* Crashlytics.framework */,
 				B246425A1927A2F200DF2E06 /* MapKit.framework */,
@@ -123,7 +116,6 @@
 				B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */,
 				B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */,
 				8F6A897ED3134CF8B77019B8 /* libPods.a */,
-				B22E933319CD6DFF0078B306 /* libAdIdAccess.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
