@@ -28,6 +28,7 @@
 		B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */; };
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
 		B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */; };
+		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartiesTVC.h; sourceTree = "<group>"; };
 		B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartiesTVC.m; sourceTree = "<group>"; };
+		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */,
+				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
 				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
 				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
@@ -236,6 +239,7 @@
 				B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */,
 				B268E0A0196700B000038686 /* SFParties.entitlements in Resources */,
 				B268E09F196700B000038686 /* Configuration.plist in Resources */,
+				B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */,
 				B2D4AEEE19276A1E00C5B0E8 /* InfoPlist.strings in Resources */,
 				B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */,
 			);
