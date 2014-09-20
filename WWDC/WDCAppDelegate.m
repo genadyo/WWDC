@@ -121,7 +121,7 @@
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
-            NSLog(@"Subscription: %@", subscription);
+//            NSLog(@"Subscription: %@", subscription);
         }
     }];
 }
