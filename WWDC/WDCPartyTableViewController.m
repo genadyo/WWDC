@@ -21,7 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UITextView *detailsTextView;
+@property (weak, nonatomic) IBOutlet UILabel *detailsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
@@ -65,7 +65,7 @@
     [attributedDetails addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, self.party.details.length)];
     UIColor *color = [UIColor colorWithRed:146.0f/255.0f green:146.0f/255.0f blue:146.0f/255.0f alpha:1.0f];
     [attributedDetails addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, self.party.details.length)];
-    self.detailsTextView.attributedText = attributedDetails;
+    self.detailsLabel.attributedText = attributedDetails;
     self.dateLabel.text = [self.party date];
     self.hoursLabel.text = [self.party hours];
     MKCoordinateRegion region;
@@ -82,21 +82,8 @@
     self.address3Label.text = self.party.address3;
     [self refreshGoing];
 
-    // I hope to find better way to do it
-    CGRect frame = self.view.frame;
-    if (self.splitViewController) {
-        if (self.splitViewController.viewControllers.count == 2) {
-            frame = [self.splitViewController.viewControllers[1] view].frame;
-        }
-    }
-    CGRect detailsTextViewFrame = self.detailsTextView.frame;
-    CGFloat width = frame.size.width-30.0f;
-    detailsTextViewFrame.size.width = width;
-    detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        self.detailsTextView.frame = detailsTextViewFrame;
-        [self.tableView reloadData];
-    });
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 61.0;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -104,21 +91,6 @@
     [super viewWillAppear:animated];
 
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
-{
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-    // I hope to find better way to do it
-    [coordinator animateAlongsideTransition:nil completion:^(id<UIViewControllerTransitionCoordinatorContext> context) {
-        CGRect detailsTextViewFrame = self.detailsTextView.frame;
-        detailsTextViewFrame.size.height = [self.detailsTextView sizeThatFits:CGSizeMake(detailsTextViewFrame.size.width, FLT_MAX)].height;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.detailsTextView.frame = detailsTextViewFrame;
-            [self.tableView reloadData];
-        });
-    }];
 }
 
 - (void)refreshGoing
@@ -258,17 +230,10 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+// This is needed because of the static table cells or because its a bug!
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-
-    if (indexPath.row == 2) {
-        height = CGRectGetHeight(self.detailsTextView.bounds)-5.0f;
-    } else if (indexPath.row == 1) {
-        height = CGRectGetHeight(self.titleLabel.bounds);
-    }
-
-    return height;
+    return tableView.rowHeight;
 }
 
 #pragma mark - EKEventEditViewDelegate
