@@ -43,6 +43,7 @@ static void *PartyKey = &PartyKey;
 @interface WDCMapDayViewController () <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -75,6 +76,16 @@ static void *PartyKey = &PartyKey;
         annotation.subtitle = [party hours];
         annotation.party = party;
         [self.mapView addAnnotation:annotation];
+    }
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestWhenInUseAuthorization];
     }
 }
 

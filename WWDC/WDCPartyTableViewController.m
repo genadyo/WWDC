@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-#import <EventKitUI/EventKitUI.h>
-#import <MapKit/MapKit.h>
+@import EventKitUI;
+@import MapKit;
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *goingButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *titleCell;
 @property (strong, nonatomic) JVObserver *observer;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -91,6 +92,16 @@
     [super viewWillAppear:animated];
 
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
 }
 
 - (void)refreshGoing
