@@ -140,11 +140,27 @@
 - (IBAction)addParty:(id)sender
 {
     if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
-        mailVC.mailComposeDelegate = self;
-        [mailVC setSubject:NSLocalizedString(@"Suggest a Party", nil)];
-        [mailVC setToRecipients:[NSArray arrayWithObjects:@"team@sugar.so", nil]];
-        [self presentViewController:mailVC animated:YES completion:nil];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please provide as much detail as possible", nil) message:NSLocalizedString(@"We would really appreciate if you won't send us an empty mail", nil) preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Suggest a Party", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
+            mailVC.mailComposeDelegate = self;
+            [mailVC setSubject:NSLocalizedString(@"Suggest a Party", nil)];
+            [mailVC setToRecipients:[NSArray arrayWithObjects:@"team@sugar.so", nil]];
+            [self presentViewController:mailVC animated:YES completion:nil];
+        }];
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:ok];
+        [alert addAction:cancel];
+        [self presentViewController:alert animated:YES completion:nil];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please configure mail account", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+            [alert dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alert addAction:ok];
+        [self presentViewController:alert animated:YES completion:nil];
     }
 }
 
