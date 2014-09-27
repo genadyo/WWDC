@@ -9,6 +9,7 @@
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
 #import <Crashlytics/Crashlytics.h>
+#import <Rollout/Rollout.h>
 #import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
@@ -36,6 +37,12 @@
 
     // GAI
     [[GAI sharedInstance] trackerWithTrackingId:configuration[@"GOOGLE_ANALYTICS_API"]];
+
+#if defined( DEBUG )
+    [Rollout setup:configuration[@"ROLLOUT_API"] debug:YES];
+#else
+    [Rollout setup:configuration[@"ROLLOUT_API"] debug:NO];
+#endif
 
     // Crashlytics
     [Crashlytics startWithAPIKey:configuration[@"CRASHLYTICS_API"]];

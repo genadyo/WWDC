@@ -1,0 +1,102 @@
+#!/bin/bash
+MODE="production"
+LIB_DIR=$(dirname "$0")
+ROLLOUT_DIR=$(dirname "$LIB_DIR")
+CACHE_DIR="${ROLLOUT_DIR}/.cache"
+LOG_FILE="/tmp/tweaker_$$.log"
+ERR_FILE="/tmp/tweaker_$$.err"
+JSON="$CACHE_DIR/tweaker_functions.json"
+TMP_FILE="/tmp/tweaker_tmp_$$"
+command=$1
+
+function copy_json(){
+  cp -v "$JSON"  "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
+  if [ -r  "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}" ]; then
+    echo "Rollout: Installation mode, special copy" 
+    cp -v "$JSON"  "${INSTALL_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
+  fi
+}
+
+function extract_objc_function(){
+  f="$1"
+  append_to="$2"
+  md5=$(cat "$f" | md5)
+  cache_file="$CACHE_DIR/${NATIVE_ARCH}.$TARGETNAME.$md5.$(basename "$f")"
+  if [ ! -s "$cache_file" ]; then
+    echo "Rollout: cache not found for $f ($md5)"
+    flags=("-ObjC" "-arch" "$NATIVE_ARCH" "-include" "$GCC_PREFIX_HEADER" "-D" "ROLLOUT_TRANSPARENT" "-isysroot" "$SDKROOT")
+    if [[ $NATIVE_ARCH == "i386" ]] ; then 
+      flags+=("-mios-simulator-version-min=$IPHONEOS_DEPLOYMENT_TARGET")
+    fi
+    for i in $HEADER_SEARCH_PATHS $TARGET_TEMP_DIR/*.hmap ; do 
+      flags+=("-I" "$i")
+    done
+    for i in $LIBRARY_SEARCH_PATHS; do 
+      flags+=("-F" "$i")
+    done
+    for i in $OTHER_CFLAGS; do
+      flags+=($(echo $i|  tr \$'"' \$' '))
+    done
+    echo "Rollout running extract_objc_function with "${flags[@]}" $f" >> $LOG_FILE
+    clang_exit_status=0
+    if [ $MODE == "debug" ] ; then 
+      xcrun clang -E "${flags[@]}" "$f" 1> /dev/null 2>>$ERR_FILE
+      clang_exit_status=$?
+    fi
+    if [  $clang_exit_status -eq 0 ] ;then 
+      echo "Success: xcrun clang -E "${flags[@]}" $f"  >> $LOG_FILE
+      "${LIB_DIR}/extract_objc_function" "${flags[@]}" "$f" >> "$cache_file"  || echo "Rollout: !!!! Problem extracting symbols from $f"
+    else
+      echo "Failed: xcrun clang -E "${flags[@]}" $f" | tee -a $ERR_FILE 
+    fi
+  fi
+  if [ -r "$cache_file" ] ;then 
+   cat "$cache_file" >> "$append_to"
+   if [[ $(basename "$f") == "RolloutDynamic.m" ]] ; then
+      rollout_install_sanity="$CACHE_DIR/sanity.$TARGETNAME.${NATIVE_ARCH}.log"
+      echo "FRAMEWORK_SEARCH_PATHS=$FRAMEWORK_SEARCH_PATHS" > $rollout_install_sanity
+      cat "$cache_file" >> $rollout_install_sanity
+   fi
+  else
+    echo "[]" >> "$append_to"
+  fi
+}
+
+if [ "X$command" == "Xclean" ]; then 
+  echo Cleanning cache dir
+  rm -vfr "$CACHE_DIR"
+  exit 0
+fi
+
+echo "Rollout pre compile script"
+is_first=true
+mkdir -p "$CACHE_DIR"
+echo -ne "[" > "$TMP_FILE"
+date  +"%s : start to read code" >> $LOG_FILE
+files_count=$("${LIB_DIR}/print_compiled_files.rb" "$PROJECT_FILE_PATH" "$TARGETNAME" | tr '\000' '\n'| wc -l | tr -d " ")
+counter=0
+while read -r -d $'\0' f ; do
+  echo "Rollout: extracting file $counter of $files_count"
+  counter=$((counter + 1))
+  $is_first ||  echo "," >> "$TMP_FILE"
+  is_first=false
+  date  +"  %s : $f" >> $LOG_FILE
+  extract_objc_function "$f"  "$TMP_FILE" 
+done < <("${LIB_DIR}/print_compiled_files.rb" "$PROJECT_FILE_PATH" "$TARGETNAME")
+date  +"%s : done reading code" >> $LOG_FILE
+echo -ne "]" >> "$TMP_FILE"
+
+data_md5=$(cat "$TMP_FILE" | md5)
+echo -ne '{"data":' > "$JSON"
+cat "$TMP_FILE" >> "$JSON"
+echo -ne ",\"arch\":\"$NATIVE_ARCH\",\"md5\":\"$data_md5\"}" >> "$JSON"
+"${LIB_DIR}/create_dynamic_swizzler.rb" "$TMP_FILE" > "${ROLLOUT_DIR}/Rollout/RolloutSwizzlerDynamic.include"
+if [ $MODE == "debug" ] ; then  
+  echo Log file in $LOG_FILE
+else
+  rm -f "$LOG_FILE"
+fi
+
+rm -f "$TMP_FILE"
+
+copy_json
