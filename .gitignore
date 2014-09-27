@@ -23,3 +23,7 @@ DerivedData
 Pods
 
 Configuration.plist
+
+# Rollout
+Rollout-ios-SDK/Rollout/RolloutSwizzlerDynamic.include
+Rollout-ios-SDK/.cache/
