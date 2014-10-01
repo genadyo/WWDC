@@ -57,14 +57,14 @@
             [color49 setFill];
             [shape2Path fill];
             [color46 setStroke];
-            shape2Path.lineWidth = 2;
+            shape2Path.lineWidth = 3;
             [shape2Path stroke];
 
 
             //// Oval-2 Drawing
             UIBezierPath* oval2Path = [UIBezierPath bezierPathWithOvalInRect: CGRectMake(13, 15, 18, 18)];
             [color48 setStroke];
-            oval2Path.lineWidth = 2;
+            oval2Path.lineWidth = 3;
             [oval2Path stroke];
         }
 
