@@ -10,7 +10,6 @@
 #import "WDCParty.h"
 #import <Crashlytics/Crashlytics.h>
 #import <Rollout/Rollout.h>
-#import "TestFairy.h"
 #import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
@@ -44,8 +43,6 @@
 #else
     [Rollout setup:configuration[@"ROLLOUT_API"] debug:NO];
 #endif
-
-    [TestFairy begin:configuration[@"TESTFAIRY_API"]];
 
     // Crashlytics
     [Crashlytics startWithAPIKey:configuration[@"CRASHLYTICS_API"]];

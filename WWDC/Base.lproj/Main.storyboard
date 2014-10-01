@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRq-sp-E9p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRq-sp-E9p">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -407,16 +407,21 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-to-calendar" translatesAutoresizingMaskIntoConstraints="NO" id="xGQ-63-kI7">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar">
                                                     <rect key="frame" x="20" y="24" width="38" height="30"/>
-                                                </imageView>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="38" id="4RU-6P-psN"/>
+                                                        <constraint firstAttribute="height" constant="30" id="P8z-r1-GfV"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="L4B-SO-y8Q" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="70" id="04k-aa-gxd"/>
                                                 <constraint firstAttribute="bottom" secondItem="L4B-SO-y8Q" secondAttribute="bottom" constant="17" id="0BH-jm-95Z"/>
-                                                <constraint firstItem="xGQ-63-kI7" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="20" symbolic="YES" id="H5J-sI-Xj8"/>
-                                                <constraint firstAttribute="centerY" secondItem="xGQ-63-kI7" secondAttribute="centerY" id="KBR-zj-wuK"/>
+                                                <constraint firstItem="Xyj-3Y-qwX" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leadingMargin" constant="12" id="0Jr-NH-ccj"/>
                                                 <constraint firstItem="7NX-Q6-GMX" firstAttribute="top" secondItem="an3-gY-oBw" secondAttribute="top" constant="17" id="MhU-fa-Aui"/>
+                                                <constraint firstAttribute="centerY" secondItem="Xyj-3Y-qwX" secondAttribute="centerY" id="QFy-88-FqQ"/>
                                                 <constraint firstItem="L4B-SO-y8Q" firstAttribute="top" secondItem="7NX-Q6-GMX" secondAttribute="bottom" constant="7" id="TdN-2x-gJa"/>
                                                 <constraint firstItem="7NX-Q6-GMX" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="70" id="tIP-Cm-Z5p"/>
                                             </constraints>
@@ -472,7 +477,7 @@ Title2</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjV-01-xGd">
-                                                    <rect key="frame" x="70" y="12" width="67" height="18"/>
+                                                    <rect key="frame" x="70" y="12" width="66.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -483,9 +488,14 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="F2o-f8-6ur">
-                                                    <rect key="frame" x="20" y="23" width="23" height="32"/>
-                                                </imageView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-l6-djE" customClass="WDCLocation">
+                                                    <rect key="frame" x="20" y="23" width="24" height="32"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="24" id="9rB-Ik-5sj"/>
+                                                        <constraint firstAttribute="height" constant="32" id="Ypd-b2-o0E"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-k2-q1z">
                                                     <rect key="frame" x="70" y="48" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -496,13 +506,13 @@ Title2</string>
                                             <constraints>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="3Un-Er-qsG"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4r-k2-q1z" secondAttribute="trailing" constant="20" symbolic="YES" id="AE0-ET-sfB"/>
-                                                <constraint firstItem="F2o-f8-6ur" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="20" symbolic="YES" id="AJw-Y8-ghN"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kjV-01-xGd" secondAttribute="trailing" constant="20" symbolic="YES" id="C3w-fP-bBF"/>
-                                                <constraint firstAttribute="centerY" secondItem="F2o-f8-6ur" secondAttribute="centerY" id="CvH-rk-DPY"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="70" id="GAh-ka-CGT"/>
+                                                <constraint firstAttribute="centerY" secondItem="GR3-l6-djE" secondAttribute="centerY" id="Hdv-AC-bDq"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="20" symbolic="YES" id="MEg-Pf-GUn"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="OG6-oc-Ssh"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="R9F-Cv-dxK"/>
+                                                <constraint firstItem="GR3-l6-djE" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leadingMargin" constant="12" id="RSo-hc-lsr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="I4r-k2-q1z" secondAttribute="bottom" constant="3" id="iKM-GH-u6g"/>
                                                 <constraint firstItem="kjV-01-xGd" firstAttribute="top" secondItem="TmW-O5-gJW" secondAttribute="topMargin" constant="4" id="lKj-hB-Cn8"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="nty-bD-wPS"/>
@@ -618,10 +628,8 @@ Title2</string>
         </scene>
     </scenes>
     <resources>
-        <image name="add-to-calendar" width="38" height="30"/>
         <image name="blank-state" width="112" height="88"/>
         <image name="going" width="13" height="10"/>
-        <image name="location" width="23" height="32"/>
         <image name="toggle-all" width="14" height="8"/>
         <image name="toggle-going" width="13" height="10"/>
     </resources>
