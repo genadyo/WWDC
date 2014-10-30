@@ -67,7 +67,7 @@
 //#ifdef DEBUG
 //    self.window = [[FBTweakShakeWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //#else
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //#endif
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -84,7 +84,7 @@
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
 
-    [self.window makeKeyAndVisible];
+//    [self.window makeKeyAndVisible];
 
     return YES;
 }
