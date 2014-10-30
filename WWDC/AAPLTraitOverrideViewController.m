@@ -18,7 +18,7 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
 {
-    if (size.width > 320.0) {
+    if (size.width > 414.0) {
         // If we are large enough, force a regular size class
         self.forcedTraitCollection = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
     } else {
