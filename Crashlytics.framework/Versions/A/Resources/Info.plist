@@ -2,29 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>English</string>
-	<key>CFBundleExecutable</key>
-	<string>Crashlytics</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.crashlytics.ios</string>
-	<key>CFBundleInfoDictionaryVersion</key>
-	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>Crashlytics</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Crashlytics Framework</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.twitter.crashlytics.ios</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
+	<key>CFBundleVersion</key>
+	<string>40</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.2.4</string>
+	<string>2.2.5+kit</string>
+	<key>NSHumanReadableCopyright</key>
+	<string>Copyright 2014 Twitter Inc.</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>
+		<string>iPhoneSimulator</string>
+		<string>MacOSX</string>
 	</array>
-	<key>CFBundleVersion</key>
-	<string>38</string>
-	<key>DTPlatformName</key>
-	<string>iphoneos</string>
-	<key>MinimumOSVersion</key>
-	<string>4.0</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
 </dict>
 </plist>

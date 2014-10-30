@@ -8,6 +8,7 @@
 
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
+#import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Rollout/Rollout.h>
 #import "GAI.h"
@@ -45,7 +46,7 @@
 #endif
 
     // Crashlytics
-    [Crashlytics startWithAPIKey:configuration[@"CRASHLYTICS_API"]];
+    [Fabric with:@[CrashlyticsKit]];
 
     // Global Tint Color (Xcode Bug #1)
     [[UIView appearance] setTintColor:[UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f]];

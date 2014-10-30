@@ -35,6 +35,7 @@
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
 		B2EEE53A19DC4A6100731D97 /* Assets.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EEE53919DC4A6100731D97 /* Assets.m */; };
 		B2EEE53D19DC4B0C00731D97 /* drawAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = B2EEE53C19DC4B0C00731D97 /* drawAssets.m */; };
+		B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F874001A02543A00DD55DB /* Fabric.framework */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		B2EEE53919DC4A6100731D97 /* Assets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Assets.m; sourceTree = "<group>"; };
 		B2EEE53B19DC4B0C00731D97 /* drawAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = drawAssets.h; sourceTree = "<group>"; };
 		B2EEE53C19DC4B0C00731D97 /* drawAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = drawAssets.m; sourceTree = "<group>"; };
+		B2F874001A02543A00DD55DB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CC94508C3B90C2C76D7B859C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
 				7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */,
 				2122714352A645F09DFEB295 /* Rollout.framework in Frameworks */,
+				B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +142,7 @@
 		B2D4AEE219276A1E00C5B0E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2F874001A02543A00DD55DB /* Fabric.framework */,
 				B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */,
 				B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */,
 				B2F9A38719521714008FA5EF /* CloudKit.framework */,
@@ -333,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run 8a47ccbf8db717681b6ae83cb615504de6fe5eb7 bf71d8eee9d314649b9cf5e1d193477e98fdad9468d1585a9fcf9983c20afd1d";
+			shellScript = "./Fabric.framework/run 8a47ccbf8db717681b6ae83cb615504de6fe5eb7 bf71d8eee9d314649b9cf5e1d193477e98fdad9468d1585a9fcf9983c20afd1d";
 		};
 		D48D53008BAA48088AFB402D /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
