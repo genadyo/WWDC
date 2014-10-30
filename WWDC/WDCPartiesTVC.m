@@ -140,7 +140,7 @@
 - (IBAction)addParty:(id)sender
 {
     if ([MFMailComposeViewController canSendMail]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please provide as much detail as possible", nil) message:NSLocalizedString(@"We would really appreciate if you won't send us an empty mail", nil) preferredStyle:UIAlertControllerStyleActionSheet];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please provide as much details as possible", nil) message:NSLocalizedString(@"We would really appreciate if you won't send us an empty mail", nil) preferredStyle:UIAlertControllerStyleActionSheet];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Suggest a Party", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
             MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
             mailVC.mailComposeDelegate = self;
