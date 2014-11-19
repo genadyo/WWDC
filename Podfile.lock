@@ -1,13 +1,13 @@
 PODS:
-  - GoogleAnalytics-iOS-SDK (3.0.3c)
+  - GoogleAnalytics-iOS-SDK (3.10)
   - TMCache (1.2.2)
 
 DEPENDENCIES:
-  - GoogleAnalytics-iOS-SDK (= 3.0.3c)
+  - GoogleAnalytics-iOS-SDK
   - TMCache
 
 SPEC CHECKSUMS:
-  GoogleAnalytics-iOS-SDK: 4377a29aa3e039030df30fd5c6075baeed3c916c
+  GoogleAnalytics-iOS-SDK: e5872d2acc120613d954320e206c7e3bc8357d7c
   TMCache: e2c9225de7a107b529d1d04baa58eb5eab3051f3
 
 COCOAPODS: 0.35.0
