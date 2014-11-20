@@ -16,6 +16,7 @@
 #import "WDCParties.h"
 #import "WDCPartiesTVC.h"
 #import "WDCMapDayViewController.h"
+#import "SFParties-Swift.h"
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate>
 
@@ -229,22 +230,21 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 6) {
-        NSURL *url = [NSURL URLWithString:self.party.url];
-        if ([[UIApplication sharedApplication] canOpenURL:url]) {
-            [[UIApplication sharedApplication] openURL:url];
-        }
-    }
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-}
-
 // This is needed because of the static table cells or because its a bug!
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return tableView.rowHeight;
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"web"]) {
+        WDCPartyWebViewController *destController = (WDCPartyWebViewController *)[segue destinationViewController];
+        destController.title = self.party.title;
+        destController.url = [NSURL URLWithString:self.party.url];
+    }
 }
 
 #pragma mark - EKEventEditViewDelegate

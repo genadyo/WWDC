@@ -10,6 +10,7 @@
 		2122714352A645F09DFEB295 /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE2E87DFF2A47BCB80F7D0B /* Rollout.framework */; };
 		7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 		ADEDFB095B88444593530B4E /* RolloutDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
 		B24642531927777D00DF2E06 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B24642521927777D00DF2E06 /* WDCParty.m */; };
@@ -43,6 +44,8 @@
 		8104116B87B866315CA062BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F6A897ED3134CF8B77019B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DE2E87DFF2A47BCB80F7D0B /* Rollout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollout.framework; path = Rollout/Rollout.framework; sourceTree = "<group>"; };
+		B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
+		B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyWebViewController.swift; sourceTree = "<group>"; };
 		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
@@ -175,12 +178,14 @@
 				B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */,
 				B246425719279DE200DF2E06 /* WDCPartyTableViewController.h */,
 				B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */,
+				B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */,
 				B286140D1958CA51006FA1D3 /* JVObserver.h */,
 				B286140E1958CA51006FA1D3 /* JVObserver.m */,
 				B2EEE53819DC4A6100731D97 /* Assets.h */,
 				B2EEE53919DC4A6100731D97 /* Assets.m */,
 				B2EEE53B19DC4B0C00731D97 /* drawAssets.h */,
 				B2EEE53C19DC4B0C00731D97 /* drawAssets.m */,
+				B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */,
 				B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */,
 				B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */,
 			);
@@ -366,6 +371,7 @@
 				B2EEE53A19DC4A6100731D97 /* Assets.m in Sources */,
 				B2EEE53D19DC4B0C00731D97 /* drawAssets.m in Sources */,
 				B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */,
+				B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */,
 				B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */,
 				B24642531927777D00DF2E06 /* WDCParty.m in Sources */,
 				B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */,
@@ -472,6 +478,7 @@
 			baseConfigurationReference = CC94508C3B90C2C76D7B859C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -485,12 +492,15 @@
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "173f6520-2ab5-4cb9-a465-2f00ebd07df9";
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -501,6 +511,7 @@
 			baseConfigurationReference = 8104116B87B866315CA062BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -514,12 +525,14 @@
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = SFParties;
 				PROVISIONING_PROFILE = "173f6520-2ab5-4cb9-a465-2f00ebd07df9";
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
