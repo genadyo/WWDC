@@ -43,18 +43,3 @@ import UIKit
         Assets.drawGoingButton(frame: rect)
     }
 }
-
-@objc @IBDesignable class WDCToggleSegmentedControl : UISegmentedControl {
-    override func drawRect(rect: CGRect) {
-//        println("selectedSegmentIndex: \(selectedSegmentIndex)")
-        let colors = [self.tintColor, UIColor(red: 249/250, green: 249/250, blue: 249/250, alpha: 1.0)]
-        Assets.drawToggleallactive(frame: rect, iconColor: colors[(selectedSegmentIndex+1)%2])
-        Assets.drawTogglegoing(frame: rect, iconColor: colors[selectedSegmentIndex])
-    }
-
-    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        // drawRect on change
-        super.touchesEnded(touches, withEvent: event)
-        setNeedsDisplay()
-    }
-}

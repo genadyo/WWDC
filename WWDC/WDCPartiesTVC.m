@@ -34,6 +34,10 @@
 {
     [super viewDidLoad];
 
+    // PaintCode
+    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoing] forSegmentAtIndex:1];
+    [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
+
     // Google
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"WDCPartiesTVC"];

@@ -14,6 +14,20 @@ import UIKit
 
 public class Assets : NSObject {
 
+    //// Cache
+
+    private struct Cache {
+        static var color55: UIColor = UIColor(red: 0.970, green: 0.970, blue: 0.970, alpha: 1.000)
+        static var imageOfToggleallactive: UIImage?
+        static var toggleallactiveTargets: [AnyObject]?
+        static var imageOfTogglegoing: UIImage?
+        static var togglegoingTargets: [AnyObject]?
+    }
+
+    //// Colors
+
+    public class var color55: UIColor { return Cache.color55 }
+
     //// Drawing Methods
 
     public class func drawLocation() {
@@ -290,97 +304,6 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawToggleallactive(#frame: CGRect, iconColor: UIColor) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
-
-        //// Welcome
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.26562 * frame.width, frame.minY + 0.48529 * frame.height)
-        CGContextScaleCTM(context, 0.5, 0.5)
-
-
-
-        //// Main
-        //// Segmented-Control
-        //// toggle-all-active
-        //// Bezier 2 Drawing
-        var bezier2Path = UIBezierPath()
-        bezier2Path.moveToPoint(CGPointMake(-14.5, -8.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, -5.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, -5.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, -8.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, -8.5))
-        bezier2Path.closePath()
-        bezier2Path.moveToPoint(CGPointMake(-14.5, -1.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, 1.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, 1.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, -1.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, -1.5))
-        bezier2Path.closePath()
-        bezier2Path.moveToPoint(CGPointMake(-14.5, 5.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, 8.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, 8.5))
-        bezier2Path.addLineToPoint(CGPointMake(14.5, 5.5))
-        bezier2Path.addLineToPoint(CGPointMake(-14.5, 5.5))
-        bezier2Path.closePath()
-        bezier2Path.miterLimit = 4;
-
-        bezier2Path.usesEvenOddFillRule = true;
-
-        iconColor.setFill()
-        bezier2Path.fill()
-
-
-
-
-
-
-
-
-
-        CGContextRestoreGState(context)
-    }
-
-    public class func drawTogglegoing(#frame: CGRect, iconColor: UIColor) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
-
-        //// Welcome
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.73438 * frame.width, frame.minY + 0.50586 * frame.height)
-        CGContextScaleCTM(context, 0.5, 0.5)
-
-
-
-        //// Main
-        //// Segmented-Control
-        //// toggle-going Drawing
-        var togglegoingPath = UIBezierPath()
-        togglegoingPath.moveToPoint(CGPointMake(-4.5, 4.23))
-        togglegoingPath.addLineToPoint(CGPointMake(10, -10.23))
-        togglegoingPath.addLineToPoint(CGPointMake(13, -7.23))
-        togglegoingPath.addLineToPoint(CGPointMake(-4.5, 10.23))
-        togglegoingPath.addLineToPoint(CGPointMake(-13, 1.73))
-        togglegoingPath.addLineToPoint(CGPointMake(-10, -1.27))
-        togglegoingPath.addLineToPoint(CGPointMake(-4.5, 4.23))
-        togglegoingPath.closePath()
-        togglegoingPath.miterLimit = 4;
-
-        togglegoingPath.usesEvenOddFillRule = true;
-
-        iconColor.setFill()
-        togglegoingPath.fill()
-
-
-
-
-
-
-
-        CGContextRestoreGState(context)
-    }
-
     public class func drawGoing() {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
@@ -424,6 +347,150 @@ public class Assets : NSObject {
 
 
         CGContextRestoreGState(context)
+    }
+
+    public class func drawToggleallactive() {
+        //// General Declarations
+        let context = UIGraphicsGetCurrentContext()
+
+        //// Color Declarations
+        let color50 = UIColor(red: 0.341, green: 0.366, blue: 0.829, alpha: 1.000)
+
+        //// Welcome
+        CGContextSaveGState(context)
+        CGContextScaleCTM(context, 0.5, 0.5)
+
+
+
+        //// Main
+        //// Segmented-Control
+        //// toggle-all-active
+        //// Bezier 2 Drawing
+        var bezier2Path = UIBezierPath()
+        bezier2Path.moveToPoint(CGPointMake(0, 0))
+        bezier2Path.addLineToPoint(CGPointMake(0, 3))
+        bezier2Path.addLineToPoint(CGPointMake(29, 3))
+        bezier2Path.addLineToPoint(CGPointMake(29, 0))
+        bezier2Path.addLineToPoint(CGPointMake(0, 0))
+        bezier2Path.closePath()
+        bezier2Path.moveToPoint(CGPointMake(0, 7))
+        bezier2Path.addLineToPoint(CGPointMake(0, 10))
+        bezier2Path.addLineToPoint(CGPointMake(29, 10))
+        bezier2Path.addLineToPoint(CGPointMake(29, 7))
+        bezier2Path.addLineToPoint(CGPointMake(0, 7))
+        bezier2Path.closePath()
+        bezier2Path.moveToPoint(CGPointMake(0, 14))
+        bezier2Path.addLineToPoint(CGPointMake(0, 17))
+        bezier2Path.addLineToPoint(CGPointMake(29, 17))
+        bezier2Path.addLineToPoint(CGPointMake(29, 14))
+        bezier2Path.addLineToPoint(CGPointMake(0, 14))
+        bezier2Path.closePath()
+        bezier2Path.miterLimit = 4;
+
+        bezier2Path.usesEvenOddFillRule = true;
+
+        color50.setFill()
+        bezier2Path.fill()
+
+
+
+
+
+
+
+
+
+        CGContextRestoreGState(context)
+    }
+
+    public class func drawTogglegoing() {
+        //// General Declarations
+        let context = UIGraphicsGetCurrentContext()
+
+        //// Welcome
+        CGContextSaveGState(context)
+        CGContextScaleCTM(context, 0.5, 0.5)
+
+
+
+        //// Main
+        //// Segmented-Control
+        //// toggle-going Drawing
+        var togglegoingPath = UIBezierPath()
+        togglegoingPath.moveToPoint(CGPointMake(8.5, 14.47))
+        togglegoingPath.addLineToPoint(CGPointMake(23, 0))
+        togglegoingPath.addLineToPoint(CGPointMake(26, 3))
+        togglegoingPath.addLineToPoint(CGPointMake(8.5, 20.47))
+        togglegoingPath.addLineToPoint(CGPointMake(0, 11.97))
+        togglegoingPath.addLineToPoint(CGPointMake(3, 8.97))
+        togglegoingPath.addLineToPoint(CGPointMake(8.5, 14.47))
+        togglegoingPath.closePath()
+        togglegoingPath.miterLimit = 4;
+
+        togglegoingPath.usesEvenOddFillRule = true;
+
+        Assets.color55.setFill()
+        togglegoingPath.fill()
+
+
+
+
+
+
+
+        CGContextRestoreGState(context)
+    }
+
+    //// Generated Images
+
+    public class var imageOfToggleallactive: UIImage {
+        if Cache.imageOfToggleallactive != nil {
+            return Cache.imageOfToggleallactive!
+        }
+
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(15, 9), false, 0)
+            Assets.drawToggleallactive()
+
+        Cache.imageOfToggleallactive = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return Cache.imageOfToggleallactive!
+    }
+
+    public class var imageOfTogglegoing: UIImage {
+        if Cache.imageOfTogglegoing != nil {
+            return Cache.imageOfTogglegoing!
+        }
+
+        UIGraphicsBeginImageContextWithOptions(CGSizeMake(13, 11), false, 0)
+            Assets.drawTogglegoing()
+
+        Cache.imageOfTogglegoing = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+
+        return Cache.imageOfTogglegoing!
+    }
+
+    //// Customization Infrastructure
+
+    @IBOutlet var toggleallactiveTargets: [AnyObject]! {
+        get { return Cache.toggleallactiveTargets }
+        set {
+            Cache.toggleallactiveTargets = newValue
+            for target: AnyObject in newValue {
+                target.setImage(Assets.imageOfToggleallactive)
+            }
+        }
+    }
+
+    @IBOutlet var togglegoingTargets: [AnyObject]! {
+        get { return Cache.togglegoingTargets }
+        set {
+            Cache.togglegoingTargets = newValue
+            for target: AnyObject in newValue {
+                target.setImage(Assets.imageOfTogglegoing)
+            }
+        }
     }
 
 }

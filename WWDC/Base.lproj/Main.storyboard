@@ -161,7 +161,7 @@ Title 2</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Parties" id="UwR-EJ-MmL">
                         <barButtonItem key="leftBarButtonItem" id="Qdo-PD-rLQ">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr" customClass="WDCToggleSegmentedControl" customModule="SFParties">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr">
                                 <rect key="frame" x="16" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
