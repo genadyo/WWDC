@@ -111,12 +111,12 @@
         [self.goingButton setTitle:NSLocalizedString(@"Not Going", nil) forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:nil forState:UIControlStateNormal];
+//        [self.goingButton setImage:nil forState:UIControlStateNormal];
     } else {
         [self.goingButton setTitle:NSLocalizedString(@"Going", nil) forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[UIImage imageNamed:@"going"] forState:UIControlStateNormal];
+//        [self.goingButton setImage:[UIImage imageNamed:@"going"] forState:UIControlStateNormal];
     }
 }
 

@@ -38,13 +38,14 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             </variation>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="going" translatesAutoresizingMaskIntoConstraints="NO" id="zeO-9u-zeL">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-aa-Fj9" customClass="WDCGoing" customModule="SFParties">
                                             <rect key="frame" x="567" y="32" width="13" height="10"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="10" id="dWE-cj-rhE"/>
-                                                <constraint firstAttribute="width" constant="13" id="yG0-vv-rMu"/>
+                                                <constraint firstAttribute="height" constant="10" id="6DK-4C-W4L"/>
+                                                <constraint firstAttribute="width" constant="13" id="K9T-M3-lPK"/>
                                             </constraints>
-                                        </imageView>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
                                             <rect key="frame" x="86" y="8" width="474" height="41"/>
                                             <string key="text">Title
@@ -59,32 +60,20 @@ Title 2</string>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="top" secondItem="tl9-99-CA5" secondAttribute="bottom" constant="6" id="4mX-tD-dcg"/>
-                                        <constraint firstItem="zeO-9u-zeL" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="7" id="Aj7-Io-qJR"/>
-                                        <constraint firstAttribute="centerY" secondItem="zeO-9u-zeL" secondAttribute="centerY" id="CEf-Of-3OG"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="HH8-gK-N2n"/>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="K5o-Jc-YCQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="zeO-9u-zeL" secondAttribute="trailing" constant="20" id="LOL-Am-uuM"/>
+                                        <constraint firstAttribute="centerY" secondItem="Jnx-aa-Fj9" secondAttribute="centerY" id="LFM-kP-Isj"/>
                                         <constraint firstAttribute="centerY" secondItem="wSf-jz-91p" secondAttribute="centerY" id="PPx-ER-Htj"/>
+                                        <constraint firstItem="Jnx-aa-Fj9" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="7" id="QDi-yl-yP6"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
-                                        <constraint firstAttribute="trailing" secondItem="zeO-9u-zeL" secondAttribute="trailing" constant="8" id="zHX-ZY-QOE"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jnx-aa-Fj9" secondAttribute="trailing" constant="20" id="oWE-Li-Uru"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="zHX-ZY-QOE"/>
-                                        </mask>
-                                    </variation>
-                                    <variation key="heightClass=compact">
-                                        <mask key="constraints">
-                                            <exclude reference="LOL-Am-uuM"/>
-                                            <include reference="zHX-ZY-QOE"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="goingImageView" destination="zeO-9u-zeL" id="QZQ-hh-BtZ"/>
+                                    <outlet property="goingView" destination="Jnx-aa-Fj9" id="eLp-gb-M1S"/>
                                     <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="4Cy-4Z-SCw"/>
                                     <outlet property="iconImageView" destination="wSf-jz-91p" id="Ly3-XR-HvV"/>
                                     <outlet property="titleLabel" destination="tl9-99-CA5" id="edg-ov-fRD"/>
@@ -127,9 +116,14 @@ Title 2</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ve-cCx">
                                             <rect key="frame" x="191.5" y="187" width="217" height="131"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank-state" translatesAutoresizingMaskIntoConstraints="NO" id="SVq-TX-kJi">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-YA-JCL" customClass="WDCBlankstate" customModule="SFParties">
                                                     <rect key="frame" x="53" y="0.0" width="112" height="88"/>
-                                                </imageView>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="Hzq-OL-zJD"/>
+                                                        <constraint firstAttribute="height" constant="88" id="SQD-04-22q"/>
+                                                    </constraints>
+                                                </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216.5" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-m9-7hI">
                                                     <rect key="frame" x="0.0" y="96" width="216.5" height="35"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
@@ -140,11 +134,11 @@ Title 2</string>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="centerX" secondItem="yvP-m9-7hI" secondAttribute="centerX" id="D45-5c-U2U"/>
-                                                <constraint firstItem="SVq-TX-kJi" firstAttribute="top" secondItem="bAe-Ve-cCx" secondAttribute="top" id="M5P-BG-WUO"/>
-                                                <constraint firstAttribute="centerX" secondItem="SVq-TX-kJi" secondAttribute="centerX" id="TXx-WA-Kz9"/>
                                                 <constraint firstAttribute="bottom" secondItem="yvP-m9-7hI" secondAttribute="bottom" id="ZmF-S1-KSE"/>
                                                 <constraint firstAttribute="height" constant="131" id="fhJ-bF-nM0"/>
+                                                <constraint firstAttribute="centerX" secondItem="9GN-YA-JCL" secondAttribute="centerX" id="kQj-5U-qeq"/>
                                                 <constraint firstAttribute="width" constant="217" id="rU9-v3-vvE"/>
+                                                <constraint firstItem="9GN-YA-JCL" firstAttribute="top" secondItem="bAe-Ve-cCx" secondAttribute="top" id="sYI-QA-x5G"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -167,12 +161,12 @@ Title 2</string>
                     </tableView>
                     <navigationItem key="navigationItem" title="Parties" id="UwR-EJ-MmL">
                         <barButtonItem key="leftBarButtonItem" id="Qdo-PD-rLQ">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr" customClass="WDCToggleSegmentedControl" customModule="SFParties">
                                 <rect key="frame" x="16" y="7" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="" image="toggle-all"/>
-                                    <segment title="" image="toggle-going"/>
+                                    <segment title=""/>
+                                    <segment title=""/>
                                 </segments>
                                 <connections>
                                     <action selector="updateSegment:" destination="ZFk-xA-eIm" eventType="valueChanged" id="Bcu-0L-9eZ"/>
@@ -407,7 +401,7 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar" customModule="SFParties">
                                                     <rect key="frame" x="20" y="24" width="38" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -488,7 +482,7 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-l6-djE" customClass="WDCLocation">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-l6-djE" customClass="WDCLocation" customModule="SFParties">
                                                     <rect key="frame" x="20" y="23" width="24" height="32"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -566,12 +560,12 @@ Title2</string>
                     <navigationItem key="navigationItem" title="Event Info" id="MlG-b7-S8s">
                         <barButtonItem key="rightBarButtonItem" id="uDO-I1-BNd">
                             <inset key="imageInsets" minX="27" minY="19" maxX="0.0" maxY="0.0"/>
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="02C-tp-8YD">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="02C-tp-8YD" customClass="WDCGoingButton" customModule="SFParties">
                                 <rect key="frame" x="202" y="11" width="102" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="6" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-6" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Not Going" image="going">
+                                <state key="normal" title="Not Going">
                                     <color key="titleColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -656,12 +650,6 @@ Title2</string>
             <point key="canvasLocation" x="85" y="-110"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="blank-state" width="112" height="88"/>
-        <image name="going" width="13" height="10"/>
-        <image name="toggle-all" width="14" height="8"/>
-        <image name="toggle-going" width="13" height="10"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="98b-xs-Xcx"/>
     </inferredMetricsTieBreakers>

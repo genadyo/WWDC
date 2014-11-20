@@ -17,6 +17,7 @@
 #import "WDCPartyTVC.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
+#import "SFParties-Swift.h"
 
 @interface WDCPartiesTVC () <MFMailComposeViewControllerDelegate>
 
@@ -258,9 +259,9 @@
         partyCell.titleLabel.text = party.title;
         partyCell.hoursLabel.text = [party hours];
         if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] == NSNotFound) {
-            partyCell.goingImageView.hidden = YES;
+            partyCell.goingView.hidden = YES;
         } else {
-            partyCell.goingImageView.hidden = NO;
+            partyCell.goingView.hidden = NO;
         }
         
         partyCell.iconImageView.image = party.icon;
@@ -308,11 +309,8 @@
         label.text = [((WDCParty *)[self.filteredParties[section] lastObject]) date];
         label.textColor = [UIColor colorWithRed:117.0f/255.0f green:117.0f/255.0f blue:117.0f/255.0f alpha:1.0f];
         [view addSubview:label];
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button setFrame:CGRectMake(tableView.frame.size.width-22-[UIImage imageNamed:@"map"].size.width-20, 0.0f, [UIImage imageNamed:@"map"].size.width+40, 40.0f)];
-        [button setImage:[UIImage imageNamed:@"map"] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@"map-clicked"] forState:UIControlStateHighlighted];
-        [button setContentMode:UIViewContentModeCenter];
+        UIButton *button = [WDCMapButton buttonWithType:UIButtonTypeRoundedRect];
+        [button setFrame:CGRectMake(tableView.frame.size.width-40.0f, 0.0f, 20, 40.0f)];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
         button.tag = section;
         [view addSubview:button];

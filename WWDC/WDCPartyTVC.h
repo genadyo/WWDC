@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SFParties-Swift.h"
 
 @interface WDCPartyTVC : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *goingImageView;
+@property (weak, nonatomic) IBOutlet WDCGoing *goingView;
 @property (strong, nonatomic) UIView *seperator;
 
 @end
