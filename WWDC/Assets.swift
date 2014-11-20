@@ -290,12 +290,9 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawToggleallactive(#frame: CGRect) {
+    public class func drawToggleallactive(#frame: CGRect, iconColor: UIColor) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
-
-        //// Color Declarations
-        let color50 = UIColor(red: 0.341, green: 0.366, blue: 0.829, alpha: 1.000)
 
         //// Welcome
         CGContextSaveGState(context)
@@ -331,7 +328,7 @@ public class Assets : NSObject {
 
         bezier2Path.usesEvenOddFillRule = true;
 
-        color50.setFill()
+        iconColor.setFill()
         bezier2Path.fill()
 
 
@@ -345,12 +342,9 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawTogglegoing(#frame: CGRect) {
+    public class func drawTogglegoing(#frame: CGRect, iconColor: UIColor) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
-
-        //// Color Declarations
-        let color50 = UIColor(red: 0.341, green: 0.366, blue: 0.829, alpha: 1.000)
 
         //// Welcome
         CGContextSaveGState(context)
@@ -375,7 +369,7 @@ public class Assets : NSObject {
 
         togglegoingPath.usesEvenOddFillRule = true;
 
-        color50.setFill()
+        iconColor.setFill()
         togglegoingPath.fill()
 
 
