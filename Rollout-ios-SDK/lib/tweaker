@@ -20,8 +20,9 @@ function copy_json(){
 function extract_objc_function(){
   f="$1"
   append_to="$2"
-  md5=$(cat "$f" | md5)
-  cache_file="$CACHE_DIR/${NATIVE_ARCH}.$TARGETNAME.$md5.$(basename "$f")"
+  md5=$(md5 -q "$f")
+  basename_f=${f##*/}
+  cache_file="$CACHE_DIR/${NATIVE_ARCH}.$TARGETNAME.$md5.$basename_f"
   if [ ! -s "$cache_file" ]; then
     echo "Rollout: cache not found for $f ($md5)"
     flags=("-ObjC" "-arch" "$NATIVE_ARCH" "-include" "$GCC_PREFIX_HEADER" "-D" "ROLLOUT_TRANSPARENT" "-isysroot" "$SDKROOT")
@@ -52,7 +53,7 @@ function extract_objc_function(){
   fi
   if [ -r "$cache_file" ] ;then 
    cat "$cache_file" >> "$append_to"
-   if [[ $(basename "$f") == "RolloutDynamic.m" ]] ; then
+   if [[ "$basename_f" == "RolloutDynamic.m" ]] ; then
       rollout_install_sanity="$CACHE_DIR/sanity.$TARGETNAME.${NATIVE_ARCH}.log"
       echo "FRAMEWORK_SEARCH_PATHS=$FRAMEWORK_SEARCH_PATHS" > $rollout_install_sanity
       cat "$cache_file" >> $rollout_install_sanity
@@ -72,6 +73,7 @@ echo "Rollout pre compile script"
 is_first=true
 mkdir -p "$CACHE_DIR"
 echo -ne "[" > "$TMP_FILE"
+cat "$LIB_DIR"/static_json_part >> $TMP_FILE
 date  +"%s : start to read code" >> $LOG_FILE
 files_count=$("${LIB_DIR}/print_compiled_files.rb" "$PROJECT_FILE_PATH" "$TARGETNAME" | tr '\000' '\n'| wc -l | tr -d " ")
 counter=0

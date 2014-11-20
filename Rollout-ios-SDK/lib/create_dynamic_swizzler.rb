@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 require "JSON"
+
 def wrapping(scope)
   f  = scope[:function_name]
   f_ = f.tr(":","_")
@@ -7,8 +8,18 @@ def wrapping(scope)
   r  = scope[:return_object][:type]
   c  = scope[:class]
   args = scope[:args] || []
-  arg_names  = args.inject("") { |memo, o| 
+  arg_list  = args.inject("") { |memo, o|
     "#{memo}, #{o[:name]}" 
+  } 
+  arg_names  = args.each_with_index.inject("") { |memo, (o, index)| 
+    if o[:kind] == "Record"
+      value = "recordPointer"
+      dereferncingPrefix = "*(#{o[:type]}*)"
+    else
+      value = o[:kind][0, 1].downcase + o[:kind][1..-1] + "Value"
+      dereferncingPrefix = ""
+    end
+    "#{memo}, #{dereferncingPrefix}((RolloutTypeWrapper*)arguments[#{index}]).#{value}" 
   } 
   arg_dec  = args.inject("")  { |memo, o|  
     "#{memo}, #{o[:type]} #{o[:name]}"
@@ -21,25 +32,42 @@ def wrapping(scope)
   decl_args_list = "(id rcv, SEL _cmd#{arg_dec})"
   store = "_rollout_storage_#{c}_#{f_}_#{t}"
   call_store = "#{store}(rcv, _cmd#{arg_names})"
+  set_original_return_value = "#{call_store};"
+  set_original_return_value_if_nil_invocation = "#{store}(rcv, _cmd#{arg_list});"
+  set_original_return_value_if_nil_invocation_with_return = "#{set_original_return_value_if_nil_invocation} return;"
   decrale_r = "" 
   return_var = ""
+  return_expression = ""
   tryCatchDefaultValue = ""
   replaceReturnValue = ""
   disableValue = ""
+
+  arguments = ""
+  args.each { |arg|
+    if "Record" == arg[:kind]
+      arguments << "     [[RolloutTypeWrapper alloc] initWithRecordPointer:&#{arg[:name]} ofSize:sizeof(#{arg[:type]}) shouldBeFreedInDealloc:NO], \n"
+    else
+      arguments << "     [[RolloutTypeWrapper alloc] initWith#{arg[:kind]}:#{arg[:name]}], \n"
+    end
+  }
+
+  if args.length > 0
+    tweaked_arguments = "NSArray *arguments = inv.tweakedArguments;"
+  end
+
   if r != "void"
     return_var = "__rollout_r"
-    call_store="#{return_var} =  #{call_store}"
-    decrale_r= "#{r} #{return_var};"
-    tryCatchDefaultValue = "#{return_var} = [inv #{r_k}_tryCatchDefaultValue];"
-    tryCatchDefaultValue = "#{return_var} = [inv #{r_k}_tryCatchDefaultValue];"
-    replaceReturnValue = "#{return_var} =   [inv #{r_k}_replaceReturnValue];"
-    disableValue = "#{return_var} =         [inv #{r_k}_disableValue];"
+    set_original_return_value = "inv.originalReturnValue = [[RolloutTypeWrapper alloc] initWith#{r_k}:#{call_store}];"
+    set_original_return_value_if_nil_invocation_with_return = "return #{set_original_return_value_if_nil_invocation}"
+    decrale_r= "RolloutTypeWrapper *#{return_var};"
+    return_expression = "return #{return_var}.#{r_k[0, 1].downcase}#{r_k[1..-1]}Value;";
+    tryCatchDefaultValue = "#{return_var} = [inv tryCatchReturnValue];"
+    replaceReturnValue = "#{return_var} =   [inv conditionalReturnValue];"
+    disableValue = "#{return_var} =         [inv disableReturnValue];"
   end 
   if r_k == "Record"
-    tryCatchDefaultValue = ""
-    tryCatchDefaultValue = ""
-    replaceReturnValue = ""
-    disableValue = ""
+    set_original_return_value = "{#{r} record = #{call_store};\n              inv.originalReturnValue = [[RolloutTypeWrapper alloc] initWithRecordPointer:&record ofSize:sizeof(#{r}) shouldBeFreedInDealloc:NO];}"
+    return_expression = "return *((#{r} *)#{return_var}.recordPointer);";
   end
   return "
 #ifdef ROLLOUT_SWIZZLE_DEFINITION_AREA
@@ -47,36 +75,46 @@ static #{r} #{imp}#{decl_args_list};
 static #{r} (*#{store})#{decl_args_list};
 #{r} #{imp}#{decl_args_list}{
     #{decrale_r}
-    RolloutInvocation* inv = [RolloutInvocation invocationFor#{t}Method:#{ns_f} forClass:#{ns_c}];
+    NSArray *originalArguments = @[#{arguments}];
+    RolloutInvocationsList *invocationsList = [RolloutInvocationsListFactory invocationsListFor#{t}Method:#{ns_f} forClass:#{ns_c}];
+    RolloutInvocation *inv = [invocationsList invocationForArguments:originalArguments];
+
+    if(!inv) {
+       #{set_original_return_value_if_nil_invocation_with_return}
+    }
+
     [inv runBefore];
-    switch ([inv invocationType]) {
-        case DISABLE:
+
+    inv.originalArguments = originalArguments;
+    #{tweaked_arguments}
+
+    switch ([inv type]) {
+        case RolloutInvocationTypeDisable:
+            #{disableValue}
             break;
-        case TRY_CATCH:
+        case RolloutInvocationTypeTryCatch:
             @try{
-              #{call_store};
+              #{set_original_return_value}
+              #{replaceReturnValue}
             }
-            @catch(NSException *e){
+            @catch(id e){
                 [inv runAfterExceptionCaught];
                 #{tryCatchDefaultValue}
             }
             break;
-        case NORMAL:
+        case RolloutInvocationTypeNormal:
         default:
-            #{call_store};
+              #{set_original_return_value};
+              #{replaceReturnValue}
             break;
     }
-    [inv runAfter];
-    if ([inv shouldReplaceReturnValue]){
-      #{replaceReturnValue}
-    }
-    return #{return_var};
+    #{return_expression}
 }
 #endif
 #ifdef ROLLOUT_SWIZZLE_ACT_AREA
-if ([RolloutInvocation shouldSetup#{t}Swizzle:#{ns_f} forClass:#{ns_c}]){
+if ([RolloutInvocationsListFactory shouldSetup#{t}Swizzle:#{ns_f} forClass:#{ns_c}]){
   rollout_swizzle#{t}MethodAndStore(NSClassFromString(#{ns_c}), @selector(#{f}),(IMP)#{imp}, (IMP*)&#{store});
-  [RolloutInvocation mark#{t}Swizzle:#{ns_f} forClass:#{ns_c}];
+  [RolloutInvocationsListFactory mark#{t}Swizzle:#{ns_f} forClass:#{ns_c}];
 }
 #endif
 "
@@ -111,7 +149,7 @@ end
 
 extract_arguments_with_types = lambda { |a|
   t  =  fix_type_issue(a)
-  t[:name] = a["symbol"]
+  t[:name] = "__rollout_var_#{a["symbol"]}"
   t
 }
 
@@ -124,7 +162,7 @@ valid_for_swizzeling  = lambda { |m|
 }
 def figure_out_import(d)
   file = d["file"]
-  if d["is_in_system_header"] 
+  if d["is_in_system_header"] != 0 
     match = file.match(/\/([^\/]*)\.framework\/Headers\/([^\/]*.h)$/)
     if match
       framework, header = match.captures
@@ -133,7 +171,7 @@ def figure_out_import(d)
   else
     match = file.match(/([^\/]*.h)$/)
     if match
-      header = match.captures
+      header = match.captures[0]
       return "\"#{header}\""
     end
   end

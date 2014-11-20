@@ -7,8 +7,9 @@
 //
 
 #import <Rollout/private/RolloutDynamic.h>
-#import <Rollout/private/NSObject+RolloutRuntimeAdditions.h>
 #import <Rollout/private/RolloutInvocation.h>
+#import <Rollout/private/RolloutTypeWrapper.h>
+#import <Rollout/private/RolloutInvocationsListFactory.h>
 #import <objc/runtime.h>
 
 
@@ -27,6 +28,10 @@
     
 }
 #ifndef ROLLOUT_TRANSPARENT
+
+
+
+
 
 +(void)setup {
     #pragma clang diagnostic push
