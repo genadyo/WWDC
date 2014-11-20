@@ -20,8 +20,6 @@ public class Assets : NSObject {
         static var color55: UIColor = UIColor(red: 0.970, green: 0.970, blue: 0.970, alpha: 1.000)
         static var imageOfToggleallactive: UIImage?
         static var toggleallactiveTargets: [AnyObject]?
-        static var imageOfTogglegoing: UIImage?
-        static var togglegoingTargets: [AnyObject]?
     }
 
     //// Colors
@@ -262,48 +260,6 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawGoingButton(#frame: CGRect) {
-        //// General Declarations
-        let context = UIGraphicsGetCurrentContext()
-
-        //// Color Declarations
-        let color54 = UIColor(red: 0.174, green: 0.774, blue: 0.368, alpha: 1.000)
-
-        //// Welcome
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.20000 * frame.width, frame.minY + 0.50586 * frame.height)
-        CGContextScaleCTM(context, 0.5, 0.5)
-
-
-
-        //// Portrait
-        //// Group 4
-        //// Fill-1 Drawing
-        var fill1Path = UIBezierPath()
-        fill1Path.moveToPoint(CGPointMake(10, -10.23))
-        fill1Path.addLineToPoint(CGPointMake(13, -7.23))
-        fill1Path.addLineToPoint(CGPointMake(-4.5, 10.23))
-        fill1Path.addLineToPoint(CGPointMake(-13, 1.73))
-        fill1Path.addLineToPoint(CGPointMake(-10, -1.27))
-        fill1Path.addLineToPoint(CGPointMake(-4.5, 4.23))
-        fill1Path.addLineToPoint(CGPointMake(10, -10.23))
-        fill1Path.closePath()
-        fill1Path.miterLimit = 4;
-
-        fill1Path.usesEvenOddFillRule = true;
-
-        color54.setFill()
-        fill1Path.fill()
-
-
-
-
-
-
-
-        CGContextRestoreGState(context)
-    }
-
     public class func drawGoing() {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
@@ -403,7 +359,7 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawTogglegoing() {
+    public class func drawTogglegoing(#initColor: UIColor) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
 
@@ -429,7 +385,7 @@ public class Assets : NSObject {
 
         togglegoingPath.usesEvenOddFillRule = true;
 
-        Assets.color55.setFill()
+        initColor.setFill()
         togglegoingPath.fill()
 
 
@@ -457,18 +413,14 @@ public class Assets : NSObject {
         return Cache.imageOfToggleallactive!
     }
 
-    public class var imageOfTogglegoing: UIImage {
-        if Cache.imageOfTogglegoing != nil {
-            return Cache.imageOfTogglegoing!
-        }
-
+    public class func imageOfTogglegoing(#initColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(13, 11), false, 0)
-            Assets.drawTogglegoing()
+            Assets.drawTogglegoing(initColor: initColor)
 
-        Cache.imageOfTogglegoing = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageOfTogglegoing = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfTogglegoing!
+        return imageOfTogglegoing
     }
 
     //// Customization Infrastructure
@@ -479,16 +431,6 @@ public class Assets : NSObject {
             Cache.toggleallactiveTargets = newValue
             for target: AnyObject in newValue {
                 target.setImage(Assets.imageOfToggleallactive)
-            }
-        }
-    }
-
-    @IBOutlet var togglegoingTargets: [AnyObject]! {
-        get { return Cache.togglegoingTargets }
-        set {
-            Cache.togglegoingTargets = newValue
-            for target: AnyObject in newValue {
-                target.setImage(Assets.imageOfTogglegoing)
             }
         }
     }

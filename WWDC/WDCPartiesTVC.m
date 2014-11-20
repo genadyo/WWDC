@@ -35,7 +35,7 @@
     [super viewDidLoad];
 
     // PaintCode
-    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoing] forSegmentAtIndex:1];
+    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
 
     // Google

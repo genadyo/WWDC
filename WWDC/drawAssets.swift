@@ -37,9 +37,3 @@ import UIKit
         Assets.drawGoing()
     }
 }
-
-@objc @IBDesignable class WDCGoingButton : UIButton {
-    override func drawRect(rect: CGRect) {
-        Assets.drawGoingButton(frame: rect)
-    }
-}
