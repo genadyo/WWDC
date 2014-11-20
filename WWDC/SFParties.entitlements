@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>com.apple.developer.icloud-container-environment</key>
-	<string>Production</string>
+	<string>Development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
 	<array>
 		<string>iCloud.$(CFBundleIdentifier)</string>
