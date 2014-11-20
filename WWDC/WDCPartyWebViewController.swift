@@ -32,6 +32,11 @@ import WebKit
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // Google
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "WDCPartyWebViewController")
+        tracker.send(GAIDictionaryBuilder.createAppView().build())
+
         // load url
         webView.loadRequest(NSURLRequest(URL:url!))
 
