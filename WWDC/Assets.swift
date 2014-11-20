@@ -248,7 +248,7 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawGoing(#frame: CGRect) {
+    public class func drawGoingButton(#frame: CGRect) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
 
@@ -257,7 +257,7 @@ public class Assets : NSObject {
 
         //// Welcome
         CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.51923 * frame.width, frame.minY + 0.50586 * frame.height)
+        CGContextTranslateCTM(context, frame.minX + 0.20000 * frame.width, frame.minY + 0.50586 * frame.height)
         CGContextScaleCTM(context, 0.5, 0.5)
 
 
@@ -299,7 +299,7 @@ public class Assets : NSObject {
 
         //// Welcome
         CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.49138 * frame.width, frame.minY + 0.48529 * frame.height)
+        CGContextTranslateCTM(context, frame.minX + 0.26562 * frame.width, frame.minY + 0.48529 * frame.height)
         CGContextScaleCTM(context, 0.5, 0.5)
 
 
@@ -354,7 +354,7 @@ public class Assets : NSObject {
 
         //// Welcome
         CGContextSaveGState(context)
-        CGContextTranslateCTM(context, frame.minX + 0.51923 * frame.width, frame.minY + 0.50586 * frame.height)
+        CGContextTranslateCTM(context, frame.minX + 0.73438 * frame.width, frame.minY + 0.50586 * frame.height)
         CGContextScaleCTM(context, 0.5, 0.5)
 
 
@@ -377,6 +377,51 @@ public class Assets : NSObject {
 
         color50.setFill()
         togglegoingPath.fill()
+
+
+
+
+
+
+
+        CGContextRestoreGState(context)
+    }
+
+    public class func drawGoing() {
+        //// General Declarations
+        let context = UIGraphicsGetCurrentContext()
+
+        //// Color Declarations
+        let color54 = UIColor(red: 0.174, green: 0.774, blue: 0.368, alpha: 1.000)
+
+        //// Welcome
+        CGContextSaveGState(context)
+        CGContextTranslateCTM(context, 1, 1)
+        CGContextScaleCTM(context, 0.5, 0.5)
+
+
+
+        //// Main
+        //// content
+        //// item
+        //// Fill-1 Drawing
+        var fill1Path = UIBezierPath()
+        fill1Path.moveToPoint(CGPointMake(8.5, 14.47))
+        fill1Path.addLineToPoint(CGPointMake(23, 0))
+        fill1Path.addLineToPoint(CGPointMake(26, 3))
+        fill1Path.addLineToPoint(CGPointMake(8.5, 20.47))
+        fill1Path.addLineToPoint(CGPointMake(0, 11.97))
+        fill1Path.addLineToPoint(CGPointMake(3, 8.97))
+        fill1Path.addLineToPoint(CGPointMake(8.5, 14.47))
+        fill1Path.closePath()
+        fill1Path.miterLimit = 4;
+
+        fill1Path.usesEvenOddFillRule = true;
+
+        color54.setFill()
+        fill1Path.fill()
+
+
 
 
 

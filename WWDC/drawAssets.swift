@@ -21,9 +21,9 @@ import UIKit
 }
 
 @objc @IBDesignable class WDCMapButton : UIButton {
-//    override func drawRect(rect: CGRect) {
-//        Assets.drawMap(frame: rect)
-//    }
+    override func drawRect(rect: CGRect) {
+        Assets.drawMap(frame: rect)
+    }
 }
 
 @IBDesignable class WDCBlankstate : UIView {
@@ -34,24 +34,19 @@ import UIKit
 
 @IBDesignable class WDCGoing : UIView {
     override func drawRect(rect: CGRect) {
-        Assets.drawGoing(frame: rect)
+        Assets.drawGoing()
     }
 }
 
 @objc @IBDesignable class WDCGoingButton : UIButton {
-//    override func drawRect(rect: CGRect) {
-//        Assets.drawGoing(frame: rect)
-//    }
+    override func drawRect(rect: CGRect) {
+        Assets.drawGoingButton(frame: rect)
+    }
 }
 
 @objc @IBDesignable class WDCToggleSegmentedControl : UISegmentedControl {
-//    override func drawRect(rect: CGRect) {
-//        for (var i = 0; i < self.subviews.count; i++) {
-//            if ((self.subviews[i].isSelected) != nil) {
-//                Assets.drawToggleallactive(frame: rect)
-//            } else {
-//                Assets.drawTogglegoing(frame: rect)
-//            }
-//        }
-//    }
+    override func drawRect(rect: CGRect) {
+        Assets.drawToggleallactive(frame: rect)
+        Assets.drawTogglegoing(frame: rect)
+    }
 }
