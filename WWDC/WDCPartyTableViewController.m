@@ -112,11 +112,13 @@
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
         [self.goingButton setImage:nil forState:UIControlStateNormal];
+        [self.goingButton setImage:nil forState:UIControlStateHighlighted];
     } else {
         [self.goingButton setTitle:NSLocalizedString(@"Going", nil) forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
         [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
+        [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
     }
 }
 
