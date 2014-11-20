@@ -14,6 +14,7 @@
 #import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
+#import <CocoaPods-Keys/SFPartiesKeys.h>
 //#import <FBTweakShakeWindow.h>
 //#import <Parse/Parse.h>
 
@@ -26,9 +27,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Configuration
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Configuration" ofType:@"plist"];
-    NSDictionary *configuration = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    // Keys
+    SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
     
     // Push Notifications
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
@@ -37,12 +37,12 @@
 //    [Parse setApplicationId:configuration[@"PARSE_API"] clientKey:configuration[@"PARSE_KEY"]];
 
     // GAI
-    [[GAI sharedInstance] trackerWithTrackingId:configuration[@"GOOGLE_ANALYTICS_API"]];
+    [[GAI sharedInstance] trackerWithTrackingId:keys.googleAnalytics];
 
 #if defined( DEBUG )
-    [Rollout setup:configuration[@"ROLLOUT_API"] debug:YES];
+    [Rollout setup:keys.rollout debug:YES];
 #else
-    [Rollout setup:configuration[@"ROLLOUT_API"] debug:NO];
+    [Rollout setup:keys.rollout debug:NO];
 #endif
 
     // Crashlytics
