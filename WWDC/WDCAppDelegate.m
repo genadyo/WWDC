@@ -15,8 +15,6 @@
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
 #import <CocoaPods-Keys/SFPartiesKeys.h>
-//#import <FBTweakShakeWindow.h>
-//#import <Parse/Parse.h>
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
 
@@ -34,7 +32,6 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
-//    [Parse setApplicationId:configuration[@"PARSE_API"] clientKey:configuration[@"PARSE_KEY"]];
 
     // GAI
     [[GAI sharedInstance] trackerWithTrackingId:keys.googleAnalytics];
@@ -51,25 +48,6 @@
     // Global Tint Color (Xcode Bug #1)
     [[UIView appearance] setTintColor:[UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f]];
 
-    // Facebook Tweaks
-//    FBTweak *tweak = [[FBTweak alloc] initWithIdentifier:@"so.sugar.SFParties.copyParseToCloudKit"];
-//    tweak.name = @"GO";
-//    tweak.defaultValue = @NO;
-//    FBTweakStore *store = [FBTweakStore sharedInstance];
-//    FBTweakCategory *category = [[FBTweakCategory alloc] initWithName:@"CloudKit"];
-//    [store addTweakCategory:category];
-//    FBTweakCollection *collection = [[FBTweakCollection alloc] initWithName:@"Copy Parse To CloudKit"];
-//    [category addTweakCollection:collection];
-//    [collection addTweak:tweak];
-//    [tweak addObserver:self];
-
-    // Split View Controller
-//#ifdef DEBUG
-//    self.window = [[FBTweakShakeWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//#else
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//#endif
-
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UINavigationController *master = [storyboard instantiateViewControllerWithIdentifier:@"master"];
     UIViewController *detail = [storyboard instantiateViewControllerWithIdentifier: @"noparty"];
@@ -83,8 +61,6 @@
     AAPLTraitOverrideViewController *traitController = [[AAPLTraitOverrideViewController alloc] init];
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
-
-//    [self.window makeKeyAndVisible];
 
     return YES;
 }
@@ -129,7 +105,7 @@
         if (error) {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
-//            NSLog(@"Subscription: %@", subscription);
+            NSLog(@"Subscription: %@", subscription);
         }
     }];
 }
@@ -138,43 +114,6 @@
 {
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
 }
-
-//- (void)tweakDidChange:(FBTweak *)tweak
-//{
-//    if ([tweak.currentValue boolValue]) {
-//        CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
-//        PFQuery *query = [PFQuery queryWithClassName:@"WDCParty"];
-//        NSArray *objects = [query findObjects];
-//        NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-//        for (PFObject *party in objects) {
-//            CKRecord *ckParty = [[CKRecord alloc] initWithRecordType:@"Party"];
-//            ckParty[@"title"] = party[@"title"];
-//            ckParty[@"address1"] = party[@"address1"];
-//            ckParty[@"address2"] = party[@"address2"];
-//            ckParty[@"address3"] = party[@"address3"];
-//            ckParty[@"details"] = party[@"details"];
-//            ckParty[@"startDate"] = party[@"startDate"];
-//            ckParty[@"endDate"] = party[@"endDate"];
-//            NSURL *documentsURL = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask][0];
-//            NSString *iconFilename = [NSString stringWithFormat:@"icon.%d.jpg", arc4random() % 9999999];
-//            NSString *logoFilename = [NSString stringWithFormat:@"logo.%d.jpg", arc4random() % 9999999];
-//            NSURL *iconURL = [documentsURL URLByAppendingPathComponent:iconFilename];
-//            NSURL *logoURL = [documentsURL URLByAppendingPathComponent:logoFilename];
-//            [[party[@"icon"] getData] writeToURL:iconURL atomically:YES];
-//            [[party[@"logo"] getData] writeToURL:logoURL atomically:YES];
-//            ckParty[@"icon"] = [[CKAsset alloc] initWithFileURL:iconURL];
-//            ckParty[@"logo"] = [[CKAsset alloc] initWithFileURL:logoURL];
-//            ckParty[@"location"] = [[CLLocation alloc] initWithLatitude:[party[@"latitude"] floatValue] longitude:[party[@"longitude"] floatValue]];
-//            ckParty[@"show"] = [NSNumber numberWithBool:party[@"show"]];
-//            ckParty[@"url"] = party[@"url"];
-//            [publicDatabase saveRecord:ckParty completionHandler:^(CKRecord *record, NSError *error) {
-//                if (error) {
-//                    NSLog(@"%@", error.localizedDescription);
-//                }
-//            }];
-//        }
-//    }
-//}
 
 #pragma mark - UISplitViewControllerDelegate
 

@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import <FBTweakInline.h>
 
-@interface WDCAppDelegate : UIResponder <UIApplicationDelegate> //, FBTweakObserver>
+@interface WDCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
