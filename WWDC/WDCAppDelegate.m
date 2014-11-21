@@ -95,17 +95,28 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"start > %@", [NSDate date]];
-    CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Notification" predicate:predicate options:CKSubscriptionOptionsFiresOnRecordCreation];
-    CKNotificationInfo *notification = [[CKNotificationInfo alloc] init];
-    notification.alertLocalizationKey = @"%@";
-    notification.alertLocalizationArgs = @[@"message"];
-    subscription.notificationInfo = notification;
-    [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
-        if (error) {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        } else {
-            NSLog(@"Subscription: %@", subscription);
+    [publicDatabase fetchAllSubscriptionsWithCompletionHandler:^(NSArray *subscriptions, NSError *error) {
+        BOOL found = false;
+        for (CKSubscription *subscription in subscriptions) {
+            if ([subscription.recordType isEqualToString:@"Notification"]) {
+                found = YES;
+                break;
+            }
+        }
+        if (!found) {
+            CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Notification" predicate:[NSPredicate predicateWithValue:YES] options:CKSubscriptionOptionsFiresOnRecordCreation];
+            CKNotificationInfo *notification = [[CKNotificationInfo alloc] init];
+            notification.alertLocalizationKey = @"%@";
+            notification.alertLocalizationArgs = @[@"message"];
+            subscription.notificationInfo = notification;
+            [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
+                if (error) {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+                } else {
+                    NSLog(@"Subscription: %@", subscription);
+                }
+            }];
+
         }
     }];
 }
