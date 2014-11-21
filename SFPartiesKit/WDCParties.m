@@ -25,7 +25,7 @@
 - (void)refreshWithBlock:(void (^)(BOOL succeeded, NSArray *parties))block
 {
     if (!self.disableCache) {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
         NSData *data = [userDefaults objectForKey:@"parties"];
         if (data && block) {
             block(YES, [NSKeyedUnarchiver unarchiveObjectWithData:data]);
@@ -82,7 +82,7 @@
         } else {
             NSLog(@"Successfully retrieved %lu scores.", (unsigned long)parties.count);
 
-            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
             NSData *data = [NSKeyedArchiver archivedDataWithRootObject:[parties copy]];
             [userDefaults setObject:data forKey:@"parties"];
             [userDefaults synchronize];
@@ -123,7 +123,7 @@
 - (NSMutableArray *)going
 {
     if (!_going) {
-        NSData *data = [[NSUserDefaults standardUserDefaults] objectForKey:@"going"];
+        NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:@"going"];
         if (data) {
             _going = [[NSKeyedUnarchiver unarchiveObjectWithData:data] mutableCopy];
         } else {
@@ -135,7 +135,7 @@
 
 - (void)saveGoing
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.going];
     [userDefaults setObject:data forKey:@"going"];
     [userDefaults synchronize];

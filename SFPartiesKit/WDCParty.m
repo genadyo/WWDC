@@ -73,7 +73,9 @@
         self.show = [decoder decodeBoolForKey:@"show"];
         self.url = [decoder decodeObjectForKey:@"url"];
         self.objectId = [decoder decodeObjectForKey:@"objectId"];
-        [self loadImagesFromCache];
+        self.logo = [decoder decodeObjectForKey:@"logo"]; // TBD: fix cahce for watch kit
+        self.icon = [decoder decodeObjectForKey:@"icon"];
+//        [self loadImagesFromCache];
     }
 
     return self;
@@ -93,6 +95,8 @@
     [encoder encodeBool:self.show forKey:@"show"];
     [encoder encodeObject:self.url forKey:@"url"];
     [encoder encodeObject:self.objectId forKey:@"objectId"];
+    [encoder encodeObject:self.icon forKey:@"icon"]; // TBD: fix cahce for watch kit
+    [encoder encodeObject:self.logo forKey:@"logo"];
 }
 
 - (NSString *)iconCacheKey
