@@ -20,12 +20,6 @@ import UIKit
     }
 }
 
-@objc @IBDesignable class WDCMapButton : UIButton {
-    override func drawRect(rect: CGRect) {
-        Assets.drawMap(frame: rect)
-    }
-}
-
 @IBDesignable class WDCBlankstate : UIView {
     override func drawRect(rect: CGRect) {
         Assets.drawBlankstate()
@@ -34,6 +28,6 @@ import UIKit
 
 @IBDesignable class WDCGoing : UIView {
     override func drawRect(rect: CGRect) {
-        Assets.drawGoing()
+        Assets.drawTogglegoing(initColor: UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1))
     }
 }

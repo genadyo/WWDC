@@ -313,8 +313,9 @@
         label.text = [((WDCParty *)[self.filteredParties[section] lastObject]) date];
         label.textColor = [UIColor colorWithRed:117.0f/255.0f green:117.0f/255.0f blue:117.0f/255.0f alpha:1.0f];
         [view addSubview:label];
-        UIButton *button = [WDCMapButton buttonWithType:UIButtonTypeRoundedRect];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button setFrame:CGRectMake(tableView.frame.size.width-40.0f, 0.0f, 20, 40.0f)];
+        [button setImage:[Assets imageOfMapWithFrame:button.bounds] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
         button.tag = section;
         [view addSubview:button];
