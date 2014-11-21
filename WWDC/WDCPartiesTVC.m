@@ -271,11 +271,10 @@
         partyCell.iconImageView.image = party.icon;
         if (!party.icon) {
             __weak typeof(party) weakParty = party;
-            __weak typeof(indexPath) weakIndexPath = indexPath;
             JVObserver *observer = [JVObserver observerForObject:party keyPath:@"icon" target:self block:^(__weak typeof(self) self) {
                 if (weakParty.icon) {
                     dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.tableView reloadRowsAtIndexPaths:@[weakIndexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+                        [self.tableView reloadData];
                     });
                 };
             }];
