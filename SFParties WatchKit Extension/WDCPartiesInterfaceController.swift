@@ -36,22 +36,18 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     }
 
     func loadTableData() {
-        WDCParties.sharedInstance().refreshWithBlock { (succeeded, parties) -> Void in
-            if (succeeded) {
-                // TBD: order and stuff
-                self.parties = parties
+        // read the cached parties
+        parties = WDCParties.sharedInstance().filteredParties
 
-                // set number of parties
-                self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
+        // set number of parties
+        self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
 
-                // set party rows
-                for (idx, party) in enumerate(parties) {
-                    let wdcParty = party as WDCParty
-                    let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
-                    row.titleInterfaceLabel.setText(wdcParty.title)
-                    row.iconInterfaceImage.setImage(wdcParty.icon)
-                }
-            }
+        // set party rows
+        for (idx, party) in enumerate(parties) {
+            let wdcParty = party as WDCParty
+            let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
+            row.titleInterfaceLabel.setText(wdcParty.title)
+            row.iconInterfaceImage.setImage(wdcParty.icon)
         }
     }
 
