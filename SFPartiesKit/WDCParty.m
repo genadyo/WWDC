@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) UIImage *icon;
+@property (strong, nonatomic) UIImage *watchIcon;
 @property (strong, nonatomic) UIImage *logo;
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
@@ -74,9 +75,7 @@
         self.show = [decoder decodeBoolForKey:@"show"];
         self.url = [decoder decodeObjectForKey:@"url"];
         self.objectId = [decoder decodeObjectForKey:@"objectId"];
-        self.logo = [decoder decodeObjectForKey:@"logo"]; // TBD: fix cahce for watch kit
-        self.icon = [decoder decodeObjectForKey:@"icon"];
-//        [self loadImagesFromCache];
+        [self loadImagesFromCache];
     }
 
     return self;
@@ -96,8 +95,6 @@
     [encoder encodeBool:self.show forKey:@"show"];
     [encoder encodeObject:self.url forKey:@"url"];
     [encoder encodeObject:self.objectId forKey:@"objectId"];
-    [encoder encodeObject:self.icon forKey:@"icon"]; // TBD: fix cahce for watch kit
-    [encoder encodeObject:self.logo forKey:@"logo"];
 }
 
 - (NSString *)iconCacheKey
@@ -121,7 +118,18 @@
                                   block:^(TMCache *cache, NSString *key, id object) {
                                       self.logo = (UIImage *)object;
                                   }];
+
+    // get apple watch icon from cache
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:[self iconCacheKey]];
+    if (data) {
+        UIImage *image = [[UIImage alloc] initWithData:data scale:[UIScreen mainScreen].scale];
+        if (image) {
+            self.watchIcon = image;
+        }
+    }
+
 }
+
 
 - (BOOL)isLogoCached
 {
@@ -207,6 +215,21 @@
         _shortDate = [dateFormatter stringFromDate:self.startDate];
     }
     return _shortDate;
+}
+
+- (void)setIcon:(UIImage *)icon
+{
+    _icon = icon;
+    if (icon) {
+        [self cacheWatchIcon:icon];
+    }
+}
+
+- (void)cacheWatchIcon:(UIImage *)icon
+{
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
+    [userDefaults setObject:UIImagePNGRepresentation(icon) forKey:[self iconCacheKey]];
+    [userDefaults synchronize];
 }
 
 @end

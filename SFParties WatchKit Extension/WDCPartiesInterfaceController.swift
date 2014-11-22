@@ -47,7 +47,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
             let wdcParty = party as WDCParty
             let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
             row.titleInterfaceLabel.setText(wdcParty.title)
-            row.iconInterfaceImage.setImage(wdcParty.icon)
+            row.iconInterfaceImage.setImage(wdcParty.watchIcon)
         }
     }
 

@@ -19,6 +19,7 @@
 @property (readonly, strong, nonatomic) NSNumber *latitude;
 @property (readonly, strong, nonatomic) NSNumber *longitude;
 @property (readonly, strong, nonatomic) UIImage *icon;
+@property (readonly, strong, nonatomic) UIImage *watchIcon;
 @property (readonly, strong, nonatomic) UIImage *logo;
 @property (readonly, strong, nonatomic) NSDate *startDate;
 @property (readonly, strong, nonatomic) NSDate *endDate;
