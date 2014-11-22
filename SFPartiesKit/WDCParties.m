@@ -186,7 +186,7 @@
         return array;
     }
 
-    return nil;
+    return @[];
 }
 
 @end
