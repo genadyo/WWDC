@@ -15,7 +15,7 @@
                                 <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="n3X-vW-WdA">
                                         <items>
-                                            <imageView width="40" height="40" alignment="left" verticalAlignment="center" id="RFY-s3-FMT"/>
+                                            <imageView width="35" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
                                             <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="3" id="e94-gW-zJs">
                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                             </label>
