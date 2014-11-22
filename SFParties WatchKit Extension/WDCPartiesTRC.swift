@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-import UIKit
 import WatchKit
 
 class WDCPartiesTRC: NSObject {
