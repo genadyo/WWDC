@@ -50,7 +50,9 @@ class WDCPartiesInterfaceController: WKInterfaceController {
                 let wdcParty = party as WDCParty
                 let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
                 row.titleInterfaceLabel.setText(wdcParty.title)
-                row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+                // cache the icon image on the watch
+                WKInterfaceDevice().addCachedImage(wdcParty.watchIcon, name: wdcParty.objectId)
+                row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
             }
         }
     }
