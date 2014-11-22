@@ -52,7 +52,9 @@
                                     <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="n3X-vW-WdA">
                                         <items>
                                             <imageView width="40" height="40" alignment="left" verticalAlignment="center" id="RFY-s3-FMT"/>
-                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="3" id="e94-gW-zJs"/>
+                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="3" id="e94-gW-zJs">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                         <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
@@ -67,7 +69,6 @@
                                 </tableRow>
                             </items>
                         </table>
-                        <separator alignment="left" id="cjd-tp-ee1"/>
                     </items>
                     <connections>
                         <outlet property="interfaceTable" destination="hyb-yL-kQ3" id="AvX-0R-Bw4"/>
@@ -81,9 +82,13 @@
             <objects>
                 <controller id="k6q-35-Xcc" customClass="WDCPartyInterfaceController" customModule="SFParties_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Date" id="N63-05-5dy"/>
+                        <label alignment="left" text="Date" id="N63-05-5dy">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
                         <map alignment="left" id="nkF-cN-app"/>
-                        <label alignment="left" text="Address" numberOfLines="2" id="r6c-JC-kFp"/>
+                        <label alignment="left" text="Address" numberOfLines="2" id="r6c-JC-kFp">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
                     </items>
                     <connections>
                         <outlet property="addressLabel" destination="r6c-JC-kFp" id="ReY-Tt-CN7"/>
