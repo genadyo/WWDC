@@ -39,15 +39,19 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // read the cached parties
         parties = WDCParties.sharedInstance().filteredParties
 
-        // set number of parties
-        self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
+        if (parties.count == 0) {
+            self.interfaceTable.setNumberOfRows(1, withRowType: "empty")
+        } else {
+            // set number of parties
+            self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
 
-        // set party rows
-        for (idx, party) in enumerate(parties) {
-            let wdcParty = party as WDCParty
-            let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
-            row.titleInterfaceLabel.setText(wdcParty.title)
-            row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+            // set party rows
+            for (idx, party) in enumerate(parties) {
+                let wdcParty = party as WDCParty
+                let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
+                row.titleInterfaceLabel.setText(wdcParty.title)
+                row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+            }
         }
     }
 

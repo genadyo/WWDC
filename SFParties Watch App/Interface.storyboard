@@ -31,6 +31,15 @@
                                         <outlet property="titleInterfaceLabel" destination="e94-gW-zJs" id="Y8v-zM-2Y8"/>
                                     </connections>
                                 </tableRow>
+                                <tableRow identifier="empty" selectable="NO" id="Zav-JE-bOE">
+                                    <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="axc-R7-gVo">
+                                        <items>
+                                            <label alignment="left" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="3" id="e4r-3b-be9"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                    </group>
+                                </tableRow>
                             </items>
                         </table>
                     </items>
