@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-import UIKit
 import WatchKit
 
 class WDCPartiesInterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTable: WKInterfaceTable!
+    var parties :NSArray!
 
     override init(context: AnyObject?) {
         // Initialize variables here.
         super.init(context: context)
         
         // Configure interface objects here.
-        NSLog("%@ init", self)
+        // NSLog("%@ init", self)
 
         // load my table
         loadTableData()
@@ -26,12 +26,12 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        NSLog("%@ will activate", self)
+        // NSLog("%@ will activate", self)
     }
 
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
-        NSLog("%@ did deactivate", self)
+        // NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
 
@@ -39,6 +39,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         WDCParties.sharedInstance().refreshWithBlock { (succeeded, parties) -> Void in
             if (succeeded) {
                 // TBD: order and stuff
+                self.parties = parties
 
                 // set number of parties
                 self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
@@ -54,7 +55,13 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         }
     }
 
-    override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
+    // MARK: Segues
 
+    override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+        if segueIdentifier == "map" {
+            return parties[rowIndex]
+        }
+
+        return nil
     }
 }

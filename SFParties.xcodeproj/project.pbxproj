@@ -22,6 +22,7 @@
 		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
 		B28A12501A1E309D00954CD8 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A124F1A1E309D00954CD8 /* Assets.swift */; };
 		B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A12511A1E312100954CD8 /* drawAssets.swift */; };
+		B2AF40661A207C950028C01C /* WDCPartyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */; };
 		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
@@ -124,6 +125,7 @@
 		B286140E1958CA51006FA1D3 /* JVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVObserver.m; sourceTree = "<group>"; };
 		B28A124F1A1E309D00954CD8 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		B28A12511A1E312100954CD8 /* drawAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawAssets.swift; sourceTree = "<group>"; };
+		B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyInterfaceController.swift; sourceTree = "<group>"; };
 		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
 		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* SFParties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFParties.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,8 +308,8 @@
 		B2F01C621A1F841D00F1AC70 /* SFParties WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				B2F01C891A1F901300F1AC70 /* SFParties WatchKit Extension.entitlements */,
 				B2F01C661A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift */,
+				B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */,
 				B2F01C871A1F8A8100F1AC70 /* WDCPartiesTRC.swift */,
 				B2F01C681A1F841D00F1AC70 /* NotificationController.swift */,
 				B2F01C6A1A1F841D00F1AC70 /* GlanceController.swift */,
@@ -320,6 +322,7 @@
 		B2F01C631A1F841D00F1AC70 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2F01C891A1F901300F1AC70 /* SFParties WatchKit Extension.entitlements */,
 				B2F01C641A1F841D00F1AC70 /* Info.plist */,
 				B2F01C651A1F841D00F1AC70 /* PushNotificationPayload.json */,
 			);
@@ -689,6 +692,7 @@
 			files = (
 				B2F01C881A1F8A8100F1AC70 /* WDCPartiesTRC.swift in Sources */,
 				B2F01C691A1F841D00F1AC70 /* NotificationController.swift in Sources */,
+				B2AF40661A207C950028C01C /* WDCPartyInterfaceController.swift in Sources */,
 				B2F01C671A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift in Sources */,
 				B2F01C6B1A1F841D00F1AC70 /* GlanceController.swift in Sources */,
 			);

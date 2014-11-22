@@ -27,6 +27,7 @@
 @property (readonly, strong, nonatomic) NSString *sortDate;
 @property (readonly, strong, nonatomic) NSString *date;
 @property (readonly, strong, nonatomic) NSString *hours;
+@property (readonly, strong, nonatomic) NSString *shortDate;
 
 - (instancetype)initWithCKRecord:(CKRecord *)record;
 - (void)setLogoWithData:(NSData *)data;

@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSString *sortDate;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *hours;
+@property (strong, nonatomic) NSString *shortDate;
 
 @end
 
@@ -193,6 +194,19 @@
         _hours = [NSString stringWithFormat:@"%@ to %@", [dateFormatterStart stringFromDate:self.startDate], [dateFormatterEnd stringFromDate:self.endDate]];
     }
     return _hours;
+}
+
+- (NSString *)shortDate
+{
+    if (!_shortDate) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setLocale:locale];
+        [dateFormatter setDateFormat:@"MMMM d, h:mm a"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        _shortDate = [dateFormatter stringFromDate:self.startDate];
+    }
+    return _shortDate;
 }
 
 @end
