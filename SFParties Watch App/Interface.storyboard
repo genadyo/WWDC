@@ -15,7 +15,7 @@
                                 <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
                                     <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="n3X-vW-WdA">
                                         <items>
-                                            <imageView width="35" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
+                                            <imageView width="45" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
                                             <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="3" id="e94-gW-zJs">
                                                 <fontDescription key="font" type="system" pointSize="12"/>
                                             </label>
@@ -56,6 +56,7 @@
                 <controller id="k6q-35-Xcc" customClass="WDCPartyInterfaceController" customModule="SFParties_WatchKit_Extension">
                     <items>
                         <label alignment="left" text="Date" id="N63-05-5dy">
+                            <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="font" type="system" pointSize="12"/>
                         </label>
                         <map alignment="left" id="nkF-cN-app"/>
