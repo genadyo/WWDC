@@ -135,10 +135,58 @@
 
 - (void)saveGoing
 {
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.going];
-    [userDefaults setObject:data forKey:@"going"];
-    [userDefaults synchronize];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
+        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.going];
+        [userDefaults setObject:data forKey:@"going"];
+
+        // cache localy all the going parties for the watchkit extension
+        data = [userDefaults objectForKey:@"parties"];
+        if (data) {
+            NSArray *parties = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+
+            // order by days
+            NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+            for (WDCParty *party in parties) {
+                if (![dict objectForKey:[party sortDate]]) {
+                    [dict setObject:[[NSMutableArray alloc] init] forKey:[party sortDate]];
+                }
+                [[dict objectForKey:[party sortDate]] addObject:party];
+            }
+            NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+            NSMutableArray *daysArray = [[NSMutableArray alloc] init];
+            for (NSString *key in sortedKeys) {
+                [daysArray addObject:[dict objectForKey:key]];
+            }
+
+            // filter going
+            NSMutableArray *filteredPartiesMutable = [[NSMutableArray alloc] init];
+            for (NSArray *array in daysArray) {
+                for (WDCParty *party in array) {
+                    if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] != NSNotFound) {
+                        [filteredPartiesMutable addObject:party];
+                    }
+                }
+            }
+
+            // save to disk
+            NSData *data = [NSKeyedArchiver archivedDataWithRootObject:filteredPartiesMutable];
+            [userDefaults setObject:data forKey:@"filteredParties"];
+        }
+        
+        [userDefaults synchronize];
+    });
+}
+
+- (NSArray *)filteredParties
+{
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:@"filteredParties"];
+    if (data) {
+        NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        return array;
+    }
+
+    return nil;
 }
 
 @end

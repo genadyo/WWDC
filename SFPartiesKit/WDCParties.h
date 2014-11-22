@@ -16,5 +16,6 @@
 
 @property (strong, nonatomic) NSMutableArray *going;
 @property (assign, nonatomic) BOOL disableCache;
+@property (readonly, strong, nonatomic) NSArray *filteredParties;
 
 @end
