@@ -17,6 +17,7 @@
 #import "WDCPartiesTVC.h"
 #import "WDCMapDayViewController.h"
 #import "SFParties-Swift.h"
+#import <CocoaPods-Keys/SFPartiesKeys.h>
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate>
 
@@ -223,14 +224,25 @@
 
 - (IBAction)uber:(UIButton *)sender
 {
-    // open sugar.so for now
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://sugar.so"]];
+    // Keys
+    SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
+    NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location", keys.uber];
+    NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@", keys.uber];
 
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"uber://"]]) {
-        // Do something awesome - the app is installed! Launch App.
-    }
-    else {
-        // No Uber app! Open Mobile Website.
+    // open Uber or Safari
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
+    } else {
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        } else {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
+                                                                message:nil
+                                                               delegate:self
+                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                                      otherButtonTitles:nil];
+            [alertView show];
+        }
     }
 }
 
