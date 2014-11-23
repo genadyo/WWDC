@@ -89,8 +89,10 @@
     self.tableView.estimatedRowHeight = 61.0;
 
     // UBER
-    UIImage *uber = [Assets imageOfUBER_API_Badge];
-    [self.uberButton setImage:uber forState:UIControlStateNormal];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        UIImage *uber = [Assets imageOfUBER_API_Badge];
+        [self.uberButton setImage:uber forState:UIControlStateNormal];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -218,40 +220,44 @@
 
 - (IBAction)openUber:(id)sender
 {
-    // Keys
-    SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        // Keys
+        SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
 
-    // urls
-    NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location&dropoff[latitude]=%f&dropoff[longitude]=%f&dropoff[nickname]=%@&dropoff[formatted_address]=%@%%20%@",
-                      keys.uber,
-                      [self.party.latitude floatValue],
-                      [self.party.longitude floatValue],
-                      [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                      [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                      [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        // urls
+        NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location&dropoff[latitude]=%f&dropoff[longitude]=%f&dropoff[nickname]=%@&dropoff[formatted_address]=%@%%20%@",
+                          keys.uber,
+                          [self.party.latitude floatValue],
+                          [self.party.longitude floatValue],
+                          [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                          [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                          [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
-    NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@&dropoff_latitude=%f&dropoff_longitude=%f&dropoff_nickname=%@&dropoff_address=%@%%20%@",
-                     keys.uber,
-                     [self.party.latitude floatValue],
-                     [self.party.longitude floatValue],
-                     [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                     [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                     [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@&dropoff_latitude=%f&dropoff_longitude=%f&dropoff_nickname=%@&dropoff_address=%@%%20%@",
+                         keys.uber,
+                         [self.party.latitude floatValue],
+                         [self.party.longitude floatValue],
+                         [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                         [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                         [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
-    // open Uber or Safari
-    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
-    } else {
-        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+        // open Uber or Safari
+        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
-                                                                message:nil
-                                                               delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                      otherButtonTitles:nil];
-            [alertView show];
+            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+            } else {
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
+                                                                    message:nil
+                                                                   delegate:self
+                                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
+                                                          otherButtonTitles:nil];
+                [alertView show];
+            }
         }
+    } else {
+        [self openMaps:sender];
     }
 }
 
