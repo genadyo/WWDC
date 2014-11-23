@@ -512,7 +512,7 @@ Title2</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="3Un-Er-qsG"/>
-                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="8" symbolic="YES" id="46f-gb-23e"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="26" id="46f-gb-23e"/>
                                                 <constraint firstAttribute="trailing" secondItem="dEp-lq-qxU" secondAttribute="trailing" constant="20" symbolic="YES" id="4Fi-nS-lHD"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="70" id="GAh-ka-CGT"/>
                                                 <constraint firstAttribute="centerY" secondItem="GR3-l6-djE" secondAttribute="centerY" id="Hdv-AC-bDq"/>
@@ -520,9 +520,9 @@ Title2</string>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="OG6-oc-Ssh"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="R9F-Cv-dxK"/>
                                                 <constraint firstItem="GR3-l6-djE" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leadingMargin" constant="12" id="RSo-hc-lsr"/>
-                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kjV-01-xGd" secondAttribute="trailing" constant="8" symbolic="YES" id="Xv0-oF-HLI"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kjV-01-xGd" secondAttribute="trailing" constant="26" id="Xv0-oF-HLI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dEp-lq-qxU" secondAttribute="trailing" id="eAS-te-xJL"/>
-                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I4r-k2-q1z" secondAttribute="trailing" constant="8" symbolic="YES" id="ewA-SE-5px"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I4r-k2-q1z" secondAttribute="trailing" constant="26" id="ewA-SE-5px"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="I4r-k2-q1z" secondAttribute="bottom" constant="3" id="iKM-GH-u6g"/>
                                                 <constraint firstItem="kjV-01-xGd" firstAttribute="top" secondItem="TmW-O5-gJW" secondAttribute="topMargin" constant="4" id="lKj-hB-Cn8"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="nty-bD-wPS"/>
@@ -533,6 +533,8 @@ Title2</string>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="3Un-Er-qsG"/>
+                                                    <exclude reference="R9F-Cv-dxK"/>
                                                     <exclude reference="MZM-P5-o5f"/>
                                                     <exclude reference="eAS-te-xJL"/>
                                                 </mask>
