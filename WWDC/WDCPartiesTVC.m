@@ -18,6 +18,7 @@
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
 #import "SFParties-Swift.h"
+@import CoreLocation;
 
 @interface WDCPartiesTVC () <MFMailComposeViewControllerDelegate>
 
@@ -25,6 +26,7 @@
 @property (strong, nonatomic) NSArray *filteredParties;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *goingSegmentedControl;
 @property (strong, nonatomic) NSMutableArray *observers;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 
 @end
 
@@ -62,6 +64,12 @@
 
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     [self updateFilteredParties];
+
+    // ask for location once
+    self.locationManager = [[CLLocationManager alloc] init];
+    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+        [self.locationManager requestWhenInUseAuthorization];
+    }
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator

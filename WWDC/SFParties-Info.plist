@@ -38,6 +38,8 @@
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Parties needs your current location to show Parties nearby</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
