@@ -395,12 +395,6 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-SO-y8Q">
-                                                    <rect key="frame" x="70" y="42" width="42" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar" customModule="SFParties">
                                                     <rect key="frame" x="20" y="24" width="38" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -409,6 +403,12 @@ Title2</string>
                                                         <constraint firstAttribute="height" constant="30" id="P8z-r1-GfV"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4B-SO-y8Q">
+                                                    <rect key="frame" x="70" y="42" width="42" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="L4B-SO-y8Q" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="70" id="04k-aa-gxd"/>
@@ -470,13 +470,13 @@ Title2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kjV-01-xGd">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjV-01-xGd">
                                                     <rect key="frame" x="70" y="12" width="66.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sX2-WM-0RF">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sX2-WM-0RF">
                                                     <rect key="frame" x="70" y="30" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -490,7 +490,7 @@ Title2</string>
                                                         <constraint firstAttribute="height" constant="32" id="Ypd-b2-o0E"/>
                                                     </constraints>
                                                 </view>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-k2-q1z">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address3" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4r-k2-q1z">
                                                     <rect key="frame" x="70" y="48" width="65" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -512,17 +512,17 @@ Title2</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="3Un-Er-qsG"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="8" symbolic="YES" id="46f-gb-23e"/>
                                                 <constraint firstAttribute="trailing" secondItem="dEp-lq-qxU" secondAttribute="trailing" constant="20" symbolic="YES" id="4Fi-nS-lHD"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="I4r-k2-q1z" secondAttribute="trailing" constant="20" symbolic="YES" id="AE0-ET-sfB"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="kjV-01-xGd" secondAttribute="trailing" constant="20" symbolic="YES" id="C3w-fP-bBF"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="70" id="GAh-ka-CGT"/>
                                                 <constraint firstAttribute="centerY" secondItem="GR3-l6-djE" secondAttribute="centerY" id="Hdv-AC-bDq"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="20" symbolic="YES" id="MEg-Pf-GUn"/>
                                                 <constraint firstItem="dEp-lq-qxU" firstAttribute="trailing" secondItem="TmW-O5-gJW" secondAttribute="trailingMargin" id="MZM-P5-o5f"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="OG6-oc-Ssh"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="R9F-Cv-dxK"/>
                                                 <constraint firstItem="GR3-l6-djE" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leadingMargin" constant="12" id="RSo-hc-lsr"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kjV-01-xGd" secondAttribute="trailing" constant="8" symbolic="YES" id="Xv0-oF-HLI"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dEp-lq-qxU" secondAttribute="trailing" id="eAS-te-xJL"/>
+                                                <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="I4r-k2-q1z" secondAttribute="trailing" constant="8" symbolic="YES" id="ewA-SE-5px"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="I4r-k2-q1z" secondAttribute="bottom" constant="3" id="iKM-GH-u6g"/>
                                                 <constraint firstItem="kjV-01-xGd" firstAttribute="top" secondItem="TmW-O5-gJW" secondAttribute="topMargin" constant="4" id="lKj-hB-Cn8"/>
                                                 <constraint firstItem="I4r-k2-q1z" firstAttribute="top" secondItem="sX2-WM-0RF" secondAttribute="bottom" id="nty-bD-wPS"/>
