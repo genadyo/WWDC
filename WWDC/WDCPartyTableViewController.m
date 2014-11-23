@@ -33,7 +33,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *goingButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *titleCell;
 @property (strong, nonatomic) JVObserver *observer;
-@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (weak, nonatomic) IBOutlet UIButton *uberButton;
 
 @end
@@ -99,11 +98,6 @@
     [super viewWillAppear:animated];
 
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-
-    self.locationManager = [[CLLocationManager alloc] init];
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-        [self.locationManager requestWhenInUseAuthorization];
-    }
 }
 
 - (void)refreshGoing
