@@ -14,4 +14,10 @@ See you there!
 
 Please note: Parties for WWDC is created by an independent developer, who is in no way affiliated with Apple, Inc.
 
-#### We are currently rewriting the app with iOS 8 support, stay tuned!
+#### Parties for iOS:
+![Parties for iOS](/Assets/iOS1.png?raw=true "Parties for iOS")
+![Parties for iOS](/Assets/iOS2.png?raw=true "Parties for iOS")
+
+#### Parties for Apple Watch:
+![Parties for Apple Watch](/Assets/watch1.png?raw=true "Parties for Apple Watch")
+![Parties for Apple Watch](/Assets/watch2.png?raw=true "Parties for Apple Watch")
