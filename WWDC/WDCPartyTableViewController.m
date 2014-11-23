@@ -33,6 +33,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *titleCell;
 @property (strong, nonatomic) JVObserver *observer;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (weak, nonatomic) IBOutlet UIButton *uberButton;
 
 @end
 
@@ -86,6 +87,10 @@
 
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 61.0;
+
+    // UBER
+    UIImage *uber = [Assets imageOfUBER_API_Badge];
+    [self.uberButton setImage:uber forState:UIControlStateNormal];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -214,6 +219,19 @@
     addController.event = event;
     addController.editViewDelegate = self;
     [self presentViewController:addController animated:YES completion:nil];
+}
+
+- (IBAction)uber:(UIButton *)sender
+{
+    // open sugar.so for now
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://sugar.so"]];
+
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"uber://"]]) {
+        // Do something awesome - the app is installed! Launch App.
+    }
+    else {
+        // No Uber app! Open Mobile Website.
+    }
 }
 
 #pragma mark - Table view data source
