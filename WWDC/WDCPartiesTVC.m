@@ -43,7 +43,7 @@
     [tracker set:kGAIScreenName value:@"WDCPartiesTVC"];
     [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
-    NSInteger selected = [[NSUserDefaults standardUserDefaults] integerForKey:@"selected"];
+    NSInteger selected = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] integerForKey:@"selected"];
     if (selected) {
         self.goingSegmentedControl.selectedSegmentIndex = selected;
     }
@@ -106,7 +106,7 @@
 - (IBAction)updateSegment:(UISegmentedControl *)sender
 {
     [self updateFilteredParties];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     [userDefaults setInteger:sender.selectedSegmentIndex forKey:@"selected"];
     [userDefaults synchronize];
 }

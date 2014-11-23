@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14C68k" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3734"/>
+    </dependencies>
+    <scenes>
+        <!--Parties-->
+        <scene sceneID="Csz-Kb-ffj">
+            <objects>
+                <controller title="Parties" id="KgC-FO-I1c" customClass="WDCPartiesInterfaceController" customModule="SFParties_WatchKit_Extension">
+                    <items>
+                        <table alignment="left" layout="vertical" id="hyb-yL-kQ3">
+                            <items>
+                                <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="n3X-vW-WdA">
+                                        <items>
+                                            <imageView width="45" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
+                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="3" id="e94-gW-zJs">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                        <connections>
+                                            <segue destination="k6q-35-Xcc" kind="push" identifier="map" id="Tuv-Qr-7pb"/>
+                                        </connections>
+                                    </group>
+                                    <connections>
+                                        <outlet property="iconInterfaceImage" destination="RFY-s3-FMT" id="4R2-QV-fuC"/>
+                                        <outlet property="titleInterfaceLabel" destination="e94-gW-zJs" id="Y8v-zM-2Y8"/>
+                                    </connections>
+                                </tableRow>
+                                <tableRow identifier="empty" selectable="NO" id="Zav-JE-bOE">
+                                    <group key="rootItem" width="1" height="66" alignment="left" spacing="6" id="axc-R7-gVo">
+                                        <items>
+                                            <label alignment="left" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="3" id="e4r-3b-be9"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTable" destination="hyb-yL-kQ3" id="AvX-0R-Bw4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="391"/>
+        </scene>
+        <!--Party Interface Controller-->
+        <scene sceneID="ReN-VJ-Wjo">
+            <objects>
+                <controller id="k6q-35-Xcc" customClass="WDCPartyInterfaceController" customModule="SFParties_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" hasDetent="YES" id="ViA-Rh-cgi">
+                            <items>
+                                <map alignment="left" id="nkF-cN-app"/>
+                                <label alignment="left" text="Address" numberOfLines="2" id="r6c-JC-kFp">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                                <label alignment="left" text="Date" id="N63-05-5dy">
+                                    <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="addressLabel" destination="r6c-JC-kFp" id="ReY-Tt-CN7"/>
+                        <outlet property="dateLabel" destination="N63-05-5dy" id="GrC-r1-ylI"/>
+                        <outlet property="map" destination="nkF-cN-app" id="ASk-9b-IQU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="482" y="391"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+</document>

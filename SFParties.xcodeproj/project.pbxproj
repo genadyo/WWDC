@@ -13,17 +13,16 @@
 		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
-		B24642531927777D00DF2E06 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B24642521927777D00DF2E06 /* WDCParty.m */; };
 		B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464255192788A200DF2E06 /* WDCPartyTVC.m */; };
 		B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */; };
 		B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B246425A1927A2F200DF2E06 /* MapKit.framework */; };
 		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
-		B269702D194224E200D5FD4D /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B269702C194224E200D5FD4D /* WDCParties.m */; };
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
 		B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */; };
 		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
 		B28A12501A1E309D00954CD8 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A124F1A1E309D00954CD8 /* Assets.swift */; };
 		B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A12511A1E312100954CD8 /* drawAssets.swift */; };
+		B2AF40661A207C950028C01C /* WDCPartyInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */; };
 		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
@@ -35,9 +34,71 @@
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
 		B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */; };
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
+		B2F01C611A1F841D00F1AC70 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01C601A1F841D00F1AC70 /* WatchKit.framework */; };
+		B2F01C671A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F01C661A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift */; };
+		B2F01C711A1F841D00F1AC70 /* SFParties Watch App.app in Resources */ = {isa = PBXBuildFile; fileRef = B2F01C701A1F841D00F1AC70 /* SFParties Watch App.app */; };
+		B2F01C781A1F841D00F1AC70 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F01C771A1F841D00F1AC70 /* Interface.storyboard */; };
+		B2F01C7A1A1F841D00F1AC70 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F01C791A1F841D00F1AC70 /* Images.xcassets */; };
+		B2F01C7D1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B2F01C881A1F8A8100F1AC70 /* WDCPartiesTRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F01C871A1F8A8100F1AC70 /* WDCPartiesTRC.swift */; };
+		B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; };
+		B2F01CCC1A1F91DD00F1AC70 /* SFPartiesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */; };
+		B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */; };
+		B2F01CE31A1F9D3A00F1AC70 /* SFPartiesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; };
 		B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F874001A02543A00DD55DB /* Fabric.framework */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
+		F8D8CEAC270F3114B435ACBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B2F01C721A1F841D00F1AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F01C6F1A1F841D00F1AC70;
+			remoteInfo = "SFParties Watch App";
+		};
+		B2F01C7B1A1F841D00F1AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F01C5E1A1F841D00F1AC70;
+			remoteInfo = "SFParties WatchKit Extension";
+		};
+		B2F01CC91A1F91DD00F1AC70 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F01CB31A1F91DD00F1AC70;
+			remoteInfo = SFPartiesKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2F01C841A1F841D00F1AC70 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B2F01C7D1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01CAB1A1F918800F1AC70 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B2F01CCC1A1F91DD00F1AC70 /* SFPartiesKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RolloutDynamic.m; path = Rollout/RolloutDynamic.m; sourceTree = "<group>"; };
@@ -49,22 +110,19 @@
 		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
-		B24642511927777D00DF2E06 /* WDCParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParty.h; sourceTree = "<group>"; };
-		B24642521927777D00DF2E06 /* WDCParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParty.m; sourceTree = "<group>"; };
 		B2464254192788A200DF2E06 /* WDCPartyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartyTVC.h; sourceTree = "<group>"; };
 		B2464255192788A200DF2E06 /* WDCPartyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartyTVC.m; sourceTree = "<group>"; };
 		B246425719279DE200DF2E06 /* WDCPartyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartyTableViewController.h; sourceTree = "<group>"; };
 		B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartyTableViewController.m; sourceTree = "<group>"; };
 		B246425A1927A2F200DF2E06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
-		B269702B194224E200D5FD4D /* WDCParties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParties.h; sourceTree = "<group>"; };
-		B269702C194224E200D5FD4D /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B286140D1958CA51006FA1D3 /* JVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVObserver.h; sourceTree = "<group>"; };
 		B286140E1958CA51006FA1D3 /* JVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVObserver.m; sourceTree = "<group>"; };
 		B28A124F1A1E309D00954CD8 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		B28A12511A1E312100954CD8 /* drawAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawAssets.swift; sourceTree = "<group>"; };
+		B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyInterfaceController.swift; sourceTree = "<group>"; };
 		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
 		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* SFParties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFParties.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +140,25 @@
 		B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartiesTVC.h; sourceTree = "<group>"; };
 		B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartiesTVC.m; sourceTree = "<group>"; };
 		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SFParties WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F01C601A1F841D00F1AC70 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		B2F01C641A1F841D00F1AC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F01C651A1F841D00F1AC70 /* PushNotificationPayload.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PushNotificationPayload.json; sourceTree = "<group>"; };
+		B2F01C661A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WDCPartiesInterfaceController.swift; sourceTree = "<group>"; };
+		B2F01C701A1F841D00F1AC70 /* SFParties Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SFParties Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F01C761A1F841D00F1AC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F01C771A1F841D00F1AC70 /* Interface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		B2F01C791A1F841D00F1AC70 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B2F01C871A1F8A8100F1AC70 /* WDCPartiesTRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartiesTRC.swift; sourceTree = "<group>"; };
+		B2F01C891A1F901300F1AC70 /* SFParties WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "SFParties WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFPartiesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2F01CB71A1F91DD00F1AC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2F01CB81A1F91DD00F1AC70 /* SFPartiesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFPartiesKit.h; sourceTree = "<group>"; };
+		B2F01CD41A1F954F00F1AC70 /* SFPartiesWatchKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFPartiesWatchKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		B2F01CDB1A1F9BDB00F1AC70 /* WDCParties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParties.h; sourceTree = "<group>"; };
+		B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
+		B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParty.h; sourceTree = "<group>"; };
+		B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParty.m; sourceTree = "<group>"; };
 		B2F874001A02543A00DD55DB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CC94508C3B90C2C76D7B859C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,9 +177,27 @@
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
 				B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
 				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
+				B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */,
 				7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */,
 				2122714352A645F09DFEB295 /* Rollout.framework in Frameworks */,
 				B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01C5C1A1F841D00F1AC70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F01CE31A1F9D3A00F1AC70 /* SFPartiesKit.framework in Frameworks */,
+				B2F01C611A1F841D00F1AC70 /* WatchKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01CB01A1F91DD00F1AC70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8D8CEAC270F3114B435ACBF /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +217,9 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEE919276A1E00C5B0E8 /* WWDC */,
+				B2F01C621A1F841D00F1AC70 /* SFParties WatchKit Extension */,
+				B2F01C741A1F841D00F1AC70 /* SFParties Watch App */,
+				B2F01CB51A1F91DD00F1AC70 /* SFPartiesKit */,
 				B2D4AEE219276A1E00C5B0E8 /* Frameworks */,
 				B2D4AEE119276A1E00C5B0E8 /* Products */,
 				CAA8B82F49FE4F389923004B /* Rollout */,
@@ -134,6 +232,9 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEE019276A1E00C5B0E8 /* SFParties.app */,
+				B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */,
+				B2F01C701A1F841D00F1AC70 /* SFParties Watch App.app */,
+				B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,6 +252,7 @@
 				B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */,
 				B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */,
 				8F6A897ED3134CF8B77019B8 /* libPods.a */,
+				B2F01C601A1F841D00F1AC70 /* WatchKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -164,10 +266,6 @@
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
 				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
 				B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */,
-				B24642511927777D00DF2E06 /* WDCParty.h */,
-				B24642521927777D00DF2E06 /* WDCParty.m */,
-				B269702B194224E200D5FD4D /* WDCParties.h */,
-				B269702C194224E200D5FD4D /* WDCParties.m */,
 				B2464254192788A200DF2E06 /* WDCPartyTVC.h */,
 				B2464255192788A200DF2E06 /* WDCPartyTVC.m */,
 				B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */,
@@ -182,6 +280,7 @@
 				B28A124F1A1E309D00954CD8 /* Assets.swift */,
 				B28A12511A1E312100954CD8 /* drawAssets.swift */,
 				B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */,
+				B2F01CD41A1F954F00F1AC70 /* SFPartiesWatchKit-Bridging-Header.h */,
 				B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */,
 				B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */,
 			);
@@ -200,6 +299,66 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		B2F01C621A1F841D00F1AC70 /* SFParties WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01C661A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift */,
+				B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */,
+				B2F01C871A1F8A8100F1AC70 /* WDCPartiesTRC.swift */,
+				B2F01C631A1F841D00F1AC70 /* Supporting Files */,
+			);
+			path = "SFParties WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		B2F01C631A1F841D00F1AC70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01C891A1F901300F1AC70 /* SFParties WatchKit Extension.entitlements */,
+				B2F01C641A1F841D00F1AC70 /* Info.plist */,
+				B2F01C651A1F841D00F1AC70 /* PushNotificationPayload.json */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2F01C741A1F841D00F1AC70 /* SFParties Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01C771A1F841D00F1AC70 /* Interface.storyboard */,
+				B2F01C791A1F841D00F1AC70 /* Images.xcassets */,
+				B2F01C751A1F841D00F1AC70 /* Supporting Files */,
+			);
+			path = "SFParties Watch App";
+			sourceTree = "<group>";
+		};
+		B2F01C751A1F841D00F1AC70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01C761A1F841D00F1AC70 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2F01CB51A1F91DD00F1AC70 /* SFPartiesKit */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */,
+				B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */,
+				B2F01CDB1A1F9BDB00F1AC70 /* WDCParties.h */,
+				B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */,
+				B2F01CB81A1F91DD00F1AC70 /* SFPartiesKit.h */,
+				B2F01CB61A1F91DD00F1AC70 /* Supporting Files */,
+			);
+			path = SFPartiesKit;
+			sourceTree = "<group>";
+		};
+		B2F01CB61A1F91DD00F1AC70 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B2F01CB71A1F91DD00F1AC70 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		CAA8B82F49FE4F389923004B /* Rollout */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +370,16 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B2F01CB11A1F91DD00F1AC70 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B2D4AEDF19276A1E00C5B0E8 /* SFParties */ = {
@@ -224,15 +393,72 @@
 				B2D4AEDE19276A1E00C5B0E8 /* Resources */,
 				B23AFA87192814A600C2A060 /* ShellScript */,
 				1CB374A1EF2A4FD38478E741 /* Copy Pods Resources */,
+				B2F01C841A1F841D00F1AC70 /* Embed App Extensions */,
+				B2F01CAB1A1F918800F1AC70 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B2F01C7C1A1F841D00F1AC70 /* PBXTargetDependency */,
+				B2F01CCA1A1F91DD00F1AC70 /* PBXTargetDependency */,
 			);
 			name = SFParties;
 			productName = WWDC;
 			productReference = B2D4AEE019276A1E00C5B0E8 /* SFParties.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B2F01C5E1A1F841D00F1AC70 /* SFParties WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F01C811A1F841D00F1AC70 /* Build configuration list for PBXNativeTarget "SFParties WatchKit Extension" */;
+			buildPhases = (
+				B2F01C5B1A1F841D00F1AC70 /* Sources */,
+				B2F01C5C1A1F841D00F1AC70 /* Frameworks */,
+				B2F01C5D1A1F841D00F1AC70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2F01C731A1F841D00F1AC70 /* PBXTargetDependency */,
+			);
+			name = "SFParties WatchKit Extension";
+			productName = "SFParties WatchKit Extension";
+			productReference = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		B2F01C6F1A1F841D00F1AC70 /* SFParties Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F01C7E1A1F841D00F1AC70 /* Build configuration list for PBXNativeTarget "SFParties Watch App" */;
+			buildPhases = (
+				B2F01C6E1A1F841D00F1AC70 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SFParties Watch App";
+			productName = "SFParties Watch App";
+			productReference = B2F01C701A1F841D00F1AC70 /* SFParties Watch App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
+		B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B2F01CCD1A1F91DD00F1AC70 /* Build configuration list for PBXNativeTarget "SFPartiesKit" */;
+			buildPhases = (
+				F8DDFEB102DEE772A15FA268 /* Check Pods Manifest.lock */,
+				B2F01CAF1A1F91DD00F1AC70 /* Sources */,
+				B2F01CB01A1F91DD00F1AC70 /* Frameworks */,
+				B2F01CB11A1F91DD00F1AC70 /* Headers */,
+				B2F01CB21A1F91DD00F1AC70 /* Resources */,
+				6D6B28AB035F6DA87F54EFC1 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SFPartiesKit;
+			productName = SFPartiesKit;
+			productReference = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -247,6 +473,9 @@
 					B2D4AEDF19276A1E00C5B0E8 = {
 						DevelopmentTeam = SZHLQT8428;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
@@ -257,6 +486,23 @@
 								enabled = 1;
 							};
 						};
+					};
+					B2F01C5E1A1F841D00F1AC70 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SZHLQT8428;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					B2F01C6F1A1F841D00F1AC70 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SZHLQT8428;
+					};
+					B2F01CB31A1F91DD00F1AC70 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = SZHLQT8428;
 					};
 				};
 			};
@@ -274,6 +520,9 @@
 			projectRoot = "";
 			targets = (
 				B2D4AEDF19276A1E00C5B0E8 /* SFParties */,
+				B2F01C5E1A1F841D00F1AC70 /* SFParties WatchKit Extension */,
+				B2F01C6F1A1F841D00F1AC70 /* SFParties Watch App */,
+				B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */,
 			);
 		};
 /* End PBXProject section */
@@ -291,10 +540,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2F01C5D1A1F841D00F1AC70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F01C711A1F841D00F1AC70 /* SFParties Watch App.app in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01C6E1A1F841D00F1AC70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F01C781A1F841D00F1AC70 /* Interface.storyboard in Resources */,
+				B2F01C7A1A1F841D00F1AC70 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01CB21A1F91DD00F1AC70 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		1CB374A1EF2A4FD38478E741 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D6B28AB035F6DA87F54EFC1 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -351,6 +639,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		F8DDFEB102DEE772A15FA268 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -359,7 +662,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */,
-				B269702D194224E200D5FD4D /* WDCParties.m in Sources */,
 				B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */,
 				B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */,
 				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
@@ -369,13 +671,49 @@
 				B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */,
 				B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */,
 				B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */,
-				B24642531927777D00DF2E06 /* WDCParty.m in Sources */,
 				B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */,
 				ADEDFB095B88444593530B4E /* RolloutDynamic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B2F01C5B1A1F841D00F1AC70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F01C881A1F8A8100F1AC70 /* WDCPartiesTRC.swift in Sources */,
+				B2AF40661A207C950028C01C /* WDCPartyInterfaceController.swift in Sources */,
+				B2F01C671A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2F01CAF1A1F91DD00F1AC70 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */,
+				B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2F01C731A1F841D00F1AC70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F01C6F1A1F841D00F1AC70 /* SFParties Watch App */;
+			targetProxy = B2F01C721A1F841D00F1AC70 /* PBXContainerItemProxy */;
+		};
+		B2F01C7C1A1F841D00F1AC70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F01C5E1A1F841D00F1AC70 /* SFParties WatchKit Extension */;
+			targetProxy = B2F01C7B1A1F841D00F1AC70 /* PBXContainerItemProxy */;
+		};
+		B2F01CCA1A1F91DD00F1AC70 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */;
+			targetProxy = B2F01CC91A1F91DD00F1AC70 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */ = {
@@ -401,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -440,6 +779,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -476,8 +816,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -493,8 +834,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = SFParties;
-				PROVISIONING_PROFILE = "173f6520-2ab5-4cb9-a465-2f00ebd07df9";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -509,8 +851,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -527,10 +870,159 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = SFParties;
-				PROVISIONING_PROFILE = "173f6520-2ab5-4cb9-a465-2f00ebd07df9";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		B2F01C7F1A1F841D00F1AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = SFParties_WatchKit_Extension;
+				INFOPLIST_FILE = "SFParties Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		B2F01C801A1F841D00F1AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IBSC_MODULE = SFParties_WatchKit_Extension;
+				INFOPLIST_FILE = "SFParties Watch App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		B2F01C821A1F841D00F1AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "SFParties WatchKit Extension/SFParties WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SFParties WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFPartiesWatchKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B2F01C831A1F841D00F1AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "SFParties WatchKit Extension/SFParties WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "SFParties WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFPartiesWatchKit-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		B2F01CCE1A1F91DD00F1AC70 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC94508C3B90C2C76D7B859C /* Pods.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SFPartiesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B2F01CCF1A1F91DD00F1AC70 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8104116B87B866315CA062BA /* Pods.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = SFPartiesKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -551,6 +1043,33 @@
 			buildConfigurations = (
 				B2D4AF1319276A1E00C5B0E8 /* Debug */,
 				B2D4AF1419276A1E00C5B0E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F01C7E1A1F841D00F1AC70 /* Build configuration list for PBXNativeTarget "SFParties Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F01C7F1A1F841D00F1AC70 /* Debug */,
+				B2F01C801A1F841D00F1AC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F01C811A1F841D00F1AC70 /* Build configuration list for PBXNativeTarget "SFParties WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F01C821A1F841D00F1AC70 /* Debug */,
+				B2F01C831A1F841D00F1AC70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B2F01CCD1A1F91DD00F1AC70 /* Build configuration list for PBXNativeTarget "SFPartiesKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B2F01CCE1A1F91DD00F1AC70 /* Debug */,
+				B2F01CCF1A1F91DD00F1AC70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
+@import UIKit;
 @import CloudKit;
 @interface WDCParty : NSObject<NSCoding>
 
@@ -18,6 +19,7 @@
 @property (readonly, strong, nonatomic) NSNumber *latitude;
 @property (readonly, strong, nonatomic) NSNumber *longitude;
 @property (readonly, strong, nonatomic) UIImage *icon;
+@property (readonly, strong, nonatomic) UIImage *watchIcon;
 @property (readonly, strong, nonatomic) UIImage *logo;
 @property (readonly, strong, nonatomic) NSDate *startDate;
 @property (readonly, strong, nonatomic) NSDate *endDate;
@@ -26,6 +28,7 @@
 @property (readonly, strong, nonatomic) NSString *sortDate;
 @property (readonly, strong, nonatomic) NSString *date;
 @property (readonly, strong, nonatomic) NSString *hours;
+@property (readonly, strong, nonatomic) NSString *shortDate;
 
 - (instancetype)initWithCKRecord:(CKRecord *)record;
 - (void)setLogoWithData:(NSData *)data;

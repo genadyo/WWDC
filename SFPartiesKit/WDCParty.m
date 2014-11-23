@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSNumber *latitude;
 @property (strong, nonatomic) NSNumber *longitude;
 @property (strong, nonatomic) UIImage *icon;
+@property (strong, nonatomic) UIImage *watchIcon;
 @property (strong, nonatomic) UIImage *logo;
 @property (strong, nonatomic) NSDate *startDate;
 @property (strong, nonatomic) NSDate *endDate;
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) NSString *sortDate;
 @property (strong, nonatomic) NSString *date;
 @property (strong, nonatomic) NSString *hours;
+@property (strong, nonatomic) NSString *shortDate;
 
 @end
 
@@ -116,7 +118,18 @@
                                   block:^(TMCache *cache, NSString *key, id object) {
                                       self.logo = (UIImage *)object;
                                   }];
+
+    // get apple watch icon from cache
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:[self iconCacheKey]];
+    if (data) {
+        UIImage *image = [[UIImage alloc] initWithData:data scale:[UIScreen mainScreen].scale];
+        if (image) {
+            self.watchIcon = image;
+        }
+    }
+
 }
+
 
 - (BOOL)isLogoCached
 {
@@ -189,6 +202,63 @@
         _hours = [NSString stringWithFormat:@"%@ to %@", [dateFormatterStart stringFromDate:self.startDate], [dateFormatterEnd stringFromDate:self.endDate]];
     }
     return _hours;
+}
+
+- (NSString *)shortDate
+{
+    if (!_shortDate) {
+        NSLocale *locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setLocale:locale];
+        [dateFormatter setDateFormat:@"MMMM d, h:mm a"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"PDT"]];
+        _shortDate = [dateFormatter stringFromDate:self.startDate];
+    }
+    return _shortDate;
+}
+
+- (void)setIcon:(UIImage *)icon
+{
+    _icon = icon;
+    if (icon) {
+        [self cacheWatchIcon:icon];
+    }
+}
+
+- (void)cacheWatchIcon:(UIImage *)icon
+{
+    UIImage *resizeIcon = [WDCParty imageWithImage:icon scaledToMaxWidth:35.0f maxHeight:35.0f];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
+    [userDefaults setObject:UIImagePNGRepresentation(resizeIcon) forKey:[self iconCacheKey]];
+    [userDefaults synchronize];
+}
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)size
+{
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(size, NO, [[UIScreen mainScreen] scale]);
+    } else {
+        UIGraphicsBeginImageContext(size);
+    }
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
+    return newImage;
+}
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToMaxWidth:(CGFloat)width maxHeight:(CGFloat)height
+{
+    CGFloat oldWidth = image.size.width;
+    CGFloat oldHeight = image.size.height;
+
+    CGFloat scaleFactor = (oldWidth > oldHeight) ? width / oldWidth : height / oldHeight;
+
+    CGFloat newHeight = oldHeight * scaleFactor;
+    CGFloat newWidth = oldWidth * scaleFactor;
+    CGSize newSize = CGSizeMake(newWidth, newHeight);
+
+    return [self imageWithImage:image scaledToSize:newSize];
 }
 
 @end

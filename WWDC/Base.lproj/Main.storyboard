@@ -653,4 +653,5 @@ Title2</string>
     <inferredMetricsTieBreakers>
         <segue reference="98b-xs-Xcx"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>
