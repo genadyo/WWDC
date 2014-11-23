@@ -216,12 +216,27 @@
     [self presentViewController:addController animated:YES completion:nil];
 }
 
-- (IBAction)uber:(UIButton *)sender
+- (IBAction)openUber:(id)sender
 {
     // Keys
     SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
-    NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location", keys.uber];
-    NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@", keys.uber];
+
+    // urls
+    NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location&dropoff[latitude]=%f&dropoff[longitude]=%f&dropoff[nickname]=%@&dropoff[formatted_address]=%@%%20%@",
+                      keys.uber,
+                      [self.party.latitude floatValue],
+                      [self.party.longitude floatValue],
+                      [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                      [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                      [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+
+    NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@&dropoff_latitude=%f&dropoff_longitude=%f&dropoff_nickname=%@&dropoff_address=%@%%20%@",
+                     keys.uber,
+                     [self.party.latitude floatValue],
+                     [self.party.longitude floatValue],
+                     [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                     [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
+                     [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
 
     // open Uber or Safari
     if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {

@@ -506,7 +506,7 @@ Title2</string>
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="uber:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="sfI-XF-CMD"/>
+                                                        <action selector="openUber:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="r3c-Fn-imZ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -618,7 +618,7 @@ Title2</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT1-Ol-2ZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="AeC-Rj-aei">
                     <connections>
-                        <action selector="openMaps:" destination="cxA-AI-2vJ" id="oMf-Rh-dKm"/>
+                        <action selector="openUber:" destination="cxA-AI-2vJ" id="MnX-t1-R0O"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="0pR-or-51a">
