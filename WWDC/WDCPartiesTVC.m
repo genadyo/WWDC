@@ -118,6 +118,7 @@
                 [self.refreshControl endRefreshing];
             }
             [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"OK", @"count": [NSNumber numberWithInteger:parties.count]}];
+            [[Mixpanel sharedInstance].people increment:@"WDCParties.refresh" by:@1];
         }
     }];
 }
@@ -128,7 +129,8 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     [userDefaults setInteger:sender.selectedSegmentIndex forKey:@"selected"];
     [userDefaults synchronize];
-    [[Mixpanel sharedInstance] track:@"updateSegment" properties:@{@"refresh": [NSNumber numberWithInteger:sender.selectedSegmentIndex]}];
+    [[Mixpanel sharedInstance] track:@"updateSegment" properties:@{@"selected": [NSNumber numberWithInteger:sender.selectedSegmentIndex]}];
+    [[Mixpanel sharedInstance].people increment:@"updateSegment.selected" by:@1];
 }
 
 - (void)updateFilteredParties
@@ -223,6 +225,7 @@
     NSURL *url = [NSURL URLWithString: @"http://sugar.so"];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[Mixpanel sharedInstance] track:@"sugarSo" properties:@{@"canOpenURL": @"OK"}];
+        [[Mixpanel sharedInstance].people increment:@"sugarSo.canOpenURL" by:@1];
         [[UIApplication sharedApplication] openURL:url];
     }
 }
@@ -368,6 +371,7 @@
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         destController.party = party;
         [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueParty": party.title}];
+        [[Mixpanel sharedInstance].people increment:@"WDCPartiesTVC.SegueParty" by:@1];
     } else if ([segue.identifier isEqualToString:@"map"]) {
         if ([sender isKindOfClass:[NSNumber class]]) {
             NSInteger tag = [(NSNumber *)sender integerValue];
@@ -375,6 +379,7 @@
             WDCMapDayViewController *destController = (WDCMapDayViewController *)[navigationController topViewController];
             destController.parties = self.filteredParties[tag];
             [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueMap": [NSNumber numberWithInteger:tag]}];
+            [[Mixpanel sharedInstance].people increment:@"WDCPartiesTVC.SegueMap" by:@1];
         }
     }
 }

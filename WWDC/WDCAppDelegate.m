@@ -65,6 +65,19 @@
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
 
+    // get icloud user id
+    [[CKContainer defaultContainer] fetchUserRecordIDWithCompletionHandler:^(CKRecordID *userRecordID, NSError *error) {
+        if (error) {
+            [[Mixpanel sharedInstance] track:@"fetchUserRecord" properties:@{@"Status": @"Error"}];
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        } else {
+            if (userRecordID) {
+                [[Mixpanel sharedInstance] identify:userRecordID.recordName];
+                NSLog(@"userRecordID: %@", userRecordID.recordName);
+            }
+        }
+    }];
+
     return YES;
 }
 							

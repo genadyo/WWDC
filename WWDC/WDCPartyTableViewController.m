@@ -124,9 +124,11 @@
     if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
         [[WDCParties sharedInstance].going addObject:self.party.objectId];
         [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"Going": self.party.title}];
+        [[Mixpanel sharedInstance].people increment:@"updateGoing.Going" by:@1];
     } else {
         [[WDCParties sharedInstance].going removeObject:self.party.objectId];
         [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"NotGoing": self.party.title}];
+        [[Mixpanel sharedInstance].people increment:@"updateGoing.NotGoing" by:@1];
     }
     [self refreshGoing];
     [[WDCParties sharedInstance] saveGoing];
@@ -143,6 +145,7 @@
 - (IBAction)openMaps:(id)sender
 {
     [[Mixpanel sharedInstance] track:@"openMaps" properties:@{@"Party": self.party.title}];
+    [[Mixpanel sharedInstance].people increment:@"openMaps" by:@1];
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = [self.party.latitude floatValue];
     coordinate.longitude = [self.party.longitude floatValue];
@@ -251,10 +254,12 @@
         // open Uber or Safari
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
             [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"OK", @"Party": self.party.title}];
+            [[Mixpanel sharedInstance].people increment:@"openUber.OK" by:@1];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
                 [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"Web", @"Party": self.party.title}];
+                [[Mixpanel sharedInstance].people increment:@"openUber.Web" by:@1];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
@@ -297,6 +302,7 @@
         destController.title = self.party.title;
         destController.url = [NSURL URLWithString:self.party.url];
         [[Mixpanel sharedInstance] track:@"WDCPartyTableViewController" properties:@{@"SegueWeb": self.party.title}];
+        [[Mixpanel sharedInstance].people increment:@"WDCPartyTableViewController.SegueWeb" by:@1];
     }
 }
 
@@ -309,6 +315,7 @@
         case EKEventEditViewActionSaved:
             [controller.eventStore saveEvent:controller.event span:EKSpanThisEvent error:&error];
             [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Saved"}];
+            [[Mixpanel sharedInstance].people increment:@"eventEditViewController.Saved" by:@1];
             break;
         default:
             [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Other"}];

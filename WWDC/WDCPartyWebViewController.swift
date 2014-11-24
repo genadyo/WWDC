@@ -58,6 +58,9 @@ import WebKit
         activityViewController.completionHandler = {(activityType, completed:Bool) in
             let properties:NSDictionary = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
             Mixpanel.sharedInstance().track("Share", properties: properties)
+            if (completed) {
+                Mixpanel.sharedInstance().people.increment("Share", by: 1)
+            }
         }
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }

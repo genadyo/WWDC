@@ -78,6 +78,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
             let wdcParty = parties[rowIndex] as WDCParty
             let properties:NSDictionary = ["SegueParty": wdcParty.title!];
             Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
+            Mixpanel.sharedInstance().people.increment("WDCPartiesInterfaceController.SegueParty", by: 1)
             return wdcParty
         }
 
