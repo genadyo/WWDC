@@ -1,15 +1,18 @@
 PODS:
   - GoogleAnalytics-iOS-SDK (3.10)
+  - Mixpanel (2.5.4)
   - TMCache (1.2.2)
   - TUSafariActivity (1.0.2)
 
 DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
+  - Mixpanel
   - TMCache
   - TUSafariActivity
 
 SPEC CHECKSUMS:
   GoogleAnalytics-iOS-SDK: e5872d2acc120613d954320e206c7e3bc8357d7c
+  Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c
   TMCache: e2c9225de7a107b529d1d04baa58eb5eab3051f3
   TUSafariActivity: 63c6b0584d1f0a731e955c0e4d9c89cde63bedc2
 
