@@ -19,6 +19,15 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // Configure interface objects here.
         // NSLog("%@ init", self)
 
+        // Keys
+        let keys = SFPartiesKeys()
+        
+        // GAI
+        GAI.sharedInstance().trackerWithTrackingId(keys.googleAnalytics())
+
+        // Mixpanel
+        Mixpanel.sharedInstanceWithToken(keys.mixpanel())
+
         // load my table
         loadTableData()
     }
@@ -27,6 +36,11 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         // NSLog("%@ will activate", self)
+
+        // Google
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "WDCPartiesInterfaceController")
+        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {
@@ -61,7 +75,10 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         if segueIdentifier == "map" {
-            return parties[rowIndex]
+            let wdcParty = parties[rowIndex] as WDCParty
+            let properties:NSDictionary = ["SegueParty": wdcParty.title!];
+            Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
+            return wdcParty
         }
 
         return nil

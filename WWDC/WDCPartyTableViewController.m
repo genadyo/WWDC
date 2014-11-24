@@ -123,8 +123,10 @@
 {
     if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
         [[WDCParties sharedInstance].going addObject:self.party.objectId];
+        [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"Going": self.party.title}];
     } else {
         [[WDCParties sharedInstance].going removeObject:self.party.objectId];
+        [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"NotGoing": self.party.title}];
     }
     [self refreshGoing];
     [[WDCParties sharedInstance] saveGoing];
@@ -140,6 +142,7 @@
 
 - (IBAction)openMaps:(id)sender
 {
+    [[Mixpanel sharedInstance] track:@"openMaps" properties:@{@"Party": self.party.title}];
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = [self.party.latitude floatValue];
     coordinate.longitude = [self.party.longitude floatValue];
@@ -173,6 +176,7 @@
         [es requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
             if (granted) {
                 [self addEvent];
+                [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil)
                                                                     message:nil
@@ -180,12 +184,14 @@
                                                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                           otherButtonTitles:nil];
                 [alertView show];
+                [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
             }
         }];
     } else {
         BOOL granted = (authorizationStatus == EKAuthorizationStatusAuthorized);
         if (granted) {
             [self addEvent];
+            [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
         } else {
             UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil)
                                                                 message:nil
@@ -193,6 +199,7 @@
                                                       cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                       otherButtonTitles:nil];
             [alertView show];
+            [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
         }
     }
 }
@@ -243,9 +250,11 @@
 
         // open Uber or Safari
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
+            [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"OK", @"Party": self.party.title}];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
+                [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"Web", @"Party": self.party.title}];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
@@ -254,6 +263,7 @@
                                                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                           otherButtonTitles:nil];
                 [alertView show];
+                [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"Error", @"Party": self.party.title}];
             }
         }
     } else {
@@ -286,6 +296,7 @@
         WDCPartyWebViewController *destController = (WDCPartyWebViewController *)[segue destinationViewController];
         destController.title = self.party.title;
         destController.url = [NSURL URLWithString:self.party.url];
+        [[Mixpanel sharedInstance] track:@"WDCPartyTableViewController" properties:@{@"SegueWeb": self.party.title}];
     }
 }
 
@@ -297,8 +308,10 @@
     switch (action) {
         case EKEventEditViewActionSaved:
             [controller.eventStore saveEvent:controller.event span:EKSpanThisEvent error:&error];
+            [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Saved"}];
             break;
         default:
+            [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Other"}];
             break;
     }
     [controller dismissViewControllerAnimated:YES completion:nil];

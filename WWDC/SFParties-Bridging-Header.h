@@ -7,3 +7,4 @@
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
+#import <Mixpanel/Mixpanel.h>

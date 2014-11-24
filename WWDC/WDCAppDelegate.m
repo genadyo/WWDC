@@ -95,6 +95,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"Error"}];
+    NSLog(@"Error: %@ %@", error, [error userInfo]);
+}
+
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
@@ -114,19 +120,23 @@
             subscription.notificationInfo = notification;
             [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
                 if (error) {
+                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"OK"}];
                     NSLog(@"Error: %@ %@", error, [error userInfo]);
                 } else {
+                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"Error"}];
                     NSLog(@"Subscription: %@", subscription);
                 }
             }];
 
         }
     }];
+    [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"OK"}];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
+    [[Mixpanel sharedInstance] track:@"CKNotification" properties:@{@"Status": @"Opened"}];
 }
 
 #pragma mark - UISplitViewControllerDelegate

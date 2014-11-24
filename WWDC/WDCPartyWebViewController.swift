@@ -55,6 +55,10 @@ import WebKit
     @IBAction func share(sender: AnyObject) {
         let activity = TUSafariActivity() // open in safari
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [title!, url!], applicationActivities: [activity])
+        activityViewController.completionHandler = {(activityType, completed:Bool) in
+            let properties:NSDictionary = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
+            Mixpanel.sharedInstance().track("Share", properties: properties)
+        }
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 }

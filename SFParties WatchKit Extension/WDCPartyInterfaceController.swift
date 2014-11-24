@@ -39,6 +39,11 @@ class WDCPartyInterfaceController: WKInterfaceController {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         // NSLog("%@ will activate", self)
+
+        // Google
+        let tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: "WDCPartyInterfaceController")
+        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {

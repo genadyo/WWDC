@@ -116,7 +116,9 @@ static void *PartyKey = &PartyKey;
     if ([segue.identifier isEqualToString:@"party"]) {
         if ([sender isKindOfClass:[MKPointAnnotation class]]) {
             WDCPartyTableViewController *destController = segue.destinationViewController;
-            destController.party = ((MKPointAnnotation *)sender).party;
+            WDCParty *party = ((MKPointAnnotation *)sender).party;
+            destController.party = party;
+            [[Mixpanel sharedInstance] track:@"WDCMapDayViewController" properties:@{@"SegueParty": party.title}];
         }
     }
 }

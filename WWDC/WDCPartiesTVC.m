@@ -66,9 +66,19 @@
     [self updateFilteredParties];
 
     // ask for location once
-    self.locationManager = [[CLLocationManager alloc] init];
-    if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
+    CLAuthorizationStatus authorizationStatus = [CLLocationManager authorizationStatus];
+    if (authorizationStatus == kCLAuthorizationStatusNotDetermined) {
+        self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestWhenInUseAuthorization];
+        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"NotDetermined"}];
+    } else if (authorizationStatus == kCLAuthorizationStatusRestricted) {
+        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"Restricted"}];
+    } else if (authorizationStatus == kCLAuthorizationStatusDenied) {
+        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"Denied"}];
+    } else if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways) {
+        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"AuthorizedAlways"}];
+    } else if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"AuthorizedWhenInUse"}];
     }
 }
 
@@ -107,6 +117,7 @@
             if ([WDCParties sharedInstance].disableCache) {
                 [self.refreshControl endRefreshing];
             }
+            [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"OK", @"count": [NSNumber numberWithInteger:parties.count]}];
         }
     }];
 }
@@ -117,6 +128,7 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     [userDefaults setInteger:sender.selectedSegmentIndex forKey:@"selected"];
     [userDefaults synchronize];
+    [[Mixpanel sharedInstance] track:@"updateSegment" properties:@{@"refresh": [NSNumber numberWithInteger:sender.selectedSegmentIndex]}];
 }
 
 - (void)updateFilteredParties
@@ -167,6 +179,7 @@
         [alert addAction:ok];
         [alert addAction:cancel];
         [self presentViewController:alert animated:YES completion:nil];
+        [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"OK"}];
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please configure mail account", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -174,6 +187,7 @@
         }];
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
+        [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"Error"}];
     }
 }
 
@@ -181,18 +195,23 @@
 {
     switch (result) {
         case MFMailComposeResultCancelled:
+            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Cancelled"}];
             NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
             break;
         case MFMailComposeResultSaved:
+            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Saved"}];
             NSLog(@"Mail saved: you saved the email message in the drafts folder.");
             break;
         case MFMailComposeResultSent:
+            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Sent"}];
             NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
             break;
         case MFMailComposeResultFailed:
+            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Failed"}];
             NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
             break;
         default:
+            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Other"}];
             NSLog(@"Mail not sent.");
             break;
     }
@@ -203,6 +222,7 @@
 {
     NSURL *url = [NSURL URLWithString: @"http://sugar.so"];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[Mixpanel sharedInstance] track:@"sugarSo" properties:@{@"canOpenURL": @"OK"}];
         [[UIApplication sharedApplication] openURL:url];
     }
 }
@@ -345,13 +365,16 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         UINavigationController *navigationController = segue.destinationViewController;
         WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
-        destController.party = (self.filteredParties[indexPath.section])[indexPath.row];
+        WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
+        destController.party = party;
+        [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueParty": party.title}];
     } else if ([segue.identifier isEqualToString:@"map"]) {
         if ([sender isKindOfClass:[NSNumber class]]) {
             NSInteger tag = [(NSNumber *)sender integerValue];
             UINavigationController *navigationController = segue.destinationViewController;
             WDCMapDayViewController *destController = (WDCMapDayViewController *)[navigationController topViewController];
             destController.parties = self.filteredParties[tag];
+            [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueMap": [NSNumber numberWithInteger:tag]}];
         }
     }
 }
