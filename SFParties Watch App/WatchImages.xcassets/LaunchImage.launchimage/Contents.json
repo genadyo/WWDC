@@ -1,21 +1,19 @@
 {
   "images" : [
     {
-      "extent" : "full-screen",
-      "idiom" : "watch",
-      "subtype" : "38mm",
-      "filename" : "launch38.png",
-      "minimum-system-version" : "8.0",
       "orientation" : "portrait",
+      "idiom" : "watch",
+      "extent" : "full-screen",
+      "minimum-system-version" : "8.0",
+      "subtype" : "38mm",
       "scale" : "2x"
     },
     {
-      "extent" : "full-screen",
-      "idiom" : "watch",
-      "subtype" : "42mm",
-      "filename" : "launch42.png",
-      "minimum-system-version" : "8.0",
       "orientation" : "portrait",
+      "idiom" : "watch",
+      "extent" : "full-screen",
+      "minimum-system-version" : "8.0",
+      "subtype" : "42mm",
       "scale" : "2x"
     }
   ],
