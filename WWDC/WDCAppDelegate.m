@@ -40,9 +40,9 @@
     [Mixpanel sharedInstanceWithToken:keys.mixpanel];
 
 #if defined( DEBUG )
-    [Rollout setup:keys.rollout debug:YES];
+    [Rollout setupWithDebug:YES];
 #else
-    [Rollout setup:keys.rollout debug:NO];
+    [Rollout setupWithDebug:NO];
 #endif
 
     // Crashlytics
