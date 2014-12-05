@@ -1,16 +1,16 @@
 //
-//  Swiz.h
-//  MoMe
+//  Rollout SDK version 0.4.0
 //
-//  Created by eyal keren on 3/6/14.
-//  Copyright (c) 2014 eyal keren. All rights reserved.
+//  Copyright (c) 2014 Rollout.io. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
+#import "RolloutOptions.h"
 
 @interface Rollout : NSObject
 
-+(void) setup: (NSString*) projectId debug: (BOOL) debug withTracker:(void (^)(NSDictionary *data))track;
-+(void) setup: (NSString*) projectId debug: (BOOL) debug;
++(void) setupWithDebug: (BOOL) debug options:(RolloutOptions*)options;
++(void) setupWithDebug: (BOOL) debug;
++(void) setup: (NSString*) projectId debug: (BOOL) debug __attribute__ ((deprecated));
 
 @end
