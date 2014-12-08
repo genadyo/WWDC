@@ -92,6 +92,9 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
     dispatch_async(dispatch_get_main_queue(), ^{
+        // set again for better placement
+        [self.refreshControl endRefreshing];
+        self.refreshControl = [BDBSpinKitRefreshControl refreshControlWithStyle:RTSpinKitViewStyleThreeBounce color:[[UIView appearance] tintColor]];
         [self.tableView reloadData];
     });
 }
