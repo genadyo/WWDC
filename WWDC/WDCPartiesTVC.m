@@ -297,6 +297,7 @@
         cell = [tableView dequeueReusableCellWithIdentifier:@"empty" forIndexPath:indexPath];
     } else if ((indexPath.section == [self.filteredParties count]) && (indexPath.row == 0)) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"credits" forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     } else {
         WDCPartyTVC *partyCell = [tableView dequeueReusableCellWithIdentifier:@"party" forIndexPath:indexPath];
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
