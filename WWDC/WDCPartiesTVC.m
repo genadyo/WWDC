@@ -17,6 +17,7 @@
 #import "WDCPartyTVC.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
+#import <BDBSpinKitRefreshControl/BDBSpinKitRefreshControl.h>
 #import "SFParties-Swift.h"
 @import CoreLocation;
 
@@ -39,6 +40,9 @@
     // PaintCode
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
+
+    // cool refresh control animation
+    self.refreshControl = [BDBSpinKitRefreshControl refreshControlWithStyle:RTSpinKitViewStyleThreeBounce color:[[UIView appearance] tintColor]];
 
     // Google
     id tracker = [[GAI sharedInstance] defaultTracker];
