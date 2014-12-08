@@ -43,6 +43,7 @@
 
     // cool refresh control animation
     self.refreshControl = [BDBSpinKitRefreshControl refreshControlWithStyle:RTSpinKitViewStyleThreeBounce color:[[UIView appearance] tintColor]];
+    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
 
     // Google
     id tracker = [[GAI sharedInstance] defaultTracker];

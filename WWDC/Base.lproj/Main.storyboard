@@ -183,9 +183,6 @@ Title 2</string>
                     <size key="freeformSize" width="600" height="1000"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="t80-yZ-8c5">
                         <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <action selector="refresh:" destination="ZFk-xA-eIm" eventType="valueChanged" id="Jvo-c8-y9c"/>
-                        </connections>
                     </refreshControl>
                     <connections>
                         <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="6DZ-1r-4qv"/>
