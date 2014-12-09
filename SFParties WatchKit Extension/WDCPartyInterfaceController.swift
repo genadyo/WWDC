@@ -41,9 +41,9 @@ class WDCPartyInterfaceController: WKInterfaceController {
         // NSLog("%@ will activate", self)
 
         // Google
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "WDCPartyInterfaceController")
-        tracker.send(GAIDictionaryBuilder.createAppView().build())
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        tracker.set(kGAIScreenName, value: "WDCPartyInterfaceController")
+//        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {

@@ -20,13 +20,13 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // NSLog("%@ init", self)
 
         // Keys
-        let keys = SFPartiesKeys()
-        
+//        let keys = SFPartiesKeys()
+
         // GAI
-        GAI.sharedInstance().trackerWithTrackingId(keys.googleAnalytics())
+//        GAI.sharedInstance().trackerWithTrackingId(keys.googleAnalytics())
 
         // Mixpanel
-        Mixpanel.sharedInstanceWithToken(keys.mixpanel())
+//        Mixpanel.sharedInstanceWithToken(keys.mixpanel())
 
         // load my table
         loadTableData()
@@ -38,9 +38,9 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // NSLog("%@ will activate", self)
 
         // Google
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "WDCPartiesInterfaceController")
-        tracker.send(GAIDictionaryBuilder.createAppView().build())
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        tracker.set(kGAIScreenName, value: "WDCPartiesInterfaceController")
+//        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {
@@ -77,8 +77,8 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         if segueIdentifier == "map" {
             let wdcParty = parties[rowIndex] as WDCParty
             let properties:NSDictionary = ["SegueParty": wdcParty.title!];
-            Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
-            Mixpanel.sharedInstance().people.increment("WDCPartiesInterfaceController.SegueParty", by: 1)
+//            Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
+//            Mixpanel.sharedInstance().people.increment("WDCPartiesInterfaceController.SegueParty", by: 1)
             return wdcParty
         }
 
