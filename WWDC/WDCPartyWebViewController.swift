@@ -52,7 +52,7 @@ import WebKit
         }
     }
 
-    @IBAction func share(sender: AnyObject) {
+    @IBAction func share(sender: UIBarButtonItem) {
         let activity = TUSafariActivity() // open in safari
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [title!, url!], applicationActivities: [activity])
         activityViewController.completionHandler = {(activityType, completed:Bool) in
@@ -62,6 +62,7 @@ import WebKit
                 Mixpanel.sharedInstance().people.increment("Share", by: 1)
             }
         }
+        activityViewController.popoverPresentationController?.barButtonItem = sender
         self.presentViewController(activityViewController, animated: true, completion: nil)
     }
 }
