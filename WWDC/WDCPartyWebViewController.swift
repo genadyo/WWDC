@@ -56,7 +56,12 @@ import WebKit
         let activity = TUSafariActivity() // open in safari
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [title!, url!], applicationActivities: [activity])
         activityViewController.completionHandler = {(activityType, completed:Bool) in
-            let properties:NSDictionary = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
+            var properties:NSDictionary;
+            if activityType == nil {
+                properties = ["Party": self.title!, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
+            } else {
+                properties = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
+            }
             Mixpanel.sharedInstance().track("Share", properties: properties)
             if (completed) {
                 Mixpanel.sharedInstance().people.increment("Share", by: 1)
