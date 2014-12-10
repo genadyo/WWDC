@@ -176,7 +176,7 @@
     });
 }
 
-- (IBAction)addParty:(id)sender
+- (IBAction)addParty:(UIBarButtonItem *)sender
 {
     if ([MFMailComposeViewController canSendMail]) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please provide as many details as possible", nil) message:NSLocalizedString(@"We would really appreciate if you won't send us an empty mail", nil) preferredStyle:UIAlertControllerStyleActionSheet];
@@ -192,6 +192,9 @@
         }];
         [alert addAction:ok];
         [alert addAction:cancel];
+        alert.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *popoverPresentationController = [alert popoverPresentationController];
+        popoverPresentationController.barButtonItem = sender;
         [self presentViewController:alert animated:YES completion:nil];
         [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"OK"}];
     } else {
@@ -200,6 +203,9 @@
             [alert dismissViewControllerAnimated:YES completion:nil];
         }];
         [alert addAction:ok];
+        alert.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *popoverPresentationController = [alert popoverPresentationController];
+        popoverPresentationController.barButtonItem = sender;
         [self presentViewController:alert animated:YES completion:nil];
         [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"Error"}];
     }
