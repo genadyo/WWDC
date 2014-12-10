@@ -12,9 +12,9 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTable: WKInterfaceTable!
     var parties :NSArray!
 
-    override init(context: AnyObject?) {
+    override func awakeWithContext(context: AnyObject!) {
         // Initialize variables here.
-        super.init(context: context)
+        super.awakeWithContext(context)
         
         // Configure interface objects here.
         // NSLog("%@ init", self)

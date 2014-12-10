@@ -14,13 +14,13 @@ class WDCPartyInterfaceController: WKInterfaceController {
     @IBOutlet weak var addressLabel: WKInterfaceLabel!
     var party: WDCParty!
     
-    override init(context: AnyObject?) {
+    override func awakeWithContext(context: AnyObject!) {
         // party
         precondition(context is WDCParty, "Expected class of `context` to be WDCParty.")
         party = context as WDCParty
 
         // Initialize variables here.
-        super.init(context: context)
+        super.awakeWithContext(context)
 
         // Set the title of the interface controller based on the party name.
         setTitle(party.title)
@@ -28,7 +28,7 @@ class WDCPartyInterfaceController: WKInterfaceController {
         // setup interface
         dateLabel.setText(party.shortDate)
         addressLabel.setText(party.address1 + ", " + party.address2)
-        map.setCoordinateRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
+        map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
         map.addAnnotation(CLLocationCoordinate2DMake(party.latitude.doubleValue, party.longitude.doubleValue), withPinColor: .Green)
 
         // Configure interface objects here.
