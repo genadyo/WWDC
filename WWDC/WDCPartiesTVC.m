@@ -203,9 +203,6 @@
             [alert dismissViewControllerAnimated:YES completion:nil];
         }];
         [alert addAction:ok];
-        alert.modalPresentationStyle = UIModalPresentationPopover;
-        UIPopoverPresentationController *popoverPresentationController = [alert popoverPresentationController];
-        popoverPresentationController.barButtonItem = sender;
         [self presentViewController:alert animated:YES completion:nil];
         [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"Error"}];
     }

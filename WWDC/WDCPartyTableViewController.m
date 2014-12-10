@@ -181,12 +181,12 @@
                 [self addEvent];
                 [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
             } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil)
-                                                                    message:nil
-                                                                   delegate:self
-                                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                          otherButtonTitles:nil];
-                [alertView show];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                    [alert dismissViewControllerAnimated:YES completion:nil];
+                }];
+                [alert addAction:ok];
+                [self presentViewController:alert animated:YES completion:nil];
                 [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
             }
         }];
@@ -196,12 +196,12 @@
             [self addEvent];
             [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
         } else {
-            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil)
-                                                                message:nil
-                                                               delegate:self
-                                                      cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                      otherButtonTitles:nil];
-            [alertView show];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
+                [alert dismissViewControllerAnimated:YES completion:nil];
+            }];
+            [alert addAction:ok];
+            [self presentViewController:alert animated:YES completion:nil];
             [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
         }
     }
