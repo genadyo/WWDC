@@ -17,7 +17,6 @@
 #import "WDCPartyTVC.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
-#import <BDBSpinKitRefreshControl/BDBSpinKitRefreshControl.h>
 #import "SFParties-Swift.h"
 @import CoreLocation;
 
@@ -63,10 +62,6 @@
 {
     [super viewWillAppear:animated];
 
-    // cool refresh control animation
-    self.refreshControl = [BDBSpinKitRefreshControl refreshControlWithStyle:RTSpinKitViewStyleThreeBounce color:[[UIView appearance] tintColor]];
-    [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
-
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
     [self updateFilteredParties];
 
@@ -92,9 +87,6 @@
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
 
     dispatch_async(dispatch_get_main_queue(), ^{
-        // set again for better placement
-        [self.refreshControl endRefreshing];
-        self.refreshControl = [BDBSpinKitRefreshControl refreshControlWithStyle:RTSpinKitViewStyleThreeBounce color:[[UIView appearance] tintColor]];
         [self.tableView reloadData];
     });
 }

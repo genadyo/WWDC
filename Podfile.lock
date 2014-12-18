@@ -1,26 +1,20 @@
 PODS:
-  - BDBSpinKitRefreshControl (1.0.2):
-    - SpinKit (~> 1.0)
   - GoogleAnalytics-iOS-SDK (3.10):
     - GoogleAnalytics-iOS-SDK/Core (= 3.10)
   - GoogleAnalytics-iOS-SDK/Core (3.10)
   - Mixpanel (2.5.4)
-  - SpinKit (1.2.0)
   - TMCache (1.2.2)
   - TUSafariActivity (1.0.2)
 
 DEPENDENCIES:
-  - BDBSpinKitRefreshControl (= 1.0.2)
   - GoogleAnalytics-iOS-SDK
   - Mixpanel
   - TMCache
   - TUSafariActivity
 
 SPEC CHECKSUMS:
-  BDBSpinKitRefreshControl: 76fd4f85a5410d05ac70833b0bcc256fcfcad422
   GoogleAnalytics-iOS-SDK: f422062075d9ccb1ea8d783fc5ba3829461e9502
   Mixpanel: 87167a0b0a74f11f0ee3787f291357494730617c
-  SpinKit: 11fa465172473ce3d59a80bf0449020b850e5229
   TMCache: e2c9225de7a107b529d1d04baa58eb5eab3051f3
   TUSafariActivity: 63c6b0584d1f0a731e955c0e4d9c89cde63bedc2
 
