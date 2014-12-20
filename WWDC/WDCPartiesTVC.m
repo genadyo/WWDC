@@ -110,7 +110,11 @@
             NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
             NSMutableArray *array = [[NSMutableArray alloc] init];
             for (NSString *key in sortedKeys) {
-                [array addObject:[dict objectForKey:key]];
+                NSArray *sortDesc = @[
+                                      [NSSortDescriptor sortDescriptorWithKey:@"startDate" ascending:YES],
+                                      [NSSortDescriptor sortDescriptorWithKey:@"title" ascending:YES selector:@selector(caseInsensitiveCompare:)]
+                                      ];
+                [array addObject:[[dict objectForKey:key] sortedArrayUsingDescriptors:sortDesc]];
             }
             self.parties = [array copy];
             [self updateFilteredParties];
