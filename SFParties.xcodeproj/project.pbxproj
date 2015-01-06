@@ -11,6 +11,7 @@
 		26BD8DBBF9765E3111962A78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 		7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 		ADEDFB095B88444593530B4E /* RolloutDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		B2174D471A5C7FF70078B843 /* SFParties WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
@@ -52,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B2174D481A5C7FF70078B843 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2F01C5E1A1F841D00F1AC70;
+			remoteInfo = "SFParties WatchKit Extension";
+		};
 		B2F01C721A1F841D00F1AC70 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
@@ -69,6 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		B2174D4A1A5C7FF70078B843 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B2174D471A5C7FF70078B843 /* SFParties WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B2F01CAB1A1F918800F1AC70 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -377,11 +396,13 @@
 				B23AFA87192814A600C2A060 /* ShellScript */,
 				1CB374A1EF2A4FD38478E741 /* Copy Pods Resources */,
 				B2F01CAB1A1F918800F1AC70 /* Embed Frameworks */,
+				B2174D4A1A5C7FF70078B843 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				B2F01CCA1A1F91DD00F1AC70 /* PBXTargetDependency */,
+				B2174D491A5C7FF70078B843 /* PBXTargetDependency */,
 			);
 			name = SFParties;
 			productName = WWDC;
@@ -711,6 +732,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B2174D491A5C7FF70078B843 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B2F01C5E1A1F841D00F1AC70 /* SFParties WatchKit Extension */;
+			targetProxy = B2174D481A5C7FF70078B843 /* PBXContainerItemProxy */;
+		};
 		B2F01C731A1F841D00F1AC70 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B2F01C6F1A1F841D00F1AC70 /* SFParties Watch App */;
@@ -828,6 +854,7 @@
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -862,6 +889,7 @@
 				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
