@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "size" : "14.5x14.5",
+      "size" : "22x22",
       "idiom" : "watch",
       "scale" : "2x",
       "filename" : "29.png",
@@ -9,7 +9,7 @@
       "subtype" : "38mm"
     },
     {
-      "size" : "18x18",
+      "size" : "27.5x27.5",
       "idiom" : "watch",
       "scale" : "2x",
       "filename" : "36.png",
@@ -26,7 +26,7 @@
     {
       "size" : "29.3x29.3",
       "idiom" : "watch",
-      "filename" : "87.png",
+      "filename" : "88-1-1.png",
       "role" : "companionSettings",
       "scale" : "3x"
     },
