@@ -12,7 +12,6 @@ class WDCPartyInterfaceController: WKInterfaceController {
     @IBOutlet weak var map: WKInterfaceMap!
     @IBOutlet weak var dateLabel: WKInterfaceLabel!
     @IBOutlet weak var addressLabel: WKInterfaceLabel!
-    @IBOutlet weak var titleLabel: WKInterfaceLabel!
     var party: WDCParty!
     
     override func awakeWithContext(context: AnyObject!) {
@@ -24,7 +23,6 @@ class WDCPartyInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
 
         // setup interface
-        titleLabel.setText(party.title)
         dateLabel.setText(party.shortDate)
         addressLabel.setText(party.address1 + ", " + party.address2)
         map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
