@@ -16,7 +16,7 @@
                                     <group key="rootItem" width="1" height="90" alignment="left" spacing="6" id="n3X-vW-WdA">
                                         <items>
                                             <imageView width="45" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
-                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="0" id="e94-gW-zJs">
+                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="0" minimumScaleFactor="0.80000000000000004" id="e94-gW-zJs">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                             </label>
                                         </items>
@@ -59,11 +59,14 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="ViA-Rh-cgi">
                             <items>
-                                <map height="110" alignment="left" id="nkF-cN-app">
-                                    <variation key="device=watch38mm" height="90"/>
-                                    <variation key="device=watch42mm" height="110"/>
+                                <label alignment="left" text="Title" minimumScaleFactor="0.80000000000000004" id="reO-ng-2f9">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <map height="88" alignment="left" id="nkF-cN-app">
+                                    <variation key="device=watch38mm" height="68"/>
+                                    <variation key="device=watch42mm" height="88"/>
                                 </map>
-                                <label alignment="left" text="Address" numberOfLines="2" id="r6c-JC-kFp">
+                                <label alignment="left" text="Address" numberOfLines="2" minimumScaleFactor="0.80000000000000004" id="r6c-JC-kFp">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                                 </label>
                                 <label alignment="left" text="Date" id="N63-05-5dy">
@@ -77,6 +80,7 @@
                         <outlet property="addressLabel" destination="r6c-JC-kFp" id="ReY-Tt-CN7"/>
                         <outlet property="dateLabel" destination="N63-05-5dy" id="GrC-r1-ylI"/>
                         <outlet property="map" destination="nkF-cN-app" id="ASk-9b-IQU"/>
+                        <outlet property="titleLabel" destination="reO-ng-2f9" id="nFU-IE-kHT"/>
                     </connections>
                 </controller>
             </objects>
