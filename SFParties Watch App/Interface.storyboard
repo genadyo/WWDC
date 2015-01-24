@@ -13,15 +13,15 @@
                         <table alignment="left" id="hyb-yL-kQ3">
                             <items>
                                 <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="90" alignment="left" spacing="6" id="n3X-vW-WdA">
+                                    <group key="rootItem" width="1" height="85" alignment="left" spacing="3" id="n3X-vW-WdA">
                                         <items>
-                                            <imageView width="45" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
-                                            <label alignment="left" verticalAlignment="center" text="Name" numberOfLines="0" minimumScaleFactor="0.80000000000000004" id="e94-gW-zJs">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
+                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="0" id="e94-gW-zJs">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                        <edgeInsets key="margins" left="3" right="3" top="3" bottom="3"/>
                                         <connections>
                                             <segue destination="k6q-35-Xcc" kind="push" identifier="map" id="Tuv-Qr-7pb"/>
                                         </connections>
