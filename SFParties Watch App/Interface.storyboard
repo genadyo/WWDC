@@ -59,12 +59,12 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="ViA-Rh-cgi">
                             <items>
-                                <label alignment="left" text="Title" minimumScaleFactor="0.75" id="reO-ng-2f9">
+                                <label alignment="left" text="Title" numberOfLines="2" id="reO-ng-2f9">
                                     <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
                                 </label>
-                                <map height="88" alignment="left" id="nkF-cN-app">
-                                    <variation key="device=watch38mm" height="68"/>
-                                    <variation key="device=watch42mm" height="88"/>
+                                <map height="73" alignment="left" id="nkF-cN-app">
+                                    <variation key="device=watch38mm" height="53"/>
+                                    <variation key="device=watch42mm" height="73"/>
                                 </map>
                                 <label alignment="left" text="Address" numberOfLines="2" minimumScaleFactor="0.99999999999999989" id="r6c-JC-kFp">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption2"/>

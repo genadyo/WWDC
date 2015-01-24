@@ -24,7 +24,7 @@ class WDCPartyInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
 
         // Set the title of be short
-        setTitle("Info")
+        setTitle("Parties")
 
         // setup interface
         titleLabel.setText(party.title)
