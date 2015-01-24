@@ -15,9 +15,13 @@ See you there!
 Please note: Parties for WWDC is created by an independent developer, who is in no way affiliated with Apple, Inc.
 
 #### Parties for iOS:
-![Parties for iOS](/Assets/iOS1.png?raw=true "Parties for iOS")
-![Parties for iOS](/Assets/iOS2.png?raw=true "Parties for iOS")
+<p align="center">
+  <img src="/Assets/iOS1.png?raw=true" alt="Parties for iOS"/>
+  <img src="/Assets/iOS2.png?raw=true" alt="Parties for iOS"/>
+</p>
 
 #### Parties for Apple Watch:
-![Parties for Apple Watch](/Assets/watch1.png?raw=true "Parties for Apple Watch")
-![Parties for Apple Watch](/Assets/watch2.png?raw=true "Parties for Apple Watch")
+<p align="center">
+  <img src="/Assets/watch1.png?raw=true" alt="Parties for Apple Watch"/>
+  <img src="/Assets/watch2.png?raw=true" alt="Parties for Apple Watch"/>
+</p>
