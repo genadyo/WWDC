@@ -16,7 +16,7 @@
                                     <group key="rootItem" width="1" height="80" alignment="left" spacing="2" id="n3X-vW-WdA">
                                         <items>
                                             <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
-                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="0" id="e94-gW-zJs">
+                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="4" id="e94-gW-zJs">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
@@ -34,7 +34,7 @@
                                 <tableRow identifier="empty" selectable="NO" id="Zav-JE-bOE">
                                     <group key="rootItem" width="1" height="80" alignment="left" spacing="6" id="axc-R7-gVo">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="3" id="e4r-3b-be9">
+                                            <label alignment="center" verticalAlignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="4" id="e4r-3b-be9">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
@@ -59,11 +59,8 @@
                     <items>
                         <group width="1" alignment="left" layout="vertical" id="ViA-Rh-cgi">
                             <items>
-                                <map height="100" alignment="left" id="nkF-cN-app">
-                                    <variation key="device=watch38mm" height="90"/>
-                                    <variation key="device=watch42mm" height="100"/>
-                                </map>
-                                <label alignment="left" text="Address" numberOfLines="2" minimumScaleFactor="0.99999999999999989" id="r6c-JC-kFp">
+                                <map alignment="left" id="nkF-cN-app"/>
+                                <label alignment="left" text="Address" numberOfLines="3" minimumScaleFactor="0.99999999999999989" id="r6c-JC-kFp">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                 </label>
                                 <label alignment="left" text="Date" id="N63-05-5dy">
