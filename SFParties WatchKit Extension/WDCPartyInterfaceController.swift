@@ -23,9 +23,6 @@ class WDCPartyInterfaceController: WKInterfaceController {
         // Initialize variables here.
         super.awakeWithContext(context)
 
-        // Set the title of be short
-        setTitle("Parties")
-
         // setup interface
         titleLabel.setText(party.title)
         dateLabel.setText(party.shortDate)

@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
     </dependencies>
     <scenes>
-        <!--Parties-->
+        <!--Parties Interface Controller-->
         <scene sceneID="Csz-Kb-ffj">
             <objects>
-                <controller title="Parties" id="KgC-FO-I1c" customClass="WDCPartiesInterfaceController" customModule="SFParties_WatchKit_Extension">
+                <controller id="KgC-FO-I1c" customClass="WDCPartiesInterfaceController" customModule="SFParties_WatchKit_Extension">
                     <items>
                         <table alignment="left" id="hyb-yL-kQ3">
                             <items>
