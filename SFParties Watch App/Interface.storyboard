@@ -32,7 +32,7 @@
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="empty" selectable="NO" id="Zav-JE-bOE">
-                                    <group key="rootItem" width="1" height="80" alignment="left" spacing="6" id="axc-R7-gVo">
+                                    <group key="rootItem" width="1" height="1" alignment="left" spacing="2" id="axc-R7-gVo">
                                         <items>
                                             <label alignment="center" verticalAlignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="4" id="e4r-3b-be9">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
