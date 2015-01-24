@@ -3,13 +3,13 @@ Parties for WWDC
 
 ###[Read the story behind Parties for WWDC](https://medium.com/p/86d13d4cad7d)
 
-## Parties for iOS:
+## Parties for iPhone:
 <p align="center">
   <img src="/Assets/screen1-6.png?raw=true" alt="Parties for iOS" width="300"/>
   <img src="/Assets/screen2-6.png?raw=true" alt="Parties for iOS" width="300"/>
 </p>
 
-## Parties for Apple Watch:
+## Parties for WATCH:
 <p align="center">
   <img src="/Assets/watch1.png?raw=true" alt="Parties for Apple Watch" width="300"/>
   <img src="/Assets/watch2.png?raw=true" alt="Parties for Apple Watch" width="300"/>
