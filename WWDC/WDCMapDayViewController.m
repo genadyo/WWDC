@@ -16,25 +16,25 @@
 #import "WDCParties.h"
 @import MapKit;
 
-@interface NSObject (ExampleCategoryWithProperty)
+@interface MKPointAnnotation (WDCPointAnnotation)
 
 @property (strong, nonatomic) WDCParty *party;
 
 @end
 
 
-static void *PartyKey = &PartyKey;
+static const char kPartyKey;
 
 @implementation MKPointAnnotation (WDCPointAnnotation)
 
 - (WDCParty *)party
 {
-    return objc_getAssociatedObject(self, PartyKey);
+    return objc_getAssociatedObject(self, &kPartyKey);
 }
 
 - (void)setParty:(WDCParty *)party
 {
-    objc_setAssociatedObject(self, PartyKey, party, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, &kPartyKey, party, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 @end
