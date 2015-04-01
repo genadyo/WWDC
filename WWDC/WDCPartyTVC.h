@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SFParties-Swift.h"
+#import "Parties-Swift.h"
 
 @interface WDCPartyTVC : UITableViewCell
 

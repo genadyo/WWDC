@@ -17,7 +17,7 @@
 #import "WDCPartyTVC.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
-#import "SFParties-Swift.h"
+#import "Parties-Swift.h"
 @import CoreLocation;
 
 @interface WDCPartiesTVC () <MFMailComposeViewControllerDelegate>

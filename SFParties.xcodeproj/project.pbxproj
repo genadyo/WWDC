@@ -126,7 +126,7 @@
 		B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyInterfaceController.swift; sourceTree = "<group>"; };
 		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
 		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
-		B2D4AEE019276A1E00C5B0E8 /* SFParties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SFParties.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B2D4AEE019276A1E00C5B0E8 /* Parties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -233,7 +233,7 @@
 		B2D4AEE119276A1E00C5B0E8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B2D4AEE019276A1E00C5B0E8 /* SFParties.app */,
+				B2D4AEE019276A1E00C5B0E8 /* Parties.app */,
 				B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */,
 				B2F01C701A1F841D00F1AC70 /* SFParties Watch App.app */,
 				B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */,
@@ -406,7 +406,7 @@
 			);
 			name = SFParties;
 			productName = WWDC;
-			productReference = B2D4AEE019276A1E00C5B0E8 /* SFParties.app */;
+			productReference = B2D4AEE019276A1E00C5B0E8 /* Parties.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B2F01C5E1A1F841D00F1AC70 /* SFParties WatchKit Extension */ = {
@@ -805,6 +805,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -840,6 +841,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -873,7 +875,7 @@
 					"$(PROJECT_DIR)",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = SFParties;
+				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -907,7 +909,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				PRODUCT_NAME = SFParties;
+				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
