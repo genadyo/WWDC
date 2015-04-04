@@ -23,6 +23,7 @@ class WDCPartyInterfaceController: WKInterfaceController {
         super.awakeWithContext(context)
 
         // setup interface
+        setTitle(party.title)
         dateLabel.setText(party.shortDate)
         addressLabel.setText(party.address1 + ", " + party.address2)
         map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
