@@ -67,10 +67,12 @@ class WDCPartiesInterfaceController: WKInterfaceController {
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
                     row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
-                } else if WKInterfaceDevice().addCachedImage(wdcParty.watchIcon, name: wdcParty.objectId) {
-                    row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
-                } else {
-                    row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+                } else if wdcParty.watchIcon != nil {
+                    if WKInterfaceDevice().addCachedImage(wdcParty.watchIcon, name: wdcParty.objectId) {
+                        row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
+                    } else {
+                        row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+                    }
                 }
             }
         }
