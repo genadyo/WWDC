@@ -43,6 +43,14 @@
 {
     [super viewDidLoad];
 
+    // Handoff
+    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:@"so.sugar.SFParties.view"];
+    activity.title = self.party.title;
+    activity.userInfo = @{@"objectId": self.party.objectId};
+    activity.webpageURL = [NSURL URLWithString:self.party.url];
+    self.userActivity = activity;
+    [self.userActivity becomeCurrent];
+
     // Google
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"WDCPartyTableViewController"];

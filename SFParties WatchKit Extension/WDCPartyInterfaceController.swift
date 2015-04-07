@@ -29,6 +29,9 @@ class WDCPartyInterfaceController: WKInterfaceController {
         map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
         map.addAnnotation(CLLocationCoordinate2DMake(party.latitude.doubleValue, party.longitude.doubleValue), withPinColor: .Green)
 
+        // Handoff
+        self.updateUserActivity("so.sugar.SFParties.view", userInfo: ["objectId": self.party.objectId], webpageURL: NSURL(string: self.party.url))
+
         // Configure interface objects here.
         // NSLog("%@ init", self)
     }
