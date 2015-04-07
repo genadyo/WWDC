@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14C78c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRq-sp-E9p">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BRq-sp-E9p">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -38,7 +38,7 @@
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             </variation>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-aa-Fj9" customClass="WDCGoing" customModule="SFParties">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-aa-Fj9" customClass="WDCGoing" customModule="Parties">
                                             <rect key="frame" x="567" y="32" width="13" height="10"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -122,7 +122,7 @@ Title 2</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ve-cCx">
                                             <rect key="frame" x="191.5" y="187" width="217" height="131"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-YA-JCL" customClass="WDCBlankstate" customModule="SFParties">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-YA-JCL" customClass="WDCBlankstate" customModule="Parties">
                                                     <rect key="frame" x="53" y="0.0" width="112" height="88"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -398,7 +398,7 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar" customModule="SFParties">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xyj-3Y-qwX" customClass="WDCAddToCalendar" customModule="Parties">
                                                     <rect key="frame" x="20" y="24" width="38" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -485,7 +485,7 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-l6-djE" customClass="WDCLocation" customModule="SFParties">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GR3-l6-djE" customClass="WDCLocation" customModule="Parties">
                                                     <rect key="frame" x="20" y="23" width="24" height="32"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -637,7 +637,7 @@ Title2</string>
         <!--Party Web View Controller-->
         <scene sceneID="AWJ-Zz-Bcl">
             <objects>
-                <viewController id="nTG-UA-Uiv" customClass="WDCPartyWebViewController" customModule="SFParties" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nTG-UA-Uiv" customClass="WDCPartyWebViewController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XSF-FG-JOK"/>
                         <viewControllerLayoutGuide type="bottom" id="ArC-4m-IVg"/>
