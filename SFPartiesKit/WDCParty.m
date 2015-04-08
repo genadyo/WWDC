@@ -233,15 +233,6 @@
     [userDefaults synchronize];
 }
 
-- (UIImage *)watchIcon
-{
-    if (_watchIcon == nil) {
-        return [WDCParty imageWithImage:[UIImage imageNamed:@"default"] scaledToMaxWidth:35.0f maxHeight:35.0f];
-    }
-
-    return _watchIcon;
-}
-
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)size
 {
     if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
