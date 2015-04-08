@@ -7,6 +7,7 @@
 //
 
 #import <TMCache/TMCache.h>
+#import "WDCParties.h"
 #import "WDCParty.h"
 
 @interface WDCParty()
@@ -231,6 +232,11 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     [userDefaults setObject:UIImagePNGRepresentation(resizeIcon) forKey:[self iconCacheKey]];
     [userDefaults synchronize];
+
+    // save going
+    if ([[WDCParties sharedInstance].going indexOfObject:self.objectId] != NSNotFound) {
+        [[WDCParties sharedInstance] saveGoing];
+    }
 }
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)size
