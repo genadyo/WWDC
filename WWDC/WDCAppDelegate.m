@@ -119,6 +119,16 @@
     return NO;
 }
 
+- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
+    NSString *objectId = userActivity.userInfo[@"objectId"];
+    if (objectId != nil) {
+        self.partyObjectId = objectId;
+        return YES;
+    }
+
+    return NO;
+}
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"Error"}];
