@@ -14,6 +14,7 @@
 @interface WDCParties()
 
 @property (strong, nonatomic) MMWormhole *wormhole;
+@property (strong, nonatomic) dispatch_queue_t serialQueue;
 
 @end
 
@@ -25,6 +26,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[WDCParties alloc] init];
+        sharedInstance.serialQueue = dispatch_queue_create("group.so.sugar.SFParties.queue", DISPATCH_QUEUE_SERIAL);
         sharedInstance.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.so.sugar.SFParties" optionalDirectory:@"wormhole"];
     });
     return sharedInstance;
@@ -143,7 +145,7 @@
 
 - (void)saveGoing
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(self.serialQueue, ^{
         NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
         NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.going];
         [userDefaults setObject:data forKey:@"going"];
