@@ -110,6 +110,11 @@
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
 }
 
+- (void)updateUserActivityState:(NSUserActivity *)activity {
+    [activity addUserInfoEntriesFromDictionary:@{@"objectId": self.party.objectId}];
+    [super updateUserActivityState:activity];
+}
+
 - (void)refreshGoing
 {
     if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
