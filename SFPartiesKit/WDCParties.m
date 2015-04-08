@@ -7,8 +7,15 @@
 //
 
 @import CloudKit;
+#import <MMWormhole/MMWormhole.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
+
+@interface WDCParties()
+
+@property (strong, nonatomic) MMWormhole *wormhole;
+
+@end
 
 @implementation WDCParties
 
@@ -18,6 +25,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[WDCParties alloc] init];
+        sharedInstance.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.so.sugar.SFParties" optionalDirectory:@"wormhole"];
     });
     return sharedInstance;
 }
@@ -176,6 +184,8 @@
         }
         
         [userDefaults synchronize];
+
+        [self.wormhole passMessageObject:@{@"action" : @"saveGoing"} identifier:@"loadTableData"];
     });
 }
 

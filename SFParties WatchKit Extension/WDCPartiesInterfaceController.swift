@@ -10,7 +10,8 @@ import WatchKit
 
 class WDCPartiesInterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTable: WKInterfaceTable!
-    var parties :NSArray!
+    var parties: NSArray!
+    var wormhole: MMWormhole?
 
     override func awakeWithContext(context: AnyObject!) {
         // Initialize variables here.
@@ -30,6 +31,12 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
         // load my table
         loadTableData()
+
+        wormhole = MMWormhole(applicationGroupIdentifier: "group.so.sugar.SFParties", optionalDirectory: "wormhole")
+        wormhole!.listenForMessageWithIdentifier("loadTableData") { [weak self] _ in
+            self?.loadTableData()
+            return
+        }
     }
 
     override func willActivate() {
