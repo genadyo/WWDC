@@ -20,6 +20,19 @@
 	<string>8.2.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>so.sugar.SFParties</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>parties</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>96</string>
 	<key>Fabric</key>

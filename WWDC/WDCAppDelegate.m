@@ -108,6 +108,17 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+{
+    NSString *partiesDeeplinkPrefix = @"parties://party/";
+    if ([url.absoluteString hasPrefix:partiesDeeplinkPrefix]) {
+        self.partyObjectId = [url.absoluteString substringFromIndex:partiesDeeplinkPrefix.length];
+        return YES;
+    }
+
+    return NO;
+}
+
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"Error"}];

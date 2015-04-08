@@ -11,5 +11,6 @@
 @interface WDCAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) NSString *partyObjectId;
 
 @end

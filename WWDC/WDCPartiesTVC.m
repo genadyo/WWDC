@@ -18,6 +18,7 @@
 #import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
+#import "WDCAppDelegate.h"
 @import CoreLocation;
 
 @interface WDCPartiesTVC () <MFMailComposeViewControllerDelegate>
@@ -27,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *goingSegmentedControl;
 @property (strong, nonatomic) NSMutableArray *observers;
 @property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) JVObserver *objectIdObserver;
 
 @end
 
@@ -80,6 +82,24 @@
     } else if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
         [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"AuthorizedWhenInUse"}];
     }
+
+    WDCAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    self.objectIdObserver = [JVObserver observerForObject:appDelegate keyPath:@"partyObjectId" target:self block:^(__weak typeof(self) self) {
+        if (!appDelegate.partyObjectId) {
+            return;
+        }
+
+        NSString *partyObjectId = appDelegate.partyObjectId;
+        appDelegate.partyObjectId = nil;
+        for (NSArray *partiesArray in self.parties) {
+            for (WDCParty *party in partiesArray) {
+                if (party.show == YES && [party.objectId isEqualToString:partyObjectId]) {
+                    [self performSegueWithIdentifier:@"party" sender:party];
+                    return;
+                }
+            }
+        }
+    }];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
@@ -377,10 +397,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"party"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        WDCParty *party;
+        if ([sender isKindOfClass:[WDCParty class]]) {
+            party = (WDCParty *)sender;
+        } else {
+            NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+            party = (self.filteredParties[indexPath.section])[indexPath.row];
+        }
         UINavigationController *navigationController = segue.destinationViewController;
         WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
-        WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         destController.party = party;
         [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueParty": party.title}];
         [[Mixpanel sharedInstance].people increment:@"WDCPartiesTVC.SegueParty" by:@1];
