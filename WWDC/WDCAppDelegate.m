@@ -14,7 +14,7 @@
 #import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
-#import <CocoaPods-Keys/SFPartiesKeys.h>
+#import <Keys/SFPartiesKeys.h>
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
 

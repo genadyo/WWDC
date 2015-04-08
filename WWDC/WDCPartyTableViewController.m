@@ -17,7 +17,7 @@
 #import "WDCPartiesTVC.h"
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
-#import <CocoaPods-Keys/SFPartiesKeys.h>
+#import <Keys/SFPartiesKeys.h>
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate>
 
