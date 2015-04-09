@@ -55,14 +55,16 @@ import WebKit
     @IBAction func share(sender: UIBarButtonItem) {
         let activity = TUSafariActivity() // open in safari
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [title!, url!], applicationActivities: [activity])
-        activityViewController.completionHandler = {(activityType, completed:Bool) in
-            var properties:NSDictionary;
-            if activityType == nil {
-                properties = ["Party": self.title!, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
-            } else {
-                properties = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
+        activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, _, _ in
+            if let title = self?.title {
+                var properties:NSDictionary;
+                if activityType == nil {
+                    properties = ["Party": title, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
+                } else {
+                    properties = ["Party": title, "activityType": activityType, "completed": NSNumber(bool: completed)];
+                }
+                Mixpanel.sharedInstance().track("Share", properties: properties as [NSObject : AnyObject])
             }
-            Mixpanel.sharedInstance().track("Share", properties: properties as [NSObject : AnyObject])
             if (completed) {
                 Mixpanel.sharedInstance().people.increment("Share", by: 1)
             }
