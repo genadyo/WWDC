@@ -35,7 +35,7 @@ import WebKit
         // Google
         let tracker = GAI.sharedInstance().defaultTracker
         tracker.set(kGAIScreenName, value: "WDCPartyWebViewController")
-        tracker.send(GAIDictionaryBuilder.createAppView().build())
+        tracker.send(GAIDictionaryBuilder.createAppView().build().copy() as! [NSObject : AnyObject])
 
         // load url
         webView.loadRequest(NSURLRequest(URL:url!))
@@ -62,7 +62,7 @@ import WebKit
             } else {
                 properties = ["Party": self.title!, "activityType": activityType, "completed": NSNumber(bool: completed)];
             }
-            Mixpanel.sharedInstance().track("Share", properties: properties)
+            Mixpanel.sharedInstance().track("Share", properties: properties as [NSObject : AnyObject])
             if (completed) {
                 Mixpanel.sharedInstance().people.increment("Share", by: 1)
             }

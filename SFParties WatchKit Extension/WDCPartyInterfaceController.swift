@@ -17,7 +17,7 @@ class WDCPartyInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject!) {
         // party
         precondition(context is WDCParty, "Expected class of `context` to be WDCParty.")
-        party = context as WDCParty
+        party = context as! WDCParty
 
         // Initialize variables here.
         super.awakeWithContext(context)

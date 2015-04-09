@@ -68,8 +68,8 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
             // set party rows
             for (idx, party) in enumerate(parties) {
-                let wdcParty = party as WDCParty
-                let row = self.interfaceTable.rowControllerAtIndex(idx) as WDCPartiesTRC
+                let wdcParty = party as! WDCParty
+                let row = self.interfaceTable.rowControllerAtIndex(idx) as! WDCPartiesTRC
                 row.titleInterfaceLabel.setText(wdcParty.title)
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
@@ -89,7 +89,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         if segueIdentifier == "map" {
-            let wdcParty = parties[rowIndex] as WDCParty
+            let wdcParty = parties[rowIndex] as! WDCParty
             let properties:NSDictionary = ["SegueParty": wdcParty.title!];
 //            Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
 //            Mixpanel.sharedInstance().people.increment("WDCPartiesInterfaceController.SegueParty", by: 1)
