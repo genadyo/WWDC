@@ -831,7 +831,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"Rollout-ios-SDK/Rollout",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
@@ -866,7 +865,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(inherited)",
-					"Rollout-ios-SDK/Rollout",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
