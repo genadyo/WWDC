@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2122714352A645F09DFEB295 /* Rollout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DE2E87DFF2A47BCB80F7D0B /* Rollout.framework */; };
 		26BD8DBBF9765E3111962A78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 		7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
-		ADEDFB095B88444593530B4E /* RolloutDynamic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		B2174D471A5C7FF70078B843 /* SFParties WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
@@ -102,10 +100,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RolloutDynamic.m; path = Rollout/RolloutDynamic.m; sourceTree = "<group>"; };
 		8104116B87B866315CA062BA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		8F6A897ED3134CF8B77019B8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		9DE2E87DFF2A47BCB80F7D0B /* Rollout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Rollout.framework; path = Rollout/Rollout.framework; sourceTree = "<group>"; };
 		B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyWebViewController.swift; sourceTree = "<group>"; };
 		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -180,7 +176,6 @@
 				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
 				B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */,
 				7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */,
-				2122714352A645F09DFEB295 /* Rollout.framework in Frameworks */,
 				B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,7 +219,6 @@
 				B2F01CB51A1F91DD00F1AC70 /* SFPartiesKit */,
 				B2D4AEE219276A1E00C5B0E8 /* Frameworks */,
 				B2D4AEE119276A1E00C5B0E8 /* Products */,
-				CAA8B82F49FE4F389923004B /* Rollout */,
 				1F4D6CD22AE7E3104C08AF8E /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -361,16 +355,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		CAA8B82F49FE4F389923004B /* Rollout */ = {
-			isa = PBXGroup;
-			children = (
-				3F8FB56870C44C3898ECF055 /* RolloutDynamic.m */,
-				9DE2E87DFF2A47BCB80F7D0B /* Rollout.framework */,
-			);
-			name = Rollout;
-			path = "Rollout-ios-SDK";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -388,7 +372,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B2D4AF1219276A1E00C5B0E8 /* Build configuration list for PBXNativeTarget "SFParties" */;
 			buildPhases = (
-				A9E2048F40DC4946BA0CEA7C /* Rollout Code analyzer */,
 				D48D53008BAA48088AFB402D /* Check Pods Manifest.lock */,
 				B2D4AEDC19276A1E00C5B0E8 /* Sources */,
 				B2D4AEDD19276A1E00C5B0E8 /* Frameworks */,
@@ -616,20 +599,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A9E2048F40DC4946BA0CEA7C /* Rollout Code analyzer */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Rollout Code analyzer";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Rollout-ios-SDK/lib/tweaker\" -k 53d7a9285fd9f46b67000022";
-		};
 		B23AFA87192814A600C2A060 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -706,7 +675,6 @@
 				B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */,
 				B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */,
 				B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */,
-				ADEDFB095B88444593530B4E /* RolloutDynamic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

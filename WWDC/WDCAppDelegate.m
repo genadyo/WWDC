@@ -10,7 +10,6 @@
 #import "WDCParty.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
-#import <Rollout/Rollout.h>
 #import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
@@ -38,12 +37,6 @@
 
     // Mixpanel
     [Mixpanel sharedInstanceWithToken:keys.mixpanel];
-
-#if defined( DEBUG )
-    [Rollout setupWithDebug:YES];
-#else
-    [Rollout setupWithDebug:NO];
-#endif
 
     // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
