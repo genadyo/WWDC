@@ -21,11 +21,11 @@ import WebKit
 
         // load progress and web views
         webView.addSubview(progressView)
-        self.view = webView
+        view = webView
 
         // auto layout progress view
         progressView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        let views = ["progressView": self.progressView]
+        let views = ["progressView": progressView]
         webView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[progressView]|", options: nil, metrics: nil, views: views))
     }
 
@@ -41,12 +41,11 @@ import WebKit
         webView.loadRequest(NSURLRequest(URL:url!))
 
         // update progress
-        observer = JVObserver(forObject: webView, keyPath: "estimatedProgress", target: self) { [weak self] (AnyObject) -> Void in
+        observer = JVObserver(forObject: webView, keyPath: "estimatedProgress", target: self) { [weak self] _ in
             self?.progressView.progress = Float((self?.webView.estimatedProgress)!)
-            if (self?.webView.estimatedProgress == 1.0) {
+            if self?.webView.estimatedProgress == 1.0 {
                 UIView.animateWithDuration(0.2) {
                     self?.progressView.alpha = 0
-                    return
                 }
             }
         }
@@ -70,6 +69,6 @@ import WebKit
             }
         }
         activityViewController.popoverPresentationController?.barButtonItem = sender
-        self.presentViewController(activityViewController, animated: true, completion: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
     }
 }

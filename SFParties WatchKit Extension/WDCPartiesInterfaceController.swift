@@ -16,18 +16,6 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject!) {
         // Initialize variables here.
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-        // NSLog("%@ init", self)
-
-        // Keys
-//        let keys = SFPartiesKeys()
-
-        // GAI
-//        GAI.sharedInstance().trackerWithTrackingId(keys.googleAnalytics())
-
-        // Mixpanel
-//        Mixpanel.sharedInstanceWithToken(keys.mixpanel())
 
         // load my table
         loadTableData()
@@ -35,24 +23,14 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         wormhole = MMWormhole(applicationGroupIdentifier: "group.so.sugar.SFParties", optionalDirectory: "wormhole")
         wormhole!.listenForMessageWithIdentifier("loadTableData") { [weak self] _ in
             self?.loadTableData()
-            return
         }
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        // NSLog("%@ will activate", self)
-
-        // Google
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        tracker.set(kGAIScreenName, value: "WDCPartiesInterfaceController")
-//        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        // NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
 
@@ -61,15 +39,15 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         parties = WDCParties.sharedInstance().filteredParties
 
         if (parties.count == 0) {
-            self.interfaceTable.setNumberOfRows(1, withRowType: "empty")
+            interfaceTable.setNumberOfRows(1, withRowType: "empty")
         } else {
             // set number of parties
-            self.interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
+            interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
 
             // set party rows
             for (idx, party) in enumerate(parties) {
                 let wdcParty = party as! WDCParty
-                let row = self.interfaceTable.rowControllerAtIndex(idx) as! WDCPartiesTRC
+                let row = interfaceTable.rowControllerAtIndex(idx) as! WDCPartiesTRC
                 row.titleInterfaceLabel.setText(wdcParty.title)
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
@@ -90,9 +68,6 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         if segueIdentifier == "map" {
             let wdcParty = parties[rowIndex] as! WDCParty
-            let properties:NSDictionary = ["SegueParty": wdcParty.title!];
-//            Mixpanel.sharedInstance().track("WDCPartiesInterfaceController", properties: properties)
-//            Mixpanel.sharedInstance().people.increment("WDCPartiesInterfaceController.SegueParty", by: 1)
             return wdcParty
         }
 

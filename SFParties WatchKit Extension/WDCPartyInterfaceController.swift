@@ -30,26 +30,14 @@ class WDCPartyInterfaceController: WKInterfaceController {
         map.addAnnotation(CLLocationCoordinate2DMake(party.latitude.doubleValue, party.longitude.doubleValue), withPinColor: .Green)
 
         // Handoff
-        self.updateUserActivity("so.sugar.SFParties.view", userInfo: ["objectId": self.party.objectId], webpageURL: NSURL(string: self.party.url))
-
-        // Configure interface objects here.
-        // NSLog("%@ init", self)
+        updateUserActivity("so.sugar.SFParties.view", userInfo: ["objectId": party.objectId], webpageURL: NSURL(string: party.url))
     }
 
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
         super.willActivate()
-        // NSLog("%@ will activate", self)
-
-        // Google
-//        let tracker = GAI.sharedInstance().defaultTracker
-//        tracker.set(kGAIScreenName, value: "WDCPartyInterfaceController")
-//        tracker.send(GAIDictionaryBuilder.createAppView().build())
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        // NSLog("%@ did deactivate", self)
         super.didDeactivate()
     }
 }
