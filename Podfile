@@ -3,7 +3,6 @@ inhibit_all_warnings!
 
 xcodeproj 'SFParties'
 
-link_with 'SFParties', 'SFPartiesKit'
 pod 'TUSafariActivity'
 pod 'GoogleAnalytics-iOS-SDK'
 pod 'TMCache'
