@@ -397,8 +397,14 @@ Title2</string>
                                                 <constraint firstItem="7NX-Q6-GMX" firstAttribute="top" secondItem="an3-gY-oBw" secondAttribute="top" constant="17" id="MhU-fa-Aui"/>
                                                 <constraint firstAttribute="centerY" secondItem="Xyj-3Y-qwX" secondAttribute="centerY" id="QFy-88-FqQ"/>
                                                 <constraint firstItem="L4B-SO-y8Q" firstAttribute="top" secondItem="7NX-Q6-GMX" secondAttribute="bottom" constant="7" id="TdN-2x-gJa"/>
+                                                <constraint firstItem="Xyj-3Y-qwX" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="20" id="XVa-c8-bDC"/>
                                                 <constraint firstItem="7NX-Q6-GMX" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="70" id="tIP-Cm-Z5p"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0Jr-NH-ccj"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <gestureRecognizers/>
                                         <connections>
@@ -494,6 +500,7 @@ Title2</string>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="top" secondItem="kjV-01-xGd" secondAttribute="bottom" id="3Un-Er-qsG"/>
                                                 <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="26" id="46f-gb-23e"/>
                                                 <constraint firstAttribute="trailing" secondItem="dEp-lq-qxU" secondAttribute="trailing" constant="20" symbolic="YES" id="4Fi-nS-lHD"/>
+                                                <constraint firstItem="GR3-l6-djE" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="20" id="BVC-PE-Fy3"/>
                                                 <constraint firstItem="sX2-WM-0RF" firstAttribute="leading" secondItem="TmW-O5-gJW" secondAttribute="leading" constant="70" id="GAh-ka-CGT"/>
                                                 <constraint firstAttribute="centerY" secondItem="GR3-l6-djE" secondAttribute="centerY" id="Hdv-AC-bDq"/>
                                                 <constraint firstItem="dEp-lq-qxU" firstAttribute="trailing" secondItem="TmW-O5-gJW" secondAttribute="trailingMargin" id="MZM-P5-o5f"/>
@@ -513,6 +520,7 @@ Title2</string>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="RSo-hc-lsr"/>
                                                     <exclude reference="3Un-Er-qsG"/>
                                                     <exclude reference="R9F-Cv-dxK"/>
                                                     <exclude reference="MZM-P5-o5f"/>
