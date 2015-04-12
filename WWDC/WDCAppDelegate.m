@@ -62,11 +62,11 @@
     [[CKContainer defaultContainer] fetchUserRecordIDWithCompletionHandler:^(CKRecordID *userRecordID, NSError *error) {
         if (error) {
             [[Mixpanel sharedInstance] track:@"fetchUserRecord" properties:@{@"Status": @"Error"}];
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
         } else {
             if (userRecordID) {
                 [[Mixpanel sharedInstance] identify:userRecordID.recordName];
-                NSLog(@"userRecordID: %@", userRecordID.recordName);
+//                NSLog(@"userRecordID: %@", userRecordID.recordName);
             }
         }
     }];
@@ -125,7 +125,7 @@
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
     [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"Error"}];
-    NSLog(@"Error: %@ %@", error, [error userInfo]);
+//    NSLog(@"Error: %@ %@", error, [error userInfo]);
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
@@ -148,10 +148,10 @@
             [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
                 if (error) {
                     [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"OK"}];
-                    NSLog(@"Error: %@ %@", error, [error userInfo]);
+//                    NSLog(@"Error: %@ %@", error, [error userInfo]);
                 } else {
                     [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"Error"}];
-                    NSLog(@"Subscription: %@", subscription);
+//                    NSLog(@"Subscription: %@", subscription);
                 }
             }];
 

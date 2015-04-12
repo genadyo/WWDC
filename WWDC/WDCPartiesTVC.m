@@ -139,12 +139,16 @@
             self.parties = [array copy];
             [self updateFilteredParties];
             if ([WDCParties sharedInstance].disableCache) {
-                [self.refreshControl endRefreshing];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.refreshControl endRefreshing];
+                });
             }
             [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"OK", @"count": [NSNumber numberWithInteger:parties.count]}];
             [[Mixpanel sharedInstance].people increment:@"WDCParties.refresh.ok" by:@1];
         } else {
-            [self.refreshControl endRefreshing];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.refreshControl endRefreshing];
+            });
             [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"FAILED"}];
             [[Mixpanel sharedInstance].people increment:@"WDCParties.refresh.failed" by:@1];
         }
@@ -200,7 +204,7 @@
             MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
             mailVC.mailComposeDelegate = self;
             [mailVC setSubject:NSLocalizedString(@"Suggest a Party", nil)];
-            [mailVC setToRecipients:[NSArray arrayWithObjects:@"team@sugar.so", nil]];
+            [mailVC setToRecipients:[NSArray arrayWithObjects:@"genady@okrain.com", nil]];
             [self presentViewController:mailVC animated:YES completion:nil];
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
@@ -229,52 +233,42 @@
     switch (result) {
         case MFMailComposeResultCancelled:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Cancelled"}];
-            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
+//            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
             break;
         case MFMailComposeResultSaved:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Saved"}];
-            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
+//            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
             break;
         case MFMailComposeResultSent:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Sent"}];
-            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
+//            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
             break;
         case MFMailComposeResultFailed:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Failed"}];
-            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
+//            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
             break;
         default:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Other"}];
-            NSLog(@"Mail not sent.");
+//            NSLog(@"Mail not sent.");
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)sugarSo:(id)sender
-{
-    NSURL *url = [NSURL URLWithString: @"http://sugar.so"];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[Mixpanel sharedInstance] track:@"sugarSo" properties:@{@"canOpenURL": @"OK"}];
-        [[Mixpanel sharedInstance].people increment:@"sugarSo.canOpenURL" by:@1];
-        [[UIApplication sharedApplication] openURL:url];
-    }
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if ((self.goingSegmentedControl.selectedSegmentIndex == 1) && ([self.filteredParties count] == 0)) {
+    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
         return 1;
     } else {
-        return [self.filteredParties count]+1;
+        return self.filteredParties.count;
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ((section == [self.filteredParties count]) || ((self.goingSegmentedControl.selectedSegmentIndex == 1) && ([self.filteredParties count] == 0))) {
+    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
         return 1;
     } else {
         return [self.filteredParties[section] count];
@@ -289,10 +283,8 @@
         height = 90;
     }
 
-    if ((self.goingSegmentedControl.selectedSegmentIndex == 1) && ([self.filteredParties count] == 0)) {
+    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
         height = [[UIScreen mainScreen] bounds].size.height-2*(self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height);
-    } else if (indexPath.section == [self.filteredParties count]) {
-        height = 55;
     }
 
     return height;
@@ -300,26 +292,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    CGFloat height = [super tableView:tableView heightForHeaderInSection:section];
-
-    if (section == [self.filteredParties count]) {
-        height = 10;
-    } else {
-        height = 40;
-    }
-
-    return height;
+    return 40;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
 
-    if ((self.goingSegmentedControl.selectedSegmentIndex == 1) && ([self.filteredParties count] == 0)) {
+    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
         cell = [tableView dequeueReusableCellWithIdentifier:@"empty" forIndexPath:indexPath];
-    } else if ((indexPath.section == [self.filteredParties count]) && (indexPath.row == 0)) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"credits" forIndexPath:indexPath];
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     } else {
         WDCPartyTVC *partyCell = [tableView dequeueReusableCellWithIdentifier:@"party" forIndexPath:indexPath];
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
@@ -364,8 +345,8 @@
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    UIView *view;
-    if (section != [self.filteredParties count]) {
+    UIView *view = [[UIView alloc] init];
+    if (!(self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0)) {
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0f)];
         UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(7, 0, tableView.frame.size.width-7*2, 40.0f)];
         bgView.backgroundColor = [UIColor colorWithRed:247.0f/255.0f green:247.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
@@ -381,8 +362,6 @@
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
         button.tag = section;
         [view addSubview:button];
-    } else {
-        view = [[UIView alloc] init];
     }
     return view;
 }
