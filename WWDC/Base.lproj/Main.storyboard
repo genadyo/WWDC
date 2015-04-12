@@ -321,6 +321,7 @@ Title2</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="VcS-Bq-V4g" secondAttribute="trailing" constant="20" id="3Qa-ci-Xir"/>
+                                                <constraint firstItem="VcS-Bq-V4g" firstAttribute="leading" secondItem="fp3-il-flp" secondAttribute="leading" constant="20" id="AWz-Ug-OTW"/>
                                                 <constraint firstItem="VcS-Bq-V4g" firstAttribute="leading" secondItem="fp3-il-flp" secondAttribute="leading" constant="20" id="CkZ-XK-ryv"/>
                                                 <constraint firstItem="VcS-Bq-V4g" firstAttribute="top" secondItem="fp3-il-flp" secondAttribute="topMargin" id="Elk-QT-NBg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VcS-Bq-V4g" secondAttribute="trailing" constant="12" id="XAk-U7-Wxz"/>
@@ -333,6 +334,7 @@ Title2</string>
                                                 <mask key="constraints">
                                                     <exclude reference="3Qa-ci-Xir"/>
                                                     <exclude reference="CkZ-XK-ryv"/>
+                                                    <exclude reference="arm-jH-De0"/>
                                                     <exclude reference="kTX-4r-HQM"/>
                                                     <exclude reference="kXj-3g-eZE"/>
                                                 </mask>
@@ -359,7 +361,13 @@ Title2</string>
                                                 <constraint firstItem="VEY-Ix-hxj" firstAttribute="leading" secondItem="0sZ-qg-rfp" secondAttribute="leadingMargin" constant="12" id="8eu-6y-v2F"/>
                                                 <constraint firstItem="VEY-Ix-hxj" firstAttribute="top" secondItem="0sZ-qg-rfp" secondAttribute="topMargin" id="NYV-ao-thm"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="VEY-Ix-hxj" secondAttribute="trailing" constant="12" id="P9m-ox-0X9"/>
+                                                <constraint firstItem="VEY-Ix-hxj" firstAttribute="leading" secondItem="0sZ-qg-rfp" secondAttribute="leading" constant="20" id="SWE-ot-XLi"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="8eu-6y-v2F"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="Wed-kP-I51">
