@@ -67,7 +67,13 @@ static const char kPartyKey;
     region.span.latitudeDelta = 0.025f;
     region.span.longitudeDelta = 0.025f;
     [self.mapView setRegion:region animated:NO];
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    [self.mapView removeAnnotations:self.mapView.annotations];
     for (WDCParty *party in self.parties) {
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
         annotation.coordinate = CLLocationCoordinate2DMake([party.latitude floatValue], [party.longitude floatValue]);
