@@ -21,12 +21,9 @@
     if (self.view.bounds.size.height > 480.0) {
         // If we are large enough, force a regular size class
         self.forcedTraitCollection = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
-        [[Mixpanel sharedInstance] track:@"viewWillTransitionToSize" properties:@{@"Status": @"Override"}];
-
     } else {
         // Otherwise, don't override any traits
         self.forcedTraitCollection = nil;
-        [[Mixpanel sharedInstance] track:@"viewWillTransitionToSize" properties:@{@"Status": @"Normal"}];
     }
 
     [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
