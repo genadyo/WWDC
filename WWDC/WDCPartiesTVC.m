@@ -207,7 +207,6 @@
         UIPopoverPresentationController *popoverPresentationController = [alert popoverPresentationController];
         popoverPresentationController.barButtonItem = sender;
         [self presentViewController:alert animated:YES completion:nil];
-        [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"OK"}];
     } else {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please configure mail account", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -215,29 +214,11 @@
         }];
         [alert addAction:ok];
         [self presentViewController:alert animated:YES completion:nil];
-        [[Mixpanel sharedInstance] track:@"addParty" properties:@{@"canSendMail": @"Error"}];
     }
 }
 
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
 {
-    switch (result) {
-        case MFMailComposeResultCancelled:
-            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Cancelled"}];
-            break;
-        case MFMailComposeResultSaved:
-            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Saved"}];
-            break;
-        case MFMailComposeResultSent:
-            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Sent"}];
-            break;
-        case MFMailComposeResultFailed:
-            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Failed"}];
-            break;
-        default:
-            [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Other"}];
-            break;
-    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
