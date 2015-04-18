@@ -136,11 +136,9 @@
 {
     if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
         [[WDCParties sharedInstance].going addObject:self.party.objectId];
-        [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"Going": self.party.title}];
         [[Mixpanel sharedInstance].people increment:@"updateGoing.Going" by:@1];
     } else {
         [[WDCParties sharedInstance].going removeObject:self.party.objectId];
-        [[Mixpanel sharedInstance] track:@"updateGoing" properties:@{@"NotGoing": self.party.title}];
         [[Mixpanel sharedInstance].people increment:@"updateGoing.NotGoing" by:@1];
     }
     [self refreshGoing];
