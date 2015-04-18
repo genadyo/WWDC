@@ -72,15 +72,6 @@
     if (authorizationStatus == kCLAuthorizationStatusNotDetermined) {
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestWhenInUseAuthorization];
-        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"NotDetermined"}];
-    } else if (authorizationStatus == kCLAuthorizationStatusRestricted) {
-        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"Restricted"}];
-    } else if (authorizationStatus == kCLAuthorizationStatusDenied) {
-        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"Denied"}];
-    } else if (authorizationStatus == kCLAuthorizationStatusAuthorizedAlways) {
-        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"AuthorizedAlways"}];
-    } else if (authorizationStatus == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        [[Mixpanel sharedInstance] track:@"CLLocationManager" properties:@{@"authorizationStatus": @"AuthorizedWhenInUse"}];
     }
 
     WDCAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
