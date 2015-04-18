@@ -233,23 +233,18 @@
     switch (result) {
         case MFMailComposeResultCancelled:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Cancelled"}];
-//            NSLog(@"Mail cancelled: you cancelled the operation and no email message was queued.");
             break;
         case MFMailComposeResultSaved:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Saved"}];
-//            NSLog(@"Mail saved: you saved the email message in the drafts folder.");
             break;
         case MFMailComposeResultSent:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Sent"}];
-//            NSLog(@"Mail send: the email message is queued in the outbox. It is ready to send.");
             break;
         case MFMailComposeResultFailed:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Failed"}];
-//            NSLog(@"Mail failed: the email message was not saved or queued, possibly due to an error.");
             break;
         default:
             [[Mixpanel sharedInstance] track:@"mailComposeController" properties:@{@"result": @"Other"}];
-//            NSLog(@"Mail not sent.");
             break;
     }
     [self dismissViewControllerAnimated:YES completion:nil];
