@@ -152,8 +152,6 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
     [userDefaults setInteger:sender.selectedSegmentIndex forKey:@"selected"];
     [userDefaults synchronize];
-    [[Mixpanel sharedInstance] track:@"updateSegment" properties:@{@"selected": [NSNumber numberWithInteger:sender.selectedSegmentIndex]}];
-    [[Mixpanel sharedInstance].people increment:@"updateSegment.selected" by:@1];
 }
 
 - (void)updateFilteredParties
