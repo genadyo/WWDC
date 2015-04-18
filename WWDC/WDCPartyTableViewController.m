@@ -157,8 +157,6 @@
 
 - (IBAction)openMaps:(id)sender
 {
-    [[Mixpanel sharedInstance] track:@"openMaps" properties:@{@"Party": self.party.title}];
-    [[Mixpanel sharedInstance].people increment:@"openMaps" by:@1];
     CLLocationCoordinate2D coordinate;
     coordinate.latitude = [self.party.latitude floatValue];
     coordinate.longitude = [self.party.longitude floatValue];
