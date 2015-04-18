@@ -134,14 +134,11 @@
                     [self.refreshControl endRefreshing];
                 });
             }
-            [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"OK", @"count": [NSNumber numberWithInteger:parties.count]}];
-            [[Mixpanel sharedInstance].people increment:@"WDCParties.refresh.ok" by:@1];
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.refreshControl endRefreshing];
             });
             [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"FAILED"}];
-            [[Mixpanel sharedInstance].people increment:@"WDCParties.refresh.failed" by:@1];
         }
     }];
 }
