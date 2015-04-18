@@ -308,8 +308,6 @@
         WDCPartyWebViewController *destController = (WDCPartyWebViewController *)[segue destinationViewController];
         destController.title = self.party.title;
         destController.url = [NSURL URLWithString:self.party.url];
-        [[Mixpanel sharedInstance] track:@"WDCPartyTableViewController" properties:@{@"SegueWeb": self.party.title}];
-        [[Mixpanel sharedInstance].people increment:@"WDCPartyTableViewController.SegueWeb" by:@1];
     }
 }
 

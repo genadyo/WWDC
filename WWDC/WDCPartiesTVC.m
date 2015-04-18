@@ -353,16 +353,12 @@
         UINavigationController *navigationController = segue.destinationViewController;
         WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
         destController.party = party;
-        [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueParty": party.title}];
-        [[Mixpanel sharedInstance].people increment:@"WDCPartiesTVC.SegueParty" by:@1];
     } else if ([segue.identifier isEqualToString:@"map"]) {
         if ([sender isKindOfClass:[NSNumber class]]) {
             NSInteger tag = [(NSNumber *)sender integerValue];
             UINavigationController *navigationController = segue.destinationViewController;
             WDCMapDayViewController *destController = (WDCMapDayViewController *)[navigationController topViewController];
             destController.parties = self.filteredParties[tag];
-            [[Mixpanel sharedInstance] track:@"WDCPartiesTVC" properties:@{@"SegueMap": [NSNumber numberWithInteger:tag]}];
-            [[Mixpanel sharedInstance].people increment:@"WDCPartiesTVC.SegueMap" by:@1];
         }
     }
 }
