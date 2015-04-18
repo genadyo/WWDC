@@ -120,11 +120,6 @@
     return NO;
 }
 
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
-{
-    [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"Error"}];
-}
-
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
@@ -144,21 +139,19 @@
             subscription.notificationInfo = notification;
             [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
                 if (error) {
-                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"OK"}];
-                } else {
                     [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"Error"}];
+                } else {
+                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"OK"}];
                 }
             }];
 
         }
     }];
-    [[Mixpanel sharedInstance] track:@"Notifications" properties:@{@"Status": @"OK"}];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
     [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
-    [[Mixpanel sharedInstance] track:@"CKNotification" properties:@{@"Status": @"Opened"}];
 }
 
 #pragma mark - UISplitViewControllerDelegate
