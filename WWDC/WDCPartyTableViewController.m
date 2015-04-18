@@ -192,7 +192,6 @@
         [es requestAccessToEntityType:EKEntityTypeEvent completion:^(BOOL granted, NSError *error) {
             if (granted) {
                 [self addEvent];
-                [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
             } else {
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -200,14 +199,12 @@
                 }];
                 [alert addAction:ok];
                 [self presentViewController:alert animated:YES completion:nil];
-                [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
             }
         }];
     } else {
         BOOL granted = (authorizationStatus == EKAuthorizationStatusAuthorized);
         if (granted) {
             [self addEvent];
-            [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"OK", @"Party": self.party.title}];
         } else {
             UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please allow access to the Calendars", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
@@ -215,7 +212,6 @@
             }];
             [alert addAction:ok];
             [self presentViewController:alert animated:YES completion:nil];
-            [[Mixpanel sharedInstance] track:@"openCal" properties:@{@"Status": @"Error", @"Party": self.party.title}];
         }
     }
 }
