@@ -124,8 +124,6 @@ static const char kPartyKey;
             WDCPartyTableViewController *destController = segue.destinationViewController;
             WDCParty *party = ((MKPointAnnotation *)sender).party;
             destController.party = party;
-            [[Mixpanel sharedInstance].people increment:@"WDCMapDayViewController.SegueParty" by:@1];
-            [[Mixpanel sharedInstance] track:@"WDCMapDayViewController" properties:@{@"SegueParty": party.title}];
         }
     }
 }
