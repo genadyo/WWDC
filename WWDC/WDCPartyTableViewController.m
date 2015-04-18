@@ -321,11 +321,8 @@
     switch (action) {
         case EKEventEditViewActionSaved:
             [controller.eventStore saveEvent:controller.event span:EKSpanThisEvent error:&error];
-            [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Saved"}];
-            [[Mixpanel sharedInstance].people increment:@"eventEditViewController.Saved" by:@1];
             break;
         default:
-            [[Mixpanel sharedInstance] track:@"eventEditViewController" properties:@{@"result": @"Other"}];
             break;
     }
     [controller dismissViewControllerAnimated:YES completion:nil];
