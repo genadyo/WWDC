@@ -100,12 +100,16 @@
 
 - (NSString *)iconCacheKey
 {
-    return [NSString stringWithFormat:@"icon-%@", self.objectId];
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [info objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"icon-%@-%@", self.objectId, version];
 }
 
 - (NSString *)logoCacheKey
 {
-    return [NSString stringWithFormat:@"logo-%@", self.objectId];
+    NSDictionary *info = [[NSBundle mainBundle] infoDictionary];
+    NSString *version = [info objectForKey:@"CFBundleVersion"];
+    return [NSString stringWithFormat:@"logo-%@-%@", self.objectId, version];
 }
 
 - (void)loadImagesFromCache
