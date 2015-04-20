@@ -26,6 +26,24 @@ import UIKit
     }
 }
 
+@IBDesignable class WDCTwitter : UIView {
+    override func drawRect(rect: CGRect) {
+        Assets.drawTwitter()
+    }
+}
+
+@IBDesignable class WDCHeart : UIView {
+    override func drawRect(rect: CGRect) {
+        Assets.drawHeart()
+    }
+}
+
+@IBDesignable class WDCEnvelope : UIView {
+    override func drawRect(rect: CGRect) {
+        Assets.drawEnvelope()
+    }
+}
+
 @IBDesignable class WDCGoing : UIView {
     override func drawRect(rect: CGRect) {
         Assets.drawTogglegoing(initColor: UIColor(red: 46/255, green: 204/255, blue: 113/255, alpha: 1))

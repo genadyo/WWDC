@@ -22,8 +22,8 @@ public class Assets : NSObject {
         static var toggleallactiveTargets: [AnyObject]?
         static var imageOfUBER_API_Badge: UIImage?
         static var uBER_API_BadgeTargets: [AnyObject]?
-        static var imageOfGear_icon: UIImage?
-        static var gear_iconTargets: [AnyObject]?
+        static var imageOfGear: UIImage?
+        static var gearTargets: [AnyObject]?
     }
 
     //// Colors
@@ -453,64 +453,174 @@ public class Assets : NSObject {
         CGContextRestoreGState(context)
     }
 
-    public class func drawGear_icon() {
+    public class func drawGear() {
         //// Color Declarations
         let strokeColor = UIColor(red: 0.416, green: 0.463, blue: 0.863, alpha: 1.000)
 
         //// Welcome
-        //// gear Drawing
-        var gearPath = UIBezierPath()
-        gearPath.moveToPoint(CGPointMake(11.94, 1))
-        gearPath.addLineToPoint(CGPointMake(10.38, 4.71))
-        gearPath.addCurveToPoint(CGPointMake(9.51, 5.11), controlPoint1: CGPointMake(10.07, 4.8), controlPoint2: CGPointMake(9.79, 4.96))
-        gearPath.addLineToPoint(CGPointMake(5.8, 3.56))
-        gearPath.addLineToPoint(CGPointMake(3.56, 5.8))
-        gearPath.addLineToPoint(CGPointMake(5.11, 9.51))
-        gearPath.addCurveToPoint(CGPointMake(4.71, 10.38), controlPoint1: CGPointMake(4.96, 9.82), controlPoint2: CGPointMake(4.83, 10.07))
-        gearPath.addLineToPoint(CGPointMake(1, 11.94))
-        gearPath.addLineToPoint(CGPointMake(1, 15.06))
-        gearPath.addLineToPoint(CGPointMake(4.71, 16.62))
-        gearPath.addCurveToPoint(CGPointMake(5.11, 17.49), controlPoint1: CGPointMake(4.83, 16.93), controlPoint2: CGPointMake(4.96, 17.18))
-        gearPath.addLineToPoint(CGPointMake(3.56, 21.2))
-        gearPath.addLineToPoint(CGPointMake(5.8, 23.44))
-        gearPath.addLineToPoint(CGPointMake(9.51, 21.89))
-        gearPath.addCurveToPoint(CGPointMake(10.38, 22.29), controlPoint1: CGPointMake(9.79, 22.01), controlPoint2: CGPointMake(10.07, 22.17))
-        gearPath.addLineToPoint(CGPointMake(11.94, 26))
-        gearPath.addLineToPoint(CGPointMake(15.06, 26))
-        gearPath.addLineToPoint(CGPointMake(16.62, 22.29))
-        gearPath.addCurveToPoint(CGPointMake(17.49, 21.89), controlPoint1: CGPointMake(16.9, 22.17), controlPoint2: CGPointMake(17.21, 22.04))
-        gearPath.addLineToPoint(CGPointMake(21.2, 23.44))
-        gearPath.addLineToPoint(CGPointMake(23.44, 21.2))
-        gearPath.addLineToPoint(CGPointMake(21.89, 17.49))
-        gearPath.addCurveToPoint(CGPointMake(22.29, 16.62), controlPoint1: CGPointMake(22.01, 17.21), controlPoint2: CGPointMake(22.17, 16.9))
-        gearPath.addLineToPoint(CGPointMake(26, 15.06))
-        gearPath.addLineToPoint(CGPointMake(26, 11.94))
-        gearPath.addLineToPoint(CGPointMake(22.29, 10.38))
-        gearPath.addCurveToPoint(CGPointMake(21.89, 9.51), controlPoint1: CGPointMake(22.2, 10.1), controlPoint2: CGPointMake(22.04, 9.79))
-        gearPath.addLineToPoint(CGPointMake(23.44, 5.8))
-        gearPath.addLineToPoint(CGPointMake(21.2, 3.56))
-        gearPath.addLineToPoint(CGPointMake(17.49, 5.11))
-        gearPath.addCurveToPoint(CGPointMake(16.62, 4.71), controlPoint1: CGPointMake(17.21, 4.99), controlPoint2: CGPointMake(16.9, 4.83))
-        gearPath.addLineToPoint(CGPointMake(15.06, 1))
-        gearPath.addLineToPoint(CGPointMake(11.94, 1))
-        gearPath.addLineToPoint(CGPointMake(11.94, 1))
-        gearPath.closePath()
-        gearPath.moveToPoint(CGPointMake(13.5, 8.79))
-        gearPath.addCurveToPoint(CGPointMake(18.18, 13.47), controlPoint1: CGPointMake(16.09, 8.79), controlPoint2: CGPointMake(18.18, 10.88))
-        gearPath.addCurveToPoint(CGPointMake(13.5, 18.14), controlPoint1: CGPointMake(18.18, 16.06), controlPoint2: CGPointMake(16.09, 18.14))
-        gearPath.addCurveToPoint(CGPointMake(8.82, 13.47), controlPoint1: CGPointMake(10.91, 18.14), controlPoint2: CGPointMake(8.82, 16.06))
-        gearPath.addCurveToPoint(CGPointMake(13.5, 8.79), controlPoint1: CGPointMake(8.82, 10.88), controlPoint2: CGPointMake(10.91, 8.79))
-        gearPath.addLineToPoint(CGPointMake(13.5, 8.79))
-        gearPath.closePath()
-        gearPath.miterLimit = 4;
+        //// Main Drawing
+        var mainPath = UIBezierPath()
+        mainPath.moveToPoint(CGPointMake(11.94, 1))
+        mainPath.addLineToPoint(CGPointMake(10.38, 4.71))
+        mainPath.addCurveToPoint(CGPointMake(9.51, 5.11), controlPoint1: CGPointMake(10.07, 4.8), controlPoint2: CGPointMake(9.79, 4.96))
+        mainPath.addLineToPoint(CGPointMake(5.8, 3.56))
+        mainPath.addLineToPoint(CGPointMake(3.56, 5.8))
+        mainPath.addLineToPoint(CGPointMake(5.11, 9.51))
+        mainPath.addCurveToPoint(CGPointMake(4.71, 10.38), controlPoint1: CGPointMake(4.96, 9.82), controlPoint2: CGPointMake(4.83, 10.07))
+        mainPath.addLineToPoint(CGPointMake(1, 11.94))
+        mainPath.addLineToPoint(CGPointMake(1, 15.06))
+        mainPath.addLineToPoint(CGPointMake(4.71, 16.62))
+        mainPath.addCurveToPoint(CGPointMake(5.11, 17.49), controlPoint1: CGPointMake(4.83, 16.93), controlPoint2: CGPointMake(4.96, 17.18))
+        mainPath.addLineToPoint(CGPointMake(3.56, 21.2))
+        mainPath.addLineToPoint(CGPointMake(5.8, 23.44))
+        mainPath.addLineToPoint(CGPointMake(9.51, 21.89))
+        mainPath.addCurveToPoint(CGPointMake(10.38, 22.29), controlPoint1: CGPointMake(9.79, 22.01), controlPoint2: CGPointMake(10.07, 22.17))
+        mainPath.addLineToPoint(CGPointMake(11.94, 26))
+        mainPath.addLineToPoint(CGPointMake(15.06, 26))
+        mainPath.addLineToPoint(CGPointMake(16.62, 22.29))
+        mainPath.addCurveToPoint(CGPointMake(17.49, 21.89), controlPoint1: CGPointMake(16.9, 22.17), controlPoint2: CGPointMake(17.21, 22.04))
+        mainPath.addLineToPoint(CGPointMake(21.2, 23.44))
+        mainPath.addLineToPoint(CGPointMake(23.44, 21.2))
+        mainPath.addLineToPoint(CGPointMake(21.89, 17.49))
+        mainPath.addCurveToPoint(CGPointMake(22.29, 16.62), controlPoint1: CGPointMake(22.01, 17.21), controlPoint2: CGPointMake(22.17, 16.9))
+        mainPath.addLineToPoint(CGPointMake(26, 15.06))
+        mainPath.addLineToPoint(CGPointMake(26, 11.94))
+        mainPath.addLineToPoint(CGPointMake(22.29, 10.38))
+        mainPath.addCurveToPoint(CGPointMake(21.89, 9.51), controlPoint1: CGPointMake(22.2, 10.1), controlPoint2: CGPointMake(22.04, 9.79))
+        mainPath.addLineToPoint(CGPointMake(23.44, 5.8))
+        mainPath.addLineToPoint(CGPointMake(21.2, 3.56))
+        mainPath.addLineToPoint(CGPointMake(17.49, 5.11))
+        mainPath.addCurveToPoint(CGPointMake(16.62, 4.71), controlPoint1: CGPointMake(17.21, 4.99), controlPoint2: CGPointMake(16.9, 4.83))
+        mainPath.addLineToPoint(CGPointMake(15.06, 1))
+        mainPath.addLineToPoint(CGPointMake(11.94, 1))
+        mainPath.addLineToPoint(CGPointMake(11.94, 1))
+        mainPath.closePath()
+        mainPath.moveToPoint(CGPointMake(13.5, 8.79))
+        mainPath.addCurveToPoint(CGPointMake(18.18, 13.47), controlPoint1: CGPointMake(16.09, 8.79), controlPoint2: CGPointMake(18.18, 10.88))
+        mainPath.addCurveToPoint(CGPointMake(13.5, 18.14), controlPoint1: CGPointMake(18.18, 16.06), controlPoint2: CGPointMake(16.09, 18.14))
+        mainPath.addCurveToPoint(CGPointMake(8.82, 13.47), controlPoint1: CGPointMake(10.91, 18.14), controlPoint2: CGPointMake(8.82, 16.06))
+        mainPath.addCurveToPoint(CGPointMake(13.5, 8.79), controlPoint1: CGPointMake(8.82, 10.88), controlPoint2: CGPointMake(10.91, 8.79))
+        mainPath.addLineToPoint(CGPointMake(13.5, 8.79))
+        mainPath.closePath()
+        mainPath.miterLimit = 4;
 
-        gearPath.usesEvenOddFillRule = true;
+        mainPath.usesEvenOddFillRule = true;
 
         UIColor.whiteColor().setFill()
-        gearPath.fill()
+        mainPath.fill()
         strokeColor.setStroke()
-        gearPath.lineWidth = 1
-        gearPath.stroke()
+        mainPath.lineWidth = 1
+        mainPath.stroke()
+    }
+
+    public class func drawEnvelope() {
+        //// Color Declarations
+        let fillColor2 = UIColor(red: 0.416, green: 0.463, blue: 0.863, alpha: 1.000)
+
+        //// Welcome
+        //// Main
+        //// Icon
+        //// Main 2 Drawing
+        var main2Path = UIBezierPath()
+        main2Path.moveToPoint(CGPointMake(0, 0))
+        main2Path.addLineToPoint(CGPointMake(0, 2))
+        main2Path.addLineToPoint(CGPointMake(8, 6))
+        main2Path.addLineToPoint(CGPointMake(16, 2))
+        main2Path.addLineToPoint(CGPointMake(16, 0))
+        main2Path.addLineToPoint(CGPointMake(0, 0))
+        main2Path.addLineToPoint(CGPointMake(0, 0))
+        main2Path.closePath()
+        main2Path.moveToPoint(CGPointMake(0, 4))
+        main2Path.addLineToPoint(CGPointMake(0, 12))
+        main2Path.addLineToPoint(CGPointMake(16, 12))
+        main2Path.addLineToPoint(CGPointMake(16, 4))
+        main2Path.addLineToPoint(CGPointMake(8, 8))
+        main2Path.addLineToPoint(CGPointMake(0, 4))
+        main2Path.addLineToPoint(CGPointMake(0, 4))
+        main2Path.closePath()
+        main2Path.miterLimit = 4;
+
+        main2Path.usesEvenOddFillRule = true;
+
+        fillColor2.setFill()
+        main2Path.fill()
+    }
+
+    public class func drawHeart() {
+        //// Color Declarations
+        let fillColor3 = UIColor(red: 0.816, green: 0.004, blue: 0.106, alpha: 1.000)
+
+        //// Welcome
+        //// Main
+        //// Shape Drawing
+        var shapePath = UIBezierPath()
+        shapePath.moveToPoint(CGPointMake(4, 0))
+        shapePath.addCurveToPoint(CGPointMake(1.18, 1.18), controlPoint1: CGPointMake(2.9, 0), controlPoint2: CGPointMake(1.92, 0.46))
+        shapePath.addCurveToPoint(CGPointMake(0, 4), controlPoint1: CGPointMake(0.46, 1.9), controlPoint2: CGPointMake(0, 2.88))
+        shapePath.addCurveToPoint(CGPointMake(1.18, 6.82), controlPoint1: CGPointMake(0, 5.1), controlPoint2: CGPointMake(0.46, 6.08))
+        shapePath.addLineToPoint(CGPointMake(8, 13.64))
+        shapePath.addLineToPoint(CGPointMake(14.82, 6.82))
+        shapePath.addCurveToPoint(CGPointMake(16, 4), controlPoint1: CGPointMake(15.54, 6.1), controlPoint2: CGPointMake(16, 5.12))
+        shapePath.addCurveToPoint(CGPointMake(14.82, 1.18), controlPoint1: CGPointMake(16, 2.9), controlPoint2: CGPointMake(15.54, 1.92))
+        shapePath.addCurveToPoint(CGPointMake(12, 0), controlPoint1: CGPointMake(14.1, 0.46), controlPoint2: CGPointMake(13.12, 0))
+        shapePath.addCurveToPoint(CGPointMake(9.18, 1.18), controlPoint1: CGPointMake(10.9, 0), controlPoint2: CGPointMake(9.92, 0.46))
+        shapePath.addCurveToPoint(CGPointMake(8, 4), controlPoint1: CGPointMake(8.46, 1.9), controlPoint2: CGPointMake(8, 2.88))
+        shapePath.addCurveToPoint(CGPointMake(6.82, 1.18), controlPoint1: CGPointMake(8, 2.9), controlPoint2: CGPointMake(7.54, 1.92))
+        shapePath.addCurveToPoint(CGPointMake(4, 0), controlPoint1: CGPointMake(6.1, 0.46), controlPoint2: CGPointMake(5.12, 0))
+        shapePath.addLineToPoint(CGPointMake(4, 0))
+        shapePath.closePath()
+        shapePath.miterLimit = 4;
+
+        shapePath.usesEvenOddFillRule = true;
+
+        fillColor3.setFill()
+        shapePath.fill()
+    }
+
+    public class func drawTwitter() {
+        //// Color Declarations
+        let fillColor4 = UIColor(red: 0.369, green: 0.624, blue: 0.796, alpha: 1.000)
+
+        //// Welcome
+        //// Main
+        //// Twitter_logo_blue
+        //// path-1 Drawing
+
+
+        //// Clip-2
+
+
+        //// Fill-1 Drawing
+        var fill1Path = UIBezierPath()
+        fill1Path.moveToPoint(CGPointMake(5.02, 14))
+        fill1Path.addCurveToPoint(CGPointMake(0, 12.42), controlPoint1: CGPointMake(3.17, 14), controlPoint2: CGPointMake(1.45, 13.42))
+        fill1Path.addCurveToPoint(CGPointMake(0.78, 12.47), controlPoint1: CGPointMake(0.26, 12.45), controlPoint2: CGPointMake(0.52, 12.47))
+        fill1Path.addCurveToPoint(CGPointMake(4.85, 10.96), controlPoint1: CGPointMake(2.32, 12.47), controlPoint2: CGPointMake(3.73, 11.9))
+        fill1Path.addCurveToPoint(CGPointMake(1.79, 8.51), controlPoint1: CGPointMake(3.42, 10.93), controlPoint2: CGPointMake(2.21, 9.91))
+        fill1Path.addCurveToPoint(CGPointMake(2.41, 8.58), controlPoint1: CGPointMake(1.99, 8.56), controlPoint2: CGPointMake(2.19, 8.58))
+        fill1Path.addCurveToPoint(CGPointMake(3.27, 8.45), controlPoint1: CGPointMake(2.7, 8.58), controlPoint2: CGPointMake(2.99, 8.53))
+        fill1Path.addCurveToPoint(CGPointMake(0.64, 5), controlPoint1: CGPointMake(1.77, 8.13), controlPoint2: CGPointMake(0.64, 6.71))
+        fill1Path.addCurveToPoint(CGPointMake(0.64, 4.96), controlPoint1: CGPointMake(0.64, 4.99), controlPoint2: CGPointMake(0.64, 4.97))
+        fill1Path.addCurveToPoint(CGPointMake(2.13, 5.4), controlPoint1: CGPointMake(1.08, 5.22), controlPoint2: CGPointMake(1.59, 5.38))
+        fill1Path.addCurveToPoint(CGPointMake(0.67, 2.47), controlPoint1: CGPointMake(1.25, 4.77), controlPoint2: CGPointMake(0.67, 3.69))
+        fill1Path.addCurveToPoint(CGPointMake(1.11, 0.7), controlPoint1: CGPointMake(0.67, 1.82), controlPoint2: CGPointMake(0.83, 1.22))
+        fill1Path.addCurveToPoint(CGPointMake(7.86, 4.38), controlPoint1: CGPointMake(2.73, 2.83), controlPoint2: CGPointMake(5.14, 4.23))
+        fill1Path.addCurveToPoint(CGPointMake(7.78, 3.57), controlPoint1: CGPointMake(7.81, 4.12), controlPoint2: CGPointMake(7.78, 3.85))
+        fill1Path.addCurveToPoint(CGPointMake(11.05, 0.05), controlPoint1: CGPointMake(7.78, 1.63), controlPoint2: CGPointMake(9.24, 0.05))
+        fill1Path.addCurveToPoint(CGPointMake(13.44, 1.16), controlPoint1: CGPointMake(11.99, 0.05), controlPoint2: CGPointMake(12.85, 0.48))
+        fill1Path.addCurveToPoint(CGPointMake(15.52, 0.31), controlPoint1: CGPointMake(14.19, 1.01), controlPoint2: CGPointMake(14.89, 0.71))
+        fill1Path.addCurveToPoint(CGPointMake(14.08, 2.26), controlPoint1: CGPointMake(15.28, 1.13), controlPoint2: CGPointMake(14.76, 1.82))
+        fill1Path.addCurveToPoint(CGPointMake(15.96, 1.7), controlPoint1: CGPointMake(14.75, 2.17), controlPoint2: CGPointMake(15.38, 1.98))
+        fill1Path.addCurveToPoint(CGPointMake(14.33, 3.53), controlPoint1: CGPointMake(15.53, 2.41), controlPoint2: CGPointMake(14.97, 3.03))
+        fill1Path.addCurveToPoint(CGPointMake(14.34, 3.98), controlPoint1: CGPointMake(14.34, 3.68), controlPoint2: CGPointMake(14.34, 3.83))
+        fill1Path.addCurveToPoint(CGPointMake(5.02, 14), controlPoint1: CGPointMake(14.34, 8.63), controlPoint2: CGPointMake(11.05, 14))
+        fill1Path.closePath()
+        fill1Path.miterLimit = 4;
+
+        fill1Path.usesEvenOddFillRule = true;
+
+        fillColor4.setFill()
+        fill1Path.fill()
     }
 
     //// Generated Images
@@ -563,18 +673,18 @@ public class Assets : NSObject {
         return Cache.imageOfUBER_API_Badge!
     }
 
-    public class var imageOfGear_icon: UIImage {
-        if Cache.imageOfGear_icon != nil {
-            return Cache.imageOfGear_icon!
+    public class var imageOfGear: UIImage {
+        if Cache.imageOfGear != nil {
+            return Cache.imageOfGear!
         }
 
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(27, 27), false, 0)
-            Assets.drawGear_icon()
+            Assets.drawGear()
 
-        Cache.imageOfGear_icon = UIGraphicsGetImageFromCurrentImageContext()!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        Cache.imageOfGear = UIGraphicsGetImageFromCurrentImageContext()!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfGear_icon!
+        return Cache.imageOfGear!
     }
 
     //// Customization Infrastructure
@@ -599,12 +709,12 @@ public class Assets : NSObject {
         }
     }
 
-    @IBOutlet var gear_iconTargets: [AnyObject]! {
-        get { return Cache.gear_iconTargets }
+    @IBOutlet var gearTargets: [AnyObject]! {
+        get { return Cache.gearTargets }
         set {
-            Cache.gear_iconTargets = newValue
+            Cache.gearTargets = newValue
             for target: AnyObject in newValue {
-                target.setImage(Assets.imageOfGear_icon)
+                target.setImage(Assets.imageOfGear)
             }
         }
     }
