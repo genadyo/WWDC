@@ -310,7 +310,7 @@
     UIView *view = [[UIView alloc] init];
     if (!(self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0)) {
         view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0f)];
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(7, 0, tableView.frame.size.width-7*2, 40.0f)];
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0f)];
         bgView.backgroundColor = [UIColor colorWithRed:247.0f/255.0f green:247.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
         [view addSubview:bgView];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(22, 0, tableView.frame.size.width-22*2, 40.0f)];
