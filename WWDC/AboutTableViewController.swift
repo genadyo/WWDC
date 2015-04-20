@@ -10,6 +10,12 @@ import UIKit
 import MessageUI
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        Mixpanel.sharedInstance().track("About")
+    }
+
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
