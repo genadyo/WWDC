@@ -112,7 +112,7 @@
 {
     [[TMCache sharedCache] objectForKey:[self iconCacheKey]
                                   block:^(TMCache *cache, NSString *key, id object) {
-                                      self.icon = (UIImage *)object;
+                                      _icon = (UIImage *)object;
                                   }];
 
     [[TMCache sharedCache] objectForKey:[self logoCacheKey]
