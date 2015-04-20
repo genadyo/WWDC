@@ -118,7 +118,9 @@
                 }
                 [[dict objectForKey:[party sortDate]] addObject:party];
             }
-            NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+            NSArray *sortedKeys = [[dict allKeys] sortedArrayUsingComparator:^(NSString *str1, NSString *str2) {
+                return [str1 compare:str2 options:NSNumericSearch];
+            }];
             NSMutableArray *array = [[NSMutableArray alloc] init];
             for (NSString *key in sortedKeys) {
                 NSArray *sortDesc = @[
