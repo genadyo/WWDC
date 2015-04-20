@@ -43,6 +43,9 @@
 {
     [super viewDidLoad];
 
+    // hide back text
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+
     // Handoff
     NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:@"so.sugar.SFParties.view"];
     activity.title = self.party.title;

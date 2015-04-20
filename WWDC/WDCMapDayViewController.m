@@ -52,6 +52,9 @@ static const char kPartyKey;
 {
     [super viewDidLoad];
 
+    // hide back text
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+
     // Google
     id tracker = [[GAI sharedInstance] defaultTracker];
     [tracker set:kGAIScreenName value:@"WDCMapDayViewController"];

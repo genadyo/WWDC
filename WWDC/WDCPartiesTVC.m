@@ -37,6 +37,9 @@
 {
     [super viewDidLoad];
 
+    // hide back text
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
+
     // PaintCode
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];

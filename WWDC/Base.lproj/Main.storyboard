@@ -212,6 +212,10 @@ Title 2</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oxc-iI-0HL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <color key="textColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="ng2-9w-WlE" kind="relationship" relationship="rootViewController" id="dgi-sh-10u"/>
@@ -258,6 +262,10 @@ Title 2</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9lP-Ae-kP9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <color key="textColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="cxA-AI-2vJ" kind="relationship" relationship="rootViewController" id="98b-xs-Xcx"/>
@@ -663,6 +671,10 @@ Title2</string>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IGj-ZW-1Zg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                            <color key="textColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -675,7 +687,7 @@ Title2</string>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cDJ-JX-H6Q"/>
+        <segue reference="98b-xs-Xcx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>
