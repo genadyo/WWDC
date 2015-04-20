@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-#import <MessageUI/MessageUI.h>
 #import "GAI.h"
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
@@ -21,7 +20,7 @@
 #import "WDCAppDelegate.h"
 @import CoreLocation;
 
-@interface WDCPartiesTVC () <MFMailComposeViewControllerDelegate>
+@interface WDCPartiesTVC ()
 
 @property (strong, nonatomic) NSArray *parties;
 @property (strong, nonatomic) NSArray *filteredParties;
@@ -182,41 +181,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
-}
-
-- (IBAction)addParty:(UIBarButtonItem *)sender
-{
-    if ([MFMailComposeViewController canSendMail]) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please provide as many details as possible", nil) message:NSLocalizedString(@"We would really appreciate if you won't send us an empty mail", nil) preferredStyle:UIAlertControllerStyleActionSheet];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"Suggest a Party", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            MFMailComposeViewController *mailVC = [[MFMailComposeViewController alloc] init];
-            mailVC.mailComposeDelegate = self;
-            [mailVC setSubject:NSLocalizedString(@"Suggest a Party", nil)];
-            [mailVC setToRecipients:[NSArray arrayWithObjects:@"genady@okrain.com", nil]];
-            [self presentViewController:mailVC animated:YES completion:nil];
-        }];
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:NSLocalizedString(@"Cancel", nil) style:UIAlertActionStyleCancel handler:^(UIAlertAction * action) {
-            [alert dismissViewControllerAnimated:YES completion:nil];
-        }];
-        [alert addAction:ok];
-        [alert addAction:cancel];
-        alert.modalPresentationStyle = UIModalPresentationPopover;
-        UIPopoverPresentationController *popoverPresentationController = [alert popoverPresentationController];
-        popoverPresentationController.barButtonItem = sender;
-        [self presentViewController:alert animated:YES completion:nil];
-    } else {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Please configure mail account", nil) message:nil preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *ok = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * action) {
-            [alert dismissViewControllerAnimated:YES completion:nil];
-        }];
-        [alert addAction:ok];
-        [self presentViewController:alert animated:YES completion:nil];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
