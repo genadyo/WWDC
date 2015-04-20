@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSMutableArray *observers;
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) JVObserver *objectIdObserver;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end
 
@@ -41,6 +42,7 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
 
     // PaintCode
+    [self.infoButton setImage:[Assets imageOfGear_icon] forState:UIControlStateNormal];
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
 

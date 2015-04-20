@@ -141,6 +141,15 @@ Title 2</string>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Parties" id="UwR-EJ-MmL">
+                        <barButtonItem key="leftBarButtonItem" id="BlY-jQ-0D6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tpN-9a-wGx">
+                                <rect key="frame" x="16" y="7" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="Qdo-PD-rLQ">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr">
                                 <rect key="frame" x="16" y="7" width="71" height="30"/>
@@ -165,6 +174,7 @@ Title 2</string>
                     </refreshControl>
                     <connections>
                         <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="6DZ-1r-4qv"/>
+                        <outlet property="infoButton" destination="tpN-9a-wGx" id="e94-hK-Ete"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbu-zn-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
