@@ -45,7 +45,7 @@
         self.address1 = record[@"address1"];
         self.address2 = record[@"address2"];
         self.address3 = record[@"address3"];
-        self.details = record[@"details"];
+        self.details = [record[@"details"] stringByReplacingOccurrencesOfString:@"💩" withString:@"\n"];
         self.startDate = record[@"startDate"];
         self.endDate = record[@"endDate"];
         self.latitude = [NSNumber numberWithDouble:((CLLocation *)record[@"location"]).coordinate.latitude];
