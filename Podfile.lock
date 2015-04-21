@@ -12,6 +12,7 @@ PODS:
   - MMWormhole/Core (1.1.1)
   - Parse (1.7.1):
     - Bolts (~> 1.1)
+  - SDCloudUserDefaults (1.0.1)
   - TMCache (1.2.4)
   - TUSafariActivity (1.0.4)
 
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - Mixpanel
   - MMWormhole
   - Parse
+  - SDCloudUserDefaults
   - TMCache
   - TUSafariActivity
 
@@ -40,6 +42,7 @@ SPEC CHECKSUMS:
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   MMWormhole: 941cd168b4afd6073f883b82944d6eded4e00203
   Parse: fa8ec29de6d82035635986c11946299fb1b38316
+  SDCloudUserDefaults: c9532cba15409dc44f3a25e2ef6d5d572c2692d9
   TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 

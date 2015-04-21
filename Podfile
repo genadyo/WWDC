@@ -9,6 +9,7 @@ pod 'TMCache'
 pod 'Mixpanel'
 pod 'MMWormhole'
 pod 'Parse'
+pod 'SDCloudUserDefaults'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
