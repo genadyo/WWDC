@@ -105,6 +105,16 @@
         UIImage *uber = [Assets imageOfUBER_API_Badge];
         [self.uberButton setImage:uber forState:UIControlStateNormal];
     }
+
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if ([[note userInfo] objectForKey:@"going"] != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf refreshGoing];
+                [[WDCParties sharedInstance] saveGoing];
+            });
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
