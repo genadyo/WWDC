@@ -71,12 +71,26 @@ static const char kPartyKey;
     region.span.latitudeDelta = 0.025f;
     region.span.longitudeDelta = 0.025f;
     [self.mapView setRegion:region animated:NO];
+
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if ([[note userInfo] objectForKey:@"going"] != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf refreshMap];
+            });
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 
+    [self refreshMap];
+}
+
+- (void)refreshMap
+{
     [self.mapView removeAnnotations:self.mapView.annotations];
     for (WDCParty *party in self.parties) {
         MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
