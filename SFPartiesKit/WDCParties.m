@@ -10,6 +10,7 @@
 #import <MMWormhole/MMWormhole.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCParties()
 
@@ -130,28 +131,12 @@
     [publicDatabase addOperation:fetchRecordsIconOperation];
 }
 
-- (NSMutableArray *)going
-{
-    if (!_going) {
-        NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:@"going"];
-        if (data) {
-            _going = [[NSKeyedUnarchiver unarchiveObjectWithData:data] mutableCopy];
-        } else {
-            _going = [[NSMutableArray alloc] init];
-        }
-    }
-    return _going;
-}
-
 - (void)saveGoing
 {
     dispatch_async(self.serialQueue, ^{
-        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
-        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.going];
-        [userDefaults setObject:data forKey:@"going"];
-
         // cache localy all the going parties for the watchkit extension
-        data = [userDefaults objectForKey:@"parties"];
+        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
+        NSData *data = [userDefaults objectForKey:@"parties"];
         if (data) {
             NSArray *parties = [NSKeyedUnarchiver unarchiveObjectWithData:data];
 
@@ -175,7 +160,7 @@
             NSMutableArray *filteredPartiesMutable = [[NSMutableArray alloc] init];
             for (NSArray *array in daysArray) {
                 for (WDCParty *party in array) {
-                    if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] != NSNotFound) {
+                    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
                         [party shortDate];
                         [filteredPartiesMutable addObject:party];
                     }

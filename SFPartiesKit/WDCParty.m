@@ -9,6 +9,7 @@
 #import <TMCache/TMCache.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCParty()
 
@@ -238,7 +239,7 @@
     [userDefaults synchronize];
 
     // save going
-    if ([[WDCParties sharedInstance].going indexOfObject:self.objectId] != NSNotFound) {
+    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.objectId] != NSNotFound) {
         [[WDCParties sharedInstance] saveGoing];
     }
 }

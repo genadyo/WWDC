@@ -15,6 +15,7 @@
 #import "AAPLTraitOverrideViewController.h"
 #import <Keys/SFPartiesKeys.h>
 #import <Parse/Parse.h>
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
 
@@ -44,6 +45,12 @@
 
     // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
+
+    // iCloud
+    [SDCloudUserDefaults registerForNotifications];
+    if ([SDCloudUserDefaults objectForKey:@"going"] == nil) {
+        [SDCloudUserDefaults setObject:@[] forKey:@"going"];
+    }
 
     // Global Tint Color (Xcode Bug #1)
     [[UIView appearance] setTintColor:[UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f]];

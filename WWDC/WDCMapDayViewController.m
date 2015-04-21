@@ -14,6 +14,7 @@
 #import "GAIDictionaryBuilder.h"
 #import <objc/runtime.h>
 #import "WDCParties.h"
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 @import MapKit;
 
 @interface MKPointAnnotation (WDCPointAnnotation)
@@ -102,7 +103,7 @@ static const char kPartyKey;
         if (!v) {
             v = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"party"];
         }
-        if ([[WDCParties sharedInstance].going indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
+        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
             v.pinColor = MKPinAnnotationColorGreen;
         } else {
             v.pinColor = MKPinAnnotationColorPurple;

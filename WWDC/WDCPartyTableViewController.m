@@ -18,6 +18,7 @@
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
 #import <Keys/SFPartiesKeys.h>
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate>
 
@@ -120,7 +121,7 @@
 
 - (void)refreshGoing
 {
-    if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
+    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
         [self.goingButton setTitle:NSLocalizedString(@"Not Going", nil) forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
@@ -137,13 +138,16 @@
 
 - (IBAction)updateGoing:(id)sender
 {
-    if ([[WDCParties sharedInstance].going indexOfObject:self.party.objectId] == NSNotFound) {
-        [[WDCParties sharedInstance].going addObject:self.party.objectId];
+    NSMutableArray *goingMutableArray = [[SDCloudUserDefaults objectForKey:@"going"] mutableCopy];
+    if ([goingMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
+        [goingMutableArray addObject:self.party.objectId];
         [[Mixpanel sharedInstance].people increment:@"updateGoing.Going" by:@1];
     } else {
-        [[WDCParties sharedInstance].going removeObject:self.party.objectId];
+        [goingMutableArray removeObject:self.party.objectId];
         [[Mixpanel sharedInstance].people increment:@"updateGoing.NotGoing" by:@1];
     }
+    [SDCloudUserDefaults setObject:[goingMutableArray copy] forKey:@"going"];
+    [SDCloudUserDefaults synchronize];
     [self refreshGoing];
     [[WDCParties sharedInstance] saveGoing];
 

@@ -14,7 +14,6 @@
 - (void)refreshWithBlock:(void (^)(BOOL succeeded, NSArray *parties))block;
 - (void)saveGoing;
 
-@property (strong, nonatomic) NSMutableArray *going;
 @property (assign, nonatomic) BOOL disableCache;
 @property (readonly, strong, nonatomic) NSArray *filteredParties;
 

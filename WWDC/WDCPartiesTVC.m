@@ -18,6 +18,7 @@
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
 #import "WDCAppDelegate.h"
+#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 @import CoreLocation;
 
 @interface WDCPartiesTVC ()
@@ -167,7 +168,7 @@
         for (NSArray *array in self.parties) {
             NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
             for (WDCParty *party in array) {
-                if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] != NSNotFound) {
+                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
                     [mutableArray addObject:party];
                 }
             }
@@ -239,7 +240,7 @@
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         partyCell.titleLabel.text = party.title;
         partyCell.hoursLabel.text = [party hours];
-        if ([[WDCParties sharedInstance].going indexOfObject:party.objectId] == NSNotFound) {
+        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] == NSNotFound) {
             partyCell.goingView.hidden = YES;
         } else {
             partyCell.goingView.hidden = NO;
