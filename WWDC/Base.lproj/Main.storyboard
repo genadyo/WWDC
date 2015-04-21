@@ -311,7 +311,7 @@ Title 2</string>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bjg-ZC-luh">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" secondItem="bjg-ZC-luh" secondAttribute="width" multiplier="1:2" id="86E-Vc-00E"/>
+                                                        <constraint firstAttribute="height" secondItem="bjg-ZC-luh" secondAttribute="width" multiplier="1:2" priority="999" id="86E-Vc-00E"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
