@@ -63,6 +63,15 @@
     self.tableView.contentOffset = CGPointMake(0, -self.refreshControl.frame.size.height);
     [self.refreshControl beginRefreshing];
     [self refresh:self];
+
+    __weak typeof(self) weakSelf = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+        if ([[note userInfo] objectForKey:@"going"] != nil) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf updateFilteredParties];
+            });
+        }
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
