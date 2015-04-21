@@ -312,13 +312,7 @@ Title 2</string>
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" secondItem="bjg-ZC-luh" secondAttribute="width" multiplier="1:2" id="86E-Vc-00E"/>
-                                                        <constraint firstAttribute="height" constant="159" id="rib-IL-65q"/>
                                                     </constraints>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="rib-IL-65q"/>
-                                                        </mask>
-                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
