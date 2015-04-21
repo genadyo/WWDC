@@ -8,6 +8,7 @@ pod 'GoogleAnalytics-iOS-SDK'
 pod 'TMCache'
 pod 'Mixpanel'
 pod 'MMWormhole'
+pod 'Parse'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
@@ -15,6 +16,8 @@ plugin 'cocoapods-keys', {
   :keys => [
     "GoogleAnalytics",
     "Uber",
-    "Mixpanel"
+    "Mixpanel",
+    "ParseApplicationId",
+    "ParseClientKey"
   ]
 }

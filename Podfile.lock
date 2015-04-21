@@ -1,4 +1,5 @@
 PODS:
+  - Bolts (1.1.4)
   - GoogleAnalytics-iOS-SDK (3.10):
     - GoogleAnalytics-iOS-SDK/Core (= 3.10)
   - GoogleAnalytics-iOS-SDK/Core (3.10)
@@ -9,7 +10,9 @@ PODS:
   - MMWormhole (1.1.1):
     - MMWormhole/Core (= 1.1.1)
   - MMWormhole/Core (1.1.1)
-  - TMCache (1.2.3)
+  - Parse (1.7.1):
+    - Bolts (~> 1.1)
+  - TMCache (1.2.4)
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
@@ -17,6 +20,7 @@ DEPENDENCIES:
   - Keys (from `https://github.com/ashfurrow/empty-podspec.git`)
   - Mixpanel
   - MMWormhole
+  - Parse
   - TMCache
   - TUSafariActivity
 
@@ -30,11 +34,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ashfurrow/empty-podspec.git
 
 SPEC CHECKSUMS:
+  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
   GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef
-  Keys: a3efe40b227b600d61cb31b7e41db667e80f8dcc
+  Keys: 0feb3c779714b9ddbb40a8214ca348af3ea4986c
   Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   MMWormhole: 941cd168b4afd6073f883b82944d6eded4e00203
-  TMCache: 11589ef8c40909114a5e60132711c9a559e01d97
+  Parse: fa8ec29de6d82035635986c11946299fb1b38316
+  TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-COCOAPODS: 0.36.3
+COCOAPODS: 0.37.0.beta.1

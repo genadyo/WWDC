@@ -14,6 +14,7 @@
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
 #import <Keys/SFPartiesKeys.h>
+#import <Parse/Parse.h>
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
 
@@ -31,6 +32,9 @@
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+
+    // Parse
+    [Parse setApplicationId:keys.parseApplicationId clientKey:keys.parseClientKey];
 
     // GAI
     [[GAI sharedInstance] trackerWithTrackingId:keys.googleAnalytics];
@@ -122,36 +126,15 @@
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
-    CKDatabase *publicDatabase = [[CKContainer defaultContainer] publicCloudDatabase];
-    [publicDatabase fetchAllSubscriptionsWithCompletionHandler:^(NSArray *subscriptions, NSError *error) {
-        BOOL found = false;
-        for (CKSubscription *subscription in subscriptions) {
-            if ([subscription.recordType isEqualToString:@"Notification"]) {
-                found = YES;
-                break;
-            }
-        }
-        if (!found) {
-            CKSubscription *subscription = [[CKSubscription alloc] initWithRecordType:@"Notification" predicate:[NSPredicate predicateWithValue:YES] options:CKSubscriptionOptionsFiresOnRecordCreation];
-            CKNotificationInfo *notification = [[CKNotificationInfo alloc] init];
-            notification.alertLocalizationKey = @"%@";
-            notification.alertLocalizationArgs = @[@"message"];
-            subscription.notificationInfo = notification;
-            [publicDatabase saveSubscription:subscription completionHandler:^(CKSubscription *subscription, NSError *error) {
-                if (error) {
-                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"Error"}];
-                } else {
-                    [[Mixpanel sharedInstance] track:@"CKSubscription" properties:@{@"Status": @"OK"}];
-                }
-            }];
-
-        }
-    }];
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [CKNotification notificationFromRemoteNotificationDictionary:userInfo];
+    [PFPush handlePush:userInfo];
 }
 
 #pragma mark - UISplitViewControllerDelegate
