@@ -249,10 +249,13 @@
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         partyCell.titleLabel.text = party.title;
         partyCell.hoursLabel.text = [party hours];
-        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] == NSNotFound) {
-            partyCell.goingView.hidden = YES;
-        } else {
-            partyCell.goingView.hidden = NO;
+        partyCell.goingView.hidden = YES;
+        if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+            if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
+                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+                    partyCell.goingView.hidden = NO;
+                }
+            }
         }
         
         partyCell.iconImageView.image = party.icon;
