@@ -55,7 +55,7 @@
                                         <items>
                                             <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="RFY-s3-FMT"/>
                                             <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="3" id="e94-gW-zJs">
-                                                <fontDescription key="font" type="system" pointSize="17"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
