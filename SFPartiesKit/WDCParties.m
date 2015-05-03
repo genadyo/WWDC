@@ -199,8 +199,11 @@
     if (data) {
         NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         NSMutableArray *fromTodayArray = [[NSMutableArray alloc] init];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        calendar.timeZone = [NSTimeZone timeZoneWithAbbreviation:@"PDT"];
+        NSDate *date = [calendar startOfDayForDate:[NSDate date]];
         for (WDCParty *party in array) {
-            if ([party.startDate timeIntervalSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] > 0) {
+            if ([party.endDate timeIntervalSinceDate:date] >= 0) {
                 [fromTodayArray addObject:party];
             }
         }
