@@ -59,7 +59,7 @@
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
+                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
                                         <connections>
                                             <segue destination="k6q-35-Xcc" kind="push" identifier="map" id="Tuv-Qr-7pb"/>
                                         </connections>
