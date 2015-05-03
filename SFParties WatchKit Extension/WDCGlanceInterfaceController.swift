@@ -13,18 +13,13 @@ class WDCGlanceInterfaceController: WKInterfaceController {
     @IBOutlet weak var emptyLabel: WKInterfaceLabel!
     @IBOutlet weak var iconImage: WKInterfaceImage!
     @IBOutlet weak var timer: WKInterfaceTimer!
-    var wormhole: MMWormhole?
+    var refreshTimer:NSTimer?
 
     override func awakeWithContext(context: AnyObject!) {
         // Initialize variables here.
         super.awakeWithContext(context)
 
         loadData()
-
-        wormhole = MMWormhole(applicationGroupIdentifier: "group.so.sugar.SFParties", optionalDirectory: "wormhole")
-        wormhole!.listenForMessageWithIdentifier("loadTableData") { [weak self] _ in
-            self?.loadData()
-        }
     }
 
     func loadData() {
@@ -61,9 +56,13 @@ class WDCGlanceInterfaceController: WKInterfaceController {
 
     override func willActivate() {
         super.willActivate()
+
+        refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "loadData", userInfo: nil, repeats: true)
     }
 
     override func didDeactivate() {
         super.didDeactivate()
+
+        refreshTimer?.invalidate()
     }
 }
