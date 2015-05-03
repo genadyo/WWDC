@@ -26,7 +26,7 @@ class WDCPartyInterfaceController: WKInterfaceController {
         setTitle(party.title)
         dateLabel.setText(party.shortDate)
         addressLabel.setText(party.address1 + ", " + party.address2)
-        map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.78417, -122.40156), MKCoordinateSpanMake(0.025, 0.025)))
+        map.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(party.latitude.doubleValue, party.longitude.doubleValue), MKCoordinateSpanMake(0.005, 0.005)))
         map.addAnnotation(CLLocationCoordinate2DMake(party.latitude.doubleValue, party.longitude.doubleValue), withPinColor: .Green)
 
         // Handoff
