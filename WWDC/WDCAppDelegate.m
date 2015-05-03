@@ -69,6 +69,25 @@
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
 
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
+    NSInteger watchRuns = [userDefaults integerForKey:@"watchRuns"];
+    NSInteger glanceRuns = [userDefaults integerForKey:@"glanceRuns"];
+    if (glanceRuns > 0) {
+        if (![userDefaults boolForKey:@"glanceRunsSaved"]) {
+            [[Mixpanel sharedInstance] track:@"glanceRun"];
+            [userDefaults setBool:YES forKey:@"glanceRunsSaved"];
+        }
+        [[Mixpanel sharedInstance].people set:@{@"glanceRuns": @(glanceRuns)}];
+    }
+    if (watchRuns > 0) {
+        if (![userDefaults boolForKey:@"watchRunsSaved"]) {
+            [[Mixpanel sharedInstance] track:@"watchRun"];
+            [userDefaults setBool:YES forKey:@"watchRunsSaved"];
+        }
+        [[Mixpanel sharedInstance].people set:@{@"watchRuns": @(watchRuns)}];
+    }
+    [userDefaults synchronize];
+
     // get icloud user id
     [[CKContainer defaultContainer] fetchUserRecordIDWithCompletionHandler:^(CKRecordID *userRecordID, NSError *error) {
         if (error) {

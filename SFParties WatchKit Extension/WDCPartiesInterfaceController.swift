@@ -17,6 +17,11 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         // Initialize variables here.
         super.awakeWithContext(context)
 
+        // analytics
+        let userDefaults = NSUserDefaults(suiteName: "group.so.sugar.SFParties")!
+        userDefaults.setInteger(userDefaults.integerForKey("watchRuns")+1, forKey: "watchRuns")
+        userDefaults.synchronize()
+
         // load my table
         loadTableData()
 

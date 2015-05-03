@@ -19,6 +19,11 @@ class WDCGlanceInterfaceController: WKInterfaceController {
         // Initialize variables here.
         super.awakeWithContext(context)
 
+        // analytics
+        let userDefaults = NSUserDefaults(suiteName: "group.so.sugar.SFParties")!
+        userDefaults.setInteger(userDefaults.integerForKey("glanceRuns")+1, forKey: "glanceRuns")
+        userDefaults.synchronize()
+
         loadData()
     }
 
