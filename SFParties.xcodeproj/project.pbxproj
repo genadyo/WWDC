@@ -12,6 +12,7 @@
 		B200A9DF1AE5999E005B070B /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */; };
 		B2174D471A5C7FF70078B843 /* SFParties WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
+		B23875FB1AF60B75005048C1 /* WDCGlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23875FA1AF60B75005048C1 /* WDCGlanceInterfaceController.swift */; };
 		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
 		B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464255192788A200DF2E06 /* WDCPartyTVC.m */; };
@@ -106,6 +107,7 @@
 		B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyWebViewController.swift; sourceTree = "<group>"; };
+		B23875FA1AF60B75005048C1 /* WDCGlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCGlanceInterfaceController.swift; sourceTree = "<group>"; };
 		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 			children = (
 				B2F01C661A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift */,
 				B2AF40651A207C950028C01C /* WDCPartyInterfaceController.swift */,
+				B23875FA1AF60B75005048C1 /* WDCGlanceInterfaceController.swift */,
 				B2F01C871A1F8A8100F1AC70 /* WDCPartiesTRC.swift */,
 				B2F01C631A1F841D00F1AC70 /* Supporting Files */,
 			);
@@ -688,6 +691,7 @@
 			files = (
 				B2F01C881A1F8A8100F1AC70 /* WDCPartiesTRC.swift in Sources */,
 				B2AF40661A207C950028C01C /* WDCPartyInterfaceController.swift in Sources */,
+				B23875FB1AF60B75005048C1 /* WDCGlanceInterfaceController.swift in Sources */,
 				B2F01C671A1F841D00F1AC70 /* WDCPartiesInterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

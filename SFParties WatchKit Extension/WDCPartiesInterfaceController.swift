@@ -38,7 +38,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
     func loadTableData() {
         // read the cached parties
-        parties = WDCParties.sharedInstance().filteredParties
+        parties = WDCParties.sharedInstance().watchParties
 
         if (parties.count == 0) {
             interfaceTable.setNumberOfRows(1, withRowType: "empty")
@@ -50,15 +50,15 @@ class WDCPartiesInterfaceController: WKInterfaceController {
             for (idx, party) in enumerate(parties) {
                 let wdcParty = party as! WDCParty
                 let row = interfaceTable.rowControllerAtIndex(idx) as! WDCPartiesTRC
-                row.titleInterfaceLabel.setText(wdcParty.title)
+                row.titleLabel.setText(wdcParty.title)
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
-                    row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
+                    row.iconImage.setImageNamed(wdcParty.objectId)
                 } else if wdcParty.watchIcon != nil {
                     if WKInterfaceDevice().addCachedImage(wdcParty.watchIcon, name: wdcParty.objectId) {
-                        row.iconInterfaceImage.setImageNamed(wdcParty.objectId)
+                        row.iconImage.setImageNamed(wdcParty.objectId)
                     } else {
-                        row.iconInterfaceImage.setImage(wdcParty.watchIcon)
+                        row.iconImage.setImage(wdcParty.watchIcon)
                     }
                 }
             }

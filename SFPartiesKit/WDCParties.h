@@ -15,6 +15,7 @@
 - (void)saveGoing;
 
 @property (assign, nonatomic) BOOL disableCache;
-@property (readonly, strong, nonatomic) NSArray *filteredParties;
+@property (readonly, strong, nonatomic) NSArray *watchParties;
+@property (readonly, strong, nonatomic) NSArray *glanceParties;
 
 @end

@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6751" systemVersion="14D130a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7703" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
+        <!--Glance Interface Controller-->
+        <scene sceneID="frm-xe-iy1">
+            <objects>
+                <glanceController topTemplateType="body1Group" id="9Ur-y5-iJr" customClass="WDCGlanceInterfaceController" customModule="SFParties_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Upcoming Party:" id="MsO-Hj-1zd">
+                            <color key="textColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                        </label>
+                        <group alignment="left" spacing="2" id="mh4-Qn-jVy">
+                            <items>
+                                <imageView width="25" height="25" alignment="left" verticalAlignment="center" hidden="YES" contentMode="scaleAspectFit" id="eIa-U1-zuu"/>
+                                <label alignment="left" verticalAlignment="center" hidden="YES" text="Name" minimumScaleFactor="0.69999999999999996" id="EnF-RC-6Gr">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" layout="vertical" id="l6u-n9-vcl">
+                            <items>
+                                <timer alignment="center" verticalAlignment="center" hidden="YES" textAlignment="center" numberOfLines="2" format="abbreviated" previewedSeconds="1000000" id="soO-CH-1en">
+                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
+                                </timer>
+                                <label alignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="0" id="dni-Xm-bJ8">
+                                    <fontDescription key="font" type="system" pointSize="20"/>
+                                </label>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="emptyLabel" destination="dni-Xm-bJ8" id="XHo-oc-g5H"/>
+                        <outlet property="iconImage" destination="eIa-U1-zuu" id="NA7-cD-HZg"/>
+                        <outlet property="timer" destination="soO-CH-1en" id="R0c-f9-qiS"/>
+                        <outlet property="titleLabel" destination="EnF-RC-6Gr" id="5Pm-ZQ-OkN"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="482" y="97"/>
+        </scene>
         <!--Parties-->
         <scene sceneID="Csz-Kb-ffj">
             <objects>
@@ -13,33 +51,32 @@
                         <table alignment="left" id="hyb-yL-kQ3">
                             <items>
                                 <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="80" alignment="left" spacing="2" id="n3X-vW-WdA">
+                                    <group key="rootItem" width="1" height="70" alignment="left" spacing="2" id="n3X-vW-WdA">
                                         <items>
-                                            <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="center" id="RFY-s3-FMT"/>
-                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="4" id="e94-gW-zJs">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="RFY-s3-FMT"/>
+                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="3" id="e94-gW-zJs">
+                                                <fontDescription key="font" type="system" pointSize="17"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                        <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                                         <connections>
                                             <segue destination="k6q-35-Xcc" kind="push" identifier="map" id="Tuv-Qr-7pb"/>
                                         </connections>
                                     </group>
                                     <connections>
-                                        <outlet property="iconInterfaceImage" destination="RFY-s3-FMT" id="4R2-QV-fuC"/>
-                                        <outlet property="titleInterfaceLabel" destination="e94-gW-zJs" id="Y8v-zM-2Y8"/>
+                                        <outlet property="iconImage" destination="RFY-s3-FMT" id="Xdm-A0-QjM"/>
+                                        <outlet property="titleLabel" destination="e94-gW-zJs" id="lrT-7J-LOF"/>
                                     </connections>
                                 </tableRow>
                                 <tableRow identifier="empty" selectable="NO" id="Zav-JE-bOE">
-                                    <group key="rootItem" width="1" height="1" alignment="left" spacing="2" id="axc-R7-gVo">
+                                    <group key="rootItem" width="1" height="1" alignment="left" id="axc-R7-gVo">
                                         <items>
-                                            <label alignment="center" verticalAlignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="4" id="e4r-3b-be9">
-                                                <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                            <label alignment="center" verticalAlignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="0" id="e4r-3b-be9">
+                                                <fontDescription key="font" type="system" pointSize="18"/>
                                             </label>
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
                                     </group>
                                 </tableRow>
                             </items>
@@ -64,7 +101,7 @@
                                     <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                 </label>
                                 <label alignment="left" text="Date" id="N63-05-5dy">
-                                    <color key="textColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                 </label>
                             </items>

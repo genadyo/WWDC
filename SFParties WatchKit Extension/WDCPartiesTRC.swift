@@ -9,6 +9,6 @@
 import WatchKit
 
 class WDCPartiesTRC: NSObject {
-    @IBOutlet weak var titleInterfaceLabel: WKInterfaceLabel!
-    @IBOutlet weak var iconInterfaceImage: WKInterfaceImage!
+    @IBOutlet weak var titleLabel: WKInterfaceLabel!
+    @IBOutlet weak var iconImage: WKInterfaceImage!
 }

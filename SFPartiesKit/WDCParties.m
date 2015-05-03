@@ -178,15 +178,37 @@
     });
 }
 
-- (NSArray *)filteredParties
+- (NSArray *)glanceParties
 {
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:@"filteredParties"];
     if (data) {
         NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-        return array;
+        for (WDCParty *party in array) {
+            if ([party.startDate timeIntervalSinceDate:[NSDate date]] > 0) {
+                return @[party];
+            }
+        }
     }
 
     return @[];
 }
+
+- (NSArray *)watchParties
+{
+    NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:@"filteredParties"];
+    if (data) {
+        NSArray *array = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        NSMutableArray *fromTodayArray = [[NSMutableArray alloc] init];
+        for (WDCParty *party in array) {
+            if ([party.startDate timeIntervalSinceDate:[[NSCalendar currentCalendar] startOfDayForDate:[NSDate date]]] > 0) {
+                [fromTodayArray addObject:party];
+            }
+        }
+        return fromTodayArray;
+    }
+
+    return @[];
+}
+
 
 @end
