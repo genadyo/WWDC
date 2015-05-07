@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7703" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
@@ -16,7 +16,7 @@
                         <group alignment="left" spacing="2" id="mh4-Qn-jVy">
                             <items>
                                 <imageView width="25" height="25" alignment="left" verticalAlignment="center" hidden="YES" contentMode="scaleAspectFit" id="eIa-U1-zuu"/>
-                                <label alignment="left" verticalAlignment="center" hidden="YES" text="Name" minimumScaleFactor="0.69999999999999996" id="EnF-RC-6Gr">
+                                <label alignment="left" verticalAlignment="center" hidden="YES" text="Name" minimumScaleFactor="0.5" id="EnF-RC-6Gr">
                                     <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                 </label>
                             </items>
