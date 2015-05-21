@@ -673,18 +673,17 @@ public class Assets : NSObject {
         //// Not-Going
         //// Shape Drawing
         var shapePath = UIBezierPath()
-        shapePath.moveToPoint(CGPointMake(0, 0))
-        shapePath.addLineToPoint(CGPointMake(0, 11.38))
+        shapePath.moveToPoint(CGPointMake(0, 11.38))
         shapePath.addLineToPoint(CGPointMake(11.38, 11.38))
-        shapePath.addLineToPoint(CGPointMake(11.38, 5.54))
-        shapePath.addLineToPoint(CGPointMake(9.75, 7.17))
+        shapePath.addLineToPoint(CGPointMake(11.38, 0))
+        shapePath.addLineToPoint(CGPointMake(9.75, 0))
         shapePath.addLineToPoint(CGPointMake(9.75, 9.75))
         shapePath.addLineToPoint(CGPointMake(1.62, 9.75))
         shapePath.addLineToPoint(CGPointMake(1.62, 1.62))
-        shapePath.addLineToPoint(CGPointMake(7.46, 1.62))
-        shapePath.addLineToPoint(CGPointMake(9.08, 0))
+        shapePath.addLineToPoint(CGPointMake(9.75, 1.62))
+        shapePath.addLineToPoint(CGPointMake(9.75, 0))
         shapePath.addLineToPoint(CGPointMake(0, 0))
-        shapePath.addLineToPoint(CGPointMake(0, 0))
+        shapePath.addLineToPoint(CGPointMake(0, 11.38))
         shapePath.closePath()
         shapePath.miterLimit = 4;
 
@@ -692,29 +691,6 @@ public class Assets : NSObject {
 
         fillColor2.setFill()
         shapePath.fill()
-
-
-        //// Shape-Copy-2 Drawing
-        var shapeCopy2Path = UIBezierPath()
-        shapeCopy2Path.moveToPoint(CGPointMake(11.37, 11.37))
-        shapeCopy2Path.addLineToPoint(CGPointMake(11.37, -0))
-        shapeCopy2Path.addLineToPoint(CGPointMake(-0, -0))
-        shapeCopy2Path.addLineToPoint(CGPointMake(-0, 5.83))
-        shapeCopy2Path.addLineToPoint(CGPointMake(1.62, 4.21))
-        shapeCopy2Path.addLineToPoint(CGPointMake(1.62, 1.62))
-        shapeCopy2Path.addLineToPoint(CGPointMake(9.75, 1.62))
-        shapeCopy2Path.addLineToPoint(CGPointMake(9.75, 9.75))
-        shapeCopy2Path.addLineToPoint(CGPointMake(3.91, 9.75))
-        shapeCopy2Path.addLineToPoint(CGPointMake(2.29, 11.37))
-        shapeCopy2Path.addLineToPoint(CGPointMake(11.37, 11.37))
-        shapeCopy2Path.addLineToPoint(CGPointMake(11.37, 11.37))
-        shapeCopy2Path.closePath()
-        shapeCopy2Path.miterLimit = 4;
-
-        shapeCopy2Path.usesEvenOddFillRule = true;
-
-        fillColor2.setFill()
-        shapeCopy2Path.fill()
     }
 
     //// Generated Images
