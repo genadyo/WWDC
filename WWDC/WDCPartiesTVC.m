@@ -178,8 +178,10 @@
             NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
             for (WDCParty *party in array) {
                 if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
-                    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
-                        [mutableArray addObject:party];
+                    if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
+                        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+                            [mutableArray addObject:party];
+                        }
                     }
                 }
             }

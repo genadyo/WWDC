@@ -131,7 +131,10 @@
 
 - (void)refreshGoing
 {
-    if ([SDCloudUserDefaults objectForKey:@"going"] == nil || [[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
+    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
+        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+        [self.goingButton setImage:[Assets imageOfNotGoingMark] forState:UIControlStateNormal];
+    } else if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setImage:[Assets imageOfNotGoingMark] forState:UIControlStateNormal];
     } else {
@@ -143,7 +146,7 @@
 - (IBAction)updateGoing:(id)sender
 {
     NSMutableArray *goingMutableArray;
-    if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+    if (([SDCloudUserDefaults objectForKey:@"going"] != nil) && ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
         goingMutableArray = [[SDCloudUserDefaults objectForKey:@"going"] mutableCopy];
     } else {
         goingMutableArray = [@[] mutableCopy];

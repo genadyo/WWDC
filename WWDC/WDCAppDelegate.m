@@ -48,7 +48,7 @@
 
     // iCloud
     [SDCloudUserDefaults registerForNotifications];
-    if ([SDCloudUserDefaults objectForKey:@"going"] == nil) {
+    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
         [SDCloudUserDefaults setObject:@[] forKey:@"going"];
     }
 

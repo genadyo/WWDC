@@ -240,8 +240,10 @@
 
     // save going
     if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
-        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.objectId] != NSNotFound) {
-            [[WDCParties sharedInstance] saveGoing];
+        if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
+            if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.objectId] != NSNotFound) {
+                [[WDCParties sharedInstance] saveGoing];
+            }
         }
     }
 }

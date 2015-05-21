@@ -119,8 +119,10 @@ static const char kPartyKey;
         }
         v.pinColor = MKPinAnnotationColorPurple;
         if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
-            if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
-                v.pinColor = MKPinAnnotationColorGreen;
+            if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
+                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
+                    v.pinColor = MKPinAnnotationColorGreen;
+                }
             }
         }
         v.canShowCallout = YES;
