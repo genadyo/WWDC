@@ -31,7 +31,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-oL-S4e">
-                                            <rect key="frame" x="86" y="53" width="474" height="14.5"/>
+                                            <rect key="frame" x="86" y="53" width="478" height="14.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -40,7 +40,7 @@
                                             </variation>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnx-aa-Fj9" customClass="WDCGoing" customModule="Parties">
-                                            <rect key="frame" x="567" y="32" width="13" height="10"/>
+                                            <rect key="frame" x="571" y="32" width="13" height="10"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="10" id="6DK-4C-W4L"/>
@@ -60,7 +60,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
-                                            <rect key="frame" x="86" y="8" width="474" height="41"/>
+                                            <rect key="frame" x="86" y="8" width="478" height="41"/>
                                             <string key="text">Title
 Title 2</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -86,7 +86,7 @@ Title 2</string>
                                         <constraint firstItem="wlh-qb-aJT" firstAttribute="trailing" secondItem="piH-pi-Tot" secondAttribute="trailing" constant="20" id="cUu-4X-Cwd"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
                                         <constraint firstAttribute="trailing" secondItem="wlh-qb-aJT" secondAttribute="trailing" constant="20" id="mVp-zi-oZO"/>
-                                        <constraint firstAttribute="trailing" secondItem="Jnx-aa-Fj9" secondAttribute="trailing" constant="20" id="oWE-Li-Uru"/>
+                                        <constraint firstAttribute="trailing" secondItem="Jnx-aa-Fj9" secondAttribute="trailing" constant="16" id="oWE-Li-Uru"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
