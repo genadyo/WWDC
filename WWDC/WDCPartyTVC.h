@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *hoursLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
 @property (weak, nonatomic) IBOutlet WDCGoing *goingView;
+@property (weak, nonatomic) IBOutlet UIView *badgeView;
 @property (strong, nonatomic) UIView *seperator;
 
 @end

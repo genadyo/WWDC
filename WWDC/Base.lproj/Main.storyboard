@@ -47,6 +47,18 @@
                                                 <constraint firstAttribute="width" constant="13" id="K9T-M3-lPK"/>
                                             </constraints>
                                         </view>
+                                        <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlh-qb-aJT" customClass="WDCCircleView">
+                                            <rect key="frame" x="570" y="33" width="10" height="10"/>
+                                            <color key="backgroundColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="10" id="4xz-VT-tv8"/>
+                                                <constraint firstAttribute="height" constant="10" id="9CO-yL-8Kg"/>
+                                            </constraints>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
                                             <rect key="frame" x="86" y="8" width="474" height="41"/>
                                             <string key="text">Title
@@ -62,6 +74,8 @@ Title 2</string>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="tl9-99-CA5" secondAttribute="centerY" constant="9" id="2NX-AD-LcB"/>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="top" secondItem="tl9-99-CA5" secondAttribute="bottom" constant="4" id="4mX-tD-dcg"/>
+                                        <constraint firstAttribute="trailing" secondItem="wlh-qb-aJT" secondAttribute="trailing" constant="20" id="6oi-sp-BJM"/>
+                                        <constraint firstAttribute="centerY" secondItem="wlh-qb-aJT" secondAttribute="centerY" id="Abc-jt-WdS"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="HH8-gK-N2n"/>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="K5o-Jc-YCQ"/>
                                         <constraint firstAttribute="centerY" secondItem="Jnx-aa-Fj9" secondAttribute="centerY" id="LFM-kP-Isj"/>
@@ -69,17 +83,22 @@ Title 2</string>
                                         <constraint firstItem="Jnx-aa-Fj9" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="7" id="QDi-yl-yP6"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
+                                        <constraint firstItem="wlh-qb-aJT" firstAttribute="trailing" secondItem="piH-pi-Tot" secondAttribute="trailing" constant="20" id="cUu-4X-Cwd"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
+                                        <constraint firstAttribute="trailing" secondItem="wlh-qb-aJT" secondAttribute="trailing" constant="20" id="mVp-zi-oZO"/>
                                         <constraint firstAttribute="trailing" secondItem="Jnx-aa-Fj9" secondAttribute="trailing" constant="20" id="oWE-Li-Uru"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="WiB-GQ-j7E"/>
+                                            <exclude reference="6oi-sp-BJM"/>
+                                            <exclude reference="cUu-4X-Cwd"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
+                                    <outlet property="badgeView" destination="wlh-qb-aJT" id="TmD-Cd-WZb"/>
                                     <outlet property="goingView" destination="Jnx-aa-Fj9" id="eLp-gb-M1S"/>
                                     <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="4Cy-4Z-SCw"/>
                                     <outlet property="iconImageView" destination="wSf-jz-91p" id="Ly3-XR-HvV"/>

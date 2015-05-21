@@ -44,6 +44,17 @@
 {
     [super viewDidLoad];
 
+    // remove badge
+    NSMutableArray *badgeMutableArray = [@[] mutableCopy];
+    if (([SDCloudUserDefaults objectForKey:@"badge"] != nil) && ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]])) {
+        badgeMutableArray = [[SDCloudUserDefaults objectForKey:@"badge"] mutableCopy];
+    }
+    if ([badgeMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
+        [badgeMutableArray addObject:self.party.objectId];
+    }
+    [SDCloudUserDefaults setObject:[badgeMutableArray copy] forKey:@"badge"];
+    [SDCloudUserDefaults synchronize];
+
     // hide back text
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
 
