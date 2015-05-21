@@ -117,10 +117,11 @@ static const char kPartyKey;
         if (!v) {
             v = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"party"];
         }
-        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
-            v.pinColor = MKPinAnnotationColorGreen;
-        } else {
-            v.pinColor = MKPinAnnotationColorPurple;
+        v.pinColor = MKPinAnnotationColorPurple;
+        if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+            if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
+                v.pinColor = MKPinAnnotationColorGreen;
+            }
         }
         v.canShowCallout = YES;
         v.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];

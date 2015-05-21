@@ -177,8 +177,10 @@
         for (NSArray *array in self.parties) {
             NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
             for (WDCParty *party in array) {
-                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
-                    [mutableArray addObject:party];
+                if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+                    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+                        [mutableArray addObject:party];
+                    }
                 }
             }
             if ([mutableArray count]) {

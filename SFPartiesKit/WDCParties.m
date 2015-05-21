@@ -160,9 +160,11 @@
             NSMutableArray *filteredPartiesMutable = [[NSMutableArray alloc] init];
             for (NSArray *array in daysArray) {
                 for (WDCParty *party in array) {
-                    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
-                        [party shortDate];
-                        [filteredPartiesMutable addObject:party];
+                    if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+                        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+                            [party shortDate];
+                            [filteredPartiesMutable addObject:party];
+                        }
                     }
                 }
             }

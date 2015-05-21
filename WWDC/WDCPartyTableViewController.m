@@ -131,7 +131,7 @@
 
 - (void)refreshGoing
 {
-    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
+    if ([SDCloudUserDefaults objectForKey:@"going"] == nil || [[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
         [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.0f]] forState:UIControlStateNormal];
@@ -146,7 +146,12 @@
 
 - (IBAction)updateGoing:(id)sender
 {
-    NSMutableArray *goingMutableArray = [[SDCloudUserDefaults objectForKey:@"going"] mutableCopy];
+    NSMutableArray *goingMutableArray;
+    if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+        goingMutableArray = [[SDCloudUserDefaults objectForKey:@"going"] mutableCopy];
+    } else {
+        goingMutableArray = [@[] mutableCopy];
+    }
     if ([goingMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
         [goingMutableArray addObject:self.party.objectId];
         [[Mixpanel sharedInstance].people increment:@"updateGoing.Going" by:@1];
