@@ -31,7 +31,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-oL-S4e">
-                                            <rect key="frame" x="86" y="53" width="478" height="14.5"/>
+                                            <rect key="frame" x="86" y="53" width="476" height="14.5"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.6705882353" green="0.6705882353" blue="0.6705882353" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl9-99-CA5">
-                                            <rect key="frame" x="86" y="8" width="478" height="41"/>
+                                            <rect key="frame" x="86" y="8" width="476" height="41"/>
                                             <string key="text">Title
 Title 2</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -80,10 +80,11 @@ Title 2</string>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="K5o-Jc-YCQ"/>
                                         <constraint firstAttribute="centerY" secondItem="Jnx-aa-Fj9" secondAttribute="centerY" id="LFM-kP-Isj"/>
                                         <constraint firstAttribute="centerY" secondItem="wSf-jz-91p" secondAttribute="centerY" id="PPx-ER-Htj"/>
-                                        <constraint firstItem="Jnx-aa-Fj9" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="7" id="QDi-yl-yP6"/>
+                                        <constraint firstItem="Jnx-aa-Fj9" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="9" id="QDi-yl-yP6"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
                                         <constraint firstItem="wlh-qb-aJT" firstAttribute="trailing" secondItem="piH-pi-Tot" secondAttribute="trailing" constant="20" id="cUu-4X-Cwd"/>
+                                        <constraint firstItem="wlh-qb-aJT" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="8" id="fUu-qW-xb2"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
                                         <constraint firstAttribute="trailing" secondItem="wlh-qb-aJT" secondAttribute="trailing" constant="20" id="mVp-zi-oZO"/>
                                         <constraint firstAttribute="trailing" secondItem="Jnx-aa-Fj9" secondAttribute="trailing" constant="16" id="oWE-Li-Uru"/>
