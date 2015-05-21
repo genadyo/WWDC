@@ -239,8 +239,10 @@
     [userDefaults synchronize];
 
     // save going
-    if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.objectId] != NSNotFound) {
-        [[WDCParties sharedInstance] saveGoing];
+    if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+        if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.objectId] != NSNotFound) {
+            [[WDCParties sharedInstance] saveGoing];
+        }
     }
 }
 
