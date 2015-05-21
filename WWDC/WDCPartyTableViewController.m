@@ -133,14 +133,10 @@
 {
     if ([SDCloudUserDefaults objectForKey:@"going"] == nil || [[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
         [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.0f]] forState:UIControlStateNormal];
-        [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:0.0f/255.0f green:0.0f/255.0f blue:0.0f/255.0f alpha:0.0f]] forState:UIControlStateHighlighted];
+        [self.goingButton setImage:[Assets imageOfNotGoingMark] forState:UIControlStateNormal];
     } else {
         [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-        [self.goingButton setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0f/255.0f blue:113.0f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
+        [self.goingButton setImage:[Assets imageOfGoingMark] forState:UIControlStateNormal];
     }
 }
 
