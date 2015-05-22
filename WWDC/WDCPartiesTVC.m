@@ -66,16 +66,7 @@
 
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        if ([[note userInfo] objectForKey:@"going"] != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf updateFilteredParties];
-            });
-        }
-        if ([[note userInfo] objectForKey:@"badge"] != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf updateFilteredParties];
-            });
-        }
+        [weakSelf updateFilteredParties];
     }];
 }
 
