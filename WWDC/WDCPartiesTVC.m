@@ -73,7 +73,7 @@
         }
         if ([[note userInfo] objectForKey:@"badge"] != nil) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf.tableView reloadData];
+                [weakSelf updateFilteredParties];
             });
         }
     }];
