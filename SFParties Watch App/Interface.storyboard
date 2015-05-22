@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7702" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7706" systemVersion="14E17e" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="KgC-FO-I1c">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Glance Interface Controller-->
@@ -54,7 +54,7 @@
                                     <group key="rootItem" width="1" height="70" alignment="left" spacing="2" id="n3X-vW-WdA">
                                         <items>
                                             <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="RFY-s3-FMT"/>
-                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="3" id="e94-gW-zJs">
+                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="3" minimumScaleFactor="0.70000000000000007" id="e94-gW-zJs">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
@@ -78,6 +78,20 @@
                                         </items>
                                         <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                     </group>
+                                </tableRow>
+                                <tableRow identifier="section" selectable="NO" id="YMz-Cp-zRa" customClass="WDCSectionTRC" customModule="SFParties_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="eCJ-7j-9gT">
+                                        <items>
+                                            <label alignment="left" text="Section" minimumScaleFactor="0.70000000000000007" id="epQ-16-Myy">
+                                                <color key="textColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                                            </label>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="sectionLabel" destination="epQ-16-Myy" id="OvI-fR-eQo"/>
+                                    </connections>
                                 </tableRow>
                             </items>
                         </table>

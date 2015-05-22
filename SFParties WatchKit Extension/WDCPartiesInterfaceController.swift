@@ -48,13 +48,34 @@ class WDCPartiesInterfaceController: WKInterfaceController {
         if (parties.count == 0) {
             interfaceTable.setNumberOfRows(1, withRowType: "empty")
         } else {
+            // calculate type
+            var rowTypes = ["section", "row"];
+            var date = (parties[0] as! WDCParty).date
+            for i in 1 ..< parties.count {
+                if parties[i].date == date {
+                    rowTypes += ["row"]
+                } else {
+                    rowTypes += ["section", "row"]
+                    date = parties[i].date
+                }
+            }
+
             // set number of parties
-            interfaceTable.setNumberOfRows(parties.count, withRowType: "row")
+            interfaceTable.setRowTypes(rowTypes)
 
             // set party rows
+            var rowNum = 0
+            date = parties[0].date
             for (idx, party) in enumerate(parties) {
+                if parties[idx].date != date || idx == 0 {
+                    let sectionRow = interfaceTable.rowControllerAtIndex(rowNum) as! WDCSectionTRC
+                    sectionRow.sectionLabel.setText(parties[idx].date)
+                    date = parties[idx].date
+                    rowNum++
+                }
+
                 let wdcParty = party as! WDCParty
-                let row = interfaceTable.rowControllerAtIndex(idx) as! WDCPartiesTRC
+                let row = interfaceTable.rowControllerAtIndex(rowNum) as! WDCPartiesTRC
                 row.titleLabel.setText(wdcParty.title)
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
@@ -66,6 +87,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
                         row.iconImage.setImage(wdcParty.watchIcon)
                     }
                 }
+                rowNum++
             }
         }
     }
