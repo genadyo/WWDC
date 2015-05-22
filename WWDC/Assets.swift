@@ -24,10 +24,6 @@ public class Assets : NSObject {
         static var uBER_API_BadgeTargets: [AnyObject]?
         static var imageOfGear: UIImage?
         static var gearTargets: [AnyObject]?
-        static var imageOfGoingMark: UIImage?
-        static var goingMarkTargets: [AnyObject]?
-        static var imageOfNotGoingMark: UIImage?
-        static var notGoingMarkTargets: [AnyObject]?
     }
 
     //// Colors
@@ -627,9 +623,7 @@ public class Assets : NSObject {
         fill1Path.fill()
     }
 
-    public class func drawGoingMark() {
-        //// Color Declarations
-        let fillColor6 = UIColor(red: 0.180, green: 0.800, blue: 0.443, alpha: 1.000)
+    public class func drawGoingMark(#initColor: UIColor) {
 
         //// Welcome
         //// Going
@@ -661,13 +655,11 @@ public class Assets : NSObject {
 
         shapeCopyPath.usesEvenOddFillRule = true;
 
-        fillColor6.setFill()
+        initColor.setFill()
         shapeCopyPath.fill()
     }
 
-    public class func drawNotGoingMark() {
-        //// Color Declarations
-        let fillColor2 = UIColor(red: 0.416, green: 0.463, blue: 0.863, alpha: 1.000)
+    public class func drawNotGoingMark(#initColor: UIColor) {
 
         //// Welcome
         //// Not-Going
@@ -689,7 +681,7 @@ public class Assets : NSObject {
 
         shapePath.usesEvenOddFillRule = true;
 
-        fillColor2.setFill()
+        initColor.setFill()
         shapePath.fill()
     }
 
@@ -757,32 +749,24 @@ public class Assets : NSObject {
         return Cache.imageOfGear!
     }
 
-    public class var imageOfGoingMark: UIImage {
-        if Cache.imageOfGoingMark != nil {
-            return Cache.imageOfGoingMark!
-        }
-
+    public class func imageOfGoingMark(#initColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(13, 12), false, 0)
-            Assets.drawGoingMark()
+            Assets.drawGoingMark(initColor: initColor)
 
-        Cache.imageOfGoingMark = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageOfGoingMark = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfGoingMark!
+        return imageOfGoingMark
     }
 
-    public class var imageOfNotGoingMark: UIImage {
-        if Cache.imageOfNotGoingMark != nil {
-            return Cache.imageOfNotGoingMark!
-        }
-
+    public class func imageOfNotGoingMark(#initColor: UIColor) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(13, 12), false, 0)
-            Assets.drawNotGoingMark()
+            Assets.drawNotGoingMark(initColor: initColor)
 
-        Cache.imageOfNotGoingMark = UIGraphicsGetImageFromCurrentImageContext()!
+        let imageOfNotGoingMark = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
 
-        return Cache.imageOfNotGoingMark!
+        return imageOfNotGoingMark
     }
 
     //// Customization Infrastructure
@@ -813,26 +797,6 @@ public class Assets : NSObject {
             Cache.gearTargets = newValue
             for target: AnyObject in newValue {
                 target.setImage(Assets.imageOfGear)
-            }
-        }
-    }
-
-    @IBOutlet var goingMarkTargets: [AnyObject]! {
-        get { return Cache.goingMarkTargets }
-        set {
-            Cache.goingMarkTargets = newValue
-            for target: AnyObject in newValue {
-                target.setImage(Assets.imageOfGoingMark)
-            }
-        }
-    }
-
-    @IBOutlet var notGoingMarkTargets: [AnyObject]! {
-        get { return Cache.notGoingMarkTargets }
-        set {
-            Cache.notGoingMarkTargets = newValue
-            for target: AnyObject in newValue {
-                target.setImage(Assets.imageOfNotGoingMark)
             }
         }
     }
