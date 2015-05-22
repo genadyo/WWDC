@@ -51,10 +51,10 @@
                         <table alignment="left" id="hyb-yL-kQ3">
                             <items>
                                 <tableRow identifier="row" id="kPT-Zo-nfE" customClass="WDCPartiesTRC" customModule="SFParties_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="70" alignment="left" spacing="2" id="n3X-vW-WdA">
+                                    <group key="rootItem" width="1" height="80" alignment="left" spacing="2" id="n3X-vW-WdA">
                                         <items>
                                             <imageView width="0.29999999999999999" alignment="left" verticalAlignment="center" contentMode="scaleAspectFit" id="RFY-s3-FMT"/>
-                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="3" minimumScaleFactor="0.70000000000000007" id="e94-gW-zJs">
+                                            <label width="0.69999999999999996" alignment="left" verticalAlignment="center" text="Name" textAlignment="center" numberOfLines="4" minimumScaleFactor="0.70000000000000007" id="e94-gW-zJs">
                                                 <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
                                             </label>
                                         </items>
