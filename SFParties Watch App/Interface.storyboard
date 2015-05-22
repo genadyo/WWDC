@@ -24,7 +24,7 @@
                         <group alignment="left" layout="vertical" id="l6u-n9-vcl">
                             <items>
                                 <timer alignment="center" verticalAlignment="center" hidden="YES" textAlignment="center" numberOfLines="2" format="abbreviated" previewedSeconds="1000000" id="soO-CH-1en">
-                                    <fontDescription key="font" type="system" pointSize="40"/>
+                                    <fontDescription key="font" type="system" pointSize="35"/>
                                     <calendarUnit key="units" day="YES" hour="YES" minute="YES" second="YES"/>
                                 </timer>
                                 <label alignment="center" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" numberOfLines="0" id="dni-Xm-bJ8">
