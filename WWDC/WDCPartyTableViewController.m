@@ -55,6 +55,15 @@
     [SDCloudUserDefaults setObject:[badgeMutableArray copy] forKey:@"badge"];
     [SDCloudUserDefaults synchronize];
 
+    // refresh for iPad
+    if ([self.splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = self.splitViewController.viewControllers[0];
+        if ([navigationController.topViewController isKindOfClass:[WDCPartiesTVC class]]) {
+            WDCPartiesTVC *partiesTVC = (WDCPartiesTVC *)navigationController.topViewController;
+            [partiesTVC updateFilteredParties];
+        }
+    }
+
     // hide back text
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
 
