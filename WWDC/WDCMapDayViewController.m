@@ -65,12 +65,9 @@ static const char kPartyKey;
 
     self.mapView.delegate = self;
 
-    MKCoordinateRegion region;
-    region.center.latitude = 37.78417f;
-    region.center.longitude = -122.40156f;
-    region.span.latitudeDelta = 0.025f;
-    region.span.longitudeDelta = 0.025f;
-    [self.mapView setRegion:region animated:NO];
+    [self refreshMap];
+    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
+    self.mapView.camera.altitude *= 2;
 
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
