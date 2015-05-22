@@ -12,6 +12,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTable: WKInterfaceTable!
     var parties: NSArray!
     var wormhole: MMWormhole?
+    var dict = [Int: Int]()
 
     override func awakeWithContext(context: AnyObject!) {
         // Initialize variables here.
@@ -76,6 +77,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
                 let wdcParty = party as! WDCParty
                 let row = interfaceTable.rowControllerAtIndex(rowNum) as! WDCPartiesTRC
+                dict[rowNum] = idx
                 row.titleLabel.setText(wdcParty.title)
                 // cache the icon image on the watch
                 if WKInterfaceDevice().cachedImages[wdcParty.objectId] != nil {
@@ -96,8 +98,15 @@ class WDCPartiesInterfaceController: WKInterfaceController {
 
     override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
         if segueIdentifier == "map" {
-            let wdcParty = parties[rowIndex] as! WDCParty
-            return wdcParty
+            if let idx = dict[rowIndex] {
+                if let wdcParty = parties[idx] as? WDCParty {
+                    return wdcParty
+                } else {
+                    return nil
+                }
+            } else {
+                return nil
+            }
         }
 
         return nil
