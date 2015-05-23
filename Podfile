@@ -13,7 +13,6 @@ pod 'SDCloudUserDefaults'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
-  :target => "SFParties",
   :keys => [
     "GoogleAnalytics",
     "Uber",
