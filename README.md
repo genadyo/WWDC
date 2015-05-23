@@ -5,8 +5,8 @@ Parties for WWDC
 
 ## Parties for iPhone:
 <p align="center">
-  <img src="/Assets/screen1-6.png?raw=true" alt="Parties for iOS" width="300"/>
-  <img src="/Assets/screen2-6.png?raw=true" alt="Parties for iOS" width="300"/>
+  <img src="/Assets/iPhone 6/screen1.png?raw=true" alt="Parties for iOS" width="300"/>
+  <img src="/Assets/iPhone 6/screen2.png?raw=true" alt="Parties for iOS" width="300"/>
 </p>
 
 ## Parties for WATCH:
