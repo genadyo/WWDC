@@ -44,6 +44,7 @@
 
     // PaintCode
     [self.infoButton setImage:[Assets imageOfGear] forState:UIControlStateNormal];
+    [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
 
@@ -168,7 +169,7 @@
     if (self.goingSegmentedControl.selectedSegmentIndex == 0) {
         self.filteredParties = self.parties;
         self.tableView.scrollEnabled = YES;
-    } else {
+    } else if (self.goingSegmentedControl.selectedSegmentIndex == 1) {
         NSMutableArray *filteredPartiesMutable = [[NSMutableArray alloc] init];
         for (NSArray *array in self.parties) {
             NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
@@ -176,6 +177,30 @@
                 if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
                     if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
                         if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+                            [mutableArray addObject:party];
+                        }
+                    }
+                }
+            }
+            if ([mutableArray count]) {
+                [filteredPartiesMutable addObject:[mutableArray copy]];
+            }
+        }
+        self.filteredParties = [filteredPartiesMutable copy];
+        if ([self.filteredParties count] == 0) {
+            self.tableView.scrollEnabled = NO;
+        } else {
+            self.tableView.scrollEnabled = YES;
+        }
+    }
+    else {
+        NSMutableArray *filteredPartiesMutable = [[NSMutableArray alloc] init];
+        for (NSArray *array in self.parties) {
+            NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+            for (WDCParty *party in array) {
+                if ([SDCloudUserDefaults objectForKey:@"badge"] != nil) {
+                    if ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]]) {
+                        if ([[SDCloudUserDefaults objectForKey:@"badge"] indexOfObject:party.objectId] != NSNotFound) {
                             [mutableArray addObject:party];
                         }
                     }
