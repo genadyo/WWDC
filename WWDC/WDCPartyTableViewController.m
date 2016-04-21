@@ -280,17 +280,17 @@
                           keys.uber,
                           [self.party.latitude floatValue],
                           [self.party.longitude floatValue],
-                          [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                          [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                          [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                          [self.party.address1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
+                          [self.party.address2 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
+                          [self.party.address3 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
 
         NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@&dropoff_latitude=%f&dropoff_longitude=%f&dropoff_nickname=%@&dropoff_address=%@%%20%@",
                          keys.uber,
                          [self.party.latitude floatValue],
                          [self.party.longitude floatValue],
-                         [self.party.address1 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                         [self.party.address2 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                         [self.party.address3 stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+                         [self.party.address1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
+                         [self.party.address2 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
+                         [self.party.address3 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
 
         // open Uber or Safari
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
@@ -298,13 +298,6 @@
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-            } else {
-                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
-                                                                    message:nil
-                                                                   delegate:self
-                                                          cancelButtonTitle:NSLocalizedString(@"OK", nil)
-                                                          otherButtonTitles:nil];
-                [alertView show];
             }
         }
     } else {

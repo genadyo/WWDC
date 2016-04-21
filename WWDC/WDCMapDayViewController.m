@@ -106,11 +106,11 @@ static const char kPartyKey;
         if (!v) {
             v = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"party"];
         }
-        v.pinColor = MKPinAnnotationColorPurple;
+        v.pinTintColor = [UIColor purpleColor];
         if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
             if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
                 if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:((MKPointAnnotation *)annotation).party.objectId] != NSNotFound) {
-                    v.pinColor = MKPinAnnotationColorGreen;
+                    v.pinTintColor = [UIColor greenColor];
                 }
             }
         }
