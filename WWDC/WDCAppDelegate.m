@@ -27,7 +27,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Keys
-    SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
+    SfpartiesKeys *keys = [[SfpartiesKeys alloc] init];
     
     // Push Notifications
     UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil];

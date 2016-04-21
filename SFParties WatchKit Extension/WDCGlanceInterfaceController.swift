@@ -62,7 +62,7 @@ class WDCGlanceInterfaceController: WKInterfaceController {
     override func willActivate() {
         super.willActivate()
 
-        refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: "loadData", userInfo: nil, repeats: true)
+        refreshTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(WDCGlanceInterfaceController.loadData), userInfo: nil, repeats: true)
     }
 
     override func didDeactivate() {

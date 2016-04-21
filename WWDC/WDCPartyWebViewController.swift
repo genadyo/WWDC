@@ -24,9 +24,9 @@ import WebKit
         view = webView
 
         // auto layout progress view
-        progressView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        progressView.translatesAutoresizingMaskIntoConstraints = false
         let views = ["progressView": progressView]
-        webView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[progressView]|", options: nil, metrics: nil, views: views))
+        webView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[progressView]|", options: [], metrics: nil, views: views))
     }
 
     override func viewDidLoad() {
@@ -57,10 +57,10 @@ import WebKit
         activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, _, _ in
             if let title = self?.title {
                 var properties:NSDictionary;
-                if activityType == nil {
-                    properties = ["Party": title, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
-                } else {
+                if let activityType = activityType {
                     properties = ["Party": title, "activityType": activityType, "completed": NSNumber(bool: completed)];
+                } else {
+                    properties = ["Party": title, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
                 }
                 Mixpanel.sharedInstance().track("Share", properties: properties as [NSObject : AnyObject])
             }

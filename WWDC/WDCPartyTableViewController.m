@@ -282,7 +282,7 @@
 {
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
         // Keys
-        SFPartiesKeys *keys = [[SFPartiesKeys alloc] init];
+        SfpartiesKeys *keys = [[SfpartiesKeys alloc] init];
 
         // urls
         NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location&dropoff[latitude]=%f&dropoff[longitude]=%f&dropoff[nickname]=%@&dropoff[formatted_address]=%@%%20%@",

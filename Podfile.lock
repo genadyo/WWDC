@@ -18,7 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - GoogleAnalytics-iOS-SDK
-  - Keys (from `Pods/CocoaPodsKeys/`)
+  - Keys (from `Pods/CocoaPodsKeys`)
   - Mixpanel
   - MMWormhole
   - Parse
@@ -28,7 +28,7 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Keys:
-    :path: Pods/CocoaPodsKeys/
+    :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
@@ -41,4 +41,4 @@ SPEC CHECKSUMS:
   TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
-COCOAPODS: 0.37.1
+COCOAPODS: 0.39.0

@@ -67,12 +67,12 @@ class WDCPartiesInterfaceController: WKInterfaceController {
             // set party rows
             var rowNum = 0
             date = parties[0].date
-            for (idx, party) in enumerate(parties) {
+            for (idx, party) in parties.enumerate() {
                 if parties[idx].date != date || idx == 0 {
                     let sectionRow = interfaceTable.rowControllerAtIndex(rowNum) as! WDCSectionTRC
                     sectionRow.sectionLabel.setText(parties[idx].date)
                     date = parties[idx].date
-                    rowNum++
+                    rowNum += 1
                 }
 
                 let wdcParty = party as! WDCParty
@@ -89,7 +89,7 @@ class WDCPartiesInterfaceController: WKInterfaceController {
                         row.iconImage.setImage(wdcParty.watchIcon)
                     }
                 }
-                rowNum++
+                rowNum += 1
             }
         }
     }

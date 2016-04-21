@@ -93,9 +93,16 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                     mailComposeViewController.setToRecipients(["genady@okrain.com"])
                     mailComposeViewController.setSubject(NSLocalizedString("Parties", comment: ""))
 
-                    let infoDictionary = NSBundle.mainBundle().infoDictionary as! [String : AnyObject]
-                    let version = infoDictionary["CFBundleShortVersionString"] as! String!
-                    let build = infoDictionary["CFBundleVersion"] as! String!
+                    var body = "<br><br><br><br><br><br><br><br><br>"
+                    body += "<hr>"
+
+                    if let infoDictionary = NSBundle.mainBundle().infoDictionary {
+                        let version = infoDictionary["CFBundleShortVersionString"] as! String
+                        let build = infoDictionary["CFBundleVersion"] as! String
+                        body += "App Version: " + version + "<br>"
+                        body += "App Build: " + build + "<br>"
+                    }
+
                     var systemInfo = [UInt8](count: sizeof(utsname), repeatedValue: 0)
                     let model = systemInfo.withUnsafeMutableBufferPointer { (inout body: UnsafeMutableBufferPointer<UInt8>) -> String? in
                         if uname(UnsafeMutablePointer(body.baseAddress)) != 0 {
@@ -103,14 +110,10 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                         }
                         return String.fromCString(UnsafePointer(body.baseAddress.advancedBy(Int(_SYS_NAMELEN * 4))))
                     }
-
-                    var body = "<br><br><br><br><br><br><br><br><br>"
-                    body += "<hr>"
-                    body += "App Version: " + version + "<br>"
-                    body += "App Build: " + build + "<br>"
                     if let model = model {
                         body += "Device Model: " + model + "<br>"
                     }
+                    
                     body += "Device Version: " + UIDevice.currentDevice().systemVersion
                     body += "<hr>"
 
@@ -157,14 +160,13 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     }
 
     override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if section == 2 {
-            let infoDictionary = NSBundle.mainBundle().infoDictionary as! [String : AnyObject]
-            let version = infoDictionary["CFBundleShortVersionString"] as! String!
-            let build = infoDictionary["CFBundleVersion"] as! String!
+        if let infoDictionary = NSBundle.mainBundle().infoDictionary where section == 2 {
+            let version = infoDictionary["CFBundleShortVersionString"] as! String
+            let build = infoDictionary["CFBundleVersion"] as! String
             let label = UILabel()
             label.text = NSLocalizedString("Version \(version) (\(build))", comment: "")
             label.textColor = UIColor.grayColor()
-            label.font = UIFont(name: "HelveticaNeue-Light", size: 17)!
+            label.font = UIFont.init(name: "HelveticaNeue-Light", size: 17)
             label.textAlignment = .Center
             return label
         } else {
@@ -174,7 +176,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
 
     // MARK: MFMailComposeViewControllerDelegate
     
-    func mailComposeController(controller: MFMailComposeViewController!, didFinishWithResult result: MFMailComposeResult, error: NSError!) {
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
