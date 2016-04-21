@@ -9,9 +9,6 @@
 #import "WDCMapDayViewController.h"
 #import "WDCParty.h"
 #import "WDCPartyTableViewController.h"
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 #import <objc/runtime.h>
 #import "WDCParties.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
@@ -55,11 +52,6 @@ static const char kPartyKey;
 
     // hide back text
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    // Google
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"WDCMapDayViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
     self.title = [((WDCParty *)[self.parties lastObject]) date];
 

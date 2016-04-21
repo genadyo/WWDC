@@ -8,9 +8,6 @@
 
 @import EventKitUI;
 @import MapKit;
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 #import "JVObserver.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCParties.h"
@@ -74,11 +71,6 @@
     activity.webpageURL = [NSURL URLWithString:self.party.url];
     self.userActivity = activity;
     [self.userActivity becomeCurrent];
-
-    // Google
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"WDCPartyTableViewController"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
     self.observer = [JVObserver observerForObject:self.party keyPath:@"logo" target:self block:^(__weak typeof(self) self) {
         if (self.party.logo) {
@@ -179,10 +171,8 @@
     }
     if ([goingMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
         [goingMutableArray addObject:self.party.objectId];
-        [[Mixpanel sharedInstance].people increment:@"updateGoing.Going" by:@1];
     } else {
         [goingMutableArray removeObject:self.party.objectId];
-        [[Mixpanel sharedInstance].people increment:@"updateGoing.NotGoing" by:@1];
     }
     [SDCloudUserDefaults setObject:[goingMutableArray copy] forKey:@"going"];
     [SDCloudUserDefaults synchronize];
@@ -303,13 +293,9 @@
 
         // open Uber or Safari
         if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
-            [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"OK", @"Party": self.party.title}];
-            [[Mixpanel sharedInstance].people increment:@"openUber.OK" by:@1];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
         } else {
             if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-                [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"Web", @"Party": self.party.title}];
-                [[Mixpanel sharedInstance].people increment:@"openUber.Web" by:@1];
                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
             } else {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Please allow access to Safari", nil)
@@ -318,7 +304,6 @@
                                                           cancelButtonTitle:NSLocalizedString(@"OK", nil)
                                                           otherButtonTitles:nil];
                 [alertView show];
-                [[Mixpanel sharedInstance] track:@"openUber" properties:@{@"Status": @"Error", @"Party": self.party.title}];
             }
         }
     } else {

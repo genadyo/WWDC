@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
+@import UIKit;
+
 @interface WDCCircleView : UIView
 
 @end

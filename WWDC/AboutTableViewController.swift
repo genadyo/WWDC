@@ -10,12 +10,6 @@ import UIKit
 import MessageUI
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        Mixpanel.sharedInstance().track("About")
-    }
-
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
@@ -24,9 +18,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         let url = NSURL(string: "https://appsto.re/us/InPC0.i")!
         let string = NSLocalizedString("Parties for WWDC", comment: "")
         let activityViewController = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)
-        activityViewController.completionWithItemsHandler = { activityType, completed, _, _ in
-            Mixpanel.sharedInstance().track("About->Share", properties: ["\(activityType)" : "\(completed)"])
-        }
         presentViewController(activityViewController, animated: true, completion: nil)
     }
 
@@ -40,8 +31,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
         if indexPath.section == 0 {
 
             if indexPath.item == 0 {
-                Mixpanel.sharedInstance().track("Rate")
-
                 let url = NSURL(string: "itms-apps://itunes.apple.com/app/id879924066")!
 
                 if UIApplication.sharedApplication().canOpenURL(url) {
@@ -55,8 +44,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                     presentViewController(alert, animated: true, completion: nil)
                 }
             } else if indexPath.item == 1 {
-                Mixpanel.sharedInstance().track("Twitter")
-
                 let tweetbot = NSURL(string: "tweetbot://current/user_profile/genadyo")!
                 let twitterrific = NSURL(string: "twitterrific://current/profile?screen_name=genadyo")!
                 let twitter = NSURL(string: "twitter://user?screen_name=genadyo")!
@@ -85,8 +72,6 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                     }
                 }
             } else if indexPath.item == 2 {
-                Mixpanel.sharedInstance().track("Email")
-
                 if MFMailComposeViewController.canSendMail() {
                     let mailComposeViewController = MFMailComposeViewController()
                     mailComposeViewController.mailComposeDelegate = self

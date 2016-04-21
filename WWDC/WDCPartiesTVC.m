@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-#import "GAI.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 #import "JVObserver.h"
 #import "WDCPartiesTVC.h"
 #import "WDCParty.h"
@@ -47,11 +44,6 @@
     [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
-
-    // Google
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:@"WDCPartiesTVC"];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
 
     NSInteger selected = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] integerForKey:@"selected"];
     if (selected) {
@@ -151,7 +143,6 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.refreshControl endRefreshing];
             });
-            [[Mixpanel sharedInstance] track:@"WDCParties" properties:@{@"refresh": @"FAILED"}];
         }
     }];
 }

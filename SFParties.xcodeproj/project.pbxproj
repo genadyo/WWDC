@@ -13,7 +13,6 @@
 		B2174D471A5C7FF70078B843 /* SFParties WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B2F01C5F1A1F841D00F1AC70 /* SFParties WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B221349B1A1DEF520081E422 /* WDCPartyWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */; };
 		B23875FB1AF60B75005048C1 /* WDCGlanceInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23875FA1AF60B75005048C1 /* WDCGlanceInterfaceController.swift */; };
-		B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23AFA88192814F100C2A060 /* Crashlytics.framework */; };
 		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
 		B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464255192788A200DF2E06 /* WDCPartyTVC.m */; };
 		B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */; };
@@ -48,7 +47,6 @@
 		B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */; };
 		B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */; };
 		B2F01CE31A1F9D3A00F1AC70 /* SFPartiesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; };
-		B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F874001A02543A00DD55DB /* Fabric.framework */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 		F8D8CEAC270F3114B435ACBF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F6A897ED3134CF8B77019B8 /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -109,7 +107,6 @@
 		B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B221349A1A1DEF520081E422 /* WDCPartyWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCPartyWebViewController.swift; sourceTree = "<group>"; };
 		B23875FA1AF60B75005048C1 /* WDCGlanceInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCGlanceInterfaceController.swift; sourceTree = "<group>"; };
-		B23AFA88192814F100C2A060 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
 		B2464254192788A200DF2E06 /* WDCPartyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartyTVC.h; sourceTree = "<group>"; };
@@ -135,7 +132,6 @@
 		B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SFParties-Info.plist"; sourceTree = "<group>"; };
 		B2D4AEED19276A1E00C5B0E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2D4AEEF19276A1E00C5B0E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B2D4AEF119276A1E00C5B0E8 /* SFParties-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Prefix.pch"; sourceTree = "<group>"; };
 		B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCAppDelegate.h; sourceTree = "<group>"; };
 		B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCAppDelegate.m; sourceTree = "<group>"; };
 		B2D4AEF619276A1E00C5B0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,7 +158,6 @@
 		B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
 		B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParty.h; sourceTree = "<group>"; };
 		B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParty.m; sourceTree = "<group>"; };
-		B2F874001A02543A00DD55DB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		CC94508C3B90C2C76D7B859C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,10 +174,8 @@
 				B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
 				B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
-				B23AFA89192814F100C2A060 /* Crashlytics.framework in Frameworks */,
 				B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */,
 				7CFCDC4CCCA04A68BFFE56D3 /* libPods.a in Frameworks */,
-				B2F874011A02543A00DD55DB /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,11 +237,9 @@
 		B2D4AEE219276A1E00C5B0E8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B2F874001A02543A00DD55DB /* Fabric.framework */,
 				B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */,
 				B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */,
 				B2F9A38719521714008FA5EF /* CloudKit.framework */,
-				B23AFA88192814F100C2A060 /* Crashlytics.framework */,
 				B246425A1927A2F200DF2E06 /* MapKit.framework */,
 				B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */,
 				B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */,
@@ -297,7 +288,6 @@
 				B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */,
 				B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */,
 				B2D4AEEF19276A1E00C5B0E8 /* main.m */,
-				B2D4AEF119276A1E00C5B0E8 /* SFParties-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -637,7 +627,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 8a47ccbf8db717681b6ae83cb615504de6fe5eb7 bf71d8eee9d314649b9cf5e1d193477e98fdad9468d1585a9fcf9983c20afd1d";
+			shellScript = "${PODS_ROOT}/Fabric/run 8a47ccbf8db717681b6ae83cb615504de6fe5eb7 bf71d8eee9d314649b9cf5e1d193477e98fdad9468d1585a9fcf9983c20afd1d";
 		};
 		C18C73F62A6A48DBA39563E9 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -864,7 +854,6 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,7 +887,6 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WWDC/SFParties-Prefix.pch";
 				INFOPLIST_FILE = "WWDC/SFParties-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

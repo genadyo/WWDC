@@ -1,12 +1,9 @@
 PODS:
   - Bolts (1.1.4)
-  - GoogleAnalytics-iOS-SDK (3.10):
-    - GoogleAnalytics-iOS-SDK/Core (= 3.10)
-  - GoogleAnalytics-iOS-SDK/Core (3.10)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - Keys (1.0.0)
-  - Mixpanel (2.7.3):
-    - Mixpanel/MPCategoryHelpers (= 2.7.3)
-  - Mixpanel/MPCategoryHelpers (2.7.3)
   - MMWormhole (1.1.1):
     - MMWormhole/Core (= 1.1.1)
   - MMWormhole/Core (1.1.1)
@@ -17,9 +14,8 @@ PODS:
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
-  - GoogleAnalytics-iOS-SDK
+  - Crashlytics
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Mixpanel
   - MMWormhole
   - Parse
   - SDCloudUserDefaults
@@ -32,9 +28,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
-  GoogleAnalytics-iOS-SDK: 4f98a376c1d61e6ac4ca47951655820314856eef
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
-  Mixpanel: 1d387d76800e07e953958c62c97fea27f13632dd
   MMWormhole: 941cd168b4afd6073f883b82944d6eded4e00203
   Parse: fa8ec29de6d82035635986c11946299fb1b38316
   SDCloudUserDefaults: c9532cba15409dc44f3a25e2ef6d5d572c2692d9

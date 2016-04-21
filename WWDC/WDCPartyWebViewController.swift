@@ -32,11 +32,6 @@ import WebKit
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Google
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: "WDCPartyWebViewController")
-        tracker.send(GAIDictionaryBuilder.createAppView().build().copy() as! [NSObject : AnyObject])
-
         // load url
         webView.loadRequest(NSURLRequest(URL:url!))
 
@@ -54,20 +49,6 @@ import WebKit
     @IBAction func share(sender: UIBarButtonItem) {
         let activity = TUSafariActivity() // open in safari
         let activityViewController : UIActivityViewController = UIActivityViewController(activityItems: [title!, url!], applicationActivities: [activity])
-        activityViewController.completionWithItemsHandler = { [weak self] activityType, completed, _, _ in
-            if let title = self?.title {
-                var properties:NSDictionary;
-                if let activityType = activityType {
-                    properties = ["Party": title, "activityType": activityType, "completed": NSNumber(bool: completed)];
-                } else {
-                    properties = ["Party": title, "activityType": NSNull(), "completed": NSNumber(bool: completed)];
-                }
-                Mixpanel.sharedInstance().track("Share", properties: properties as [NSObject : AnyObject])
-            }
-            if (completed) {
-                Mixpanel.sharedInstance().people.increment("Share", by: 1)
-            }
-        }
         activityViewController.popoverPresentationController?.barButtonItem = sender
         presentViewController(activityViewController, animated: true, completion: nil)
     }

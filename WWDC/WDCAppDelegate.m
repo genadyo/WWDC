@@ -6,11 +6,10 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
+@import Fabric;
+@import Crashlytics;
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
-#import <Fabric/Fabric.h>
-#import <Crashlytics/Crashlytics.h>
-#import "GAI.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
 #import <Keys/SFPartiesKeys.h>
@@ -37,12 +36,6 @@
     // Parse
     [Parse setApplicationId:keys.parseApplicationId clientKey:keys.parseClientKey];
 
-    // GAI
-    [[GAI sharedInstance] trackerWithTrackingId:keys.googleAnalytics];
-
-    // Mixpanel
-    [Mixpanel sharedInstanceWithToken:keys.mixpanel];
-
     // Crashlytics
     [Fabric with:@[CrashlyticsKit]];
 
@@ -68,36 +61,6 @@
     AAPLTraitOverrideViewController *traitController = [[AAPLTraitOverrideViewController alloc] init];
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
-
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"];
-    NSInteger watchRuns = [userDefaults integerForKey:@"watchRuns"];
-    NSInteger glanceRuns = [userDefaults integerForKey:@"glanceRuns"];
-    if (glanceRuns > 0) {
-        if (![userDefaults boolForKey:@"glanceRunsSaved"]) {
-            [[Mixpanel sharedInstance] track:@"glanceRun"];
-            [userDefaults setBool:YES forKey:@"glanceRunsSaved"];
-        }
-        [[Mixpanel sharedInstance].people set:@{@"glanceRuns": @(glanceRuns)}];
-    }
-    if (watchRuns > 0) {
-        if (![userDefaults boolForKey:@"watchRunsSaved"]) {
-            [[Mixpanel sharedInstance] track:@"watchRun"];
-            [userDefaults setBool:YES forKey:@"watchRunsSaved"];
-        }
-        [[Mixpanel sharedInstance].people set:@{@"watchRuns": @(watchRuns)}];
-    }
-    [userDefaults synchronize];
-
-    // get icloud user id
-    [[CKContainer defaultContainer] fetchUserRecordIDWithCompletionHandler:^(CKRecordID *userRecordID, NSError *error) {
-        if (error) {
-            [[Mixpanel sharedInstance] track:@"fetchUserRecord" properties:@{@"Status": @"Error"}];
-        } else {
-            if (userRecordID) {
-                [[Mixpanel sharedInstance] identify:userRecordID.recordName];
-            }
-        }
-    }];
 
     return YES;
 }
