@@ -276,13 +276,13 @@
         SfpartiesKeys *keys = [[SfpartiesKeys alloc] init];
 
         // urls
-        NSString *uber = [NSString stringWithFormat:@"lyft://ridetype?id=lyft_line&destination[latitude]=%f&destination[longitude]=%f&partner=%@",
+        NSString *lyft = [NSString stringWithFormat:@"lyft://ridetype?id=lyft_line&destination[latitude]=%f&destination[longitude]=%f&partner=%@",
                           [self.party.latitude doubleValue],
                           [self.party.longitude doubleValue],
-                          keys.lyft;
+                          keys.lyft];
 
         UIApplication *myApp = UIApplication.sharedApplication;
-        NSURL *lyftAppURL = [NSURL URLWithString:];
+        NSURL *lyftAppURL = [NSURL URLWithString:lyft];
         if ([myApp canOpenURL:lyftAppURL]) {
             // Lyft is installed; launch it
             [myApp openURL:lyftAppURL];
