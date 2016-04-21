@@ -13,7 +13,7 @@ pod 'Crashlytics'
 plugin 'cocoapods-keys', {
   :project => "SFParties",
   :keys => [
-    "Uber",
+    "Lyft",
     "ParseApplicationId",
     "ParseClientKey"
   ]

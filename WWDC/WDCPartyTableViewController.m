@@ -276,29 +276,20 @@
         SfpartiesKeys *keys = [[SfpartiesKeys alloc] init];
 
         // urls
-        NSString *uber = [NSString stringWithFormat:@"uber://?client_id=%@&action=setPickup&pickup=my_location&dropoff[latitude]=%f&dropoff[longitude]=%f&dropoff[nickname]=%@&dropoff[formatted_address]=%@%%20%@",
-                          keys.uber,
-                          [self.party.latitude floatValue],
-                          [self.party.longitude floatValue],
-                          [self.party.address1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
-                          [self.party.address2 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
-                          [self.party.address3 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
+        NSString *uber = [NSString stringWithFormat:@"lyft://ridetype?id=lyft_line&destination[latitude]=%f&destination[longitude]=%f&partner=%@",
+                          [self.party.latitude doubleValue],
+                          [self.party.longitude doubleValue],
+                          keys.lyft;
 
-        NSString *url = [NSString stringWithFormat:@"https://m.uber.com/sign-up?client_id=%@&dropoff_latitude=%f&dropoff_longitude=%f&dropoff_nickname=%@&dropoff_address=%@%%20%@",
-                         keys.uber,
-                         [self.party.latitude floatValue],
-                         [self.party.longitude floatValue],
-                         [self.party.address1 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
-                         [self.party.address2 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]],
-                         [self.party.address3 stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]]];
-
-        // open Uber or Safari
-        if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:uber]]) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:uber]];
+        UIApplication *myApp = UIApplication.sharedApplication;
+        NSURL *lyftAppURL = [NSURL URLWithString:];
+        if ([myApp canOpenURL:lyftAppURL]) {
+            // Lyft is installed; launch it
+            [myApp openURL:lyftAppURL];
         } else {
-            if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:url]]) {
-                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
-            }
+            // Lyft not installed; open App Store
+            NSURL *lyftAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082"];
+            [myApp openURL:lyftAppStoreURL];
         }
     } else {
         [self openMaps:sender];
