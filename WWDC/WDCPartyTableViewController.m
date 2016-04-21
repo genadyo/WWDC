@@ -8,6 +8,7 @@
 
 @import EventKitUI;
 @import MapKit;
+@import SafariServices;
 #import "JVObserver.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCParties.h"
@@ -17,7 +18,7 @@
 #import <Keys/SFPartiesKeys.h>
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
-@interface WDCPartyTableViewController () <EKEventEditViewDelegate>
+@interface WDCPartyTableViewController () <EKEventEditViewDelegate, SFSafariViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -311,6 +312,12 @@
     }
 }
 
+- (IBAction)openWeb:(UIButton *)sender {
+    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:self.party.url]];
+    safariViewController.delegate = self;
+    [self presentViewController:safariViewController animated:YES completion:nil];
+}
+
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -328,17 +335,6 @@
     return tableView.rowHeight;
 }
 
-#pragma mark - Navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"web"]) {
-        WDCPartyWebViewController *destController = (WDCPartyWebViewController *)[segue destinationViewController];
-        destController.title = self.party.title;
-        destController.url = [NSURL URLWithString:self.party.url];
-    }
-}
-
 #pragma mark - EKEventEditViewDelegate
 
 - (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
@@ -351,6 +347,12 @@
         default:
             break;
     }
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - SFSafariViewControllerDelegate
+
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 

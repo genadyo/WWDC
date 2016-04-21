@@ -41,7 +41,7 @@
 
     // PaintCode
     [self.infoButton setImage:[Assets imageOfGear] forState:UIControlStateNormal];
-    [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
+//    [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
     [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
     [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
 
