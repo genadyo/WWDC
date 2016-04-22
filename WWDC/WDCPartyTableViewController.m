@@ -115,7 +115,7 @@
 
     // UBER
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        UIImage *uber = [Assets imageOfUBER_API_Badge];
+        UIImage *uber = [Assets imageOfLyft];
         [self.uberButton setImage:uber forState:UIControlStateNormal];
     }
 
