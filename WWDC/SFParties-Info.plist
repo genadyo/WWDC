@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1001</string>
+	<string>1002</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>lyft</string>
