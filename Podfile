@@ -1,7 +1,6 @@
 platform :ios, '9.0'
 inhibit_all_warnings!
-
-xcodeproj 'SFParties'
+use_frameworks!
 
 pod 'TUSafariActivity'
 pod 'TMCache'

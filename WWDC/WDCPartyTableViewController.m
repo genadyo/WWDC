@@ -9,13 +9,13 @@
 @import EventKitUI;
 @import MapKit;
 @import SafariServices;
+@import Keys;
 #import "JVObserver.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCParties.h"
 #import "WDCPartiesTVC.h"
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
-#import <Keys/SFPartiesKeys.h>
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCPartyTableViewController () <EKEventEditViewDelegate, SFSafariViewControllerDelegate>

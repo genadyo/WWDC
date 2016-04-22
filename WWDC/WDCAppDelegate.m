@@ -8,11 +8,11 @@
 
 @import Fabric;
 @import Crashlytics;
+@import Keys;
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
-#import <Keys/SFPartiesKeys.h>
 #import <Parse/Parse.h>
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 

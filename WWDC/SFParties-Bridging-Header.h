@@ -3,4 +3,3 @@
 //
 
 #import "JVObserver.h"
-#import "TUSafariActivity.h"

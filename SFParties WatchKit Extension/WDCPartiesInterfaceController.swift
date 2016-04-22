@@ -7,6 +7,7 @@
 //
 
 import WatchKit
+import MMWormhole
 
 class WDCPartiesInterfaceController: WKInterfaceController {
     @IBOutlet weak var interfaceTable: WKInterfaceTable!
