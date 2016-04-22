@@ -1,16 +1,16 @@
 PODS:
-  - Bolts (1.1.4)
+  - Bolts/Tasks (1.7.0)
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
   - Keys (1.0.0)
-  - MMWormhole (1.1.1):
-    - MMWormhole/Core (= 1.1.1)
-  - MMWormhole/Core (1.1.1)
-  - Parse (1.7.1):
-    - Bolts (~> 1.1)
-  - SDCloudUserDefaults (1.0.1)
-  - TMCache (1.2.4)
+  - MMWormhole (2.0.0):
+    - MMWormhole/Core (= 2.0.0)
+  - MMWormhole/Core (2.0.0)
+  - Parse (1.13.0):
+    - Bolts/Tasks (~> 1.6)
+  - SDCloudUserDefaults (1.0.2)
+  - TMCache (2.1.0)
   - TUSafariActivity (1.0.4)
 
 DEPENDENCIES:
@@ -27,14 +27,14 @@ EXTERNAL SOURCES:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  Bolts: f8e2f94edbf9fec7bb8de5ecaaa3aa6b7de6f64e
+  Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
-  MMWormhole: 941cd168b4afd6073f883b82944d6eded4e00203
-  Parse: fa8ec29de6d82035635986c11946299fb1b38316
-  SDCloudUserDefaults: c9532cba15409dc44f3a25e2ef6d5d572c2692d9
-  TMCache: a93984b045a5ee84bd8941bd5e0b54296059cc52
+  MMWormhole: 0cd3fd35a9118b2e2d762b499f54eeaace0be791
+  Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  SDCloudUserDefaults: cacf733d192160d94364efab8548ae3302615a65
+  TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
   TUSafariActivity: afc55a00965377939107ce4fdc7f951f62454546
 
 COCOAPODS: 0.39.0
