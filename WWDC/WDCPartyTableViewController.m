@@ -195,17 +195,17 @@
     coordinate.latitude = [self.party.latitude floatValue];
     coordinate.longitude = [self.party.longitude floatValue];
     NSMutableDictionary *addressDictionary = [[NSMutableDictionary alloc] init];
-    [addressDictionary setObject:@"United States" forKey:(NSString *)kABPersonAddressCountryKey];
+    [addressDictionary setObject:@"United States" forKey:CNPostalAddressCountryKey];
     if (self.party.address2) {
-        [addressDictionary setObject:self.party.address2 forKey:(NSString *)kABPersonAddressStreetKey];
+        [addressDictionary setObject:self.party.address2 forKey:CNPostalAddressStreetKey];
     }
     NSArray *address3Split = [self.party.address3 componentsSeparatedByString: @", "];
     if ([address3Split count] == 2) {
-        [addressDictionary setObject:address3Split[0] forKey:(NSString *)kABPersonAddressCityKey];
+        [addressDictionary setObject:address3Split[0] forKey:CNPostalAddressCityKey];
         NSArray *address3SplitSplit = [address3Split[1] componentsSeparatedByString: @" "];
         if ([address3SplitSplit count] == 2) {
-            [addressDictionary setObject:address3SplitSplit[0] forKey:(NSString *)kABPersonAddressStateKey];
-            [addressDictionary setObject:address3SplitSplit[1] forKey:(NSString *)kABPersonAddressZIPKey];
+            [addressDictionary setObject:address3SplitSplit[0] forKey:CNPostalAddressStateKey];
+            [addressDictionary setObject:address3SplitSplit[1] forKey:CNPostalAddressPostalCodeKey];
         }
     }
     MKMapItem *item = [[MKMapItem alloc] initWithPlacemark:[[MKPlacemark alloc] initWithCoordinate:coordinate addressDictionary:[addressDictionary copy]]];
