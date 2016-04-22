@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.0'
 inhibit_all_warnings!
 
 xcodeproj 'SFParties'
@@ -13,6 +13,7 @@ pod 'Crashlytics'
 plugin 'cocoapods-keys', {
   :project => "SFParties",
   :keys => [
+    "Crashlytics",
     "Lyft",
     "ParseApplicationId",
     "ParseClientKey"

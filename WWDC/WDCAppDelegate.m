@@ -37,7 +37,7 @@
     [Parse setApplicationId:keys.parseApplicationId clientKey:keys.parseClientKey];
 
     // Crashlytics
-    [Fabric with:@[CrashlyticsKit]];
+    [Fabric with:@[[Crashlytics startWithAPIKey:keys.crashlytics]]];
 
     // iCloud
     [SDCloudUserDefaults registerForNotifications];
