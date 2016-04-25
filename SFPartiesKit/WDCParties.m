@@ -7,6 +7,8 @@
 //
 
 @import CloudKit;
+@import CoreSpotlight;
+@import MobileCoreServices;
 #import <MMWormhole/MMWormhole.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
@@ -69,6 +71,15 @@
                 }
             }];
         }
+
+        CSSearchableItemAttributeSet *searchableItemAttributeSet = [[CSSearchableItemAttributeSet alloc] initWithItemContentType:(NSString*)kUTTypeImage];
+        searchableItemAttributeSet.title = party.title;
+        searchableItemAttributeSet.contentDescription = party.details;
+        searchableItemAttributeSet.relatedUniqueIdentifier = party.objectId;
+        searchableItemAttributeSet.identifier = party.objectId;
+        searchableItemAttributeSet.thumbnailData = UIImagePNGRepresentation(party.icon);
+        CSSearchableItem *searchableItem = [[CSSearchableItem alloc] initWithUniqueIdentifier:searchableItemAttributeSet.identifier domainIdentifier:@"com.reelgoodapp.ios.search" attributeSet:searchableItemAttributeSet];
+        [[CSSearchableIndex defaultSearchableIndex] indexSearchableItems:@[searchableItem] completionHandler:nil];
 
         if (![party isLogoCached]) {
             [self getDataForRecordID:record.recordID desiredKey:@"logo" queuePriority:NSOperationQueuePriorityNormal block:^(NSData *data, NSError *error) {
