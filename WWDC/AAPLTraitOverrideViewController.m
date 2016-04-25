@@ -16,26 +16,11 @@
 
 @implementation AAPLTraitOverrideViewController
 
-- (void)willTransitionToTraitCollection:(UITraitCollection *)newCollection withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
-{
-    if (self.view.bounds.size.height > 480.0) {
-        // If we are large enough, force a regular size class
-        self.forcedTraitCollection = [UITraitCollection traitCollectionWithHorizontalSizeClass:UIUserInterfaceSizeClassRegular];
-    } else {
-        // Otherwise, don't override any traits
-        self.forcedTraitCollection = nil;
-    }
-
-    [super willTransitionToTraitCollection:newCollection withTransitionCoordinator:coordinator];
-}
-
 - (void)updateForcedTraitCollection
 {
     // Use our forcedTraitCollection to override our child's traits
     [self setOverrideTraitCollection:self.forcedTraitCollection forChildViewController:self.viewController];
 }
-
-
 
 - (void)setViewController:(UIViewController *)viewController
 {
