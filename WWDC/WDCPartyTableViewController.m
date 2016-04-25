@@ -84,7 +84,7 @@
     self.titleLabel.text = self.party.title;
 
     NSMutableAttributedString *attributedDetails = [[NSMutableAttributedString alloc]initWithString:self.party.details];
-    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0f];
+    UIFont *font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightLight];
     [attributedDetails addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, self.party.details.length)];
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     paragraphStyle.lineHeightMultiple = 20.0f;

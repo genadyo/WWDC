@@ -326,7 +326,7 @@
         bgView.backgroundColor = [UIColor colorWithRed:247.0f/255.0f green:247.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
         [view addSubview:bgView];
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, tableView.frame.size.width-22*2, 40.0f)];
-        label.font = [UIFont fontWithName:@"HelveticaNeue-Regular" size:15.0f];
+        label.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightRegular];
         label.text = [((WDCParty *)[self.filteredParties[section] lastObject]) date];
         label.textColor = [UIColor colorWithRed:117.0f/255.0f green:117.0f/255.0f blue:117.0f/255.0f alpha:1.0f];
         [view addSubview:label];

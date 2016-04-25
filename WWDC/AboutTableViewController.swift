@@ -149,7 +149,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
             let label = UILabel()
             label.text = NSLocalizedString("Version \(version) (\(build))", comment: "")
             label.textColor = UIColor.grayColor()
-            label.font = UIFont.init(name: "HelveticaNeue-Light", size: 17)
+            label.font = UIFont.systemFontOfSize(16.0, weight: UIFontWeightLight)
             label.textAlignment = .Center
             return label
         } else {
