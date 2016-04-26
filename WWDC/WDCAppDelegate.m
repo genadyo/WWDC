@@ -9,6 +9,7 @@
 @import Fabric;
 @import Crashlytics;
 @import Keys;
+@import CoreSpotlight;
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
 #import "WDCPartiesTVC.h"
@@ -104,10 +105,19 @@
 }
 
 - (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void (^)(NSArray *restorableObjects))restorationHandler {
-    NSString *objectId = userActivity.userInfo[@"objectId"];
-    if (objectId != nil) {
-        self.partyObjectId = objectId;
+    if ([userActivity.activityType isEqualToString:CSSearchableItemActionType]) {
+        NSString *objectId = userActivity.userInfo[CSSearchableItemActivityIdentifier];
+        if (objectId != nil) {
+            self.partyObjectId = objectId;
+            return YES;
+        }
         return YES;
+    } else {
+        NSString *objectId = userActivity.userInfo[@"objectId"];
+        if (objectId != nil) {
+            self.partyObjectId = objectId;
+            return YES;
+        }
     }
 
     return NO;
