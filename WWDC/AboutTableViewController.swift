@@ -13,8 +13,11 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { parties, _ in
-            print(parties)
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        print(userDefaults.objectForKey("parties"))
+        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { parties, JSON in
+            userDefaults.setObject(JSON, forKey: "parties")
+            userDefaults.synchronize()
         }
     }
 
