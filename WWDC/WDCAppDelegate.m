@@ -64,8 +64,6 @@
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
 
-    [ServerManager load:@"https://github.com/genadyo/WWDC/raw/master/data/data.json" completion:nil];
-
     return YES;
 }
 							
