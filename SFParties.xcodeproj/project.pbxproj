@@ -17,6 +17,7 @@
 		B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */; };
 		B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B246425A1927A2F200DF2E06 /* MapKit.framework */; };
 		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
+		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26DC2851B0EF6FF00F60080 /* WDCSectionTRC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26DC2841B0EF6FF00F60080 /* WDCSectionTRC.swift */; };
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
 		B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */; };
@@ -116,6 +117,7 @@
 		B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartyTableViewController.m; sourceTree = "<group>"; };
 		B246425A1927A2F200DF2E06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
+		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26DC2841B0EF6FF00F60080 /* WDCSectionTRC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WDCSectionTRC.swift; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -257,6 +259,7 @@
 				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
 				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
+				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
 				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
 				B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */,
 				B2464254192788A200DF2E06 /* WDCPartyTVC.h */,
@@ -584,6 +587,7 @@
 				B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */,
 				B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */,
 				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
+				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
 				B28614101958CA51006FA1D3 /* JVObserver.m in Sources */,
 				B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */,
 				B28A12501A1E309D00954CD8 /* Assets.swift in Sources */,

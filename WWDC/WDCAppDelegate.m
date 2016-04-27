@@ -16,6 +16,7 @@
 #import "AAPLTraitOverrideViewController.h"
 #import <Parse/Parse.h>
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
+#import "Parties-Swift.h"
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
 
@@ -62,6 +63,8 @@
     AAPLTraitOverrideViewController *traitController = [[AAPLTraitOverrideViewController alloc] init];
     traitController.viewController = controller;
     self.window.rootViewController = traitController;
+
+    [ServerManager load:@"https://github.com/genadyo/WWDC/raw/master/data/data.json" completion:nil];
 
     return YES;
 }
