@@ -33,7 +33,7 @@ class ServerManager {
         }
     }
 
-    static func processJSON(JSON: AnyObject?) -> [Party] {
+    static func processJSON(JSON: AnyObject?) -> [[Party]] {
         var ps = [Party]()
         if let parties = JSON as? [AnyObject] {
             for party in parties {
@@ -54,6 +54,8 @@ class ServerManager {
                 }
             }
         }
+        // sort
+        // put in new array
         return ps
     }
 }
