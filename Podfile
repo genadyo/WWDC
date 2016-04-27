@@ -3,7 +3,6 @@ inhibit_all_warnings!
 use_frameworks!
 
 pod 'TMCache'
-pod 'MMWormhole'
 pod 'Parse'
 pod 'SDCloudUserDefaults'
 pod 'Crashlytics'
