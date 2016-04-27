@@ -9,14 +9,12 @@
 @import CloudKit;
 @import CoreSpotlight;
 @import MobileCoreServices;
-#import <MMWormhole/MMWormhole.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 
 @interface WDCParties()
 
-@property (strong, nonatomic) MMWormhole *wormhole;
 @property (strong, nonatomic) dispatch_queue_t serialQueue;
 
 @end
@@ -30,7 +28,6 @@
     dispatch_once(&onceToken, ^{
         sharedInstance = [[WDCParties alloc] init];
         sharedInstance.serialQueue = dispatch_queue_create("group.so.sugar.SFParties.queue", DISPATCH_QUEUE_SERIAL);
-        sharedInstance.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.so.sugar.SFParties" optionalDirectory:@"wormhole"];
     });
     return sharedInstance;
 }
@@ -188,8 +185,6 @@
         }
         
         [userDefaults synchronize];
-
-        [self.wormhole passMessageObject:@{@"action" : @"saveGoing"} identifier:@"loadTableData"];
     });
 }
 

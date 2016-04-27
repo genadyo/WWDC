@@ -6,6 +6,8 @@
 //  Copyright © 2016 Sugar So Studio. All rights reserved.
 //
 
+import Foundation
+
 struct Party {
     let objectId: String
     let icon: NSURL
