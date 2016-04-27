@@ -129,12 +129,10 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
             case 0:
                 url = NSURL(string: "https://github.com/orta/cocoapods-keys")
             case 1:
-                url = NSURL(string: "https://github.com/mutualmobile/MMWormhole")
-            case 2:
                 url = NSURL(string: "https://useiconic.com/open/")
-            case 3:
+            case 2:
                 url = NSURL(string: "https://github.com/sdarlington/SDCloudUserDefaults")
-            case 4:
+            case 3:
                 url = NSURL(string: "https://github.com/tumblr/TMCache")
             default:
                 break
