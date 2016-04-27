@@ -54,7 +54,6 @@ class ServerManager {
                 }
             }
         }
-        print(ps)
         return ps
     }
 }
