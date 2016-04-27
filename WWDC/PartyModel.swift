@@ -1,5 +1,5 @@
 //
-//  Party.swift
+//  PartyModel.swift
 //  SFParties
 //
 //  Created by Genady Okrain on 4/26/16.
