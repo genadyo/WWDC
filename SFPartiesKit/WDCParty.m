@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-#import <TMCache/TMCache.h>
 #import "WDCParties.h"
 #import "WDCParty.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
@@ -115,15 +114,15 @@
 
 - (void)loadImagesFromCache
 {
-    [[TMCache sharedCache] objectForKey:[self iconCacheKey]
-                                  block:^(TMCache *cache, NSString *key, id object) {
-                                      _icon = (UIImage *)object;
-                                  }];
-
-    [[TMCache sharedCache] objectForKey:[self logoCacheKey]
-                                  block:^(TMCache *cache, NSString *key, id object) {
-                                      self.logo = (UIImage *)object;
-                                  }];
+//    [[TMCache sharedCache] objectForKey:[self iconCacheKey]
+//                                  block:^(TMCache *cache, NSString *key, id object) {
+//                                      _icon = (UIImage *)object;
+//                                  }];
+//
+//    [[TMCache sharedCache] objectForKey:[self logoCacheKey]
+//                                  block:^(TMCache *cache, NSString *key, id object) {
+//                                      self.logo = (UIImage *)object;
+//                                  }];
 
     // get apple watch icon from cache
     NSData *data = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] objectForKey:[self iconCacheKey]];
@@ -139,32 +138,32 @@
 
 - (BOOL)isLogoCached
 {
-    if ([[TMCache sharedCache] objectForKey:[self logoCacheKey]]) {
-        return YES;
-    } else {
+//    if ([[TMCache sharedCache] objectForKey:[self logoCacheKey]]) {
+//        return YES;
+//    } else {
         return NO;
-    }
+//    }
 }
 
 - (BOOL)isIconCached
 {
-    if ([[TMCache sharedCache] objectForKey:[self iconCacheKey]]) {
-        return YES;
-    } else {
+//    if ([[TMCache sharedCache] objectForKey:[self iconCacheKey]]) {
+//        return YES;
+//    } else {
         return NO;
-    }
+//    }
 }
 
 - (void)setLogoWithData:(NSData *)data
 {
     self.logo = [[UIImage alloc] initWithData:data scale:[UIScreen mainScreen].scale];
-    [[TMCache sharedCache] setObject:self.logo forKey:[self logoCacheKey] block:nil];
+//    [[TMCache sharedCache] setObject:self.logo forKey:[self logoCacheKey] block:nil];
 }
 
 - (void)setIconWithData:(NSData *)data
 {
     self.icon = [[UIImage alloc] initWithData:data scale:[UIScreen mainScreen].scale];
-    [[TMCache sharedCache] setObject:self.icon forKey:[self iconCacheKey] block:nil];
+//    [[TMCache sharedCache] setObject:self.icon forKey:[self iconCacheKey] block:nil];
 }
 
 - (NSString *)sortDate
