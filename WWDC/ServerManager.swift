@@ -41,7 +41,12 @@ class ServerManager {
     }
 
     static func dateForString(string: String) -> NSDate? {
-        return NSDate()
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
+        dateFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "PST")
+        return dateFormatter.dateFromString(string)
     }
 
     static func processJSON(JSON: AnyObject?) -> [[Party]] {
