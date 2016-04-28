@@ -9,7 +9,7 @@
         <!--Parties-->
         <scene sceneID="H8J-aB-wgz">
             <objects>
-                <tableViewController id="ZFk-xA-eIm" customClass="WDCPartiesTVC" sceneMemberID="viewController">
+                <tableViewController id="ZFk-xA-eIm" customClass="PartiesTableViewController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="75" sectionHeaderHeight="44" sectionFooterHeight="1" id="Gtc-Jh-rgd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -195,8 +195,8 @@ Title 2</string>
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="6DZ-1r-4qv"/>
-                        <outlet property="infoButton" destination="tpN-9a-wGx" id="e94-hK-Ete"/>
+                        <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="lCS-fc-dqS"/>
+                        <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbu-zn-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
