@@ -10,14 +10,6 @@ import UIKit
 import MessageUI
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { parties, JSON in
-            print(parties)
-        }
-    }
-
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

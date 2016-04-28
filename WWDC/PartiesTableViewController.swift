@@ -12,6 +12,14 @@ class PartiesTableViewController: UITableViewController {
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var goingSegmentedControl: UISegmentedControl!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { [weak self] parties, JSON in
+            self?.tableView.reloadData()
+        }
+    }
+
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
