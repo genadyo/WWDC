@@ -3,9 +3,18 @@ PODS:
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
+  - FLAnimatedImage (1.0.12)
   - Keys (1.0.0)
   - Parse (1.13.0):
     - Bolts/Tasks (~> 1.6)
+  - PINCache (2.2.2)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
   - SDCloudUserDefaults (1.0.2)
   - TMCache (2.1.0)
 
@@ -13,6 +22,7 @@ DEPENDENCIES:
   - Crashlytics
   - Keys (from `Pods/CocoaPodsKeys`)
   - Parse
+  - PINRemoteImage
   - SDCloudUserDefaults
   - TMCache
 
@@ -24,8 +34,11 @@ SPEC CHECKSUMS:
   Bolts: a0058fa3b331c5a1e4402d534f2dae36dbff31e4
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Keys: 7d2ff6ff42f6903358267ce56e9392f83c31acfe
   Parse: f51c24d2feb412e4b2d6cc73d37cb24e8d0089bc
+  PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
   SDCloudUserDefaults: cacf733d192160d94364efab8548ae3302615a65
   TMCache: 95ebcc9b3c7e90fb5fd8fc3036cba3aa781c9bed
 

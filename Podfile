@@ -6,6 +6,7 @@ pod 'TMCache'
 pod 'Parse'
 pod 'SDCloudUserDefaults'
 pod 'Crashlytics'
+pod 'PINRemoteImage'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",

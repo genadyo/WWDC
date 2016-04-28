@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PINRemoteImage
 
 class PartyTableViewCell: UITableViewCell {
     var party: Party? {
@@ -14,6 +15,7 @@ class PartyTableViewCell: UITableViewCell {
             if let party = party {
                 titleLabel.text = party.title
                 hoursLabel.text = party.hours
+                iconImageView.pin_setImageFromURL(party.icon)
             }
         }
     }
