@@ -26,7 +26,7 @@ class PartiesManager {
         }
     }
 
-    lazy private(set) var parties: [Party] = {
+    lazy private(set) var parties: [[Party]] = {
         if let JSON = self.JSON {
             return ServerManager.processJSON(JSON)
         } else {

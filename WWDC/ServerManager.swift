@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerManager {
-    static func load(url: String, completion: ((parties: [Party], JSON: AnyObject?) -> Void)?) {
+    static func load(url: String, completion: ((parties: [[Party]], JSON: AnyObject?) -> Void)?) {
         if let url = NSURL(string: url) {
             let request = NSURLRequest(URL: url)
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -34,7 +34,7 @@ class ServerManager {
     }
 
     static func processJSON(JSON: AnyObject?) -> [[Party]] {
-        var ps = [Party]()
+        var allParties = [Party]()
         if let parties = JSON as? [AnyObject] {
             for party in parties {
                 if let p = party as? [String: AnyObject],
@@ -50,12 +50,27 @@ class ServerManager {
                     longitude = p["longitude"] as? Double,
                     url = p["url"] as? String, URL = NSURL(string: url)
                 {
-                    ps.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: NSDate(), endDate: NSDate(), details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL))
+                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: NSDate(), endDate: NSDate(), details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL))
                 }
             }
         }
-        // sort
-        // put in new array
-        return ps
+
+        allParties.sortInPlace({ $0.startDate.compare($1.startDate) == NSComparisonResult.OrderedAscending })
+
+        var lastDate: NSDate?
+        var partiesForDay = [[Party]]()
+        var parties = [Party]()
+        for party in allParties {
+            if let lastDate = lastDate where NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.isDate(lastDate, inSameDayAsDate: party.startDate) {
+                partiesForDay.append(parties)
+                parties = []
+            } else {
+                parties.append(party)
+            }
+            lastDate = party.startDate
+        }
+        partiesForDay.append(parties)
+        
+        return partiesForDay
     }
 }
