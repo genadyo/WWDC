@@ -23,8 +23,8 @@ class PartiesTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath)
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath) as! PartyTableViewCell
+        cell.party = PartiesManager.sharedInstance.parties[indexPath.section][indexPath.row]
         return cell
     }
 }

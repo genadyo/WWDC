@@ -1,0 +1,25 @@
+//
+//  PartyTableViewCell.swift
+//  SFParties
+//
+//  Created by Genady Okrain on 4/27/16.
+//  Copyright © 2016 Sugar So Studio. All rights reserved.
+//
+
+import UIKit
+
+class PartyTableViewCell: UITableViewCell {
+    var party: Party? {
+        didSet {
+            if let party = party {
+                titleLabel.text = party.title
+            }
+        }
+    }
+
+    @IBOutlet weak var iconImageView: UIImageView!
+    @IBOutlet weak var hoursLabel: UILabel!
+    @IBOutlet weak var goingView: WDCGoing!
+    @IBOutlet weak var badgeView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+}

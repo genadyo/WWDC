@@ -38,6 +38,7 @@
 		B2F01CCC1A1F91DD00F1AC70 /* SFPartiesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */; };
 		B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */; };
+		B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 		CE5865DE14A589CD30570BE1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A574C6E91FE4AB459E94C70E /* Pods.framework */; };
 /* End PBXBuildFile section */
@@ -126,6 +127,7 @@
 		B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
 		B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParty.h; sourceTree = "<group>"; };
 		B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParty.m; sourceTree = "<group>"; };
+		B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -208,9 +210,10 @@
 				B26CC1861CD10B8500B2198B /* PartiesManager.swift */,
 				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
 				B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */,
+				B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */,
+				B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */,
 				B2464254192788A200DF2E06 /* WDCPartyTVC.h */,
 				B2464255192788A200DF2E06 /* WDCPartyTVC.m */,
-				B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */,
 				B2D4AF1819276D7800C5B0E8 /* WDCPartiesTVC.h */,
 				B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */,
 				B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */,
@@ -427,6 +430,7 @@
 				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
 				B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */,
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
+				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */,
 				B28614101958CA51006FA1D3 /* JVObserver.m in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,

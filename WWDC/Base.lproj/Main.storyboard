@@ -16,7 +16,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="party" id="Oew-qX-0v3" customClass="WDCPartyTVC">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="party" id="Oew-qX-0v3" customClass="PartyTableViewCell" customModule="Parties" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="108" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oew-qX-0v3" id="piH-pi-Tot">
@@ -96,11 +96,11 @@ Title 2</string>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
-                                    <outlet property="badgeView" destination="wlh-qb-aJT" id="TmD-Cd-WZb"/>
-                                    <outlet property="goingView" destination="Jnx-aa-Fj9" id="eLp-gb-M1S"/>
-                                    <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="4Cy-4Z-SCw"/>
-                                    <outlet property="iconImageView" destination="wSf-jz-91p" id="Ly3-XR-HvV"/>
-                                    <outlet property="titleLabel" destination="tl9-99-CA5" id="edg-ov-fRD"/>
+                                    <outlet property="badgeView" destination="wlh-qb-aJT" id="FAP-Gk-7GO"/>
+                                    <outlet property="goingView" destination="Jnx-aa-Fj9" id="hee-27-9hu"/>
+                                    <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="eSw-YE-Ufm"/>
+                                    <outlet property="iconImageView" destination="wSf-jz-91p" id="KYh-KX-ECy"/>
+                                    <outlet property="titleLabel" destination="tl9-99-CA5" id="vR7-bs-J6t"/>
                                     <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" id="Wj4-LC-1PK"/>
                                 </connections>
                             </tableViewCell>
