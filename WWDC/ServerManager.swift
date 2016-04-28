@@ -33,6 +33,17 @@ class ServerManager {
         }
     }
 
+    static func hourForDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.stringFromDate(date)
+    }
+
+    static func dateForString(string: String) -> NSDate? {
+        return NSDate()
+    }
+
     static func processJSON(JSON: AnyObject?) -> [[Party]] {
         var allParties = [Party]()
         if let parties = JSON as? [AnyObject] {
@@ -42,6 +53,8 @@ class ServerManager {
                     icon = p["icon"] as? String, iconURL = NSURL(string: icon),
                     logo = p["logo"] as? String, logoURL = NSURL(string: logo),
                     title = p["title"] as? String,
+                    startD = p["startDate"] as? String, startDate = dateForString(startD),
+                    endD = p["endDate"] as? String, endDate = dateForString(endD),
                     details = p["details"] as? String,
                     address1 = p["address1"] as? String,
                     address2 = p["address2"] as? String,
@@ -50,7 +63,7 @@ class ServerManager {
                     longitude = p["longitude"] as? Double,
                     url = p["url"] as? String, URL = NSURL(string: url)
                 {
-                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: NSDate(), endDate: NSDate(), details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL))
+                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: startDate, endDate: endDate, details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL, hours: hourForDate(startDate) + " to " + hourForDate(endDate)))
                 }
             }
         }

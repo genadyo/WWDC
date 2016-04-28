@@ -13,6 +13,7 @@ class PartyTableViewCell: UITableViewCell {
         didSet {
             if let party = party {
                 titleLabel.text = party.title
+                hoursLabel.text = party.hours
             }
         }
     }
