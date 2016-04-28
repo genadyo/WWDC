@@ -15,7 +15,7 @@ class PartiesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { [weak self] parties, JSON in
+        PartiesManager.sharedInstance.load() { [weak self] in
             self?.tableView.reloadData()
         }
     }
