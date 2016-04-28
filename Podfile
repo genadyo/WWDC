@@ -2,19 +2,17 @@ platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod 'TMCache'
-pod 'Parse'
-pod 'SDCloudUserDefaults'
 pod 'Crashlytics'
+pod 'OneSignal'
 pod 'PINRemoteImage'
+pod 'SDCloudUserDefaults'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
   :keys => [
     "Crashlytics",
     "Lyft",
-    "ParseApplicationId",
-    "ParseClientKey"
+    "OneSignal"
   ]
 }
 

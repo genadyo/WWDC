@@ -10,16 +10,16 @@
 @import Crashlytics;
 @import Keys;
 @import CoreSpotlight;
+#import <OneSignal/OneSignal.h>
 #import "WDCAppDelegate.h"
 #import "WDCParty.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
-#import <Parse/Parse.h>
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 #import "Parties-Swift.h"
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
-
+@property (strong, nonatomic) OneSignal *oneSignal;
 @end
 
 
@@ -35,8 +35,8 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
 
-    // Parse
-    [Parse setApplicationId:keys.parseApplicationId clientKey:keys.parseClientKey];
+    // One Signal
+    self.oneSignal = [[OneSignal alloc] initWithLaunchOptions:launchOptions appId:keys.oneSignal handleNotification:nil];
 
     // Crashlytics
     [Fabric with:@[[Crashlytics startWithAPIKey:keys.crashlytics]]];
@@ -127,14 +127,14 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     // Store the deviceToken in the current installation and save it to Parse.
-    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
-    [currentInstallation setDeviceTokenFromData:deviceToken];
-    [currentInstallation saveInBackground];
+//    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+//    [currentInstallation setDeviceTokenFromData:deviceToken];
+//    [currentInstallation saveInBackground];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
 {
-    [PFPush handlePush:userInfo];
+//    [PFPush handlePush:userInfo];
 }
 
 #pragma mark - UISplitViewControllerDelegate
