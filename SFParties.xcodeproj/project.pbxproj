@@ -21,8 +21,6 @@
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
 		B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */; };
 		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
-		B28A12501A1E309D00954CD8 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A124F1A1E309D00954CD8 /* Assets.swift */; };
-		B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28A12511A1E312100954CD8 /* drawAssets.swift */; };
 		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
@@ -101,8 +99,6 @@
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B286140D1958CA51006FA1D3 /* JVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVObserver.h; sourceTree = "<group>"; };
 		B286140E1958CA51006FA1D3 /* JVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVObserver.m; sourceTree = "<group>"; };
-		B28A124F1A1E309D00954CD8 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
-		B28A12511A1E312100954CD8 /* drawAssets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawAssets.swift; sourceTree = "<group>"; };
 		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
 		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* Parties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parties.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -223,8 +219,6 @@
 				B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */,
 				B286140D1958CA51006FA1D3 /* JVObserver.h */,
 				B286140E1958CA51006FA1D3 /* JVObserver.m */,
-				B28A124F1A1E309D00954CD8 /* Assets.swift */,
-				B28A12511A1E312100954CD8 /* drawAssets.swift */,
 				B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */,
 				B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */,
 				B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */,
@@ -426,7 +420,6 @@
 			files = (
 				B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */,
 				B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */,
-				B28A12521A1E312100954CD8 /* drawAssets.swift in Sources */,
 				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
 				B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */,
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
@@ -435,7 +428,6 @@
 				B28614101958CA51006FA1D3 /* JVObserver.m in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
 				B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */,
-				B28A12501A1E309D00954CD8 /* Assets.swift in Sources */,
 				B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */,
 				B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */,
 				B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */,

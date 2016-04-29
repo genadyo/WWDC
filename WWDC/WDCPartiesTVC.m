@@ -40,10 +40,10 @@
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
 
     // PaintCode
-    [self.infoButton setImage:[Assets imageOfGear] forState:UIControlStateNormal];
+//    [self.infoButton setImage:[Assets imageOfGear] forState:UIControlStateNormal];
 //    [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
-    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
-    [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
+//    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
+//    [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
 
     NSInteger selected = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] integerForKey:@"selected"];
     if (selected) {
@@ -332,7 +332,7 @@
         [view addSubview:label];
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [button setFrame:CGRectMake(tableView.frame.size.width-36.0f, 0.0f, 20, 40.0f)];
-        [button setImage:[Assets imageOfMapWithFrame:button.bounds] forState:UIControlStateNormal];
+//        [button setImage:[Assets imageOfMapWithFrame:button.bounds] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
         button.tag = section;
         [view addSubview:button];

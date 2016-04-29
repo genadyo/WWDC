@@ -22,7 +22,7 @@ class PartyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var hoursLabel: UILabel!
-    @IBOutlet weak var goingView: WDCGoing!
+//    @IBOutlet weak var goingView: WDCGoing!
     @IBOutlet weak var badgeView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
 }

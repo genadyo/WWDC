@@ -114,10 +114,10 @@
     self.tableView.estimatedRowHeight = 61.0;
 
     // UBER
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        UIImage *uber = [Assets imageOfLyft];
-        [self.uberButton setImage:uber forState:UIControlStateNormal];
-    }
+//    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+//        UIImage *uber = [Assets imageOfLyft];
+//        [self.uberButton setImage:uber forState:UIControlStateNormal];
+//    }
 
     __weak typeof(self) weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
@@ -144,22 +144,22 @@
 
 - (void)refreshGoing
 {
-    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
-        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-    } else if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
-        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-    } else {
-        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-    }
+//    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
+//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
+//    } else if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
+//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
+//    } else {
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
+//        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
+//        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
+//        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
+//    }
 }
 
 - (IBAction)updateGoing:(id)sender
