@@ -35,4 +35,20 @@ class PartiesTableViewController: UITableViewController {
         cell.party = PartiesManager.sharedInstance.parties[indexPath.section][indexPath.row]
         return cell
     }
+
+    // MARK: UITableViewDelegate
+
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("party", sender: indexPath)
+    }
+
+    // MARK: Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let indexPath = sender as? NSIndexPath else { return }
+
+        if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where segue.identifier == "party" {
+            vc.party = PartiesManager.sharedInstance.parties[indexPath.section][indexPath.row]
+        }
+    }
 }

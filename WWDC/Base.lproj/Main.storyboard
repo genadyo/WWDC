@@ -100,7 +100,6 @@ Title 2</string>
                                     <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="eSw-YE-Ufm"/>
                                     <outlet property="iconImageView" destination="wSf-jz-91p" id="KYh-KX-ECy"/>
                                     <outlet property="titleLabel" destination="tl9-99-CA5" id="vR7-bs-J6t"/>
-                                    <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" id="Wj4-LC-1PK"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="empty" rowHeight="504" id="IBX-RV-GO8">
@@ -196,6 +195,7 @@ Title 2</string>
                     <connections>
                         <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="lCS-fc-dqS"/>
                         <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
+                        <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" action="showViewController:sender:" id="zcu-b2-klE"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbu-zn-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
