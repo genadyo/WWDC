@@ -47,4 +47,16 @@ class PartyTableViewController: UITableViewController {
             address3Label.text = party.address3
         }
     }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Self sizing cells
+        tableView.estimatedRowHeight = 100.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+    }
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
