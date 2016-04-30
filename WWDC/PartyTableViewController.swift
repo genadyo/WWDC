@@ -11,8 +11,9 @@ import MapKit
 import SafariServices
 import Keys
 import Contacts
+import EventKitUI
 
-class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate {
+class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate, EKEventEditViewDelegate {
     var party: Party! {
         didSet {
             goingButton.selected = party.isGoing
@@ -108,7 +109,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         goingButton.selected = party.isGoing
     }
 
-    @IBAction func openMaps(sender: UIButton) {
+    @IBAction func openMaps(sender: AnyObject) {
         let coordinate = CLLocationCoordinate2DMake(party.latitude, party.longitude)
 
         var addressDictionary = [String: AnyObject]()
@@ -129,7 +130,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         item.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsMapTypeKey: MKMapType.Standard.rawValue])
     }
 
-    @IBAction func openLyft(sender: UIButton) {
+    @IBAction func openLyft(sender: AnyObject) {
         if UI_USER_INTERFACE_IDIOM() != .Pad {
             let keys = SfpartiesKeys()
             if let url = NSURL(string: "lyft://ridetype?id=lyft_line&destination[latitude]=\(party.latitude)&destination[longitude]=\(party.longitude)&partner=\(keys.lyft)") where UIApplication.sharedApplication().canOpenURL(url) {
@@ -147,10 +148,80 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         safariViewController.delegate = self
         presentViewController(safariViewController, animated: true, completion: nil)
     }
+    
+    @IBAction func openCal(sender: UITapGestureRecognizer) {
+        let eventStore = EKEventStore()
+        let authorizationStatus = EKEventStore.authorizationStatusForEntityType(.Event)
+        let needsToRequestAccessToEventStore = authorizationStatus == .NotDetermined
+
+        if needsToRequestAccessToEventStore == true {
+            eventStore.requestAccessToEntityType(.Event) { [weak self] granted, error in
+                if granted == true {
+                    self?.addEvent()
+                } else {
+                    let alert = UIAlertController(title: "Please allow access to the Calendars", message: nil, preferredStyle: .Alert)
+                    let ok = UIAlertAction(title: "OK", style: .Default) { action in
+                        alert.dismissViewControllerAnimated(true, completion: nil)
+                    }
+                    alert.addAction(ok)
+                    self?.presentViewController(alert, animated: true, completion: nil)
+                }
+            }
+        } else {
+            let granted = authorizationStatus == .Authorized
+            if granted == true {
+                addEvent()
+            } else {
+                let alert = UIAlertController(title: "Please allow access to the Calendars", message: nil, preferredStyle: .Alert)
+                let ok = UIAlertAction(title: "OK", style: .Default) { action in
+                    alert.dismissViewControllerAnimated(true, completion: nil)
+                }
+                alert.addAction(ok)
+                presentViewController(alert, animated: true, completion: nil)
+            }
+        }
+    }
+
+    func addEvent() {
+        let eventStore = EKEventStore()
+        let event = EKEvent(eventStore: eventStore)
+
+        // Event
+        event.title = party.title
+        event.startDate = party.startDate
+        event.endDate = party.endDate
+        event.location = "\(party.address1) \(party.address2) \(party.address3)"
+        event.URL = party.url
+        event.notes = party.details
+
+        // addController
+        let addController = EKEventEditViewController()
+        addController.eventStore = eventStore
+        addController.event = event
+        addController.editViewDelegate = self
+        presentViewController(addController, animated: true, completion: nil)
+    }
 
     // MARK: SFSafariViewControllerDelegate
 
     func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
+    }
+
+    // MARK: EKEventEditViewDelegate
+
+    func eventEditViewController(controller: EKEventEditViewController, didCompleteWithAction action: EKEventEditViewAction) {
+        switch action {
+        case .Saved:
+            do {
+                if let event = controller.event {
+                    try controller.eventStore.saveEvent(event, span: .ThisEvent)
+                }
+            } catch { }
+            break;
+        default:
+            break;
+        }
         controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }

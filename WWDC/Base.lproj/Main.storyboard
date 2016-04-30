@@ -626,12 +626,12 @@ Title2</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FT1-Ol-2ZH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="AeC-Rj-aei">
                     <connections>
-                        <action selector="openUber:" destination="cxA-AI-2vJ" id="MnX-t1-R0O"/>
+                        <action selector="openLyft:" destination="cxA-AI-2vJ" id="Ode-Qn-Z42"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="0pR-or-51a">
                     <connections>
-                        <action selector="openCal:" destination="cxA-AI-2vJ" id="QZ3-2G-oeO"/>
+                        <action selector="openCal:" destination="cxA-AI-2vJ" id="RLp-d5-t3J"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
