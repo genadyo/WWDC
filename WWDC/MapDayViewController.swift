@@ -31,7 +31,7 @@ class MapDayViewController: UIViewController, MKMapViewDelegate {
         loadMap()
     }
 
-    func loadMap() {
+    private func loadMap() {
         mapView.removeAnnotations(mapView.annotations)
         for (partyIndex, party) in parties.enumerate() {
             let annotation = MKPointAnnotation()

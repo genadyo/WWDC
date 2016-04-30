@@ -10,11 +10,11 @@ import UIKit
 import CoreLocation
 
 class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate {
-    var parties = PartiesManager.sharedInstance.parties
+    private var parties = PartiesManager.sharedInstance.parties
+    private let locationManager = CLLocationManager()
 
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
