@@ -38,9 +38,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
 
         // Delegate
-        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UISplitViewController {
-            controller.delegate = self
-            window?.rootViewController = controller
+        if let splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UISplitViewController {
+            splitViewController.delegate = self
+            splitViewController.preferredDisplayMode = .AllVisible
+            window?.rootViewController = splitViewController
             window?.makeKeyAndVisible()
         }
 
