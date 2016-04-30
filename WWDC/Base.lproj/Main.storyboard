@@ -427,6 +427,13 @@ Title2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addToCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="4em-gq-KUf">
+                                                    <rect key="frame" x="20" y="24" width="38" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="UKE-rc-lhA"/>
+                                                        <constraint firstAttribute="width" constant="38" id="gNW-R1-FJc"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7NX-Q6-GMX">
                                                     <rect key="frame" x="70" y="17" width="33" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -439,13 +446,6 @@ Title2</string>
                                                     <color key="textColor" red="0.32549019610000002" green="0.32549019610000002" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addToCalendar" translatesAutoresizingMaskIntoConstraints="NO" id="4em-gq-KUf">
-                                                    <rect key="frame" x="20" y="23.5" width="38" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="UKE-rc-lhA"/>
-                                                        <constraint firstAttribute="width" constant="38" id="gNW-R1-FJc"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="L4B-SO-y8Q" firstAttribute="leading" secondItem="an3-gY-oBw" secondAttribute="leading" constant="70" id="04k-aa-gxd"/>
@@ -507,6 +507,13 @@ Title2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="iNv-uv-X4o">
+                                                    <rect key="frame" x="20" y="23" width="24" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="32" id="aDv-7Y-0hw"/>
+                                                        <constraint firstAttribute="width" constant="24" id="iZw-DG-U5u"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kjV-01-xGd">
                                                     <rect key="frame" x="70" y="12" width="68" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -539,13 +546,6 @@ Title2</string>
                                                         <action selector="openUber:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="r3c-Fn-imZ"/>
                                                     </connections>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="iNv-uv-X4o">
-                                                    <rect key="frame" x="20" y="22.5" width="24" height="32"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="32" id="aDv-7Y-0hw"/>
-                                                        <constraint firstAttribute="width" constant="24" id="iZw-DG-U5u"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dEp-lq-qxU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sX2-WM-0RF" secondAttribute="trailing" constant="26" id="46f-gb-23e"/>
@@ -723,24 +723,24 @@ Title2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate on the App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQV-NN-GAO">
-                                                    <rect key="frame" x="32" y="11" width="168.5" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="kmI-x7-rwb">
-                                                    <rect key="frame" x="8" y="15.5" width="16" height="14"/>
+                                                    <rect key="frame" x="15" y="15.5" width="16" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="16" id="2ED-kv-BSF"/>
                                                         <constraint firstAttribute="height" constant="14" id="Bnh-5P-2BG"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate on the App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQV-NN-GAO">
+                                                    <rect key="frame" x="39" y="11" width="168.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="JQV-NN-GAO" secondAttribute="centerY" id="A5E-sR-w7t"/>
                                                 <constraint firstItem="JQV-NN-GAO" firstAttribute="leading" secondItem="kmI-x7-rwb" secondAttribute="trailing" constant="8" id="G5i-uh-b72"/>
-                                                <constraint firstItem="kmI-x7-rwb" firstAttribute="leading" secondItem="ZaD-8Q-dMB" secondAttribute="leading" constant="8" id="N1q-Rq-5Uw"/>
+                                                <constraint firstItem="kmI-x7-rwb" firstAttribute="leading" secondItem="ZaD-8Q-dMB" secondAttribute="leading" constant="15" id="N1q-Rq-5Uw"/>
                                                 <constraint firstItem="JQV-NN-GAO" firstAttribute="leading" secondItem="ZaD-8Q-dMB" secondAttribute="leadingMargin" id="fGL-uM-BgA"/>
                                                 <constraint firstItem="kmI-x7-rwb" firstAttribute="centerY" secondItem="ZaD-8Q-dMB" secondAttribute="centerY" id="hCC-O9-gay"/>
                                             </constraints>
@@ -759,14 +759,14 @@ Title2</string>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="vvr-ul-Gcs">
-                                                    <rect key="frame" x="8" y="15.5" width="16" height="14"/>
+                                                    <rect key="frame" x="15" y="15.5" width="16" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="16" id="9SB-xM-bJw"/>
                                                         <constraint firstAttribute="height" constant="14" id="I7j-gS-DnX"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8g-ve-rbT">
-                                                    <rect key="frame" x="32" y="11" width="53" height="21"/>
+                                                    <rect key="frame" x="39" y="11" width="53" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -775,7 +775,7 @@ Title2</string>
                                             <constraints>
                                                 <constraint firstItem="vvr-ul-Gcs" firstAttribute="centerY" secondItem="FMG-bg-9qU" secondAttribute="centerY" id="IWY-Sf-tXz"/>
                                                 <constraint firstItem="D8g-ve-rbT" firstAttribute="leading" secondItem="vvr-ul-Gcs" secondAttribute="trailing" constant="8" id="Who-5J-Raj"/>
-                                                <constraint firstItem="vvr-ul-Gcs" firstAttribute="leading" secondItem="FMG-bg-9qU" secondAttribute="leading" constant="8" id="Y5L-zQ-p7d"/>
+                                                <constraint firstItem="vvr-ul-Gcs" firstAttribute="leading" secondItem="FMG-bg-9qU" secondAttribute="leading" constant="15" id="Y5L-zQ-p7d"/>
                                                 <constraint firstAttribute="centerY" secondItem="D8g-ve-rbT" secondAttribute="centerY" id="zj1-9T-W0e"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -787,23 +787,23 @@ Title2</string>
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-3L-iAG">
-                                                    <rect key="frame" x="32" y="11" width="32" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="rUL-A9-ThX">
-                                                    <rect key="frame" x="8" y="16.5" width="16" height="12"/>
+                                                    <rect key="frame" x="15" y="16.5" width="16" height="12"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="12" id="gcx-w5-g9m"/>
                                                         <constraint firstAttribute="width" constant="16" id="jCw-pJ-qNb"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-3L-iAG">
+                                                    <rect key="frame" x="39" y="11" width="32" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="w9g-3L-iAG" firstAttribute="leading" secondItem="rUL-A9-ThX" secondAttribute="trailing" constant="8" id="2ri-v6-9qU"/>
-                                                <constraint firstItem="rUL-A9-ThX" firstAttribute="leading" secondItem="ltL-vs-zFt" secondAttribute="leading" constant="8" id="6hl-Jh-mRE"/>
+                                                <constraint firstItem="rUL-A9-ThX" firstAttribute="leading" secondItem="ltL-vs-zFt" secondAttribute="leading" constant="15" id="6hl-Jh-mRE"/>
                                                 <constraint firstAttribute="centerY" secondItem="w9g-3L-iAG" secondAttribute="centerY" id="tQe-81-nnP"/>
                                                 <constraint firstItem="rUL-A9-ThX" firstAttribute="centerY" secondItem="ltL-vs-zFt" secondAttribute="centerY" id="xxm-QV-8cM"/>
                                             </constraints>
