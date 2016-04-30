@@ -301,10 +301,10 @@ Title 2</string>
             </objects>
             <point key="canvasLocation" x="311" y="-1118"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Party Navigation Controller-->
         <scene sceneID="Z8D-IW-uVH">
             <objects>
-                <navigationController id="Hzk-Hl-4lF" sceneMemberID="viewController">
+                <navigationController id="Hzk-Hl-4lF" customClass="PartyNavigationController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9lP-Ae-kP9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -920,7 +920,7 @@ Title2</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hWH-5p-OlG"/>
-        <segue reference="cDJ-JX-H6Q"/>
+        <segue reference="98b-xs-Xcx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>
