@@ -35,7 +35,7 @@ class ServerManager {
 
     static func hourForDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.stringFromDate(date)
     }
@@ -45,13 +45,12 @@ class ServerManager {
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm"
         dateFormatter.calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        dateFormatter.timeZone = NSTimeZone(abbreviation: "PST")
         return dateFormatter.dateFromString(string)
     }
 
     static func dateForDate(date: NSDate) -> String {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         dateFormatter.dateFormat = "EEEE, MMMM d"
         return dateFormatter.stringFromDate(date)
     }

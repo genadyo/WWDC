@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Crashlytics
         Fabric.with([Crashlytics.startWithAPIKey(keys.crashlytics())])
 
+        // Default time
         NSTimeZone.setDefaultTimeZone(NSTimeZone(name: "PST")!)
 
         // Global Tint Color (Xcode Bug #1)
