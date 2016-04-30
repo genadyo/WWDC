@@ -8,17 +8,40 @@
 
 import UIKit
 import MessageUI
+import SafariServices
 
 class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+    private func openTwitter(username: String) {
+        let urls = ["tweetbot://current/user_profile/\(username)", "twitterrific://current/profile?screen_name=\(username)", "twitter://user?screen_name=\(username)"]
+        for url in urls {
+            if let url = NSURL(string: url) where UIApplication.sharedApplication().canOpenURL(url) {
+                if UIApplication.sharedApplication().openURL(url) == true {
+                    return
+                }
+            }
+        }
+
+        openURL("https://twitter.com/\(username)")
+    }
+
+    private func openURL(string: String) {
+        if let url = NSURL(string: string) {
+            let safariViewController = SFSafariViewController(URL: url)
+            presentViewController(safariViewController, animated: true, completion: nil)
+        }
+    }
+
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
     @IBAction func share(sender: AnyObject) {
-        let url = NSURL(string: "https://appsto.re/us/InPC0.i")!
-        let string = NSLocalizedString("Parties for WWDC", comment: "")
-        let activityViewController = UIActivityViewController(activityItems: [string, url], applicationActivities: nil)
-        presentViewController(activityViewController, animated: true, completion: nil)
+        let text = "Parties for WWDC"
+        if let url = NSURL(string: "https://itunes.apple.com/us/app/parties-for-wwdc/id879924066?ls=1&mt=8") {
+            let activityItems = [text, url]
+            let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+            presentViewController(activityViewController, animated: true, completion: nil)
+        }
     }
 
     // MARK: UITableViewControllerDelegate
@@ -26,66 +49,30 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
 
-        var url:NSURL!
-
         if indexPath.section == 0 {
-
-            if indexPath.item == 0 {
-                let url = NSURL(string: "itms-apps://itunes.apple.com/app/id879924066")!
-
-                if UIApplication.sharedApplication().canOpenURL(url) {
+            if indexPath.row == 0 {
+                if let url = NSURL(string: "itms-apps://itunes.apple.com/app/id879924066") where UIApplication.sharedApplication().canOpenURL(url) {
                     UIApplication.sharedApplication().openURL(url)
-                } else {
-                    let alert = UIAlertController(title: NSLocalizedString("Failed to open url", comment: ""), message: nil, preferredStyle: .Alert)
-                    let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Default) { _ in
-                        alert.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                    alert.addAction(ok)
-                    presentViewController(alert, animated: true, completion: nil)
                 }
-            } else if indexPath.item == 1 {
-                let tweetbot = NSURL(string: "tweetbot://current/user_profile/genadyo")!
-                let twitterrific = NSURL(string: "twitterrific://current/profile?screen_name=genadyo")!
-                let twitter = NSURL(string: "twitter://user?screen_name=genadyo")!
-                let safari = NSURL(string: "https://twitter.com/genadyo")!
-
-                if UIApplication.sharedApplication().canOpenURL(tweetbot) {
-                    UIApplication.sharedApplication().openURL(tweetbot)
-                } else {
-                    if UIApplication.sharedApplication().canOpenURL(twitterrific) {
-                        UIApplication.sharedApplication().openURL(twitterrific)
-                    } else {
-                        if UIApplication.sharedApplication().canOpenURL(twitter) {
-                            UIApplication.sharedApplication().openURL(twitter)
-                        } else {
-                            if UIApplication.sharedApplication().canOpenURL(safari) {
-                                UIApplication.sharedApplication().openURL(safari)
-                            } else {
-                                let alert = UIAlertController(title: NSLocalizedString("Failed to open url", comment: ""), message: nil, preferredStyle: .Alert)
-                                let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Default) { _ in
-                                    alert.dismissViewControllerAnimated(true, completion: nil)
-                                }
-                                alert.addAction(ok)
-                                presentViewController(alert, animated: true, completion: nil)
-                            }
-                        }
-                    }
-                }
-            } else if indexPath.item == 2 {
-                if MFMailComposeViewController.canSendMail() {
+            } else if indexPath.row == 1 {
+                openTwitter("genadyo")
+            } else if indexPath.row == 2 {
+                if MFMailComposeViewController.canSendMail() == true {
                     let mailComposeViewController = MFMailComposeViewController()
                     mailComposeViewController.mailComposeDelegate = self
                     mailComposeViewController.setToRecipients(["genady@okrain.com"])
-                    mailComposeViewController.setSubject(NSLocalizedString("Parties", comment: ""))
+                    mailComposeViewController.setSubject("Caltrain")
 
-                    var body = "<br><br><br><br><br><br><br><br><br>"
-                    body += "<hr>"
+                    var body = "<br><br><br><br><br><br><br><br><br><hr>"
 
                     if let infoDictionary = NSBundle.mainBundle().infoDictionary {
-                        let version = infoDictionary["CFBundleShortVersionString"] as! String
-                        let build = infoDictionary["CFBundleVersion"] as! String
-                        body += "App Version: " + version + "<br>"
-                        body += "App Build: " + build + "<br>"
+                        if let version = infoDictionary["CFBundleShortVersionString"] as? String {
+                            body += "App Version: " + version + "<br>"
+                        }
+
+                        if let build = infoDictionary["CFBundleVersion"] as? String {
+                            body += "App Build: " + build + "<br>"
+                        }
                     }
 
                     var systemInfo = [UInt8](count: sizeof(utsname), repeatedValue: 0)
@@ -93,63 +80,29 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                         if uname(UnsafeMutablePointer(body.baseAddress)) != 0 {
                             return nil
                         }
-                        return String.fromCString(UnsafePointer(body.baseAddress.advancedBy(Int(_SYS_NAMELEN * 4))))
+                        return String.fromCString(UnsafePointer(body.baseAddress.advancedBy(Int(_SYS_NAMELEN*4))))
                     }
                     if let model = model {
                         body += "Device Model: " + model + "<br>"
                     }
-                    
+
                     body += "Device Version: " + UIDevice.currentDevice().systemVersion
+
                     body += "<hr>"
 
                     mailComposeViewController.setMessageBody(body, isHTML: true)
+
                     presentViewController(mailComposeViewController, animated: true, completion: nil)
-                } else {
-                    let alert = UIAlertController(title: NSLocalizedString("Failed to send mail", comment: ""), message: nil, preferredStyle: .Alert)
-                    let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Default) { _ in
-                        alert.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                    alert.addAction(ok)
-                    presentViewController(alert, animated: true, completion: nil)
                 }
             }
         } else if indexPath.section == 1 {
-            switch indexPath.item {
-            case 0:
-                url = NSURL(string: "https://github.com/orta/cocoapods-keys")
-            case 1:
-                url = NSURL(string: "https://useiconic.com/open/")
-            case 2:
-                url = NSURL(string: "https://github.com/pinterest/PINRemoteImage")
-            default:
-                break
+            if indexPath.row == 0 {
+                openURL("https://github.com/orta/cocoapods-keys")
+            } else if indexPath.row == 1 {
+                openURL("https://useiconic.com/open/")
+            } else if indexPath.row == 2 {
+                openURL("https://github.com/pinterest/PINRemoteImage")
             }
-
-            if UIApplication.sharedApplication().canOpenURL(url) {
-                UIApplication.sharedApplication().openURL(url)
-            } else {
-                let alert = UIAlertController(title: NSLocalizedString("Failed to open url", comment: ""), message: nil, preferredStyle: .Alert)
-                let ok = UIAlertAction(title: NSLocalizedString("OK", comment: ""), style: .Default) { _ in
-                    alert.dismissViewControllerAnimated(true, completion: nil)
-                }
-                alert.addAction(ok)
-                presentViewController(alert, animated: true, completion: nil)
-            }
-        }
-    }
-
-    override func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        if let infoDictionary = NSBundle.mainBundle().infoDictionary where section == 2 {
-            let version = infoDictionary["CFBundleShortVersionString"] as! String
-            let build = infoDictionary["CFBundleVersion"] as! String
-            let label = UILabel()
-            label.text = NSLocalizedString("Version \(version) (\(build))", comment: "")
-            label.textColor = UIColor.grayColor()
-            label.font = UIFont.systemFontOfSize(16.0, weight: UIFontWeightLight)
-            label.textAlignment = .Center
-            return label
-        } else {
-            return nil
         }
     }
 

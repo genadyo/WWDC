@@ -841,9 +841,6 @@ Title2</string>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection footerTitle="Version X.Y.Z (WWW)" id="F3F-ux-ozy">
-                                <cells/>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="XCU-e5-YmW" id="Z9B-bY-TV1"/>
