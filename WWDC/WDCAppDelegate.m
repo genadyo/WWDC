@@ -12,8 +12,8 @@
 @import CoreSpotlight;
 #import <OneSignal/OneSignal.h>
 #import "WDCAppDelegate.h"
-#import "WDCParty.h"
-#import "WDCPartiesTVC.h"
+//#import "WDCParty.h"
+//#import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
 //#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 #import "Parties-Swift.h"
@@ -150,14 +150,14 @@
     }
 }
 
-- (UIViewController *)splitViewController:(UISplitViewController *)splitViewController separateSecondaryViewControllerFromPrimaryViewController:(UIViewController *)primaryViewController
-{
-    if ([[(UINavigationController *)primaryViewController topViewController] isKindOfClass:[WDCPartiesTVC class]]) {
-        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier: @"noparty"];
-        return vc;
-    } else {
-        return nil;
-    }
-}
+//- (UIViewController *)splitViewController:(UISplitViewController *)splitViewController separateSecondaryViewControllerFromPrimaryViewController:(UIViewController *)primaryViewController
+//{
+//    if ([[(UINavigationController *)primaryViewController topViewController] isKindOfClass:[PartiesTableViewController class]]) {
+//        UIViewController *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier: @"noparty"];
+//        return vc;
+//    } else {
+//        return nil;
+//    }
+//}
 
 @end

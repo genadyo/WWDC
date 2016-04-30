@@ -66,6 +66,13 @@ Title 2</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             </variation>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YG-7O-CyH">
+                                            <rect key="frame" x="7" y="74" width="593" height="1"/>
+                                            <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="kWV-Zm-4UV" customClass="HairlineConstraint" customModule="Parties" customModuleProvider="target"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="tl9-99-CA5" secondAttribute="centerY" constant="9" id="2NX-AD-LcB"/>
@@ -75,6 +82,9 @@ Title 2</string>
                                         <constraint firstItem="yP0-Ed-Kd9" firstAttribute="centerY" secondItem="piH-pi-Tot" secondAttribute="centerY" id="DFP-cz-I9F"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="HH8-gK-N2n"/>
                                         <constraint firstItem="9Mz-oL-S4e" firstAttribute="leading" secondItem="wSf-jz-91p" secondAttribute="trailing" constant="8" symbolic="YES" id="K5o-Jc-YCQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="7YG-7O-CyH" secondAttribute="bottom" id="K5t-6V-b4T"/>
+                                        <constraint firstAttribute="trailing" secondItem="7YG-7O-CyH" secondAttribute="trailing" id="Mjo-J5-Jai"/>
+                                        <constraint firstItem="7YG-7O-CyH" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="7" id="PAd-yt-i9P"/>
                                         <constraint firstAttribute="centerY" secondItem="wSf-jz-91p" secondAttribute="centerY" id="PPx-ER-Htj"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
@@ -99,6 +109,7 @@ Title 2</string>
                                     <outlet property="goingImageView" destination="yP0-Ed-Kd9" id="24h-SF-VRM"/>
                                     <outlet property="hoursLabel" destination="9Mz-oL-S4e" id="eSw-YE-Ufm"/>
                                     <outlet property="iconImageView" destination="wSf-jz-91p" id="KYh-KX-ECy"/>
+                                    <outlet property="separatorView" destination="7YG-7O-CyH" id="257-dV-OJe"/>
                                     <outlet property="titleLabel" destination="tl9-99-CA5" id="vR7-bs-J6t"/>
                                 </connections>
                             </tableViewCell>

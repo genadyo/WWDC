@@ -68,6 +68,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath) as! PartyTableViewCell
             cell.party = parties[indexPath.section][indexPath.row]
+            cell.separatorView.hidden = parties[indexPath.section].count == indexPath.row+1
             return cell
         }
     }

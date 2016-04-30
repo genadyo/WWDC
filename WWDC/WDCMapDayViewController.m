@@ -7,10 +7,10 @@
 //
 
 #import "WDCMapDayViewController.h"
-#import "WDCParty.h"
+//#import "WDCParty.h"
 //#import "WDCPartyTableViewController.h"
 #import <objc/runtime.h>
-#import "WDCParties.h"
+//#import "WDCParties.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 @import MapKit;
 

@@ -7,7 +7,7 @@
 //
 
 #import "WDCPartiesTVC.h"
-#import "WDCParty.h"
+//#import "WDCParty.h"
 #import "WDCParties.h"
 #import "WDCPartyTVC.h"
 //#import "WDCPartyTableViewController.h"
@@ -43,56 +43,6 @@
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestWhenInUseAuthorization];
     }
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell;
-
-    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
-        cell = [tableView dequeueReusableCellWithIdentifier:@"empty" forIndexPath:indexPath];
-    } else {
-        WDCPartyTVC *partyCell = [tableView dequeueReusableCellWithIdentifier:@"party" forIndexPath:indexPath];
-        WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
-        partyCell.titleLabel.text = party.title;
-        partyCell.hoursLabel.text = [party hours];
-//        partyCell.goingView.hidden = YES;
-//        if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
-//            if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
-//                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
-//                    partyCell.goingView.hidden = NO;
-//                }
-//            }
-//        }
-
-//        partyCell.badgeView.hidden = YES;
-//        if (partyCell.goingView.hidden == YES) {
-//            partyCell.badgeView.hidden = NO;
-//            if ([SDCloudUserDefaults objectForKey:@"badge"] != nil) {
-//                if ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]]) {
-//                    if ([[SDCloudUserDefaults objectForKey:@"badge"] indexOfObject:party.objectId] != NSNotFound) {
-//                        partyCell.badgeView.hidden = YES;
-//                    }
-//                }
-//            }
-//        }
-
-        [partyCell.seperator removeFromSuperview];
-        if (indexPath.row != [self.filteredParties[indexPath.section] count]-1) {
-            partyCell.seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1)];
-            partyCell.seperator.opaque = YES;
-            partyCell.seperator.backgroundColor = [UIColor colorWithRed:235.0f/255.0f green:235.0f/255.0f blue:235.0f/255.0f alpha:1.0f];
-            [partyCell addSubview:partyCell.seperator];
-        } else {
-            partyCell.seperator = [[UIView alloc] initWithFrame:CGRectMake(7, partyCell.frame.size.height-1, partyCell.frame.size.width-7*2, 1.0f)];
-            partyCell.seperator.opaque = YES;
-            partyCell.seperator.backgroundColor = [UIColor whiteColor];
-            [partyCell addSubview:partyCell.seperator];
-        }
-        cell = partyCell;
-    }
-
-    return cell;
 }
 
 

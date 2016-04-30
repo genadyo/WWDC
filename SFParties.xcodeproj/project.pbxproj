@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		B200A9DF1AE5999E005B070B /* AboutTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */; };
-		B211B8661CC9B472002F9AEA /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B211B8651CC9B472002F9AEA /* Pods.framework */; };
-		B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */; };
-		B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2464255192788A200DF2E06 /* WDCPartyTVC.m */; };
 		B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B246425A1927A2F200DF2E06 /* MapKit.framework */; };
 		B246FC961CD326F600A0B42D /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FC951CD326F600A0B42D /* PartyTableViewController.swift */; };
+		B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */; };
 		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartyModel.swift */; };
@@ -29,26 +27,11 @@
 		B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */; };
 		B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */; };
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
-		B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */; };
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
-		B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; };
-		B2F01CCC1A1F91DD00F1AC70 /* SFPartiesKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */; };
-		B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */; };
 		B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */; };
 		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 		CE5865DE14A589CD30570BE1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A574C6E91FE4AB459E94C70E /* Pods.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B2F01CC91A1F91DD00F1AC70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B2D4AED819276A1E00C5B0E8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B2F01CB31A1F91DD00F1AC70;
-			remoteInfo = SFPartiesKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		B2174D4A1A5C7FF70078B843 /* Embed App Extensions */ = {
@@ -67,7 +50,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B2F01CCC1A1F91DD00F1AC70 /* SFPartiesKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +69,7 @@
 		B2464255192788A200DF2E06 /* WDCPartyTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartyTVC.m; sourceTree = "<group>"; };
 		B246425A1927A2F200DF2E06 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B246FC951CD326F600A0B42D /* PartyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
+		B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineConstraint.swift; sourceTree = "<group>"; };
 		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26CC1821CD08C0E00B2198B /* PartyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
@@ -111,13 +94,6 @@
 		B2D4AF1919276D7800C5B0E8 /* WDCPartiesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCPartiesTVC.m; sourceTree = "<group>"; };
 		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F01C601A1F841D00F1AC70 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
-		B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SFPartiesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B2F01CB71A1F91DD00F1AC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2F01CB81A1F91DD00F1AC70 /* SFPartiesKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SFPartiesKit.h; sourceTree = "<group>"; };
-		B2F01CDB1A1F9BDB00F1AC70 /* WDCParties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParties.h; sourceTree = "<group>"; };
-		B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParties.m; sourceTree = "<group>"; };
-		B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCParty.h; sourceTree = "<group>"; };
-		B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCParty.m; sourceTree = "<group>"; };
 		B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
 		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -134,16 +110,7 @@
 				B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
 				B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */,
-				B2F01CCB1A1F91DD00F1AC70 /* SFPartiesKit.framework in Frameworks */,
 				CE5865DE14A589CD30570BE1 /* Pods.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2F01CB01A1F91DD00F1AC70 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B211B8661CC9B472002F9AEA /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEE919276A1E00C5B0E8 /* WWDC */,
-				B2F01CB51A1F91DD00F1AC70 /* SFPartiesKit */,
 				B2D4AEE219276A1E00C5B0E8 /* Frameworks */,
 				B2D4AEE119276A1E00C5B0E8 /* Products */,
 				E7592BFB00A99D5AAAC65D1D /* Pods */,
@@ -166,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B2D4AEE019276A1E00C5B0E8 /* Parties.app */,
-				B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,6 +161,7 @@
 				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
 				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
+				B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */,
 				B26CC1821CD08C0E00B2198B /* PartyModel.swift */,
 				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
 				B26CC1861CD10B8500B2198B /* PartiesManager.swift */,
@@ -228,27 +194,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B2F01CB51A1F91DD00F1AC70 /* SFPartiesKit */ = {
-			isa = PBXGroup;
-			children = (
-				B2F01CDD1A1F9BDB00F1AC70 /* WDCParty.h */,
-				B2F01CDE1A1F9BDB00F1AC70 /* WDCParty.m */,
-				B2F01CDB1A1F9BDB00F1AC70 /* WDCParties.h */,
-				B2F01CDC1A1F9BDB00F1AC70 /* WDCParties.m */,
-				B2F01CB81A1F91DD00F1AC70 /* SFPartiesKit.h */,
-				B2F01CB61A1F91DD00F1AC70 /* Supporting Files */,
-			);
-			path = SFPartiesKit;
-			sourceTree = "<group>";
-		};
-		B2F01CB61A1F91DD00F1AC70 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B2F01CB71A1F91DD00F1AC70 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		E7592BFB00A99D5AAAC65D1D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,16 +204,6 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		B2F01CB11A1F91DD00F1AC70 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		B2D4AEDF19276A1E00C5B0E8 /* SFParties */ = {
@@ -285,30 +220,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B2F01CCA1A1F91DD00F1AC70 /* PBXTargetDependency */,
 			);
 			name = SFParties;
 			productName = WWDC;
 			productReference = B2D4AEE019276A1E00C5B0E8 /* Parties.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B2F01CCD1A1F91DD00F1AC70 /* Build configuration list for PBXNativeTarget "SFPartiesKit" */;
-			buildPhases = (
-				B2F01CAF1A1F91DD00F1AC70 /* Sources */,
-				B2F01CB01A1F91DD00F1AC70 /* Frameworks */,
-				B2F01CB11A1F91DD00F1AC70 /* Headers */,
-				B2F01CB21A1F91DD00F1AC70 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SFPartiesKit;
-			productName = SFPartiesKit;
-			productReference = B2F01CB41A1F91DD00F1AC70 /* SFPartiesKit.framework */;
-			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -339,10 +255,6 @@
 							};
 						};
 					};
-					B2F01CB31A1F91DD00F1AC70 = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = SZHLQT8428;
-					};
 				};
 			};
 			buildConfigurationList = B2D4AEDB19276A1E00C5B0E8 /* Build configuration list for PBXProject "SFParties" */;
@@ -359,7 +271,6 @@
 			projectRoot = "";
 			targets = (
 				B2D4AEDF19276A1E00C5B0E8 /* SFParties */,
-				B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */,
 			);
 		};
 /* End PBXProject section */
@@ -374,13 +285,6 @@
 				B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */,
 				B2D4AEEE19276A1E00C5B0E8 /* InfoPlist.strings in Resources */,
 				B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B2F01CB21A1F91DD00F1AC70 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,31 +322,12 @@
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
-				B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */,
-				B23AFA8F192828D400C2A060 /* WDCMapDayViewController.m in Sources */,
-				B2D4AF1A19276D7800C5B0E8 /* WDCPartiesTVC.m in Sources */,
+				B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */,
 				B200A9DF1AE5999E005B070B /* AboutTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2F01CAF1A1F91DD00F1AC70 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B2F01CE01A1F9BDB00F1AC70 /* WDCParties.m in Sources */,
-				B2F01CE21A1F9BDB00F1AC70 /* WDCParty.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B2F01CCA1A1F91DD00F1AC70 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B2F01CB31A1F91DD00F1AC70 /* SFPartiesKit */;
-			targetProxy = B2F01CC91A1F91DD00F1AC70 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */ = {
@@ -611,62 +496,6 @@
 			};
 			name = Release;
 		};
-		B2F01CCE1A1F91DD00F1AC70 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SFPartiesKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "so.sugar.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B2F01CCF1A1F91DD00F1AC70 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = NO;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = SFPartiesKit/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "so.sugar.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -684,15 +513,6 @@
 			buildConfigurations = (
 				B2D4AF1319276A1E00C5B0E8 /* Debug */,
 				B2D4AF1419276A1E00C5B0E8 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B2F01CCD1A1F91DD00F1AC70 /* Build configuration list for PBXNativeTarget "SFPartiesKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B2F01CCE1A1F91DD00F1AC70 /* Debug */,
-				B2F01CCF1A1F91DD00F1AC70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -27,4 +27,5 @@ class PartyTableViewCell: UITableViewCell {
     @IBOutlet weak var goingImageView: UIImageView!
     @IBOutlet weak var badgeView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
 }
