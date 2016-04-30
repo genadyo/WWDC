@@ -113,6 +113,14 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        if indexPath.row == 6 { // Xcode Bug #2
+            cell.backgroundColor = UIColor(red: 106.0/255.0, green: 111.8/255.0, blue: 220.0/255.0, alpha: 1.0)
+        }
+        return cell
+    }
+
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
@@ -153,7 +161,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         }
     }
 
-    @IBAction func openWeb(sender: UIButton) {
+    @IBAction func openWeb(sender: AnyObject) {
         let safariViewController = SFSafariViewController(URL: party.url)
         safariViewController.delegate = self
         presentViewController(safariViewController, animated: true, completion: nil)

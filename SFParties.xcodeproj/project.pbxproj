@@ -13,18 +13,17 @@
 		B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */; };
 		B246FCA61CD50DE500A0B42D /* MapDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA51CD50DE500A0B42D /* MapDayViewController.swift */; };
 		B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */; };
+		B246FCAD1CD52D0F00A0B42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */; };
+		B246FCB01CD5317300A0B42D /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B246FCAF1CD5317300A0B42D /* AAPLTraitOverrideViewController.m */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartyModel.swift */; };
 		B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */; };
 		B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1861CD10B8500B2198B /* PartiesManager.swift */; };
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
 		B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */; };
-		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
 		B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */; };
-		B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEEF19276A1E00C5B0E8 /* main.m */; };
-		B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */; };
 		B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */; };
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
@@ -69,22 +68,20 @@
 		B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+WDCPointAnnotation.h"; sourceTree = "<group>"; };
 		B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+WDCPointAnnotation.m"; sourceTree = "<group>"; };
 		B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
+		B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B246FCAE1CD5317300A0B42D /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
+		B246FCAF1CD5317300A0B42D /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26CC1821CD08C0E00B2198B /* PartyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
 		B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
 		B26CC1861CD10B8500B2198B /* PartiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesManager.swift; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
-		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* Parties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parties.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SFParties-Info.plist"; sourceTree = "<group>"; };
-		B2D4AEEF19276A1E00C5B0E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCAppDelegate.h; sourceTree = "<group>"; };
-		B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCAppDelegate.m; sourceTree = "<group>"; };
 		B2D4AEF619276A1E00C5B0E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -151,22 +148,20 @@
 			children = (
 				B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */,
 				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
-				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
-				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
-				B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */,
-				B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */,
-				B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */,
+				B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */,
 				B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */,
 				B26CC1821CD08C0E00B2198B /* PartyModel.swift */,
 				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
 				B26CC1861CD10B8500B2198B /* PartiesManager.swift */,
-				B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */,
-				B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */,
 				B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */,
 				B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */,
 				B246FC951CD326F600A0B42D /* PartyTableViewController.swift */,
 				B246FCA51CD50DE500A0B42D /* MapDayViewController.swift */,
 				B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */,
+				B246FCAE1CD5317300A0B42D /* AAPLTraitOverrideViewController.h */,
+				B246FCAF1CD5317300A0B42D /* AAPLTraitOverrideViewController.m */,
+				B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */,
+				B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */,
 				B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */,
 				B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */,
 			);
@@ -176,8 +171,8 @@
 		B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */,
 				B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */,
-				B2D4AEEF19276A1E00C5B0E8 /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -303,9 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B246FC961CD326F600A0B42D /* PartyTableViewController.swift in Sources */,
-				B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */,
-				B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */,
-				B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */,
+				B246FCAD1CD52D0F00A0B42D /* AppDelegate.swift in Sources */,
 				B246FCA61CD50DE500A0B42D /* MapDayViewController.swift in Sources */,
 				B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */,
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
@@ -315,6 +308,7 @@
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
 				B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */,
 				B200A9DF1AE5999E005B070B /* AboutTableViewController.swift in Sources */,
+				B246FCB01CD5317300A0B42D /* AAPLTraitOverrideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

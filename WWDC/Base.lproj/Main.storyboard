@@ -4,6 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Parties-->
@@ -156,7 +157,10 @@ Title 2</string>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                 <connections>
-                                    <segue destination="arB-vy-uOW" kind="showDetail" identifier="map" id="Chw-Xw-edb"/>
+                                    <segue destination="arB-vy-uOW" kind="showDetail" identifier="map" id="Chw-Xw-edb">
+                                        <segue key="commit" inheritsFrom="parent" id="MLT-R2-Mnc"/>
+                                        <segue key="preview" inheritsFrom="commit" id="wn4-lq-RwA"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -586,7 +590,6 @@ Title2</string>
                                                     </connections>
                                                 </button>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.41568627450000001" green="0.46274509800000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="rts-CR-y0j" secondAttribute="trailing" constant="12" id="8k6-Ll-Omr"/>
                                                 <constraint firstItem="rts-CR-y0j" firstAttribute="top" secondItem="lOt-gd-zsV" secondAttribute="topMargin" id="Cmf-Pn-Uo0"/>
@@ -594,7 +597,10 @@ Title2</string>
                                                 <constraint firstItem="rts-CR-y0j" firstAttribute="leading" secondItem="lOt-gd-zsV" secondAttribute="leadingMargin" constant="12" id="j3c-SF-nB3"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.41568627450000001" green="0.46274509800000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Uwj-oL-paQ" appends="YES" id="UNF-Em-cQs"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -653,6 +659,11 @@ Title2</string>
                 <tapGestureRecognizer id="1h6-aG-UMM">
                     <connections>
                         <action selector="openMaps:" destination="cxA-AI-2vJ" id="TVP-AL-8op"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Uwj-oL-paQ">
+                    <connections>
+                        <action selector="openWeb:" destination="cxA-AI-2vJ" id="Dxq-cg-foK"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -907,6 +918,7 @@ Title2</string>
         <image name="twitter" width="16" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Chw-Xw-edb"/>
         <segue reference="cDJ-JX-H6Q"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
