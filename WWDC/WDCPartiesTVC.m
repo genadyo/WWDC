@@ -34,20 +34,6 @@
 {
     [super viewDidLoad];
 
-    // hide back text
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    // PaintCode
-//    [self.infoButton setImage:[Assets imageOfGear] forState:UIControlStateNormal];
-//    [self.goingSegmentedControl setImage:[Assets imageOfTogglenew] forSegmentAtIndex:2];
-//    [self.goingSegmentedControl setImage:[Assets imageOfTogglegoingWithInitColor:[UIColor whiteColor]] forSegmentAtIndex:1];
-//    [self.goingSegmentedControl setImage:[Assets imageOfToggleallactive] forSegmentAtIndex:0];
-
-    NSInteger selected = [[[NSUserDefaults alloc] initWithSuiteName:@"group.so.sugar.SFParties"] integerForKey:@"selected"];
-    if (selected) {
-        self.goingSegmentedControl.selectedSegmentIndex = selected;
-    }
-
     self.tableView.tableFooterView = [[UIView alloc] init];
 
     self.observers = [[NSMutableArray alloc] init];
@@ -74,20 +60,6 @@
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestWhenInUseAuthorization];
     }
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
-{
-    [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
-
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.tableView reloadData];
-    });
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (IBAction)refresh:(id)sender
