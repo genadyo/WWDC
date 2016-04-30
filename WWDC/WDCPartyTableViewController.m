@@ -259,33 +259,6 @@
     [self presentViewController:addController animated:YES completion:nil];
 }
 
-- (IBAction)openUber:(id)sender
-{
-    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        // Keys
-        SfpartiesKeys *keys = [[SfpartiesKeys alloc] init];
-
-        // urls
-        NSString *lyft = [NSString stringWithFormat:@"lyft://ridetype?id=lyft_line&destination[latitude]=%f&destination[longitude]=%f&partner=%@",
-                          [self.party.latitude doubleValue],
-                          [self.party.longitude doubleValue],
-                          keys.lyft];
-
-        UIApplication *myApp = UIApplication.sharedApplication;
-        NSURL *lyftAppURL = [NSURL URLWithString:lyft];
-        if ([myApp canOpenURL:lyftAppURL]) {
-            // Lyft is installed; launch it
-            [myApp openURL:lyftAppURL];
-        } else {
-            // Lyft not installed; open App Store
-            NSURL *lyftAppStoreURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082"];
-            [myApp openURL:lyftAppStoreURL];
-        }
-    } else {
-        [self openMaps:sender];
-    }
-}
-
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

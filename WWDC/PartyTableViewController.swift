@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import SafariServices
+import Keys
 
 class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     var party: Party!
@@ -94,7 +95,16 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: UIButton) {
-
+        if UI_USER_INTERFACE_IDIOM() != .Pad {
+            let keys = SfpartiesKeys()
+            if let url = NSURL(string: "lyft://ridetype?id=lyft_line&destination[latitude]=\(party.latitude)&destination[longitude]=\(party.longitude)&partner=\(keys.lyft)") where UIApplication.sharedApplication().canOpenURL(url) {
+                UIApplication.sharedApplication().openURL(url)
+            } else if let url = NSURL(string: "https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082") {
+                UIApplication.sharedApplication().openURL(url)
+            }
+        } else {
+            openMaps(sender)
+        }
     }
 
     @IBAction func openWeb(sender: UIButton) {
