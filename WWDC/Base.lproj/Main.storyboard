@@ -112,14 +112,13 @@ Title 2</string>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ve-cCx">
                                             <rect key="frame" x="192" y="187" width="217" height="131"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9GN-YA-JCL" customClass="WDCBlankstate" customModule="Parties">
-                                                    <rect key="frame" x="53" y="0.0" width="112" height="88"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankState" translatesAutoresizingMaskIntoConstraints="NO" id="OVN-r5-H61">
+                                                    <rect key="frame" x="52" y="0.0" width="112" height="88"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="112" id="Hzq-OL-zJD"/>
-                                                        <constraint firstAttribute="height" constant="88" id="SQD-04-22q"/>
+                                                        <constraint firstAttribute="width" constant="112" id="C3D-X2-3hp"/>
+                                                        <constraint firstAttribute="height" constant="88" id="EPt-nc-bLV"/>
                                                     </constraints>
-                                                </view>
+                                                </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216.5" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-m9-7hI">
                                                     <rect key="frame" x="0.0" y="95" width="217" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -129,12 +128,12 @@ Title 2</string>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="OVN-r5-H61" firstAttribute="centerX" secondItem="bAe-Ve-cCx" secondAttribute="centerX" id="1EX-JS-Q1d"/>
                                                 <constraint firstAttribute="centerX" secondItem="yvP-m9-7hI" secondAttribute="centerX" id="D45-5c-U2U"/>
                                                 <constraint firstAttribute="bottom" secondItem="yvP-m9-7hI" secondAttribute="bottom" id="ZmF-S1-KSE"/>
                                                 <constraint firstAttribute="height" constant="131" id="fhJ-bF-nM0"/>
-                                                <constraint firstAttribute="centerX" secondItem="9GN-YA-JCL" secondAttribute="centerX" id="kQj-5U-qeq"/>
                                                 <constraint firstAttribute="width" constant="217" id="rU9-v3-vvE"/>
-                                                <constraint firstItem="9GN-YA-JCL" firstAttribute="top" secondItem="bAe-Ve-cCx" secondAttribute="top" id="sYI-QA-x5G"/>
+                                                <constraint firstItem="OVN-r5-H61" firstAttribute="top" secondItem="bAe-Ve-cCx" secondAttribute="top" id="t9e-aa-FFD"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -189,7 +188,7 @@ Title 2</string>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="t80-yZ-8c5">
                         <autoresizingMask key="autoresizingMask"/>
                         <connections>
-                            <action selector="refresh:" destination="ZFk-xA-eIm" eventType="valueChanged" id="vFH-ey-n5U"/>
+                            <action selector="refresh:" destination="ZFk-xA-eIm" eventType="valueChanged" id="eQa-jY-jHn"/>
                         </connections>
                     </refreshControl>
                     <connections>
@@ -897,6 +896,7 @@ Title2</string>
     </scenes>
     <resources>
         <image name="addToCalendar" width="39" height="32"/>
+        <image name="blankState" width="112" height="88"/>
         <image name="gear" width="27" height="27"/>
         <image name="going" width="13" height="11"/>
         <image name="goingMark" width="13" height="12"/>
