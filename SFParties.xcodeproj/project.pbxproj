@@ -12,6 +12,7 @@
 		B246FC961CD326F600A0B42D /* PartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FC951CD326F600A0B42D /* PartyTableViewController.swift */; };
 		B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */; };
 		B246FCA61CD50DE500A0B42D /* MapDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA51CD50DE500A0B42D /* MapDayViewController.swift */; };
+		B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */; };
 		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartyModel.swift */; };
@@ -70,6 +71,9 @@
 		B246FC951CD326F600A0B42D /* PartyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewController.swift; sourceTree = "<group>"; };
 		B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HairlineConstraint.swift; sourceTree = "<group>"; };
 		B246FCA51CD50DE500A0B42D /* MapDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDayViewController.swift; sourceTree = "<group>"; };
+		B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+WDCPointAnnotation.h"; sourceTree = "<group>"; };
+		B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+WDCPointAnnotation.m"; sourceTree = "<group>"; };
+		B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26CC1821CD08C0E00B2198B /* PartyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
@@ -159,6 +163,9 @@
 				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
 				B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */,
 				B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */,
+				B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */,
+				B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */,
+				B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */,
 				B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */,
 				B26CC1821CD08C0E00B2198B /* PartyModel.swift */,
 				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
@@ -315,6 +322,7 @@
 				B246FCA61CD50DE500A0B42D /* MapDayViewController.swift in Sources */,
 				B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */,
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
+				B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */,
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
@@ -386,6 +394,7 @@
 				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Debug;
@@ -423,6 +432,7 @@
 				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};

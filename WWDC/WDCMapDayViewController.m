@@ -9,33 +9,11 @@
 #import "WDCMapDayViewController.h"
 //#import "WDCParty.h"
 //#import "WDCPartyTableViewController.h"
-#import <objc/runtime.h>
 //#import "WDCParties.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 @import MapKit;
 
-@interface MKPointAnnotation (WDCPointAnnotation)
 
-@property (strong, nonatomic) WDCParty *party;
-
-@end
-
-
-static const char kPartyKey;
-
-@implementation MKPointAnnotation (WDCPointAnnotation)
-
-- (WDCParty *)party
-{
-    return objc_getAssociatedObject(self, &kPartyKey);
-}
-
-- (void)setParty:(WDCParty *)party
-{
-    objc_setAssociatedObject(self, &kPartyKey, party, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-@end
 
 
 @interface WDCMapDayViewController () <MKMapViewDelegate>
@@ -45,51 +23,6 @@ static const char kPartyKey;
 @end
 
 @implementation WDCMapDayViewController
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // hide back text
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
-
-    self.title = [((WDCParty *)[self.parties lastObject]) date];
-
-    self.mapView.delegate = self;
-
-    [self refreshMap];
-    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
-    self.mapView.camera.altitude *= 2;
-
-    __weak typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        if ([[note userInfo] objectForKey:@"going"] != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf refreshMap];
-            });
-        }
-    }];
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    [self refreshMap];
-}
-
-- (void)refreshMap
-{
-    [self.mapView removeAnnotations:self.mapView.annotations];
-    for (WDCParty *party in self.parties) {
-        MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-        annotation.coordinate = CLLocationCoordinate2DMake([party.latitude floatValue], [party.longitude floatValue]);
-        annotation.title = party.title;
-        annotation.subtitle = [party hours];
-        annotation.party = party;
-        [self.mapView addAnnotation:annotation];
-    }
-}
 
 #pragma - mark MKMapViewDelegate
 
