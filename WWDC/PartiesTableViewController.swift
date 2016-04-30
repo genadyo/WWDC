@@ -35,6 +35,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     @IBAction func updateSegment(sender: UISegmentedControl) {
         reloadData()
+        tableView.reloadData()
         let userDefaults = NSUserDefaults.standardUserDefaults()
         userDefaults.setInteger(sender.selectedSegmentIndex, forKey: "selectedSegmentIndex")
         userDefaults.synchronize()
@@ -43,6 +44,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     @IBAction func refresh(sender: UIRefreshControl?) {
         PartiesManager.sharedInstance.load() { [weak self] in
             self?.reloadData()
+            self?.tableView.reloadData()
             sender?.endRefreshing()
         }
     }
@@ -129,7 +131,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             tableView.scrollEnabled = true
         } else {
             var pparties = [[Party]]()
-            for p in parties {
+            for p in PartiesManager.sharedInstance.parties {
                 let filteredP = p.filter({ $0.isGoing })
                 if filteredP.count > 0 {
                     pparties.append(filteredP)
@@ -138,7 +140,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             parties = pparties
             tableView.scrollEnabled = parties.count > 0
         }
-        tableView.reloadData()
     }
 
     // MARK: CLLocationManagerDelegate
