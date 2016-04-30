@@ -87,13 +87,13 @@ class ServerManager {
         var parties = [Party]()
         for party in allParties {
             if let lastDate = lastDate where NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.isDate(lastDate, inSameDayAsDate: party.startDate) == false {
-                partiesForDay.append(parties)
+                partiesForDay.append(parties.sort({ $0.title < $1.title }))
                 parties = []
             }
             parties.append(party)
             lastDate = party.startDate
         }
-        partiesForDay.append(parties)
+        partiesForDay.append(parties.sort({ $0.title < $1.title }))
         
         return partiesForDay
     }
