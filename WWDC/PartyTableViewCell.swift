@@ -22,6 +22,12 @@ class PartyTableViewCell: UITableViewCell {
         }
     }
 
+    override func setHighlighted(highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+
+        badgeView.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+    }
+
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var hoursLabel: UILabel!
     @IBOutlet weak var goingImageView: UIImageView!
