@@ -176,26 +176,16 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
             eventStore.requestAccessToEntityType(.Event) { [weak self] granted, error in
                 if granted == true {
                     self?.addEvent()
-                } else {
-                    let alert = UIAlertController(title: "Please allow access to the Calendars", message: nil, preferredStyle: .Alert)
-                    let ok = UIAlertAction(title: "OK", style: .Default) { action in
-                        alert.dismissViewControllerAnimated(true, completion: nil)
-                    }
-                    alert.addAction(ok)
-                    self?.presentViewController(alert, animated: true, completion: nil)
+                } else if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.sharedApplication().openURL(url)
                 }
             }
         } else {
             let granted = authorizationStatus == .Authorized
             if granted == true {
                 addEvent()
-            } else {
-                let alert = UIAlertController(title: "Please allow access to the Calendars", message: nil, preferredStyle: .Alert)
-                let ok = UIAlertAction(title: "OK", style: .Default) { action in
-                    alert.dismissViewControllerAnimated(true, completion: nil)
-                }
-                alert.addAction(ok)
-                presentViewController(alert, animated: true, completion: nil)
+            } else if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.sharedApplication().openURL(url)
             }
         }
     }
