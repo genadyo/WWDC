@@ -21,7 +21,7 @@ class PartiesManager {
         }
         set {
             let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(JSON, forKey: "parties")
+            userDefaults.setObject(newValue, forKey: "parties")
             userDefaults.synchronize()
         }
     }
