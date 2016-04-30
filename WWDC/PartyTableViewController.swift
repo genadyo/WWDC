@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class PartyTableViewController: UITableViewController {
     var party: Party!
@@ -25,10 +26,37 @@ class PartyTableViewController: UITableViewController {
         }
     }
 
-    @IBOutlet weak var detailsLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var hoursLabel: UILabel!
-    @IBOutlet weak var mapView: UIButton!
+    @IBOutlet weak var detailsLabel: UILabel! {
+        didSet {
+            detailsLabel.text = party.details
+        }
+    }
+
+    @IBOutlet weak var dateLabel: UILabel! {
+        didSet {
+            dateLabel.text = party.date
+        }
+    }
+
+    @IBOutlet weak var hoursLabel: UILabel! {
+        didSet {
+            hoursLabel.text = party.hours
+        }
+    }
+
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            var region = MKCoordinateRegion()
+            region.center.latitude = party.latitude
+            region.center.longitude = party.longitude
+            region.span.latitudeDelta = 0.0075
+            region.span.longitudeDelta = 0.0075
+            mapView.setRegion(region, animated: false)
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake(party.latitude, party.longitude)
+            mapView.addAnnotation(annotation)
+        }
+    }
 
     @IBOutlet weak var address1Label: UILabel! {
         didSet {

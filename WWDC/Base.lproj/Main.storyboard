@@ -618,7 +618,7 @@ Title2</string>
                         <outlet property="goingButton" destination="02C-tp-8YD" id="92c-If-sIS"/>
                         <outlet property="hoursLabel" destination="L4B-SO-y8Q" id="m8u-f9-Dx2"/>
                         <outlet property="logoImageView" destination="bjg-ZC-luh" id="1y8-19-OXy"/>
-                        <outlet property="mapView" destination="ajf-PO-39T" id="Wgk-rI-JmI"/>
+                        <outlet property="mapView" destination="MMY-Hj-xPU" id="cyV-7a-ziL"/>
                         <outlet property="titleLabel" destination="VcS-Bq-V4g" id="kHs-BH-YEP"/>
                     </connections>
                 </tableViewController>

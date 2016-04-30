@@ -49,6 +49,13 @@ class ServerManager {
         return dateFormatter.dateFromString(string)
     }
 
+    static func dateForDate(date: NSDate) -> String {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        return dateFormatter.stringFromDate(date)
+    }
+
     static func processJSON(JSON: AnyObject?) -> [[Party]] {
         var allParties = [Party]()
         if let parties = JSON as? [AnyObject] {
@@ -68,7 +75,7 @@ class ServerManager {
                     longitude = p["longitude"] as? Double,
                     url = p["url"] as? String, URL = NSURL(string: url)
                 {
-                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: startDate, endDate: endDate, details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL, hours: hourForDate(startDate) + " to " + hourForDate(endDate)))
+                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: startDate, endDate: endDate, details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: URL, date: dateForDate(startDate), hours: hourForDate(startDate) + " to " + hourForDate(endDate)))
                 }
             }
         }

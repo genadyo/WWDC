@@ -22,5 +22,6 @@ struct Party {
     let latitude: Double
     let longitude: Double
     let url: NSURL
+    let date: String
     let hours: String
 }
