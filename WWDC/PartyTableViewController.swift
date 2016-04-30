@@ -13,7 +13,11 @@ import Keys
 import Contacts
 
 class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate {
-    var party: Party!
+    var party: Party! {
+        didSet {
+            goingButton.selected = party.isGoing
+        }
+    }
 
     @IBOutlet weak var goingButton: UIButton!
 
@@ -96,6 +100,13 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+
+    @IBAction func updateGoing(sender: UIButton) {
+        print(party.isGoing)
+        party.isGoing = !party.isGoing
+        print(party.isGoing)
+        goingButton.selected = party.isGoing
     }
 
     @IBAction func openMaps(sender: UIButton) {

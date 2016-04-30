@@ -24,4 +24,41 @@ struct Party {
     let url: NSURL
     let date: String
     let hours: String
+
+    var isGoing: Bool {
+        get {
+            return getVar("going")
+        }
+        set {
+            setVar("going", bool: newValue)
+        }
+    }
+
+    var isNew: Bool {
+        get {
+            return getVar("new")
+        }
+        set {
+            setVar("new", bool: newValue)
+        }
+    }
+
+    private func getVar(name: String) -> Bool {
+        if let dict = NSUserDefaults.standardUserDefaults().objectForKey(name) as? [String: Bool], val = dict[objectId] {
+            return val
+        } else {
+            return false
+        }
+    }
+
+    private func setVar(name: String, bool: Bool) {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        if var dict = NSUserDefaults.standardUserDefaults().objectForKey(name) as? [String: Bool] {
+            dict[objectId] = bool
+            userDefaults.setObject(dict, forKey: name)
+        } else {
+            userDefaults.setObject([objectId: bool], forKey: name)
+        }
+        userDefaults.synchronize()
+    }
 }

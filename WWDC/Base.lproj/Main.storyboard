@@ -594,16 +594,17 @@ Title2</string>
                         <barButtonItem key="rightBarButtonItem" id="uDO-I1-BNd">
                             <inset key="imageInsets" minX="27" minY="19" maxX="0.0" maxY="0.0"/>
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="02C-tp-8YD">
-                                <rect key="frame" x="478" y="11" width="102" height="22"/>
+                                <rect key="frame" x="507" y="11" width="73" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="-8" minY="2" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title=" Going">
-                                    <color key="titleColor" red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="6" maxY="0.0"/>
+                                <state key="normal" title="Going" image="notGoingMark">
+                                    <color key="titleColor" red="0.41568627450000001" green="0.46274509800000002" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" title="Going" image="goingMark">
+                                    <color key="titleColor" red="0.18039215689999999" green="0.80000000000000004" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="updateGoing:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="eTl-E8-VVh"/>
+                                    <action selector="updateGoing:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="noi-1J-ZIa"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -896,8 +897,10 @@ Title2</string>
     <resources>
         <image name="addToCalendar" width="39" height="32"/>
         <image name="gear" width="27" height="27"/>
+        <image name="goingMark" width="13" height="12"/>
         <image name="location" width="25" height="34"/>
         <image name="lyft" width="250" height="250"/>
+        <image name="notGoingMark" width="13" height="12"/>
         <image name="toggleAllActive" width="15" height="9"/>
         <image name="toggleGoing" width="13" height="11"/>
     </resources>
