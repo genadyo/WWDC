@@ -121,10 +121,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         return view
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("party", sender: indexPath)
-    }
-
     // MARK: PartyTableViewControllerDelegate
 
     func reloadData() {
@@ -158,9 +154,9 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     // MARK: Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, indexPath = sender as? NSIndexPath where segue.identifier == "party" {
+        if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, cell = sender as? PartyTableViewCell where segue.identifier == "party" {
             vc.delegate = self
-            vc.party = parties[indexPath.section][indexPath.row]
+            vc.party = cell.party
         } else if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? MapDayViewController, button = sender as? UIButton where segue.identifier == "map" {
             vc.parties = parties[button.tag]
         }
