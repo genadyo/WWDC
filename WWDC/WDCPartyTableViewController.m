@@ -63,61 +63,11 @@
     // hide back text
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Back", nil) style:UIBarButtonItemStylePlain target:nil action:nil];
 
-    // Handoff
-    NSUserActivity *activity = [[NSUserActivity alloc] initWithActivityType:@"so.sugar.SFParties.view"];
-    activity.title = self.party.title;
-    activity.userInfo = @{@"objectId": self.party.objectId};
-    activity.webpageURL = [NSURL URLWithString:self.party.url];
-    self.userActivity = activity;
-    [self.userActivity becomeCurrent];
-
-    self.titleLabel.text = self.party.title;
-
-    NSMutableAttributedString *attributedDetails = [[NSMutableAttributedString alloc]initWithString:self.party.details];
-    UIFont *font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightLight];
-    [attributedDetails addAttribute:NSFontAttributeName value:font range:NSMakeRange(0, self.party.details.length)];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.lineHeightMultiple = 20.0f;
-    paragraphStyle.maximumLineHeight = 20.0f;
-    paragraphStyle.minimumLineHeight = 20.0f;
-    [attributedDetails addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, self.party.details.length)];
-    UIColor *color = [UIColor colorWithRed:146.0f/255.0f green:146.0f/255.0f blue:146.0f/255.0f alpha:1.0f];
-    [attributedDetails addAttribute:NSForegroundColorAttributeName value:color range:NSMakeRange(0, self.party.details.length)];
-    self.detailsLabel.attributedText = attributedDetails;
-    self.dateLabel.text = [self.party date];
-    self.hoursLabel.text = [self.party hours];
-    MKCoordinateRegion region;
-    region.center.latitude = [self.party.latitude floatValue];
-    region.center.longitude = [self.party.longitude floatValue];
-    region.span.latitudeDelta = 0.0075f;
-    region.span.longitudeDelta = 0.0075f;
-    [self.mapView setRegion:region animated:NO];
-    MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
-    annotation.coordinate = CLLocationCoordinate2DMake([self.party.latitude floatValue], [self.party.longitude floatValue]);
-    [self.mapView addAnnotation:annotation];
-    self.address1Label.text = self.party.address1;
-    self.address2Label.text = self.party.address2;
-    self.address3Label.text = self.party.address3;
-    [self refreshGoing];
-
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
-    self.tableView.estimatedRowHeight = 61.0;
-
     // UBER
 //    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
 //        UIImage *uber = [Assets imageOfLyft];
 //        [self.uberButton setImage:uber forState:UIControlStateNormal];
 //    }
-
-    __weak typeof(self) weakSelf = self;
-    [[NSNotificationCenter defaultCenter] addObserverForName:SDCloudValueUpdatedNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        if ([[note userInfo] objectForKey:@"going"] != nil) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [weakSelf refreshGoing];
-                [[WDCParties sharedInstance] saveGoing];
-            });
-        }
-    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -125,11 +75,6 @@
     [super viewWillAppear:animated];
 
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)updateUserActivityState:(NSUserActivity *)activity {
-    [activity addUserInfoEntriesFromDictionary:@{@"objectId": self.party.objectId}];
-    [super updateUserActivityState:activity];
 }
 
 - (void)refreshGoing

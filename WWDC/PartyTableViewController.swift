@@ -31,7 +31,14 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var detailsLabel: UILabel! {
         didSet {
-            detailsLabel.text = party.details
+            let font = UIFont.systemFontOfSize(15.0, weight: UIFontWeightLight)
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineHeightMultiple = 20.0
+            paragraphStyle.maximumLineHeight = 20.0
+            paragraphStyle.minimumLineHeight = 20.0
+            let color = UIColor(red: 146.0/255.0, green: 146.0/255.0, blue: 146.0/255.0, alpha: 1.0)
+            let attributedDetails = NSMutableAttributedString(string: party.details, attributes: [NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: color])
+            detailsLabel.attributedText = attributedDetails;
         }
     }
 
