@@ -686,7 +686,6 @@ Title2</string>
         <!--Navigation Controller-->
         <scene sceneID="cve-bs-sbi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wv1-kp-pPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BRq-sp-E9p" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IGj-ZW-1Zg">
@@ -702,6 +701,7 @@ Title2</string>
                         <segue destination="ZFk-xA-eIm" kind="relationship" relationship="rootViewController" id="q3w-0B-OGM"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wv1-kp-pPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="85" y="-110"/>
         </scene>
@@ -933,7 +933,7 @@ Title2</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hWH-5p-OlG"/>
-        <segue reference="98b-xs-Xcx"/>
+        <segue reference="cDJ-JX-H6Q"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>
