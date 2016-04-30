@@ -45,21 +45,6 @@
     }
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat height = [super tableView:tableView heightForRowAtIndexPath:indexPath];
-
-    if (self.traitCollection.verticalSizeClass == UIUserInterfaceSizeClassCompact) {
-        height = 90;
-    }
-
-    if (self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0) {
-        height = [[UIScreen mainScreen] bounds].size.height-2*(self.navigationController.navigationBar.frame.size.height+[UIApplication sharedApplication].statusBarFrame.size.height);
-    }
-
-    return height;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
