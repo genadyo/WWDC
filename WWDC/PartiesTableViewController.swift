@@ -23,6 +23,12 @@ class PartiesTableViewController: UITableViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        tableView.reloadData()
+    }
+
     @IBAction func updateSegment(sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
             parties = PartiesManager.sharedInstance.parties

@@ -16,6 +16,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     var party: Party! {
         didSet {
             goingButton.selected = party.isGoing
+            party.isOld = true
         }
     }
 
@@ -103,9 +104,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func updateGoing(sender: UIButton) {
-        print(party.isGoing)
         party.isGoing = !party.isGoing
-        print(party.isGoing)
         goingButton.selected = party.isGoing
     }
 

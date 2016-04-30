@@ -34,12 +34,12 @@ struct Party {
         }
     }
 
-    var isNew: Bool {
+    var isOld: Bool {
         get {
-            return getVar("new")
+            return getVar("old")
         }
         set {
-            setVar("new", bool: newValue)
+            setVar("old", bool: newValue)
         }
     }
 
