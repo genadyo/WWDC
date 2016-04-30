@@ -112,6 +112,10 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             button.setImage(UIImage(named: "map"), forState: .Normal)
             button.addTarget(self, action: #selector(PartiesTableViewController.buttonClicked(_:)), forControlEvents: .TouchDown)
             button.tag = section
+            view.autoresizingMask = .FlexibleWidth
+            bgView.autoresizingMask = .FlexibleWidth
+            label.autoresizingMask = .FlexibleRightMargin
+            button.autoresizingMask = .FlexibleLeftMargin
             view.addSubview(button)
         }
         return view
