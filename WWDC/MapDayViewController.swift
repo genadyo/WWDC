@@ -19,8 +19,6 @@ class MapDayViewController: UIViewController, MKMapViewDelegate {
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
 
-        navigationItem.title = parties[0].date
-
         loadMap()
         mapView.delegate = self
         mapView.showAnnotations(mapView.annotations, animated: false)

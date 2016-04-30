@@ -166,6 +166,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             vc.delegate = self
             vc.party = cell.party
         } else if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? MapDayViewController, button = sender as? UIButton where segue.identifier == "map" {
+            vc.navigationItem.title = parties[button.tag][0].date
             vc.parties = parties[button.tag]
         }
     }
