@@ -45,10 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         controller.preferredDisplayMode = .AllVisible
         controller.preferredPrimaryColumnWidthFraction = 0.45
         controller.delegate = self
-
-        let traitController = AAPLTraitOverrideViewController()
-        traitController.viewController = controller
-        window?.rootViewController = traitController
+        window?.rootViewController = controller
 
         return true
     }

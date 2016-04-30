@@ -7,5 +7,4 @@
 //
 
 #import <OneSignal/OneSignal.h>
-#import "AAPLTraitOverrideViewController.h"
 #import "MKPointAnnotation+WDCPointAnnotation.h"
