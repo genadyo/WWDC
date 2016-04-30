@@ -20,19 +20,6 @@
 	<string>10.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
-			<key>CFBundleURLName</key>
-			<string>so.sugar.SFParties</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>parties</string>
-			</array>
-		</dict>
-	</array>
 	<key>CFBundleVersion</key>
 	<string>1007</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -45,10 +32,6 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Parties needs your current location to show Parties nearby</string>
-	<key>NSUserActivityTypes</key>
-	<array>
-		<string>so.sugar.SFParties.view</string>
-	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
