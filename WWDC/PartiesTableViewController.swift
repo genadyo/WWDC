@@ -84,14 +84,18 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
             let navigationControllerHeight = navigationController?.navigationBar.frame.size.height ?? 0
-            return UIScreen.mainScreen().bounds.size.height-2*(navigationControllerHeight+UIApplication.sharedApplication().statusBarFrame.size.height)
+            return UIScreen.mainScreen().bounds.size.height-navigationControllerHeight-UIApplication.sharedApplication().statusBarFrame.size.height
         } else {
-            return 90
+            return 75
         }
     }
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+            return 0
+        } else {
+            return 40
+        }
     }
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
