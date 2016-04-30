@@ -100,24 +100,31 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var view = UIView()
         if !(segmentedControl.selectedSegmentIndex == 1 && parties.count == 0) && parties.count > section && parties[section].count > 0 {
-            view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40.0))
-            let bgView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40.0))
+            view = UIView(frame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 40.0))
+            view.autoresizingMask = .FlexibleWidth
+
+            let bgView = UIView(frame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 40.0))
+            bgView.autoresizingMask = .FlexibleWidth
             bgView.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 247.0/255.0, alpha: 1.0)
             view.addSubview(bgView)
-            let label = UILabel(frame: CGRectMake(8, 0, tableView.frame.size.width-22*2, 40.0))
+
+            let label = UILabel(frame: CGRectMake(8.0, 0.0, tableView.frame.size.width-22.0*2, 40.0))
+            label.autoresizingMask = .FlexibleRightMargin
             label.font = UIFont.systemFontOfSize(15.0, weight: UIFontWeightRegular)
             label.text = parties[section][0].date
             label.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
             view.addSubview(label)
+
+            let mapImageView = UIImageView(image: UIImage(named: "map"))
+            mapImageView.autoresizingMask = .FlexibleLeftMargin
+            mapImageView.frame = CGRectMake(tableView.frame.size.width-33.0, 6.0, 20.0, 28.0)
+            view.addSubview(mapImageView)
+
             let button = UIButton(type: .Custom)
-            button.frame = CGRectMake(tableView.frame.size.width-36.0, 0.0, 20, 40.0)
-            button.setImage(UIImage(named: "map"), forState: .Normal)
+            button.autoresizingMask = .FlexibleWidth
+            button.frame = view.frame
             button.addTarget(self, action: #selector(PartiesTableViewController.buttonClicked(_:)), forControlEvents: .TouchDown)
             button.tag = section
-            view.autoresizingMask = .FlexibleWidth
-            bgView.autoresizingMask = .FlexibleWidth
-            label.autoresizingMask = .FlexibleRightMargin
-            button.autoresizingMask = .FlexibleLeftMargin
             view.addSubview(button)
         }
         return view
