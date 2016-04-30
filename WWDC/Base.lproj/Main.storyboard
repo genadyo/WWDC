@@ -194,6 +194,7 @@ Title 2</string>
                     </refreshControl>
                     <connections>
                         <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
+                        <outlet property="segmentedControl" destination="bXC-he-xLr" id="HVz-Uc-zSo"/>
                         <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" action="showViewController:sender:" id="zcu-b2-klE"/>
                     </connections>
                 </tableViewController>
@@ -619,6 +620,7 @@ Title2</string>
                         <outlet property="goingButton" destination="02C-tp-8YD" id="92c-If-sIS"/>
                         <outlet property="hoursLabel" destination="L4B-SO-y8Q" id="m8u-f9-Dx2"/>
                         <outlet property="logoImageView" destination="bjg-ZC-luh" id="1y8-19-OXy"/>
+                        <outlet property="lyftButton" destination="dEp-lq-qxU" id="JIj-u6-1Ds"/>
                         <outlet property="mapView" destination="MMY-Hj-xPU" id="cyV-7a-ziL"/>
                         <outlet property="titleLabel" destination="VcS-Bq-V4g" id="kHs-BH-YEP"/>
                     </connections>

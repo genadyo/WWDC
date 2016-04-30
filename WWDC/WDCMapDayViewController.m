@@ -8,7 +8,7 @@
 
 #import "WDCMapDayViewController.h"
 #import "WDCParty.h"
-#import "WDCPartyTableViewController.h"
+//#import "WDCPartyTableViewController.h"
 #import <objc/runtime.h>
 #import "WDCParties.h"
 #import <SDCloudUserDefaults/SDCloudUserDefaults.h>
@@ -127,15 +127,15 @@ static const char kPartyKey;
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([segue.identifier isEqualToString:@"party"]) {
-        if ([sender isKindOfClass:[MKPointAnnotation class]]) {
-            WDCPartyTableViewController *destController = segue.destinationViewController;
-            WDCParty *party = ((MKPointAnnotation *)sender).party;
-            destController.party = party;
-        }
-    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier isEqualToString:@"party"]) {
+//        if ([sender isKindOfClass:[MKPointAnnotation class]]) {
+//            WDCPartyTableViewController *destController = segue.destinationViewController;
+//            WDCParty *party = ((MKPointAnnotation *)sender).party;
+//            destController.party = party;
+//        }
+//    }
+//}
 
 @end

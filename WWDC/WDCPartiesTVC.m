@@ -10,7 +10,7 @@
 #import "WDCParty.h"
 #import "WDCParties.h"
 #import "WDCPartyTVC.h"
-#import "WDCPartyTableViewController.h"
+//#import "WDCPartyTableViewController.h"
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
 #import "WDCAppDelegate.h"
@@ -324,9 +324,9 @@
             NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
             party = (self.filteredParties[indexPath.section])[indexPath.row];
         }
-        UINavigationController *navigationController = segue.destinationViewController;
-        WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
-        destController.party = party;
+//        UINavigationController *navigationController = segue.destinationViewController;
+//        WDCPartyTableViewController *destController = (WDCPartyTableViewController *)[navigationController topViewController];
+//        destController.party = party;
     } else if ([segue.identifier isEqualToString:@"map"]) {
         if ([sender isKindOfClass:[NSNumber class]]) {
             NSInteger tag = [(NSNumber *)sender integerValue];

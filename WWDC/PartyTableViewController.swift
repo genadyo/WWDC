@@ -13,13 +13,13 @@ import Keys
 import Contacts
 import EventKitUI
 
+protocol PartyTableViewControllerDelegate {
+    func reloadData()
+}
+
 class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate, EKEventEditViewDelegate {
-    var party: Party! {
-        didSet {
-            goingButton.selected = party.isGoing
-            party.isOld = true
-        }
-    }
+    var party: Party!
+    var delegate: PartyTableViewControllerDelegate?
 
     @IBOutlet weak var goingButton: UIButton!
 
@@ -92,8 +92,21 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         }
     }
 
+    @IBOutlet weak var lyftButton: UIButton! {
+        didSet {
+            if UI_USER_INTERFACE_IDIOM() == .Pad {
+                lyftButton.hidden = true
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Going/Old
+        goingButton.selected = party.isGoing
+        party.isOld = true
+        delegate?.reloadData()
 
         // Self sizing cells
         tableView.estimatedRowHeight = 100.0
@@ -107,6 +120,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     @IBAction func updateGoing(sender: UIButton) {
         party.isGoing = !party.isGoing
         goingButton.selected = party.isGoing
+        delegate?.reloadData()
     }
 
     @IBAction func openMaps(sender: AnyObject) {
@@ -131,15 +145,11 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: AnyObject) {
-        if UI_USER_INTERFACE_IDIOM() != .Pad {
-            let keys = SfpartiesKeys()
-            if let url = NSURL(string: "lyft://ridetype?id=lyft_line&destination[latitude]=\(party.latitude)&destination[longitude]=\(party.longitude)&partner=\(keys.lyft)") where UIApplication.sharedApplication().canOpenURL(url) {
-                UIApplication.sharedApplication().openURL(url)
-            } else if let url = NSURL(string: "https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082") {
-                UIApplication.sharedApplication().openURL(url)
-            }
-        } else {
-            openMaps(sender)
+        let keys = SfpartiesKeys()
+        if let url = NSURL(string: "lyft://ridetype?id=lyft_line&destination[latitude]=\(party.latitude)&destination[longitude]=\(party.longitude)&partner=\(keys.lyft)") where UIApplication.sharedApplication().canOpenURL(url) {
+            UIApplication.sharedApplication().openURL(url)
+        } else if let url = NSURL(string: "https://itunes.apple.com/us/app/lyft-taxi-bus-app-alternative/id529379082") {
+            UIApplication.sharedApplication().openURL(url)
         }
     }
 

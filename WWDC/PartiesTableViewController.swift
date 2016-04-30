@@ -8,41 +8,23 @@
 
 import UIKit
 
-class PartiesTableViewController: UITableViewController {
+class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate {
     var parties = PartiesManager.sharedInstance.parties
 
     @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        parties = PartiesManager.sharedInstance.parties
+        reloadData()
         PartiesManager.sharedInstance.load() { [weak self] in
-            self?.parties = PartiesManager.sharedInstance.parties
-            self?.tableView.reloadData()
+            self?.reloadData()
         }
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-        tableView.reloadData()
     }
 
     @IBAction func updateSegment(sender: UISegmentedControl) {
-        if sender.selectedSegmentIndex == 0 {
-            parties = PartiesManager.sharedInstance.parties
-        } else {
-            var pparties = [[Party]]()
-            for p in parties {
-                let filteredP = p.filter({ $0.isGoing })
-                if filteredP.count > 0 {
-                    pparties.append(filteredP)
-                }
-            }
-            parties = pparties
-        }
-        tableView.reloadData()
+        reloadData()
     }
 
     // MARK: UITableViewDataSource
@@ -71,12 +53,31 @@ class PartiesTableViewController: UITableViewController {
         performSegueWithIdentifier("party", sender: indexPath)
     }
 
+    // MARK: PartyTableViewControllerDelegate
+
+    func reloadData() {
+        if segmentedControl.selectedSegmentIndex == 0 {
+            parties = PartiesManager.sharedInstance.parties
+        } else {
+            var pparties = [[Party]]()
+            for p in parties {
+                let filteredP = p.filter({ $0.isGoing })
+                if filteredP.count > 0 {
+                    pparties.append(filteredP)
+                }
+            }
+            parties = pparties
+        }
+        tableView.reloadData()
+    }
+
     // MARK: Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let indexPath = sender as? NSIndexPath else { return }
 
         if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where segue.identifier == "party" {
+            vc.delegate = self
             vc.party = parties[indexPath.section][indexPath.row]
         }
     }
