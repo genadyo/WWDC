@@ -215,7 +215,7 @@ Title 2</string>
         <!--Map Day View Controller-->
         <scene sceneID="SF8-YR-9jV">
             <objects>
-                <viewController id="ng2-9w-WlE" customClass="WDCMapDayViewController" sceneMemberID="viewController">
+                <viewController id="ng2-9w-WlE" customClass="MapDayViewController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JaG-hr-EEk"/>
                         <viewControllerLayoutGuide type="bottom" id="y3C-xX-PpT"/>
@@ -238,7 +238,7 @@ Title 2</string>
                     </view>
                     <navigationItem key="navigationItem" id="YMD-o9-PJ2"/>
                     <connections>
-                        <outlet property="mapView" destination="QxE-Tx-QxF" id="cgr-q3-eNJ"/>
+                        <outlet property="mapView" destination="QxE-Tx-QxF" id="jv0-fD-K0p"/>
                         <segue destination="cxA-AI-2vJ" kind="show" identifier="party" id="cDJ-JX-H6Q"/>
                     </connections>
                 </viewController>
@@ -918,7 +918,7 @@ Title2</string>
         <image name="toggleGoing" width="13" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="98b-xs-Xcx"/>
+        <segue reference="cDJ-JX-H6Q"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>

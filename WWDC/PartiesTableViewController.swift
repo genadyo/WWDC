@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import CoreLocation
 
-class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate {
+class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate, CLLocationManagerDelegate {
     var parties = PartiesManager.sharedInstance.parties
 
     @IBOutlet weak var infoButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,11 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         reloadData()
         refreshControl?.beginRefreshing()
         refresh(refreshControl)
+
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            locationManager.delegate = self
+            locationManager.requestLocation()
+        }
     }
 
     @IBAction func updateSegment(sender: UISegmentedControl) {
@@ -41,7 +48,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     func buttonClicked(sender: UIButton) {
-        performSegueWithIdentifier("map", sender: sender.tag)
+        performSegueWithIdentifier("map", sender: sender)
     }
 
     // MARK: UITableViewDataSource
@@ -134,14 +141,24 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         tableView.reloadData()
     }
 
+    // MARK: CLLocationManagerDelegate
+
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        
+    }
+
     // MARK: Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        guard let indexPath = sender as? NSIndexPath else { return }
-
-        if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where segue.identifier == "party" {
+        if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, indexPath = sender as? NSIndexPath where segue.identifier == "party" {
             vc.delegate = self
             vc.party = parties[indexPath.section][indexPath.row]
+        } else if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? MapDayViewController, button = sender as? UIButton where segue.identifier == "map" {
+            vc.parties = parties[button.tag]
         }
     }
 }
