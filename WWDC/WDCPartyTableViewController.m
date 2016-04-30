@@ -259,23 +259,6 @@
     [self presentViewController:addController animated:YES completion:nil];
 }
 
-#pragma mark - Table view data source
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
-    if (indexPath.row == 6) { // Xcode Bug #2
-        cell.backgroundColor = [UIColor colorWithRed:106.0f/255.0f green:111.8f/255.0f blue:220.0f/255.0f alpha:1.0f];
-    }
-    return cell;
-}
-
-// This is needed because of the static table cells or because its a bug!
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return tableView.rowHeight;
-}
-
 #pragma mark - EKEventEditViewDelegate
 
 - (void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
