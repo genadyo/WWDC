@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import SafariServices
 
-class PartyTableViewController: UITableViewController {
+class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     var party: Party!
 
     @IBOutlet weak var goingButton: UIButton!
@@ -86,5 +87,25 @@ class PartyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+
+    @IBAction func openMaps(sender: UIButton) {
+
+    }
+
+    @IBAction func openLyft(sender: UIButton) {
+
+    }
+
+    @IBAction func openWeb(sender: UIButton) {
+        let safariViewController = SFSafariViewController(URL: party.url)
+        safariViewController.delegate = self
+        presentViewController(safariViewController, animated: true, completion: nil)
+    }
+
+    // MARK: SFSafariViewControllerDelegate
+
+    func safariViewControllerDidFinish(controller: SFSafariViewController) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
 }

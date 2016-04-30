@@ -286,12 +286,6 @@
     }
 }
 
-- (IBAction)openWeb:(UIButton *)sender {
-    SFSafariViewController *safariViewController = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:self.party.url]];
-    safariViewController.delegate = self;
-    [self presentViewController:safariViewController animated:YES completion:nil];
-}
-
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -321,12 +315,6 @@
         default:
             break;
     }
-    [controller dismissViewControllerAnimated:YES completion:nil];
-}
-
-#pragma mark - SFSafariViewControllerDelegate
-
-- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller {
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
