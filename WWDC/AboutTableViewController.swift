@@ -1,9 +1,9 @@
 //
 //  AboutTableViewController.swift
-//  Strobe
+//  SFParties
 //
 //  Created by Genady Okrain on 3/24/15.
-//  Copyright (c) 2015 Genady Okrain. All rights reserved.
+//  Copyright © 2016 Okrain. All rights reserved.
 //
 
 import UIKit

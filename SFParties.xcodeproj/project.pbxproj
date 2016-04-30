@@ -217,7 +217,7 @@
 				LastSwiftMigration = 0730;
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Sugar So Studio";
+				ORGANIZATIONNAME = Okrain;
 				TargetAttributes = {
 					B2D4AEDF19276A1E00C5B0E8 = {
 						DevelopmentTeam = SZHLQT8428;

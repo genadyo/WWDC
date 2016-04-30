@@ -1,6 +1,6 @@
 //
 //  ServerManager.swift
-//  Caltrain
+//  SFParties
 //
 //  Created by Genady Okrain on 3/3/16.
 //  Copyright © 2016 Okrain. All rights reserved.

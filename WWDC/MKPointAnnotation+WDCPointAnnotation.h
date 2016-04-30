@@ -3,7 +3,7 @@
 //  SFParties
 //
 //  Created by Genady Okrain on 4/30/16.
-//  Copyright © 2016 Sugar So Studio. All rights reserved.
+//  Copyright © 2016 Okrain. All rights reserved.
 //
 
 #import <MapKit/MapKit.h>
