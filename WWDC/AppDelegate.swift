@@ -36,16 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Global Tint Color (Xcode Bug #1)
         UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
 
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let master = storyboard.instantiateViewControllerWithIdentifier("master")
-        let detail = storyboard.instantiateViewControllerWithIdentifier("noparty")
-
-        let controller = UISplitViewController()
-        controller.viewControllers = [master, detail]
-        controller.preferredDisplayMode = .AllVisible
-        controller.preferredPrimaryColumnWidthFraction = 0.45
-        controller.delegate = self
-        window?.rootViewController = controller
+        // Delegate
+        if let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UISplitViewController {
+            controller.delegate = self
+            window?.rootViewController = controller
+            window?.makeKeyAndVisible()
+        }
 
         return true
     }
@@ -53,7 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: UISplitViewControllerDelegate
 
     func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
-        if secondaryViewController is UINavigationController {
+        if secondaryViewController.isKindOfClass(UINavigationController) {
             return false
         } else {
             return true
@@ -61,11 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     func splitViewController(splitViewController: UISplitViewController, separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController) -> UIViewController? {
-        if let nvc = primaryViewController as? UINavigationController where nvc.topViewController is PartiesTableViewController {
-            return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("noparty")
-        } else {
-            return nil
+        if primaryViewController.isKindOfClass(UINavigationController) {
+            let nvc = primaryViewController as! UINavigationController
+            if nvc.topViewController is PartiesTableViewController {
+                return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("noparty")
+            }
         }
+
+        return nil
     }
 }
 
