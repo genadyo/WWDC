@@ -179,7 +179,7 @@ Title 2</string>
                                     <segment title="" image="toggleGoing"/>
                                 </segments>
                                 <connections>
-                                    <action selector="updateSegment:" destination="ZFk-xA-eIm" eventType="valueChanged" id="Bcu-0L-9eZ"/>
+                                    <action selector="updateSegment:" destination="ZFk-xA-eIm" eventType="valueChanged" id="64H-VH-hvN"/>
                                 </connections>
                             </segmentedControl>
                         </barButtonItem>
@@ -193,7 +193,6 @@ Title 2</string>
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="goingSegmentedControl" destination="bXC-he-xLr" id="lCS-fc-dqS"/>
                         <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
                         <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" action="showViewController:sender:" id="zcu-b2-klE"/>
                     </connections>

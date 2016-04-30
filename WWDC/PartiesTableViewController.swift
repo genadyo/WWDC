@@ -9,35 +9,54 @@
 import UIKit
 
 class PartiesTableViewController: UITableViewController {
+    var parties = PartiesManager.sharedInstance.parties
+
     @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var goingSegmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        parties = PartiesManager.sharedInstance.parties
         PartiesManager.sharedInstance.load() { [weak self] in
+            self?.parties = PartiesManager.sharedInstance.parties
             self?.tableView.reloadData()
         }
+    }
+
+    @IBAction func updateSegment(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            parties = PartiesManager.sharedInstance.parties
+        } else {
+            var pparties = [[Party]]()
+            for p in parties {
+                let filteredP = p.filter({ $0.isGoing })
+                if filteredP.count > 0 {
+                    pparties.append(filteredP)
+                }
+            }
+            parties = pparties
+        }
+        tableView.reloadData()
     }
 
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return PartiesManager.sharedInstance.parties.count
+        return parties.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return PartiesManager.sharedInstance.parties[section].count
+        return parties[section].count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath) as! PartyTableViewCell
-        cell.party = PartiesManager.sharedInstance.parties[indexPath.section][indexPath.row]
+        cell.party = parties[indexPath.section][indexPath.row]
         return cell
     }
 
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return PartiesManager.sharedInstance.parties[section][0].date
+        return parties[section][0].date
     }
 
     // MARK: UITableViewDelegate
@@ -52,7 +71,7 @@ class PartiesTableViewController: UITableViewController {
         guard let indexPath = sender as? NSIndexPath else { return }
 
         if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where segue.identifier == "party" {
-            vc.party = PartiesManager.sharedInstance.parties[indexPath.section][indexPath.row]
+            vc.party = parties[indexPath.section][indexPath.row]
         }
     }
 }
