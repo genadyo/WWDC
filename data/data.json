@@ -1,7 +1,7 @@
 [{
-    "objectId": "996deee2-0727-48ae-b3b5-3b7c0879739f",
-    "icon": "https://github.com/genadyo/WWDC/raw/master/data/icons/996deee2-0727-48ae-b3b5-3b7c0879739f.png",
-    "logo": "https://github.com/genadyo/WWDC/raw/master/data/logos/996deee2-0727-48ae-b3b5-3b7c0879739f.jpg",
+    "objectId": "relay",
+    "icon": "https://github.com/genadyo/WWDC/raw/master/data/icons/relay.png",
+    "logo": "https://github.com/genadyo/WWDC/raw/master/data/logos/relay.jpg",
     "title": "RelayCon: WWDC 2016",
     "startDate": "2016-06-13T18:00",
     "endDate": "2016-06-13T20:30",
@@ -12,4 +12,20 @@
     "latitude": 37.78731,
     "longitude": -122.39937,
     "url": "https://www.eventbrite.com/e/relaycon-wwdc-2016-tickets-21418547452"
+},{
+    "objectId": "hike",
+    "icon": "https://github.com/genadyo/WWDC/raw/master/data/icons/hike.png",
+    "logo": "https://github.com/genadyo/WWDC/raw/master/data/logos/hike.jpg",
+    "title": "WWDC Hike 2016",
+    "startDate": "2016-06-12T14:00",
+    "endDate": "2016-06-12T18:00",
+    "details": "When\nJune 12th, 2016, the Sunday before WWDC. We'll leave at 2pm.\n\nWhere\nWe'll leave from Lands End. It's about a 20 minute drive from the Moscone. If you drive, you'll have to cab back to your car at the end since the route isn't a loop.\n\nHiking\nIt will take about 3-4 hours to hike 6.2 miles (10km). The terrain ranges from dirt trails, streets, and beaches. Comfortable walking shoes are recommended.\n\nWe'll see Lands End, Baker Beach, the Golden Gate Bridge, Crissy Field, and Fort Mason along the way. Click the pins on the map for details of each spot. We'll finish at In-N-Out in Fisherman's Wharf. Anyone that wants to stay and eat is welcome.\n\nDon't feel like you have to do all of it. You're more than welcome to come, hike for a bit, and cab back to downtown when you're feeling done.",
+    "address1": "Lands End",
+    "address2": "680 Point Lobos Ave",
+    "address3": "San Francisco, CA 94121",
+    "latitude": 37.785443,
+    "longitude": -122.50618,
+    "url": "http://wwdchike.com"
 }]
+
+
