@@ -40,17 +40,6 @@
 {
     [super viewDidLoad];
 
-    // remove badge
-    NSMutableArray *badgeMutableArray = [@[] mutableCopy];
-    if (([SDCloudUserDefaults objectForKey:@"badge"] != nil) && ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]])) {
-        badgeMutableArray = [[SDCloudUserDefaults objectForKey:@"badge"] mutableCopy];
-    }
-    if ([badgeMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
-        [badgeMutableArray addObject:self.party.objectId];
-    }
-    [SDCloudUserDefaults setObject:[badgeMutableArray copy] forKey:@"badge"];
-    [SDCloudUserDefaults synchronize];
-
     // refresh for iPad
     if ([self.splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = self.splitViewController.viewControllers[0];
@@ -68,60 +57,6 @@
 //        UIImage *uber = [Assets imageOfLyft];
 //        [self.uberButton setImage:uber forState:UIControlStateNormal];
 //    }
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:animated];
-}
-
-- (void)refreshGoing
-{
-//    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-//    } else if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:self.party.objectId] == NSNotFound) {
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-//        [self.goingButton setImage:[Assets imageOfNotGoingMarkWithInitColor:[UIColor colorWithRed:106.0/255.0f green:118.0/255.f blue:220.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-//    } else {
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f] forState:UIControlStateNormal];
-//        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:1.0f]] forState:UIControlStateNormal];
-//        [self.goingButton setTitleColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f] forState:UIControlStateHighlighted];
-//        [self.goingButton setImage:[Assets imageOfGoingMarkWithInitColor:[UIColor colorWithRed:46.0f/255.0f green:204.0/255.f blue:113.f/255.0f alpha:0.3f]] forState:UIControlStateHighlighted];
-//    }
-}
-
-- (IBAction)updateGoing:(id)sender
-{
-    NSMutableArray *goingMutableArray;
-    if (([SDCloudUserDefaults objectForKey:@"going"] != nil) && ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
-        goingMutableArray = [[SDCloudUserDefaults objectForKey:@"going"] mutableCopy];
-    } else {
-        goingMutableArray = [@[] mutableCopy];
-    }
-    if ([goingMutableArray indexOfObject:self.party.objectId] == NSNotFound) {
-        [goingMutableArray addObject:self.party.objectId];
-    } else {
-        [goingMutableArray removeObject:self.party.objectId];
-    }
-    [SDCloudUserDefaults setObject:[goingMutableArray copy] forKey:@"going"];
-    [SDCloudUserDefaults synchronize];
-    [self refreshGoing];
-    [[WDCParties sharedInstance] saveGoing];
-
-    if ([self.splitViewController.viewControllers[0] isKindOfClass:[UINavigationController class]]) {
-        UINavigationController *navigationController = self.splitViewController.viewControllers[0];
-        if ([navigationController.topViewController isKindOfClass:[WDCPartiesTVC class]]) {
-            WDCPartiesTVC *partiesTVC = (WDCPartiesTVC *)navigationController.topViewController;
-            [partiesTVC updateFilteredParties];
-        }
-    }
 }
 
 - (IBAction)openCal:(id)sender
