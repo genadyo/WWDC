@@ -116,7 +116,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
         if indexPath.row == 6 { // Xcode Bug #2
-            cell.backgroundColor = UIColor(red: 106.0/255.0, green: 111.8/255.0, blue: 220.0/255.0, alpha: 1.0)
+            cell.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
         }
         return cell
     }

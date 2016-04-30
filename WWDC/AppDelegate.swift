@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         NSTimeZone.setDefaultTimeZone(NSTimeZone(name: "PST")!)
 
         // Global Tint Color (Xcode Bug #1)
-        UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 111.8/255.0, blue: 220.0/255.0, alpha: 1.0)
+        UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let master = storyboard.instantiateViewControllerWithIdentifier("master")

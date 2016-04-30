@@ -59,7 +59,7 @@ class MapDayViewController: UIViewController, MKMapViewDelegate {
 
             if let pointAnnotation = annotation as? MKPointAnnotation {
                 let party = parties[pointAnnotation.partyIndex.integerValue]
-                pinAnnotationView?.pinTintColor = party.isGoing ? UIColor.greenColor() : UIColor.purpleColor()
+                pinAnnotationView?.pinTintColor = party.isGoing ? UIColor(red: 46.0/255.0, green: 204.0/255.0, blue: 113.0/255.0, alpha: 1.0) : UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
             }
             pinAnnotationView?.canShowCallout = true
             pinAnnotationView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
