@@ -61,7 +61,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                     let mailComposeViewController = MFMailComposeViewController()
                     mailComposeViewController.mailComposeDelegate = self
                     mailComposeViewController.setToRecipients(["genady@okrain.com"])
-                    mailComposeViewController.setSubject("Caltrain")
+                    mailComposeViewController.setSubject("Parties for WWDC")
 
                     var body = "<br><br><br><br><br><br><br><br><br><hr>"
 
