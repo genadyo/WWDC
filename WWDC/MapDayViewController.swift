@@ -44,4 +44,38 @@ class MapDayViewController: UIViewController, MKMapViewDelegate {
             mapView.addAnnotation(annotation)
         }
     }
+
+    // MARK: MKMapViewDelegate
+
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+        guard !(annotation is MKUserLocation) else { return nil }
+
+        var pinAnnotationView: MKPinAnnotationView?
+        if annotation is MKPointAnnotation {
+            pinAnnotationView = mapView.dequeueReusableAnnotationViewWithIdentifier("party") as? MKPinAnnotationView
+            if pinAnnotationView == nil {
+                pinAnnotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "party")
+            }
+
+            if let pointAnnotation = annotation as? MKPointAnnotation {
+                let party = parties[pointAnnotation.partyIndex.integerValue]
+                pinAnnotationView?.pinTintColor = party.isGoing ? UIColor.greenColor() : UIColor.purpleColor()
+            }
+            pinAnnotationView?.canShowCallout = true
+            pinAnnotationView?.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+        }
+        return pinAnnotationView
+    }
+
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        performSegueWithIdentifier("party", sender: view.annotation)
+    }
+
+    // MARK: Navigation
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? PartyTableViewController, pointAnnotation = sender as? MKPointAnnotation where segue.identifier == "party" {
+            vc.party = parties[pointAnnotation.partyIndex.integerValue]
+        }
+    }
 }
