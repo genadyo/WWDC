@@ -36,6 +36,10 @@ class PartiesTableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return PartiesManager.sharedInstance.parties[section][0].date
+    }
+
     // MARK: UITableViewDelegate
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
