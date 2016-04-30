@@ -21,7 +21,6 @@
 		B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1861CD10B8500B2198B /* PartiesManager.swift */; };
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
 		B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */; };
-		B28614101958CA51006FA1D3 /* JVObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = B286140E1958CA51006FA1D3 /* JVObserver.m */; };
 		B2B556EE195ED703008602F1 /* AAPLTraitOverrideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */; };
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
@@ -83,7 +82,6 @@
 		B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutTableViewController.swift; sourceTree = "<group>"; };
 		B211B8651CC9B472002F9AEA /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "Pods/../build/Debug-iphoneos/Pods.framework"; sourceTree = "<group>"; };
 		B211B8671CC9B491002F9AEA /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = "../../Library/Developer/Xcode/DerivedData/SFParties-fjijihfpnewykpatirzcnefwirxl/Build/Products/Debug-iphonesimulator/Pods.framework"; sourceTree = "<group>"; };
-		B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B23AFA8D192828D400C2A060 /* WDCMapDayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCMapDayViewController.h; sourceTree = "<group>"; };
 		B23AFA8E192828D400C2A060 /* WDCMapDayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WDCMapDayViewController.m; sourceTree = "<group>"; };
 		B2464254192788A200DF2E06 /* WDCPartyTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WDCPartyTVC.h; sourceTree = "<group>"; };
@@ -99,8 +97,6 @@
 		B26CC1861CD10B8500B2198B /* PartiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesManager.swift; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		B286140D1958CA51006FA1D3 /* JVObserver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JVObserver.h; sourceTree = "<group>"; };
-		B286140E1958CA51006FA1D3 /* JVObserver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JVObserver.m; sourceTree = "<group>"; };
 		B2B556EC195ED703008602F1 /* AAPLTraitOverrideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLTraitOverrideViewController.h; sourceTree = "<group>"; };
 		B2B556ED195ED703008602F1 /* AAPLTraitOverrideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLTraitOverrideViewController.m; sourceTree = "<group>"; };
 		B2D4AEE019276A1E00C5B0E8 /* Parties.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parties.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -220,9 +216,6 @@
 				B246425719279DE200DF2E06 /* WDCPartyTableViewController.h */,
 				B246425819279DE200DF2E06 /* WDCPartyTableViewController.m */,
 				B200A9DE1AE5999E005B070B /* AboutTableViewController.swift */,
-				B286140D1958CA51006FA1D3 /* JVObserver.h */,
-				B286140E1958CA51006FA1D3 /* JVObserver.m */,
-				B22134991A1DEF520081E422 /* SFParties-Bridging-Header.h */,
 				B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */,
 				B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */,
 			);
@@ -429,7 +422,6 @@
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */,
-				B28614101958CA51006FA1D3 /* JVObserver.m in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
 				B2464256192788A200DF2E06 /* WDCPartyTVC.m in Sources */,
 				B246425919279DE200DF2E06 /* WDCPartyTableViewController.m in Sources */,
@@ -588,7 +580,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "so.sugar.SF$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "1b4f5c86-462f-4892-bc48-da6c073131e0";
-				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -621,7 +612,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "so.sugar.SF$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "1b4f5c86-462f-4892-bc48-da6c073131e0";
-				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 Sugar So Studio. All rights reserved.
 //
 
-#import "JVObserver.h"
 #import "WDCPartiesTVC.h"
 #import "WDCParty.h"
 #import "WDCParties.h"
@@ -25,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *goingSegmentedControl;
 @property (strong, nonatomic) NSMutableArray *observers;
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (strong, nonatomic) JVObserver *objectIdObserver;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 @end
@@ -76,24 +74,6 @@
         self.locationManager = [[CLLocationManager alloc] init];
         [self.locationManager requestWhenInUseAuthorization];
     }
-
-    WDCAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    self.objectIdObserver = [JVObserver observerForObject:appDelegate keyPath:@"partyObjectId" target:self block:^(__weak typeof(self) self) {
-        if (!appDelegate.partyObjectId) {
-            return;
-        }
-
-        NSString *partyObjectId = appDelegate.partyObjectId;
-        appDelegate.partyObjectId = nil;
-        for (NSArray *partiesArray in self.parties) {
-            for (WDCParty *party in partiesArray) {
-                if (party.show == YES && [party.objectId isEqualToString:partyObjectId]) {
-                    [self performSegueWithIdentifier:@"party" sender:party];
-                    return;
-                }
-            }
-        }
-    }];
 }
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator>)coordinator
@@ -284,19 +264,6 @@
                     }
                 }
             }
-        }
-        
-        partyCell.iconImageView.image = party.icon;
-        if (!party.icon) {
-            __weak typeof(party) weakParty = party;
-            JVObserver *observer = [JVObserver observerForObject:party keyPath:@"icon" target:self block:^(__weak typeof(self) self) {
-                if (weakParty.icon) {
-                    dispatch_async(dispatch_get_main_queue(), ^{
-                        [self.tableView reloadData];
-                    });
-                };
-            }];
-            [self.observers addObject:observer];
         }
 
         [partyCell.seperator removeFromSuperview];

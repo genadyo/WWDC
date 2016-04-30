@@ -10,7 +10,6 @@
 @import MapKit;
 @import SafariServices;
 @import Keys;
-#import "JVObserver.h"
 #import "WDCPartyTableViewController.h"
 #import "WDCParties.h"
 #import "WDCPartiesTVC.h"
@@ -31,7 +30,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *address3Label;
 @property (weak, nonatomic) IBOutlet UIButton *goingButton;
 @property (weak, nonatomic) IBOutlet UITableViewCell *titleCell;
-@property (strong, nonatomic) JVObserver *observer;
 @property (weak, nonatomic) IBOutlet UIButton *uberButton;
 
 @end
@@ -72,14 +70,6 @@
     activity.webpageURL = [NSURL URLWithString:self.party.url];
     self.userActivity = activity;
     [self.userActivity becomeCurrent];
-
-    self.observer = [JVObserver observerForObject:self.party keyPath:@"logo" target:self block:^(__weak typeof(self) self) {
-        if (self.party.logo) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.logoImageView.image = self.party.logo;
-            });
-        }
-    }];
 
     self.titleLabel.text = self.party.title;
 
