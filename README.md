@@ -10,8 +10,6 @@ Parties for WWDC
 </p>
 
 ## Info:
-Parties in now available for Apple Watch. See the parties you are going to on your wrist.
-
 Parties for WWDC is an aggregator of developers parties happening in San Francisco mostly exclusively for participators of WWDC 2016. 
 
 Hottest startups and technology companies in Silicon Valley are organizing parties for developers who participate WWDC 2016. 
