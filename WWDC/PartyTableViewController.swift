@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import SafariServices
 import Keys
+import Contacts
 
 class PartyTableViewController: UITableViewController, SFSafariViewControllerDelegate {
     var party: Party!
@@ -91,7 +92,24 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openMaps(sender: UIButton) {
+        let coordinate = CLLocationCoordinate2DMake(party.latitude, party.longitude)
 
+        var addressDictionary = [String: AnyObject]()
+        addressDictionary[CNPostalAddressCountryKey] = "United States"
+        addressDictionary[CNPostalAddressStreetKey] = party.address2
+        let address3Split = party.address3.componentsSeparatedByString(", ")
+        if address3Split.count == 2 {
+            addressDictionary[CNPostalAddressCityKey] = address3Split[0]
+            let address3SplitSplit = address3Split[1].componentsSeparatedByString(" ")
+            if address3SplitSplit.count == 2 {
+                addressDictionary[CNPostalAddressStateKey] = address3SplitSplit[0]
+                addressDictionary[CNPostalAddressPostalCodeKey] = address3SplitSplit[1]
+            }
+        }
+
+        let item = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary))
+        item.name = party.title
+        item.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsMapTypeKey: MKMapType.Standard.rawValue])
     }
 
     @IBAction func openLyft(sender: UIButton) {
