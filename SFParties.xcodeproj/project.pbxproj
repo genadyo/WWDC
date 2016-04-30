@@ -13,7 +13,6 @@
 		B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */; };
 		B246FCA61CD50DE500A0B42D /* MapDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA51CD50DE500A0B42D /* MapDayViewController.swift */; };
 		B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */; };
-		B268E0A0196700B000038686 /* SFParties.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = B268E09E196700B000038686 /* SFParties.entitlements */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartyModel.swift */; };
 		B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */; };
@@ -24,14 +23,12 @@
 		B2D4AEE419276A1E00C5B0E8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */; };
 		B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */; };
 		B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */; };
-		B2D4AEEE19276A1E00C5B0E8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */; };
 		B2D4AEF019276A1E00C5B0E8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEEF19276A1E00C5B0E8 /* main.m */; };
 		B2D4AEF419276A1E00C5B0E8 /* WDCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */; };
 		B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */; };
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
 		B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */; };
-		B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2F9A38719521714008FA5EF /* CloudKit.framework */; };
 		CE5865DE14A589CD30570BE1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A574C6E91FE4AB459E94C70E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +69,6 @@
 		B246FCA71CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKPointAnnotation+WDCPointAnnotation.h"; sourceTree = "<group>"; };
 		B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKPointAnnotation+WDCPointAnnotation.m"; sourceTree = "<group>"; };
 		B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
-		B268E09E196700B000038686 /* SFParties.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = SFParties.entitlements; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26CC1821CD08C0E00B2198B /* PartyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
 		B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +82,6 @@
 		B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B2D4AEE719276A1E00C5B0E8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SFParties-Info.plist"; sourceTree = "<group>"; };
-		B2D4AEED19276A1E00C5B0E8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B2D4AEEF19276A1E00C5B0E8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B2D4AEF219276A1E00C5B0E8 /* WDCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDCAppDelegate.h; sourceTree = "<group>"; };
 		B2D4AEF319276A1E00C5B0E8 /* WDCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WDCAppDelegate.m; sourceTree = "<group>"; };
@@ -95,7 +90,6 @@
 		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F01C601A1F841D00F1AC70 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
-		B2F9A38719521714008FA5EF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +99,6 @@
 			files = (
 				B2732EEA19D9CB450074CC87 /* SystemConfiguration.framework in Frameworks */,
 				B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */,
-				B2F9A38819521714008FA5EF /* CloudKit.framework in Frameworks */,
 				B2D4AEE619276A1E00C5B0E8 /* CoreGraphics.framework in Frameworks */,
 				B2D4AEE819276A1E00C5B0E8 /* UIKit.framework in Frameworks */,
 				B246425B1927A2F200DF2E06 /* MapKit.framework in Frameworks */,
@@ -143,7 +136,6 @@
 				B211B8651CC9B472002F9AEA /* Pods.framework */,
 				B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */,
 				B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */,
-				B2F9A38719521714008FA5EF /* CloudKit.framework */,
 				B246425A1927A2F200DF2E06 /* MapKit.framework */,
 				B2D4AEE319276A1E00C5B0E8 /* Foundation.framework */,
 				B2D4AEE519276A1E00C5B0E8 /* CoreGraphics.framework */,
@@ -184,9 +176,7 @@
 		B2D4AEEA19276A1E00C5B0E8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B268E09E196700B000038686 /* SFParties.entitlements */,
 				B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */,
-				B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */,
 				B2D4AEEF19276A1E00C5B0E8 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -240,13 +230,16 @@
 						DevelopmentTeam = SZHLQT8428;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
-							com.apple.iCloud = {
+							com.apple.Push = {
 								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
 							};
 							com.apple.iOS = {
 								enabled = 1;
@@ -279,9 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */,
-				B268E0A0196700B000038686 /* SFParties.entitlements in Resources */,
 				B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */,
-				B2D4AEEE19276A1E00C5B0E8 /* InfoPlist.strings in Resources */,
 				B2D4AEF719276A1E00C5B0E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,14 +321,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B2D4AEEC19276A1E00C5B0E8 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B2D4AEED19276A1E00C5B0E8 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		B2D4AEF519276A1E00C5B0E8 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -440,7 +423,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -473,7 +455,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = WWDC/SFParties.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
