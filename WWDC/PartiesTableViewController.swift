@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate, CLLocationManagerDelegate {
+class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate {
     var parties = PartiesManager.sharedInstance.parties
 
     @IBOutlet weak var infoButton: UIButton!
@@ -28,8 +28,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         refresh(refreshControl)
 
         if CLLocationManager.authorizationStatus() == .NotDetermined {
-            locationManager.delegate = self
-            locationManager.requestLocation()
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 
@@ -146,16 +145,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             tableView.scrollEnabled = parties.count > 0
         }
         tableView.reloadData()
-    }
-
-    // MARK: CLLocationManagerDelegate
-
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        
-    }
-
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        
     }
 
     // MARK: Navigation
