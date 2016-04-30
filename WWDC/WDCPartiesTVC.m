@@ -14,7 +14,7 @@
 #import "WDCMapDayViewController.h"
 #import "Parties-Swift.h"
 #import "WDCAppDelegate.h"
-#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
+//#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 @import CoreLocation;
 
 @interface WDCPartiesTVC ()
@@ -60,11 +60,6 @@
     return height;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 40;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell;
@@ -76,26 +71,26 @@
         WDCParty *party = (self.filteredParties[indexPath.section])[indexPath.row];
         partyCell.titleLabel.text = party.title;
         partyCell.hoursLabel.text = [party hours];
-        partyCell.goingView.hidden = YES;
-        if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
-            if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
-                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
-                    partyCell.goingView.hidden = NO;
-                }
-            }
-        }
+//        partyCell.goingView.hidden = YES;
+//        if ([SDCloudUserDefaults objectForKey:@"going"] != nil) {
+//            if ([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]]) {
+//                if ([[SDCloudUserDefaults objectForKey:@"going"] indexOfObject:party.objectId] != NSNotFound) {
+//                    partyCell.goingView.hidden = NO;
+//                }
+//            }
+//        }
 
-        partyCell.badgeView.hidden = YES;
-        if (partyCell.goingView.hidden == YES) {
-            partyCell.badgeView.hidden = NO;
-            if ([SDCloudUserDefaults objectForKey:@"badge"] != nil) {
-                if ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]]) {
-                    if ([[SDCloudUserDefaults objectForKey:@"badge"] indexOfObject:party.objectId] != NSNotFound) {
-                        partyCell.badgeView.hidden = YES;
-                    }
-                }
-            }
-        }
+//        partyCell.badgeView.hidden = YES;
+//        if (partyCell.goingView.hidden == YES) {
+//            partyCell.badgeView.hidden = NO;
+//            if ([SDCloudUserDefaults objectForKey:@"badge"] != nil) {
+//                if ([[SDCloudUserDefaults objectForKey:@"badge"] isKindOfClass:[NSArray class]]) {
+//                    if ([[SDCloudUserDefaults objectForKey:@"badge"] indexOfObject:party.objectId] != NSNotFound) {
+//                        partyCell.badgeView.hidden = YES;
+//                    }
+//                }
+//            }
+//        }
 
         [partyCell.seperator removeFromSuperview];
         if (indexPath.row != [self.filteredParties[indexPath.section] count]-1) {
@@ -115,33 +110,6 @@
     return cell;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIView *view = [[UIView alloc] init];
-    if (!(self.goingSegmentedControl.selectedSegmentIndex == 1 && self.filteredParties.count == 0)) {
-        view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0f)];
-        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 40.0f)];
-        bgView.backgroundColor = [UIColor colorWithRed:247.0f/255.0f green:247.0f/255.0f blue:247.0f/255.0f alpha:1.0f];
-        [view addSubview:bgView];
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(8, 0, tableView.frame.size.width-22*2, 40.0f)];
-        label.font = [UIFont systemFontOfSize:15.0 weight:UIFontWeightRegular];
-        label.text = [((WDCParty *)[self.filteredParties[section] lastObject]) date];
-        label.textColor = [UIColor colorWithRed:117.0f/255.0f green:117.0f/255.0f blue:117.0f/255.0f alpha:1.0f];
-        [view addSubview:label];
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-        [button setFrame:CGRectMake(tableView.frame.size.width-36.0f, 0.0f, 20, 40.0f)];
-//        [button setImage:[Assets imageOfMapWithFrame:button.bounds] forState:UIControlStateNormal];
-        [button addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchDown];
-        button.tag = section;
-        [view addSubview:button];
-    }
-    return view;
-}
-
-- (void)buttonClicked:(UIButton *)sender
-{
-    [self performSegueWithIdentifier:@"map" sender:[NSNumber numberWithInteger:sender.tag]];
-}
 
 #pragma mark - Navigation
 

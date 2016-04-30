@@ -15,7 +15,7 @@
 #import "WDCParty.h"
 #import "WDCPartiesTVC.h"
 #import "AAPLTraitOverrideViewController.h"
-#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
+//#import <SDCloudUserDefaults/SDCloudUserDefaults.h>
 #import "Parties-Swift.h"
 
 @interface WDCAppDelegate () <UISplitViewControllerDelegate>
@@ -42,10 +42,10 @@
     [Fabric with:@[[Crashlytics startWithAPIKey:keys.crashlytics]]];
 
     // iCloud
-    [SDCloudUserDefaults registerForNotifications];
-    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
-        [SDCloudUserDefaults setObject:@[] forKey:@"going"];
-    }
+//    [SDCloudUserDefaults registerForNotifications];
+//    if (([SDCloudUserDefaults objectForKey:@"going"] == nil) || !([[SDCloudUserDefaults objectForKey:@"going"] isKindOfClass:[NSArray class]])) {
+//        [SDCloudUserDefaults setObject:@[] forKey:@"going"];
+//    }
 
     [NSTimeZone setDefaultTimeZone:[NSTimeZone timeZoneWithName:@"PST"]];
 

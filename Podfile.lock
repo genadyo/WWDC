@@ -13,14 +13,12 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
-  - SDCloudUserDefaults (1.0.2)
 
 DEPENDENCIES:
   - Crashlytics
   - Keys (from `Pods/CocoaPodsKeys`)
   - OneSignal
   - PINRemoteImage
-  - SDCloudUserDefaults
 
 EXTERNAL SOURCES:
   Keys:
@@ -34,6 +32,5 @@ SPEC CHECKSUMS:
   OneSignal: 15b94fa760a6754908f11ef92da6ec945923fa2c
   PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
-  SDCloudUserDefaults: cacf733d192160d94364efab8548ae3302615a65
 
 COCOAPODS: 0.39.0

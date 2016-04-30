@@ -5,7 +5,6 @@ use_frameworks!
 pod 'Crashlytics'
 pod 'OneSignal'
 pod 'PINRemoteImage'
-pod 'SDCloudUserDefaults'
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",

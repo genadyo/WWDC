@@ -40,6 +40,10 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
+    func buttonClicked(sender: UIButton) {
+        performSegueWithIdentifier("map", sender: sender.tag)
+    }
+
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -68,15 +72,42 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if parties.count > section && parties[section].count > 0 {
-            return parties[section][0].date
+    // MARK: UITableViewDelegate
+
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+            let navigationControllerHeight = navigationController?.navigationBar.frame.size.height ?? 0
+            return UIScreen.mainScreen().bounds.size.height-2*(navigationControllerHeight+UIApplication.sharedApplication().statusBarFrame.size.height)
         } else {
-            return nil
+            return 90
         }
     }
 
-    // MARK: UITableViewDelegate
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40
+    }
+
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var view = UIView()
+        if !(segmentedControl.selectedSegmentIndex == 1 && parties.count == 0) && parties.count > section && parties[section].count > 0 {
+            view = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40.0))
+            let bgView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 40.0))
+            bgView.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 247.0/255.0, alpha: 1.0)
+            view.addSubview(bgView)
+            let label = UILabel(frame: CGRectMake(8, 0, tableView.frame.size.width-22*2, 40.0))
+            label.font = UIFont.systemFontOfSize(15.0, weight: UIFontWeightRegular)
+            label.text = parties[section][0].date
+            label.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
+            view.addSubview(label)
+            let button = UIButton(type: .Custom)
+            button.frame = CGRectMake(tableView.frame.size.width-36.0, 0.0, 20, 40.0)
+            button.setImage(UIImage(named: "map"), forState: .Normal)
+            button.addTarget(self, action: #selector(PartiesTableViewController.buttonClicked(_:)), forControlEvents: .TouchDown)
+            button.tag = section
+            view.addSubview(button)
+        }
+        return view
+    }
 
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("party", sender: indexPath)
