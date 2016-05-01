@@ -28,6 +28,7 @@
 		B2D4AEFC19276A1E00C5B0E8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2D4AEFB19276A1E00C5B0E8 /* Images.xcassets */; };
 		B2DD1E7F19CDEE9B00352537 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */; };
 		B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */; };
+		B2FD33441CD664AD0003D384 /* PartiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD33431CD664AD0003D384 /* PartiesViewController.swift */; };
 		CE5865DE14A589CD30570BE1 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A574C6E91FE4AB459E94C70E /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F01C601A1F841D00F1AC70 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
 		B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyTableViewCell.swift; sourceTree = "<group>"; };
+		B2FD33431CD664AD0003D384 /* PartiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				B26CC1821CD08C0E00B2198B /* PartiesModel.swift */,
 				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
 				B26CC1861CD10B8500B2198B /* PartiesManager.swift */,
+				B2FD33431CD664AD0003D384 /* PartiesViewController.swift */,
 				B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */,
 				B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */,
 				B2B3C36C1CD54A220026DDF8 /* PartyNavigationController.swift */,
@@ -304,6 +307,7 @@
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartiesModel.swift in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
+				B2FD33441CD664AD0003D384 /* PartiesViewController.swift in Sources */,
 				B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */,
 				B2B3C36D1CD54A220026DDF8 /* PartyNavigationController.swift in Sources */,
 				B200A9DF1AE5999E005B070B /* AboutTableViewController.swift in Sources */,

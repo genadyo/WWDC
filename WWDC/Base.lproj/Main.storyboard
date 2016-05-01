@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Parties-->
+        <!--Parties Table View Controller-->
         <scene sceneID="H8J-aB-wgz">
             <objects>
                 <tableViewController id="ZFk-xA-eIm" customClass="PartiesTableViewController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,7 +17,7 @@
                         <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="party" id="Oew-qX-0v3" customClass="PartyTableViewCell" customModule="Parties" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="108" width="600" height="75"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oew-qX-0v3" id="piH-pi-Tot">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
@@ -114,7 +114,7 @@ Title 2</string>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="empty" rowHeight="504" id="IBX-RV-GO8">
-                                <rect key="frame" x="0.0" y="183" width="600" height="504"/>
+                                <rect key="frame" x="0.0" y="119" width="600" height="504"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IBX-RV-GO8" id="NJM-gR-Nbv">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
@@ -165,35 +165,6 @@ Title 2</string>
                             <outlet property="delegate" destination="ZFk-xA-eIm" id="XPa-Xq-5wt"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Parties" id="UwR-EJ-MmL">
-                        <barButtonItem key="leftBarButtonItem" id="BlY-jQ-0D6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tpN-9a-wGx">
-                                <rect key="frame" x="20" y="8" width="27" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="gear">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jNu-Vl-JpO" kind="popoverPresentation" identifier="about" popoverAnchorView="tpN-9a-wGx" id="fsc-Oh-SE8">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="Qdo-PD-rLQ">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr">
-                                <rect key="frame" x="474" y="7" width="106" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="" image="toggleAllActive"/>
-                                    <segment title="" image="toggleGoing"/>
-                                </segments>
-                                <connections>
-                                    <action selector="updateSegment:" destination="ZFk-xA-eIm" eventType="valueChanged" id="64H-VH-hvN"/>
-                                </connections>
-                            </segmentedControl>
-                        </barButtonItem>
-                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1000"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="t80-yZ-8c5">
@@ -203,7 +174,6 @@ Title 2</string>
                         </connections>
                     </refreshControl>
                     <connections>
-                        <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
                         <outlet property="segmentedControl" destination="bXC-he-xLr" id="HVz-Uc-zSo"/>
                         <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" id="GPR-d1-jVa"/>
                     </connections>
@@ -266,6 +236,75 @@ Title 2</string>
             </objects>
             <point key="canvasLocation" x="1500" y="278"/>
         </scene>
+        <!--Parties-->
+        <scene sceneID="Ij7-xI-ziv">
+            <objects>
+                <viewController id="3ER-Zw-h6e" customClass="PartiesViewController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Svd-C4-4Ff"/>
+                        <viewControllerLayoutGuide type="bottom" id="hWH-OD-2o3"/>
+                    </layoutGuides>
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="pri-Nz-xoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-FT-gKp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <connections>
+                                    <segue destination="ZFk-xA-eIm" kind="embed" identifier="partiesTVC" id="Dh9-wn-32H"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4m8-f7-IJw">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="999" constant="50" id="5QM-Al-5ri"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="openBanner:" destination="3ER-Zw-h6e" eventType="touchUpInside" id="dep-Wl-ghM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </stackView>
+                    <navigationItem key="navigationItem" title="Parties" id="UwR-EJ-MmL">
+                        <barButtonItem key="leftBarButtonItem" id="BlY-jQ-0D6">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tpN-9a-wGx">
+                                <rect key="frame" x="20" y="8" width="27" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="gear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jNu-Vl-JpO" kind="popoverPresentation" identifier="about" popoverAnchorView="tpN-9a-wGx" id="fsc-Oh-SE8">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" id="Qdo-PD-rLQ">
+                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="bXC-he-xLr">
+                                <rect key="frame" x="474" y="7" width="106" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="" image="toggleAllActive"/>
+                                    <segment title="" image="toggleGoing"/>
+                                </segments>
+                                <connections>
+                                    <action selector="updateSegment:" destination="ZFk-xA-eIm" eventType="valueChanged" id="64H-VH-hvN"/>
+                                    <action selector="updateSegment:" destination="3ER-Zw-h6e" eventType="valueChanged" id="kJO-o8-oIx"/>
+                                </connections>
+                            </segmentedControl>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="bannerButton" destination="4m8-f7-IJw" id="mgO-QB-Qd3"/>
+                        <outlet property="partiesView" destination="PQc-FT-gKp" id="eRx-4q-mUL"/>
+                        <outlet property="segmentedControl" destination="bXC-he-xLr" id="rVy-IZ-m4k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hRq-ZN-r0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-258" y="-110"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="Idf-9B-kox">
             <objects>
@@ -294,7 +333,7 @@ Title 2</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fQ-Ls-6UJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="-1070"/>
+            <point key="canvasLocation" x="-1275" y="-942"/>
         </scene>
         <!--Party Navigation Controller-->
         <scene sceneID="Z8D-IW-uVH">
@@ -328,7 +367,7 @@ Title 2</string>
                             <tableViewSection id="KtS-3L-FNn">
                                 <cells>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="300" id="TAJ-2c-828">
-                                        <rect key="frame" x="0.0" y="64" width="600" height="300"/>
+                                        <rect key="frame" x="0.0" y="44" width="600" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TAJ-2c-828" id="IoB-Zv-cMC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
@@ -350,7 +389,7 @@ Title 2</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="57" id="aDh-K9-D0e">
-                                        <rect key="frame" x="0.0" y="364" width="600" height="57"/>
+                                        <rect key="frame" x="0.0" y="344" width="600" height="57"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aDh-K9-D0e" id="fp3-il-flp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="57"/>
@@ -387,7 +426,7 @@ Title2</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="200" id="4RP-Ug-TGM">
-                                        <rect key="frame" x="0.0" y="421" width="600" height="200"/>
+                                        <rect key="frame" x="0.0" y="401" width="600" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RP-Ug-TGM" id="0sZ-qg-rfp">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -416,7 +455,7 @@ Title2</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="Wed-kP-I51">
-                                        <rect key="frame" x="0.0" y="621" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="601" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wed-kP-I51" id="an3-gY-oBw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -458,7 +497,7 @@ Title2</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="192" id="pMU-HH-BgM">
-                                        <rect key="frame" x="0.0" y="698" width="600" height="192"/>
+                                        <rect key="frame" x="0.0" y="678" width="600" height="192"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pMU-HH-BgM" id="TuZ-Rl-ead">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="192"/>
@@ -496,7 +535,7 @@ Title2</string>
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="uwO-ac-6zh">
-                                        <rect key="frame" x="0.0" y="890" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="870" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uwO-ac-6zh" id="TmW-O5-gJW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -566,7 +605,7 @@ Title2</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="9bP-Ow-ToB">
-                                        <rect key="frame" x="0.0" y="967" width="600" height="61"/>
+                                        <rect key="frame" x="0.0" y="947" width="600" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bP-Ow-ToB" id="lOt-gd-zsV">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="61"/>
@@ -676,7 +715,7 @@ Title2</string>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xN4-lH-99F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1050" y="-619"/>
+            <point key="canvasLocation" x="-2714" y="-619"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cve-bs-sbi">
@@ -693,12 +732,12 @@ Title2</string>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ZFk-xA-eIm" kind="relationship" relationship="rootViewController" id="q3w-0B-OGM"/>
+                        <segue destination="3ER-Zw-h6e" kind="relationship" relationship="rootViewController" id="Vfc-ic-Aae"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wv1-kp-pPo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85" y="-110"/>
+            <point key="canvasLocation" x="-1267" y="-110"/>
         </scene>
         <!--About Parties-->
         <scene sceneID="a3F-Sr-Kp8">

@@ -9,23 +9,24 @@
 import UIKit
 import CoreLocation
 
+protocol PartiesTableViewControllerDelegate {
+    func load(completion: (() -> Void)?)
+}
+
 class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate, UIViewControllerPreviewingDelegate {
+    var selectedSegmentIndex = 0 {
+        didSet {
+            reloadData()
+        }
+    }
+
+    var delegate: PartiesTableViewControllerDelegate?
+
     private var parties = PartiesManager.sharedInstance.parties
     private let locationManager = CLLocationManager()
 
-    @IBOutlet weak var infoButton: UIButton!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
-
-        segmentedControl.selectedSegmentIndex = NSUserDefaults.standardUserDefaults().integerForKey("selectedSegmentIndex")
-
-        reloadData()
-        refreshControl?.beginRefreshing()
-        refresh(refreshControl)
 
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             locationManager.requestWhenInUseAuthorization()
@@ -41,16 +42,8 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    @IBAction func updateSegment(sender: UISegmentedControl) {
-        reloadData()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        userDefaults.setInteger(sender.selectedSegmentIndex, forKey: "selectedSegmentIndex")
-        userDefaults.synchronize()
-    }
-
     @IBAction func refresh(sender: UIRefreshControl?) {
-        PartiesManager.sharedInstance.load() { [weak self] in
-            self?.reloadData()
+        delegate?.load() {
             sender?.endRefreshing()
         }
     }
@@ -62,7 +55,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     // MARK: UITableViewDataSource
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+        if selectedSegmentIndex == 1 && parties.count == 0 {
             return 1
         } else {
             return parties.count
@@ -70,7 +63,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+        if selectedSegmentIndex == 1 && parties.count == 0 {
             return 1
         } else {
             return parties[section].count
@@ -78,7 +71,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+        if selectedSegmentIndex == 1 && parties.count == 0 {
             return tableView.dequeueReusableCellWithIdentifier("empty", forIndexPath: indexPath)
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath) as! PartyTableViewCell
@@ -91,7 +84,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     // MARK: UITableViewDelegate
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+        if selectedSegmentIndex == 1 && parties.count == 0 {
             let navigationControllerHeight = navigationController?.navigationBar.frame.size.height ?? 0
             return UIScreen.mainScreen().bounds.size.height-navigationControllerHeight-UIApplication.sharedApplication().statusBarFrame.size.height
         } else {
@@ -100,7 +93,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if segmentedControl.selectedSegmentIndex == 1 && parties.count == 0 {
+        if selectedSegmentIndex == 1 && parties.count == 0 {
             return 0
         } else {
             return 40
@@ -109,7 +102,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var view = UIView()
-        if !(segmentedControl.selectedSegmentIndex == 1 && parties.count == 0) && parties.count > section && parties[section].count > 0 {
+        if !(selectedSegmentIndex == 1 && parties.count == 0) && parties.count > section && parties[section].count > 0 {
             view = UIView(frame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 40.0))
             view.autoresizingMask = .FlexibleWidth
 
@@ -149,7 +142,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     // MARK: PartyTableViewControllerDelegate
 
     func reloadData() {
-        if segmentedControl.selectedSegmentIndex == 0 {
+        if selectedSegmentIndex == 0 {
             parties = PartiesManager.sharedInstance.parties
             tableView.scrollEnabled = true
         } else {
