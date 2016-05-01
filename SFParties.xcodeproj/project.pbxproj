@@ -15,7 +15,7 @@
 		B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B246FCA81CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m */; };
 		B246FCAD1CD52D0F00A0B42D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
-		B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartyModel.swift */; };
+		B26CC1831CD08C0E00B2198B /* PartiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartiesModel.swift */; };
 		B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */; };
 		B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1861CD10B8500B2198B /* PartiesManager.swift */; };
 		B2732EE819D9CB3E0074CC87 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */; };
@@ -70,7 +70,7 @@
 		B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SFParties-Bridging-Header.h"; sourceTree = "<group>"; };
 		B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
-		B26CC1821CD08C0E00B2198B /* PartyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyModel.swift; sourceTree = "<group>"; };
+		B26CC1821CD08C0E00B2198B /* PartiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesModel.swift; sourceTree = "<group>"; };
 		B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
 		B26CC1861CD10B8500B2198B /* PartiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesManager.swift; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -149,7 +149,7 @@
 				B2DD1E7E19CDEE9B00352537 /* LaunchScreen.storyboard */,
 				B246FCAC1CD52D0F00A0B42D /* AppDelegate.swift */,
 				B246FCA31CD50B9F00A0B42D /* HairlineConstraint.swift */,
-				B26CC1821CD08C0E00B2198B /* PartyModel.swift */,
+				B26CC1821CD08C0E00B2198B /* PartiesModel.swift */,
 				B26CC1801CD08A0900B2198B /* ServerManager.swift */,
 				B26CC1861CD10B8500B2198B /* PartiesManager.swift */,
 				B2F381FE1CD1A7C700D5AE1F /* PartyTableViewCell.swift */,
@@ -302,7 +302,7 @@
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
 				B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */,
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
-				B26CC1831CD08C0E00B2198B /* PartyModel.swift in Sources */,
+				B26CC1831CD08C0E00B2198B /* PartiesModel.swift in Sources */,
 				B26CC1871CD10B8500B2198B /* PartiesManager.swift in Sources */,
 				B246FCA41CD50B9F00A0B42D /* HairlineConstraint.swift in Sources */,
 				B2B3C36D1CD54A220026DDF8 /* PartyNavigationController.swift in Sources */,

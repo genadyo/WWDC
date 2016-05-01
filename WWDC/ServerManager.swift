@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerManager {
-    static func load(url: String, completion: ((parties: [[Party]], JSON: AnyObject?) -> Void)?) {
+    static func load(url: String, completion: ((results: ([[Party]], [Banner]), JSON: AnyObject?) -> Void)?) {
         if let url = NSURL(string: url) {
             let request = NSURLRequest(URL: url)
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -18,18 +18,18 @@ class ServerManager {
                     if let data = data {
                         do {
                             let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
-                            completion?(parties: processJSON(response), JSON: response)
+                            completion?(results: processJSON(response), JSON: response)
                         } catch {
-                            completion?(parties: [], JSON: nil)
+                            completion?(results: ([], []), JSON: nil)
                         }
                     } else {
-                        completion?(parties: [], JSON: nil)
+                        completion?(results: ([], []), JSON: nil)
                     }
                 }
             }
             task.resume()
         } else {
-            completion?(parties: [], JSON: nil)
+            completion?(results: ([], []), JSON: nil)
         }
     }
 
@@ -55,9 +55,9 @@ class ServerManager {
         return dateFormatter.stringFromDate(date)
     }
 
-    static func processJSON(JSON: AnyObject?) -> [[Party]] {
+    static func processJSON(JSON: AnyObject?) -> ([[Party]], [Banner]) {
         var allParties = [Party]()
-        if let parties = JSON as? [AnyObject] {
+        if let json = JSON as? [String: AnyObject], parties = json["parties"] as? [AnyObject] {
             for party in parties {
                 if let p = party as? [String: AnyObject],
                     objectId = p["objectId"] as? String,
@@ -93,7 +93,19 @@ class ServerManager {
             lastDate = party.startDate
         }
         partiesForDay.append(parties.sort({ $0.title < $1.title }))
-        
-        return partiesForDay
+
+        var banners = [Banner]()
+        if let json = JSON as? [String: AnyObject], bns = json["banners"] as? [AnyObject] {
+            for banner in bns {
+                if let b = banner as? [String: AnyObject],
+                    imageurl = b["\(Int(UIScreen.mainScreen().bounds.width))"] as? String, imageURL = NSURL(string: imageurl),
+                    url = b["url"] as? String, URL = NSURL(string: url)
+                {
+                    banners.append(Banner(imageURL: imageURL, url: URL))
+                }
+            }
+        }
+
+        return (partiesForDay, banners)
     }
 }

@@ -11,9 +11,9 @@ import Foundation
 class PartiesManager {
     static let sharedInstance = PartiesManager()
 
-    private var JSON: [AnyObject]? {
+    private var JSON: [String: AnyObject]? {
         get {
-            if let JSON = NSUserDefaults.standardUserDefaults().objectForKey("parties") as? [AnyObject] {
+            if let JSON = NSUserDefaults.standardUserDefaults().objectForKey("results") as? [String: AnyObject] {
                 return JSON
             } else {
                 return nil
@@ -21,23 +21,32 @@ class PartiesManager {
         }
         set {
             let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(newValue, forKey: "parties")
+            userDefaults.setObject(newValue, forKey: "results")
             userDefaults.synchronize()
         }
     }
 
     lazy private(set) var parties: [[Party]] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON)
+            return ServerManager.processJSON(JSON).0
+        } else {
+            return []
+        }
+    }()
+
+    lazy private(set) var banners: [Banner] = {
+        if let JSON = self.JSON {
+            return ServerManager.processJSON(JSON).1
         } else {
             return []
         }
     }()
 
     func load(completion: (() -> Void)?) {
-        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { [weak self] parties, JSON in
-            self?.parties = parties
-            self?.JSON = JSON as? [AnyObject]
+        ServerManager.load("https://github.com/genadyo/WWDC/raw/master/data/data.json") { [weak self] results, JSON in
+            self?.parties = results.0
+            self?.banners = results.1
+            self?.JSON = JSON as? [String: AnyObject]
             completion?()
         }
     }

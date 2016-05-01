@@ -62,3 +62,8 @@ struct Party {
         userDefaults.synchronize()
     }
 }
+
+struct Banner {
+    let imageURL: NSURL
+    let url: NSURL
+}
