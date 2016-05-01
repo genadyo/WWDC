@@ -31,9 +31,9 @@
     "banners":  [{
                     "320": "https://github.com/genadyo/WWDC/raw/master/data/banners/Caltrain_320.png",
                     "375": "https://github.com/genadyo/WWDC/raw/master/data/banners/Caltrain_375.png",
-                    "414": "https://github.com/genadyo/WWDC/raw/master/data/banners/Caltrain_314.png",
+                    "414": "https://github.com/genadyo/WWDC/raw/master/data/banners/Caltrain_414.png",
                     "url": "https://itunes.apple.com/us/app/caltrain-real-time-schedule/id1077039589?ls=1&mt=8"
-        }]
+                }]
 }
 
 
