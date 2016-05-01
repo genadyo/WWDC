@@ -248,16 +248,16 @@ Title 2</string>
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-FT-gKp">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-FT-gKp">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                 <connections>
                                     <segue destination="ZFk-xA-eIm" kind="embed" identifier="partiesTVC" id="Dh9-wn-32H"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4m8-f7-IJw">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4m8-f7-IJw">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="999" constant="50" id="5QM-Al-5ri"/>
+                                    <constraint firstAttribute="height" constant="50" id="5QM-Al-5ri"/>
                                 </constraints>
                                 <connections>
                                     <action selector="openBanner:" destination="3ER-Zw-h6e" eventType="touchUpInside" id="dep-Wl-ghM"/>
