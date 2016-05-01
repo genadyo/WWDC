@@ -44,6 +44,8 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
                     }
                 }
             }
+        } else {
+            bannerButton.hidden = true
         }
     }
 
