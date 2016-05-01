@@ -26,7 +26,11 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
         partiesTableViewController?.selectedSegmentIndex = segmentedControl.selectedSegmentIndex
 
         loadBanner()
-        load(nil)
+
+        partiesTableViewController?.refreshControl?.beginRefreshing()
+        load() { [weak self] in
+            self?.partiesTableViewController?.refreshControl?.endRefreshing()
+        }
     }
 
     func loadBanner() {
