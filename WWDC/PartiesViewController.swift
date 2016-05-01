@@ -67,7 +67,9 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
 
     func load(completion: (() -> Void)?) {
         PartiesManager.sharedInstance.load() { [weak self] in
-            self?.loadBanner()
+            if self?.banner == nil {
+                self?.loadBanner()
+            }
             self?.partiesTableViewController?.reloadData()
             completion?()
         }
