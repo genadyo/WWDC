@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate {
+class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate, UIViewControllerPreviewingDelegate {
     private var parties = PartiesManager.sharedInstance.parties
     private let locationManager = CLLocationManager()
 
@@ -29,6 +29,15 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
         if CLLocationManager.authorizationStatus() == .NotDetermined {
             locationManager.requestWhenInUseAuthorization()
+        }
+    }
+
+    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        // Peek & Pop
+        if traitCollection.forceTouchCapability == .Available {
+            registerForPreviewingWithDelegate(self, sourceView: view)
         }
     }
 
@@ -131,6 +140,12 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         return view
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+
+        performSegueWithIdentifier("party", sender: indexPath)
+    }
+
     // MARK: PartyTableViewControllerDelegate
 
     func reloadData() {
@@ -151,12 +166,25 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         tableView.reloadData()
     }
 
+    // MARK: UIViewControllerPreviewingDelegate
+
+    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRowAtPoint(location), cell = tableView.cellForRowAtIndexPath(indexPath) as? PartyTableViewCell, nvc = storyboard?.instantiateViewControllerWithIdentifier("partyNVC") as? PartyNavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where tableView.bounds.contains(tableView.rectForRowAtIndexPath(indexPath)) else { return nil }
+        previewingContext.sourceRect = cell.frame
+        vc.party = parties[indexPath.section][indexPath.row]
+        return nvc
+    }
+
+    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: false)
+    }
+
     // MARK: Navigation
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let nvc = segue.destinationViewController as? PartyNavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, cell = sender as? PartyTableViewCell where segue.identifier == "party" {
+        if let nvc = segue.destinationViewController as? PartyNavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, indexPath = sender as? NSIndexPath where segue.identifier == "party" {
             vc.delegate = self
-            vc.party = cell.party
+            vc.party = parties[indexPath.section][indexPath.row]
         } else if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? MapDayViewController, button = sender as? UIButton where segue.identifier == "map" {
             vc.navigationItem.title = parties[button.tag][0].date
             vc.parties = parties[button.tag]

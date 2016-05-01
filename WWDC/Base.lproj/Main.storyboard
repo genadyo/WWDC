@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
     </dependencies>
     <scenes>
         <!--Parties-->
@@ -113,10 +112,6 @@ Title 2</string>
                                     <outlet property="iconImageView" destination="wSf-jz-91p" id="KYh-KX-ECy"/>
                                     <outlet property="separatorView" destination="7YG-7O-CyH" id="257-dV-OJe"/>
                                     <outlet property="titleLabel" destination="tl9-99-CA5" id="vR7-bs-J6t"/>
-                                    <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" action="showViewController:sender:" id="hWH-5p-OlG">
-                                        <segue key="commit" inheritsFrom="parent" id="XEE-wP-GPT"/>
-                                        <segue key="preview" inheritsFrom="commit" id="BNd-WS-lNt"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="empty" rowHeight="504" id="IBX-RV-GO8">
@@ -211,6 +206,7 @@ Title 2</string>
                     <connections>
                         <outlet property="infoButton" destination="tpN-9a-wGx" id="OhW-Em-I7H"/>
                         <outlet property="segmentedControl" destination="bXC-he-xLr" id="HVz-Uc-zSo"/>
+                        <segue destination="Hzk-Hl-4lF" kind="showDetail" identifier="party" id="GPR-d1-jVa"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qbu-zn-c8b" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -304,7 +300,7 @@ Title 2</string>
         <!--Party Navigation Controller-->
         <scene sceneID="Z8D-IW-uVH">
             <objects>
-                <navigationController id="Hzk-Hl-4lF" customClass="PartyNavigationController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="partyNVC" id="Hzk-Hl-4lF" customClass="PartyNavigationController" customModule="Parties" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9lP-Ae-kP9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -932,8 +928,7 @@ Title2</string>
         <image name="twitter" width="16" height="14"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="hWH-5p-OlG"/>
-        <segue reference="cDJ-JX-H6Q"/>
+        <segue reference="98b-xs-Xcx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41568627450000001" green="0.43921568630000002" blue="0.88235294119999996" alpha="1" colorSpace="calibratedRGB"/>
 </document>
