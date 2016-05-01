@@ -43,7 +43,7 @@ class PartiesManager {
     }()
 
     func load(completion: (() -> Void)?) {
-        ServerManager.load("https://cdn.rawgit.com/genadyo/WWDC/master/data/data.json") { [weak self] results, JSON in
+        ServerManager.load("https://gitcdn.link/repo/genadyo/WWDC/master/data/data.json") { [weak self] results, JSON in
             self?.parties = results.0
             self?.banners = results.1
             self?.JSON = JSON as? [String: AnyObject]

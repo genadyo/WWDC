@@ -1,8 +1,8 @@
 {
     "parties":  [{
                     "objectId": "relay",
-                    "icon": "https://cdn.rawgit.com/genadyo/WWDC/master/data/icons/relay.png",
-                    "logo": "https://cdn.rawgit.com/genadyo/WWDC/master/data/logos/relay.jpg",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/relay.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/relay.jpg",
                     "title": "RelayCon: WWDC 2016",
                     "startDate": "2016-06-13T18:00",
                     "endDate": "2016-06-13T20:30",
@@ -15,8 +15,8 @@
                     "url": "https://www.eventbrite.com/e/relaycon-wwdc-2016-tickets-21418547452"
                 },{
                     "objectId": "hike",
-                    "icon": "https://cdn.rawgit.com/genadyo/WWDC/master/data/icons/hike.png",
-                    "logo": "https://cdn.rawgit.com/genadyo/WWDC/master/data/logos/hike.jpg",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/hike.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/hike.jpg",
                     "title": "WWDC Hike 2016",
                     "startDate": "2016-06-12T14:00",
                     "endDate": "2016-06-12T18:00",
@@ -29,9 +29,9 @@
                     "url": "http://wwdchike.com"
                 }],
     "banners":  [{
-                    "320": "https://cdn.rawgit.com/genadyo/WWDC/master/data/banners/Caltrain_320.png",
-                    "375": "https://cdn.rawgit.com/genadyo/WWDC/master/data/banners/Caltrain_375.png",
-                    "414": "https://cdn.rawgit.com/genadyo/WWDC/master/data/banners/Caltrain_414.png",
+                    "320": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_320.png",
+                    "375": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_375.png",
+                    "414": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_414.png",
                     "url": "https://itunes.apple.com/us/app/caltrain-real-time-schedule/id1077039589?ls=1&mt=8"
                 }]
 }
