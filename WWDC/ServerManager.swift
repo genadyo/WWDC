@@ -98,13 +98,10 @@ class ServerManager {
         if let json = JSON as? [String: AnyObject], bns = json["banners"] as? [AnyObject] {
             for banner in bns {
                 if let b = banner as? [String: AnyObject],
+                    imageurl = b["\(Int(UIScreen.mainScreen().bounds.width))"] as? String, imageURL = NSURL(string: imageurl),
                     url = b["url"] as? String, URL = NSURL(string: url)
                 {
-                    if let imageurl = b["\(Int(UIScreen.mainScreen().bounds.width))"] as? String, imageURL = NSURL(string: imageurl) {
-                        banners.append(Banner(imageURL: imageURL, url: URL))
-                    } else if let imageurl = b["375"] as? String, imageURL = NSURL(string: imageurl) {
-                        banners.append(Banner(imageURL: imageURL, url: URL))
-                    }
+                    banners.append(Banner(imageURL: imageURL, url: URL))
                 }
             }
         }
