@@ -11,7 +11,7 @@ import Foundation
 class ServerManager {
     static func load(url: String, completion: ((results: ([[Party]], [Banner]), JSON: AnyObject?) -> Void)?) {
         if let url = NSURL(string: url) {
-            let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 60.0)
+            let request = NSURLRequest(URL: url)
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
             let task = session.dataTaskWithRequest(request) { data, _, _ in
                 dispatch_async(dispatch_get_main_queue()) {
