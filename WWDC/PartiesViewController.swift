@@ -34,12 +34,14 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
     }
 
     func loadBanner() {
-        let banner = PartiesManager.sharedInstance.banners[Int(arc4random_uniform(UInt32(PartiesManager.sharedInstance.banners.count)))]
-        PINRemoteImageManager.sharedImageManager().downloadImageWithURL(banner.imageURL) { [weak self] result in
-            dispatch_async(dispatch_get_main_queue()) {
-                if let image = result.image {
-                    self?.banner = banner
-                    self?.bannerButton.setImage(image, forState: .Normal)
+        if PartiesManager.sharedInstance.banners.count > 0 {
+            let banner = PartiesManager.sharedInstance.banners[Int(arc4random_uniform(UInt32(PartiesManager.sharedInstance.banners.count)))]
+            PINRemoteImageManager.sharedImageManager().downloadImageWithURL(banner.imageURL) { [weak self] result in
+                dispatch_async(dispatch_get_main_queue()) {
+                    if let image = result.image {
+                        self?.banner = banner
+                        self?.bannerButton.setImage(image, forState: .Normal)
+                    }
                 }
             }
         }
