@@ -140,12 +140,7 @@
                     "longitude": -122.50618,
                     "url": "http://wwdchike.com"
                 }],
-    "banners":  [{
-                    "320": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_320.png",
-                    "375": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_375.png",
-                    "414": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_414.png",
-                    "url": "https://itunes.apple.com/app/apple-store/id1077039589?pt=493817&ct=parties&mt=8"
-                }]
+    "banners":  []
 }
 
 
