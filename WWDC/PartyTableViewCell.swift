@@ -13,6 +13,7 @@ class PartyTableViewCell: UITableViewCell {
     var party: Party? {
         didSet {
             if let party = party {
+                iconImageView.image = nil
                 iconImageView.pin_setImageFromURL(party.icon)
                 hoursLabel.text = party.hours
                 goingImageView.hidden = !party.isGoing
