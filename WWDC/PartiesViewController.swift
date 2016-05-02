@@ -29,6 +29,9 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
 
         loadBanner()
 
+        if let partiesTableViewController = partiesTableViewController, refreshControl = partiesTableViewController.refreshControl {
+            partiesTableViewController.tableView.contentOffset = CGPointMake(0, -refreshControl.frame.size.height)
+        }
         partiesTableViewController?.refreshControl?.beginRefreshing()
         load() { [weak self] in
             self?.partiesTableViewController?.refreshControl?.endRefreshing()
