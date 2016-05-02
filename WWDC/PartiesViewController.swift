@@ -17,6 +17,8 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
     @IBOutlet weak var partiesView: UIView!
     @IBOutlet weak var bannerButton: UIButton!
 
+    private let locationManager = CLLocationManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +32,10 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
         partiesTableViewController?.refreshControl?.beginRefreshing()
         load() { [weak self] in
             self?.partiesTableViewController?.refreshControl?.endRefreshing()
+        }
+
+        if CLLocationManager.authorizationStatus() == .NotDetermined {
+            locationManager.requestWhenInUseAuthorization()
         }
     }
 

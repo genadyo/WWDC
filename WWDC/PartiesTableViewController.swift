@@ -23,15 +23,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     var delegate: PartiesTableViewControllerDelegate?
 
     private var parties = PartiesManager.sharedInstance.parties
-    private let locationManager = CLLocationManager()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        if CLLocationManager.authorizationStatus() == .NotDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        }
-    }
 
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
