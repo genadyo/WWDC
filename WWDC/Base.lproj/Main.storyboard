@@ -578,7 +578,6 @@ Title2</string>
                                                     </state>
                                                     <connections>
                                                         <action selector="openLyft:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="nfb-pG-gk3"/>
-                                                        <action selector="openUber:" destination="cxA-AI-2vJ" eventType="touchUpInside" id="r3c-Fn-imZ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
