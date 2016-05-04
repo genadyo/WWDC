@@ -11,6 +11,7 @@ plugin 'cocoapods-keys', {
   :keys => [
     "Crashlytics",
     "Lyft",
+    "LyftSecret",
     "OneSignal"
   ]
 }
