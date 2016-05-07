@@ -44,7 +44,7 @@ class PartiesManager {
 
     func load(completion: (() -> Void)?) {
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
-            if let JSON = JSON as? [String: AnyObject] {
+            if let JSON = JSON as? [String: AnyObject], results = results {
                 self?.parties = results.0
                 self?.banners = results.1
                 self?.JSON = JSON

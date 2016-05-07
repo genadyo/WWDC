@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerManager {
-    static func load(url: String, completion: ((results: ([[Party]], [Banner]), JSON: AnyObject?) -> Void)?) {
+    static func load(url: String, completion: ((results: ([[Party]], [Banner])?, JSON: AnyObject?) -> Void)?) {
         if let url = NSURL(string: url) {
             let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 60.0)
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -20,16 +20,16 @@ class ServerManager {
                             let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments)
                             completion?(results: processJSON(response), JSON: response)
                         } catch {
-                            completion?(results: ([], []), JSON: nil)
+                            completion?(results: nil, JSON: nil)
                         }
                     } else {
-                        completion?(results: ([], []), JSON: nil)
+                        completion?(results: nil, JSON: nil)
                     }
                 }
             }
             task.resume()
         } else {
-            completion?(results: ([], []), JSON: nil)
+            completion?(results: nil, JSON: nil)
         }
     }
 
