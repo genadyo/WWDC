@@ -64,6 +64,7 @@ struct Party {
 }
 
 struct Banner {
+    let objectId: String
     let imageURL: NSURL
     let url: NSURL
 }

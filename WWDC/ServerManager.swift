@@ -99,9 +99,10 @@ class ServerManager {
             for banner in bns {
                 if let b = banner as? [String: AnyObject],
                     imageurl = b["\(Int(UIScreen.mainScreen().bounds.width))"] as? String, imageURL = NSURL(string: imageurl),
-                    url = b["url"] as? String, URL = NSURL(string: url)
+                    url = b["url"] as? String, URL = NSURL(string: url),
+                    objectId = b["objectId"] as? String
                 {
-                    banners.append(Banner(imageURL: imageURL, url: URL))
+                    banners.append(Banner(objectId: objectId, imageURL: imageURL, url: URL))
                 }
             }
         }

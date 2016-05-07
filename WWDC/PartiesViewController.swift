@@ -68,9 +68,9 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
     }
 
     @IBAction func openBanner(sender: UIButton) {
-        if let url = banner?.url {
+        if let url = banner?.url, objectId = banner?.objectId {
             UIApplication.sharedApplication().openURL(url)
-            Answers.logCustomEventWithName("Banner", customAttributes: ["url": url.absoluteString])
+            Answers.logCustomEventWithName("Banner", customAttributes: ["objectId": objectId])
         }
     }
 
