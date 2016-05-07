@@ -12,6 +12,7 @@ import SafariServices
 import Keys
 import Contacts
 import EventKitUI
+import Crashlytics
 
 protocol PartyTableViewControllerDelegate {
     func reloadData()
@@ -155,6 +156,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     @IBAction func openLyft(sender: AnyObject) {
         LyftManager.sharedInstance.setClientId(SfpartiesKeys().lyft(), clientSecret: SfpartiesKeys().lyftSecret())
         LyftManager.sharedInstance.openLyft(scope: "public", state: "")
+        Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
     }
 
     @IBAction func openWeb(sender: AnyObject) {

@@ -8,6 +8,7 @@
 
 import UIKit
 import PINRemoteImage
+import Crashlytics
 
 class PartiesViewController: UIViewController, PartiesTableViewControllerDelegate {
     var banner: Banner?
@@ -69,6 +70,7 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
     @IBAction func openBanner(sender: UIButton) {
         if let url = banner?.url {
             UIApplication.sharedApplication().openURL(url)
+            Answers.logCustomEventWithName("Banner", customAttributes: ["url": url.absoluteString])
         }
     }
 
