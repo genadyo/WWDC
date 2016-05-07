@@ -29,7 +29,7 @@
                     "url": "http://wwdchike.com"
                 }],
     "banners":  [{
-                    "objectId": "caltrain"
+                    "objectId": "caltrain",
                     "320": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_320.png",
                     "375": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_375.png",
                     "414": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_414.png",
