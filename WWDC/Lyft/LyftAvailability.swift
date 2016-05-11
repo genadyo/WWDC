@@ -8,26 +8,26 @@
 
 //  Examples:
 //
-//  Lyft.requestRideTypes(RideTypesQuery(lat: 37.7833, lng: -122.4167)) { response, error in
+//  Lyft.requestRideTypes(rideTypesQuery: RideTypesQuery(lat: 37.7833, lng: -122.4167)) { response, error in
 //
 //  }
 //
-//  Lyft.requestETA(ETAQuery(lat: 37.7833, lng: -122.4167)) { response, error in
+//  Lyft.requestETA(etaQuery: ETAQuery(lat: 37.7833, lng: -122.4167)) { response, error in
 //
 //  }
 //
-//  Lyft.requestCost(CostQuery(startLat: 37.7833, startLng: -122.4167, endLat: 37.7972, endLng: -122.4533)) { response, error in
+//  Lyft.requestCost(costQuery: CostQuery(startLat: 37.7833, startLng: -122.4167, endLat: 37.7972, endLng: -122.4533)) { response, error in
 //
 //  }
 //
-//  Lyft.requestNearbyDrivers(NearbyDriversQuery(lat: 37.7789, lng: -122.45690)) { response, error in
+//  Lyft.requestNearbyDrivers(nearbyDriversQuery: NearbyDriversQuery(lat: 37.7789, lng: -122.45690)) { response, error in
 //
 //  }
 
 import Foundation
 
 extension Lyft {
-    static func requestRideTypes(rideTypesQuery: RideTypesQuery, completionHandler: ((response: [RideTypesResponse]?, error: NSError?) -> ())?) {
+    static func requestRideTypes(rideTypesQuery rideTypesQuery: RideTypesQuery, completionHandler: ((response: [RideTypesResponse]?, error: NSError?) -> ())?) {
         request(.GET, path: "/ridetypes", params: ["lat": "\(rideTypesQuery.lat)", "lng": "\(rideTypesQuery.lng)", "ride_type": rideTypesQuery.rideType.rawValue]) { response, error in
             if let error = error {
                 completionHandler?(response: nil, error: error)
@@ -73,12 +73,12 @@ extension Lyft {
         }
     }
 
-    static func requestETA(etaQuery: ETAQuery, completionHandler: ((response: [EtaEstimate]?, error: NSError?) -> ())?) {
+    static func requestETA(etaQuery etaQuery: ETAQuery, completionHandler: ((response: [ETAEstimate]?, error: NSError?) -> ())?) {
         request(.GET, path: "/eta", params: ["lat": "\(etaQuery.lat)", "lng": "\(etaQuery.lng)", "ride_type": etaQuery.rideType.rawValue]) { response, error in
             if let error = error {
                 completionHandler?(response: nil, error: error)
             } else {
-                var etaEstimatesResponse = [EtaEstimate]()
+                var etaEstimatesResponse = [ETAEstimate]()
                 if let etaEstimates = response["eta_estimates"] as? [AnyObject] {
                     for e in etaEstimates {
                         if let e = e as? [String: AnyObject],
@@ -87,7 +87,7 @@ extension Lyft {
                             rideType = RideType(rawValue: rType),
                             etaSeconds = e["eta_seconds"] as? Int {
                             etaEstimatesResponse.append(
-                                EtaEstimate(
+                                ETAEstimate(
                                     displayName: displayName,
                                     rideType: rideType,
                                     etaSeconds: etaSeconds
@@ -101,7 +101,7 @@ extension Lyft {
         }
     }
 
-    static func requestCost(costQuery: CostQuery, completionHandler: ((response: [CostEstimate]?, error: NSError?) -> ())?) {
+    static func requestCost(costQuery costQuery: CostQuery, completionHandler: ((response: [CostEstimate]?, error: NSError?) -> ())?) {
         request(.GET, path: "/cost", params: [
             "start_lat": "\(costQuery.startLat)",
             "start_lng": "\(costQuery.startLng)",
@@ -147,7 +147,7 @@ extension Lyft {
         }
     }
 
-    static func requestNearbyDrivers(nearbyDriversQuery: NearbyDriversQuery, completionHandler: ((response: [NearbyDrivers]?, error: NSError?) -> ())?) {
+    static func requestNearbyDrivers(nearbyDriversQuery nearbyDriversQuery: NearbyDriversQuery, completionHandler: ((response: [NearbyDrivers]?, error: NSError?) -> ())?) {
         request(.GET, path: "/drivers", params: ["lat": "\(nearbyDriversQuery.lat)", "lng": "\(nearbyDriversQuery.lng)"]) { response, error in
             if let error = error {
                 completionHandler?(response: nil, error: error)

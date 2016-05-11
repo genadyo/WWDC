@@ -92,7 +92,7 @@ struct RideTypesResponse {
     let seats: Int
 }
 
-struct EtaEstimate {
+struct ETAEstimate {
     let displayName: String
     let rideType: RideType
     let etaSeconds: Int

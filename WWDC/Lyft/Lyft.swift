@@ -32,9 +32,11 @@ class Lyft {
     static func login(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
 
+        let string = "https://api.lyft.com/oauth/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)"
+
         sharedInstance.completionHandler = completionHandler
 
-        if let url = NSURL(string: "https://api.lyft.com/oauth/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)") {
+        if let url = NSURL(string: string.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!) {
             UIApplication.sharedApplication().openURL(url)
         }
     }
@@ -105,7 +107,7 @@ class Lyft {
         }
     }
 
-    static func request(type: HTTPMethod, path: String, params: [String: AnyObject], completionHandler: ((response: [String: AnyObject], error: NSError?) -> ())?) {
+    static func request(type: HTTPMethod, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject], error: NSError?) -> ())?) {
         guard let accessToken = sharedInstance.accessToken else { return }
 
         var p = "https://api.lyft.com/v1" + path
@@ -123,7 +125,7 @@ class Lyft {
 
             do {
                 // Body
-                if type == .POST {
+                if let params = params  where type == .POST {
                     let body = try NSJSONSerialization.dataWithJSONObject(params, options: [])
                     urlRequest.HTTPBody = body
                 }
