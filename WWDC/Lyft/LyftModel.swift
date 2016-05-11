@@ -154,3 +154,25 @@ struct CancelConfirmationToken {
     let token: String
     let tokenDuration: Int
 }
+
+struct Tip {
+    let amount: Int
+    let currency: String
+
+    init(amount: Int = 0, currency: String = "") {
+        self.amount = amount
+        self.currency = currency
+    }
+}
+
+struct RateAndTipQuery {
+    let rating: Int
+    let tip: Tip
+    let feedback: String
+
+    init(rating: Int, tipAmount: Int = 0, tipCurrency: String = "", feedback: String = "") {
+        self.rating = rating
+        self.tip = Tip(amount: tipAmount, currency: tipCurrency)
+        self.feedback = feedback
+    }
+}

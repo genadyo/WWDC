@@ -30,9 +30,7 @@ extension Lyft {
             "ride_type": requestRideQuery.rideType.rawValue,
             "primetime_confirmation_token": requestRideQuery.primetimeConfirmationToken]
         ) { response, error in
-            if let error = error {
-                completionHandler?(result: nil, response: response, error: error)
-            } else if let response = response {
+            if let response = response {
                 if let passenger = response["passenger"] as? [String: AnyObject],
                     firstName = passenger["first_name"] as? String,
                     origin = response["origin"] as? [String: AnyObject],
@@ -51,7 +49,7 @@ extension Lyft {
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
                 } else {
-                    completionHandler?(result: nil, response: response, error: nil)
+                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
         }
@@ -59,9 +57,7 @@ extension Lyft {
 
     static func requestRideDetails(rideId rideId: String, completionHandler: ((result: Ride?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/rides/\(rideId)", params: nil) { response, error in
-            if let error = error {
-                completionHandler?(result: nil, response: response, error: error)
-            } else if let response = response {
+            if let response = response {
                 if let passenger = response["passenger"] as? [String: AnyObject],
                     firstName = passenger["first_name"] as? String,
                     origin = response["origin"] as? [String: AnyObject],
@@ -80,7 +76,7 @@ extension Lyft {
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
                 } else {
-                    completionHandler?(result: nil, response: response, error: nil)
+                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
         }
@@ -88,18 +84,26 @@ extension Lyft {
 
     static func cancelRide(rideId rideId: String, cancelConfirmationToken: String? = nil, completionHandler: ((result: CancelConfirmationToken?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.POST, path: "/rides/\(rideId)/cancel", params: (cancelConfirmationToken != nil) ? ["cancel_confirmation_token": cancelConfirmationToken!] : nil) { response, error in
-            if let error = error {
-                completionHandler?(result: nil, response: response, error: error)
-            } else if let response = response {
+            if let response = response {
                 if let amount = response["amount"] as? Int,
                     currency = response["currency"] as? String,
                     token = response["token"] as? String,
                     tokenDuration = response["token_duration"] as? Int {
                     completionHandler?(result: CancelConfirmationToken(amount: amount, currency: currency, token: token, tokenDuration: tokenDuration), response: response, error: nil)
                 } else {
-                    completionHandler?(result: nil, response: response, error: nil)
+                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
+        }
+    }
+
+    static func rateAndTipRide(rideId rideId: String, rateAndTipQuery: RateAndTipQuery, completionHandler: ((result: CancelConfirmationToken?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+        request(.POST, path: "/rides/\(rideId)/rating", params: [
+            "rating": rateAndTipQuery.rating,
+            "tip": ["amount": rateAndTipQuery.tip.amount, "currency": rateAndTipQuery.tip.currency],
+            "feedback": rateAndTipQuery.feedback])
+        { response, error in
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 }
