@@ -202,3 +202,15 @@ struct RideReceipt {
     let charge: [Charge]
     let requestedAt: String
 }
+
+struct RidesHistoryQuery {
+    let startTime: String
+    let endTime: String
+    let limit: Int
+
+    init(startTime: String, endTime: String = "", limit: Int = 0) {
+        self.startTime = startTime
+        self.endTime = endTime
+        self.limit = limit
+    }
+}

@@ -27,6 +27,10 @@
 //  Lyft.requestRideReceipt(rideId: "123456789") { result, response, error in
 //
 //  }
+//
+//  Lyft.requestRidesHistory(ridesHistoryQuery: RidesHistoryQuery(startTime: "2015-12-01T21:04:22Z", endTime: "2015-12-04T21:04:22Z", limit: 10) { result, response, error in
+//
+//  }
 
 import Foundation
 
@@ -106,7 +110,7 @@ extension Lyft {
     }
 
     static func rateAndTipRide(rideId rideId: String, rateAndTipQuery: RateAndTipQuery, completionHandler: ((result: AnyObject?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
-        request(.POST, path: "/rides/\(rideId)/rating", params: [
+        request(.PUT, path: "/rides/\(rideId)/rating", params: [
             "rating": rateAndTipQuery.rating,
             "tip": ["amount": rateAndTipQuery.tip.amount, "currency": rateAndTipQuery.tip.currency],
             "feedback": rateAndTipQuery.feedback])
@@ -116,7 +120,7 @@ extension Lyft {
     }
 
     static func requestRideReceipt(rideId rideId: String, completionHandler: ((result: RideReceipt?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
-        request(.POST, path: "/rides/\(rideId)/receipt", params: nil) { response, error in
+        request(.GET, path: "/rides/\(rideId)/receipt", params: nil) { response, error in
             if let response = response {
                 if let rideId = response["ride_id"] as? String,
                     price = response["price"] as? [String: AnyObject],
@@ -144,6 +148,13 @@ extension Lyft {
                     completionHandler?(result: nil, response: response, error: error)
                 }
             }
+        }
+    }
+
+    static func requestRidesHistory(ridesHistoryQuery ridesHistoryQuery: RidesHistoryQuery, completionHandler: ((result: AnyObject?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+        request(.GET, path: "/rides", params: ["start_time": ridesHistoryQuery.startTime, "end_time": ridesHistoryQuery.endTime, "limit": ridesHistoryQuery.limit])
+        { response, error in
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 }

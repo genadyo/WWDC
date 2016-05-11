@@ -11,6 +11,7 @@ import Foundation
 enum HTTPMethod: String {
     case GET = "GET"
     case POST = "POST"
+    case PUT = "PUT"
 }
 
 class Lyft {
@@ -125,7 +126,7 @@ class Lyft {
 
             do {
                 // Body
-                if let params = params  where type == .POST {
+                if let params = params  where type == .POST || type == .PUT {
                     let body = try NSJSONSerialization.dataWithJSONObject(params, options: [])
                     urlRequest.HTTPBody = body
                 }
