@@ -176,3 +176,29 @@ struct RateAndTipQuery {
         self.feedback = feedback
     }
 }
+
+struct Price {
+    let amount: Int
+    let currency: String
+    let description: String
+}
+
+struct LineItem {
+    let amount: Int
+    let currency: String
+    let type: String
+}
+
+struct Charge {
+    let amount: Int
+    let currency: String
+    let paymentMethod: String
+}
+
+struct RideReceipt {
+    let rideId: String
+    let price: Price
+    let lineItems: [LineItem]
+    let charge: [Charge]
+    let requestedAt: String
+}

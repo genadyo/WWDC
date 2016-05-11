@@ -23,6 +23,10 @@
 //  Lyft.rateAndTipRide(rideId: "123456789", rateAndTipQuery: RateAndTipQuery(rating: 5, tipAmount: 100, tipCurrency: "USA", feedback: "great ride!")  { result, response, error in
 //
 //  }
+//
+//  Lyft.requestRideReceipt(rideId: "123456789") { result, response, error in
+//
+//  }
 
 import Foundation
 
@@ -108,6 +112,38 @@ extension Lyft {
             "feedback": rateAndTipQuery.feedback])
         { response, error in
             completionHandler?(result: nil, response: response, error: error)
+        }
+    }
+
+    static func requestRideReceipt(rideId rideId: String, completionHandler: ((result: RideReceipt?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+        request(.POST, path: "/rides/\(rideId)/receipt", params: nil) { response, error in
+            if let response = response {
+                if let rideId = response["ride_id"] as? String,
+                    price = response["price"] as? [String: AnyObject],
+                    priceAmount = price["amount"] as? Int,
+                    priceCurrency = price["currency"] as? String,
+                    priceDescription = price["description"] as? String,
+                    lineItems = response["line_items"] as? [AnyObject],
+                    charges = response["charges"] as? [AnyObject],
+                    requestedAt = response["requested_at"] as? String {
+                    var l = [LineItem]()
+                    for lineItem in lineItems {
+                        if let amount = lineItem["amount"] as? Int, currency = lineItem["currency"] as? String, type = lineItem["type"] as? String {
+                            l.append(LineItem(amount: amount, currency: currency, type: type))
+                        }
+                    }
+                    var c = [Charge]()
+                    for charge in charges {
+                        if let amount = charge["amount"] as? Int, currency = charge["currency"] as? String, paymentMethod = charge["payment_method"] as? String {
+                            c.append(Charge(amount: amount, currency: currency, paymentMethod: paymentMethod))
+                        }
+                    }
+                    let price = Price(amount: priceAmount, currency: priceCurrency, description: priceDescription)
+                    completionHandler?(result: RideReceipt(rideId: rideId, price: price, lineItems: l, charge: c, requestedAt: requestedAt), response: response, error: nil)
+                } else {
+                    completionHandler?(result: nil, response: response, error: error)
+                }
+            }
         }
     }
 }
