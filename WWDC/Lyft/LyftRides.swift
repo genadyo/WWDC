@@ -8,7 +8,7 @@
 
 //  Examples:
 //
-//  Lyft.requestRide(requestRidePost: RequestRidePost(originLat: 34.305658, originLng: -118.8893667, originAddress: "123 Main St, Anytown, CA", destinationLat: 36.9442175, destinationLng: -123.8679133, destinationAddress: "123 Main St, Anytown, CA", rideType: .Lyft)) { result, response, error in
+//  Lyft.requestRide(requestRideQuery: RequestRideQuery(originLat: 34.305658, originLng: -118.8893667, originAddress: "123 Main St, Anytown, CA", destinationLat: 36.9442175, destinationLng: -123.8679133, destinationAddress: "123 Main St, Anytown, CA", rideType: .Lyft)) { result, response, error in
 //
 //  }
 //
@@ -23,12 +23,12 @@
 import Foundation
 
 extension Lyft {
-    static func requestRide(requestRidePost requestRidePost: RequestRidePost, completionHandler: ((result: Ride?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+    static func requestRide(requestRideQuery requestRideQuery: RequestRideQuery, completionHandler: ((result: Ride?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.POST, path: "/rides", params: [
-            "origin": ["lat": "\(requestRidePost.origin.lat)", "lng": "\(requestRidePost.origin.lng)", "address": "\(requestRidePost.origin.address)"],
-            "destination": ["lat": "\(requestRidePost.destination.lat)", "lng": "\(requestRidePost.destination.lng)", "address": "\(requestRidePost.destination.address)"],
-            "ride_type": requestRidePost.rideType.rawValue,
-            "primetime_confirmation_token": requestRidePost.primetimeConfirmationToken]
+            "origin": ["lat": "\(requestRideQuery.origin.lat)", "lng": "\(requestRideQuery.origin.lng)", "address": "\(requestRideQuery.origin.address)"],
+            "destination": ["lat": "\(requestRideQuery.destination.lat)", "lng": "\(requestRideQuery.destination.lng)", "address": "\(requestRideQuery.destination.address)"],
+            "ride_type": requestRideQuery.rideType.rawValue,
+            "primetime_confirmation_token": requestRideQuery.primetimeConfirmationToken]
         ) { response, error in
             if let error = error {
                 completionHandler?(result: nil, response: response, error: error)

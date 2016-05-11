@@ -60,7 +60,7 @@ struct NearbyDriversQuery {
     let lng: Float
 }
 
-struct RequestRidePost {
+struct RequestRideQuery {
     let origin: Address
     let destination: Address
     let rideType: RideType
