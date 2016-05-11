@@ -19,6 +19,10 @@
 //  Lyft.cancelRide(rideId: "123456789") { result, response, error in
 //
 //  }
+//
+//  Lyft.rateAndTipRide(rideId: "123456789", rateAndTipQuery: RateAndTipQuery(rating: 5, tipAmount: 100, tipCurrency: "USA", feedback: "great ride!")  { result, response, error in
+//
+//  }
 
 import Foundation
 
@@ -97,7 +101,7 @@ extension Lyft {
         }
     }
 
-    static func rateAndTipRide(rideId rideId: String, rateAndTipQuery: RateAndTipQuery, completionHandler: ((result: CancelConfirmationToken?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+    static func rateAndTipRide(rideId rideId: String, rateAndTipQuery: RateAndTipQuery, completionHandler: ((result: AnyObject?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.POST, path: "/rides/\(rideId)/rating", params: [
             "rating": rateAndTipQuery.rating,
             "tip": ["amount": rateAndTipQuery.tip.amount, "currency": rateAndTipQuery.tip.currency],
