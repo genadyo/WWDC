@@ -8,30 +8,30 @@
 
 //  Examples:
 //
-//  Lyft.requestRideTypes(rideTypesQuery: RideTypesQuery(lat: 37.7833, lng: -122.4167)) { response, error in
+//  Lyft.requestRideTypes(rideTypesQuery: RideTypesQuery(lat: 37.7833, lng: -122.4167)) { result, response, error in
 //
 //  }
 //
-//  Lyft.requestETA(etaQuery: ETAQuery(lat: 37.7833, lng: -122.4167)) { response, error in
+//  Lyft.requestETA(etaQuery: ETAQuery(lat: 37.7833, lng: -122.4167)) { result, response, error in
 //
 //  }
 //
-//  Lyft.requestCost(costQuery: CostQuery(startLat: 37.7833, startLng: -122.4167, endLat: 37.7972, endLng: -122.4533)) { response, error in
+//  Lyft.requestCost(costQuery: CostQuery(startLat: 37.7833, startLng: -122.4167, endLat: 37.7972, endLng: -122.4533)) { result, response, error in
 //
 //  }
 //
-//  Lyft.requestNearbyDrivers(nearbyDriversQuery: NearbyDriversQuery(lat: 37.7789, lng: -122.45690)) { response, error in
+//  Lyft.requestNearbyDrivers(nearbyDriversQuery: NearbyDriversQuery(lat: 37.7789, lng: -122.45690)) { result, response, error in
 //
 //  }
 
 import Foundation
 
 extension Lyft {
-    static func requestRideTypes(rideTypesQuery rideTypesQuery: RideTypesQuery, completionHandler: ((response: [RideTypesResponse]?, error: NSError?) -> ())?) {
+    static func requestRideTypes(rideTypesQuery rideTypesQuery: RideTypesQuery, completionHandler: ((result: [RideTypesResponse]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/ridetypes", params: ["lat": "\(rideTypesQuery.lat)", "lng": "\(rideTypesQuery.lng)", "ride_type": rideTypesQuery.rideType.rawValue]) { response, error in
             if let error = error {
-                completionHandler?(response: nil, error: error)
-            } else {
+                completionHandler?(result: nil, response: nil, error: error)
+            } else if let response = response {
                 var rideTypesResponse = [RideTypesResponse]()
                 if let rideTypes = response["ride_types"] as? [AnyObject] {
                     for r in rideTypes {
@@ -68,16 +68,16 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(response: rideTypesResponse, error: nil)
+                completionHandler?(result: rideTypesResponse, response: response, error: nil)
             }
         }
     }
 
-    static func requestETA(etaQuery etaQuery: ETAQuery, completionHandler: ((response: [ETAEstimate]?, error: NSError?) -> ())?) {
+    static func requestETA(etaQuery etaQuery: ETAQuery, completionHandler: ((result: [ETAEstimate]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/eta", params: ["lat": "\(etaQuery.lat)", "lng": "\(etaQuery.lng)", "ride_type": etaQuery.rideType.rawValue]) { response, error in
             if let error = error {
-                completionHandler?(response: nil, error: error)
-            } else {
+                completionHandler?(result: nil, response: response, error: error)
+            } else if let response = response {
                 var etaEstimatesResponse = [ETAEstimate]()
                 if let etaEstimates = response["eta_estimates"] as? [AnyObject] {
                     for e in etaEstimates {
@@ -96,12 +96,12 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(response: etaEstimatesResponse, error: nil)
+                completionHandler?(result: etaEstimatesResponse, response: response, error: nil)
             }
         }
     }
 
-    static func requestCost(costQuery costQuery: CostQuery, completionHandler: ((response: [CostEstimate]?, error: NSError?) -> ())?) {
+    static func requestCost(costQuery costQuery: CostQuery, completionHandler: ((result: [CostEstimate]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/cost", params: [
             "start_lat": "\(costQuery.startLat)",
             "start_lng": "\(costQuery.startLng)",
@@ -110,8 +110,8 @@ extension Lyft {
             "ride_type": costQuery.rideType.rawValue]
         ) { response, error in
             if let error = error {
-                completionHandler?(response: nil, error: error)
-            } else {
+                completionHandler?(result: nil, response: response, error: error)
+            } else if let response = response {
                 var costEstimateResponse = [CostEstimate]()
                 if let costEstimates = response["cost_estimates"] as? [AnyObject] {
                     for c in costEstimates {
@@ -142,16 +142,16 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(response: costEstimateResponse, error: nil)
+                completionHandler?(result: costEstimateResponse, response: response, error: nil)
             }
         }
     }
 
-    static func requestNearbyDrivers(nearbyDriversQuery nearbyDriversQuery: NearbyDriversQuery, completionHandler: ((response: [NearbyDrivers]?, error: NSError?) -> ())?) {
+    static func requestNearbyDrivers(nearbyDriversQuery nearbyDriversQuery: NearbyDriversQuery, completionHandler: ((result: [NearbyDrivers]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/drivers", params: ["lat": "\(nearbyDriversQuery.lat)", "lng": "\(nearbyDriversQuery.lng)"]) { response, error in
             if let error = error {
-                completionHandler?(response: nil, error: error)
-            } else {
+                completionHandler?(result: nil, response: response, error: error)
+            } else if let response = response {
                 var nearbyDriversResponse = [NearbyDrivers]()
                 if let nearbyDrivers = response["nearby_drivers"] as? [AnyObject] {
                     for n in nearbyDrivers {
@@ -175,7 +175,7 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(response: nearbyDriversResponse, error: nil)
+                completionHandler?(result: nearbyDriversResponse, response: response, error: nil)
             }
         }
     }

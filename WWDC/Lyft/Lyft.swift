@@ -107,7 +107,7 @@ class Lyft {
         }
     }
 
-    static func request(type: HTTPMethod, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject], error: NSError?) -> ())?) {
+    static func request(type: HTTPMethod, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject]?, error: NSError?) -> ())?) {
         guard let accessToken = sharedInstance.accessToken else { return }
 
         var p = "https://api.lyft.com/v1" + path
