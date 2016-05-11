@@ -2,9 +2,11 @@ platform :ios, '9.0'
 inhibit_all_warnings!
 use_frameworks!
 
-pod 'Crashlytics'
-pod 'OneSignal'
-pod 'PINRemoteImage'
+target 'SFParties' do
+    pod 'Crashlytics'
+    pod 'OneSignal'
+    pod 'PINRemoteImage'
+end
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
