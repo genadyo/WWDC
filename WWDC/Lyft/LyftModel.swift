@@ -147,3 +147,10 @@ struct Ride {
     let destination: Address
     let passenger: Passenger
 }
+
+struct CancelConfirmationToken {
+    let amount: Int
+    let currency: String
+    let token: String
+    let tokenDuration: Int
+}

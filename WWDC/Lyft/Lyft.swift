@@ -133,14 +133,18 @@ class Lyft {
                 let session = NSURLSession(configuration: sessionConfiguration)
                 let task = session.dataTaskWithRequest(urlRequest) { data, response, error in
                     if let data = data {
-                        do {
-                            if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
-                                completionHandler?(response: response, error: nil)
-                            } else {
-                                print("No access_token")
+                        if data.length == 0 {
+                            completionHandler?(response: [:], error: nil)
+                        } else {
+                            do {
+                                if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
+                                    completionHandler?(response: response, error: nil)
+                                } else {
+                                    print("No response")
+                                }
+                            } catch {
+                                print("Response JSON Serialization Failed")
                             }
-                        } catch {
-                            print("Response JSON Serialization Failed")
                         }
                     } else {
                         print("data == nil")
