@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Crashlytics
         Fabric.with([Crashlytics.startWithAPIKey(keys.crashlytics())])
 
-        Lyft.set(clientId: SfpartiesKeys().lyft(), clientSecret: SfpartiesKeys().lyftSecret())
+        Lyft.set(clientId: SfpartiesKeys().lyft(), clientSecret: SfpartiesKeys().lyftSecret(), sandbox: true)
 
         // Default time
         NSTimeZone.setDefaultTimeZone(NSTimeZone(name: "PST")!)

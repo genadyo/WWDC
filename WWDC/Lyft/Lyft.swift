@@ -17,12 +17,16 @@ class Lyft {
     static let sharedInstance = Lyft()
     private var clientId: String?
     private var clientSecret: String?
+    private var sandbox = false
     private var accessToken: String?
     private var completionHandler: ((success: Bool, error: NSError?) -> ())?
 
-    static func set(clientId clientId: String, clientSecret: String) {
+    static func set(clientId clientId: String, clientSecret: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
+        if let sandbox = sandbox {
+            sharedInstance.sandbox = sandbox
+        }
     }
 
     static func login(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
@@ -60,7 +64,12 @@ class Lyft {
 
 
             // Auth
-            let authString = "\(clientId):SANDBOX-\(clientSecret)"
+            let authString: String
+            if sandbox == true {
+                authString = "\(clientId):SANDBOX-\(clientSecret)"
+            } else {
+                authString = "\(clientId):\(clientSecret)"
+            }
             let authData = authString.dataUsingEncoding(NSUTF8StringEncoding)
             if let authBase64 = authData?.base64EncodedStringWithOptions([]) {
                 sessionConfiguration.HTTPAdditionalHeaders = ["Authorization" : "Basic \(authBase64)"]
