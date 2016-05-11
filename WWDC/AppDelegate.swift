@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Crashlytics
         Fabric.with([Crashlytics.startWithAPIKey(keys.crashlytics())])
 
+        Lyft.set(clientId: SfpartiesKeys().lyft(), clientSecret: SfpartiesKeys().lyftSecret())
+
         // Default time
         NSTimeZone.setDefaultTimeZone(NSTimeZone(name: "PST")!)
 
@@ -49,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return LyftManager.sharedInstance.openURL(url)
+        return Lyft.sharedInstance.openURL(url)
     }
 
     // MARK: UISplitViewControllerDelegate

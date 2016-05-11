@@ -154,8 +154,11 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: AnyObject) {
-        LyftManager.sharedInstance.setClientId(SfpartiesKeys().lyft(), clientSecret: SfpartiesKeys().lyftSecret())
-        LyftManager.sharedInstance.openLyft(scope: "public", state: "")
+        Lyft.login(scope: "public") { success, error in
+            if success == true {
+                // promo
+            }
+        }
         Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
     }
 
