@@ -27,6 +27,20 @@
                     "latitude": 37.785443,
                     "longitude": -122.50618,
                     "url": "http://wwdchike.com"
+                },{
+                    "objectId": "diversion",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/diversion.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/diversion.jpg",
+                    "title": "WWDC Diversion",
+                    "startDate": "2016-06-15T19:00",
+                    "endDate": "2016-06-15T22:00",
+                    "details": "It wouldn't be WWDC without a little Diversion!\nCome join your friends from Apteligent & Localytics for the 3rd annual WWDC Diversion Party at 620 Jones on Wednesday, June 15th.  \nMingle over some cocktails, reconnect with old colleagues, make new connections or just enjoy the ambiance. Whatever your reason, this is the place to be.\nThis can't-miss event has sold out in prior years, so don't be left in the dust. Get your ticket today!\n\n* You must be 21 or older to attend.\n\nWHEN\nWednesday, June 15, 2016 from 7:00 PM to 10:00 PM (PDT) - Add to Calendar\nWHERE\nJones - 620 Jones Street, San Francisco, CA 94102 - View Map",
+                    "address1": "Jones",
+                    "address2": "620 Jones Street",
+                    "address3": "San Francisco, CA 94102",
+                    "latitude": 37.78718,
+                    "longitude": -122.41299,
+                    "url": "https://www.eventbrite.com/e/wwdc--tickets-25098636698"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
