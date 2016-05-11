@@ -154,7 +154,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: AnyObject) {
-        Lyft.login(scope: "public") { success, error in
+        Lyft.login(scope: "rides.request") { success, error in
             if success == true {
                 // promo
             }

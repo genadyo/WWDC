@@ -16,7 +16,7 @@
 //
 //  }
 //
-//  Lyft.requestCost(CostQuery(start_lat: 37.7833, start_lng: -122.4167, end_lat: 37.7972, end_lng: -122.4533)) { response, error in
+//  Lyft.requestCost(CostQuery(startLat: 37.7833, startLng: -122.4167, endLat: 37.7972, endLng: -122.4533)) { response, error in
 //
 //  }
 //
@@ -103,10 +103,10 @@ extension Lyft {
 
     static func requestCost(costQuery: CostQuery, completionHandler: ((response: [CostEstimate]?, error: NSError?) -> ())?) {
         request(.GET, path: "/cost", params: [
-            "start_lat": "\(costQuery.start_lat)",
-            "start_lng": "\(costQuery.start_lng)",
-            "end_lat": costQuery.end_lat == 0 ? "" : "\(costQuery.end_lat)",
-            "end_lng": costQuery.end_lng == 0 ? "" : "\(costQuery.end_lng)",
+            "start_lat": "\(costQuery.startLat)",
+            "start_lng": "\(costQuery.startLng)",
+            "end_lat": costQuery.endLat == 0 ? "" : "\(costQuery.endLat)",
+            "end_lng": costQuery.endLng == 0 ? "" : "\(costQuery.endLng)",
             "ride_type": costQuery.rideType.rawValue]
         ) { response, error in
             if let error = error {
@@ -152,7 +152,6 @@ extension Lyft {
             if let error = error {
                 completionHandler?(response: nil, error: error)
             } else {
-                print(response)
                 var nearbyDriversResponse = [NearbyDrivers]()
                 if let nearbyDrivers = response["nearby_drivers"] as? [AnyObject] {
                     for n in nearbyDrivers {

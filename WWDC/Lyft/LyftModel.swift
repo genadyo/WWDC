@@ -40,17 +40,17 @@ struct ETAQuery {
 }
 
 struct CostQuery {
-    let start_lat: Float
-    let start_lng: Float
-    let end_lat: Float
-    let end_lng: Float
+    let startLat: Float
+    let startLng: Float
+    let endLat: Float
+    let endLng: Float
     let rideType: RideType
 
-    init(start_lat: Float, start_lng: Float, end_lat: Float = 0, end_lng: Float = 0, rideType: RideType = .All) {
-        self.start_lat = start_lat
-        self.start_lng = start_lng
-        self.end_lat = end_lat
-        self.end_lng = end_lng
+    init(startLat: Float, startLng: Float, endLat: Float = 0, endLng: Float = 0, rideType: RideType = .All) {
+        self.startLat = startLat
+        self.startLng = startLng
+        self.endLat = endLat
+        self.endLng = endLng
         self.rideType = rideType
     }
 }
@@ -58,6 +58,20 @@ struct CostQuery {
 struct NearbyDriversQuery {
     let lat: Float
     let lng: Float
+}
+
+struct RequestRidePost {
+    let origin: Address
+    let destination: Address
+    let rideType: RideType
+    let primetimeConfirmationToken: String
+
+    init(originLat: Float, originLng: Float, originAddress: String, destinationLat: Float, destinationLng: Float, destinationAddress: String, rideType: RideType, primetimeConfirmationToken: String = "") {
+        self.origin = Address(lat: originLat, lng: originLng, address: originAddress)
+        self.destination = Address(lat: destinationLat, lng: destinationLng, address: destinationAddress)
+        self.rideType = rideType
+        self.primetimeConfirmationToken = primetimeConfirmationToken
+    }
 }
 
 struct PricingDetails {
@@ -110,4 +124,26 @@ struct Location {
 //    let bearing: String
     let lat: Float
     let lng: Float
+}
+
+struct Address {
+    let lat: Float
+    let lng: Float
+    let address: String
+}
+
+struct Passenger {
+    let firstName: String
+//    let lastName: String
+//    let phoneNumber: String
+//    let imageURL: String
+//    let rating: String
+}
+
+struct Ride {
+    let rideId: String
+    let status: String
+    let origin: Address
+    let destination: Address
+    let passenger: Passenger
 }

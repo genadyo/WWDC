@@ -17,6 +17,7 @@
 		B26236D01CE3072D0010C630 /* Lyft.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26236CD1CE3072D0010C630 /* Lyft.swift */; };
 		B26236D11CE3072D0010C630 /* LyftAvailability.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26236CE1CE3072D0010C630 /* LyftAvailability.swift */; };
 		B26236D21CE3072D0010C630 /* LyftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26236CF1CE3072D0010C630 /* LyftModel.swift */; };
+		B26236D41CE309060010C630 /* LyftRides.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26236D31CE309060010C630 /* LyftRides.swift */; };
 		B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1801CD08A0900B2198B /* ServerManager.swift */; };
 		B26CC1831CD08C0E00B2198B /* PartiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1821CD08C0E00B2198B /* PartiesModel.swift */; };
 		B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */; };
@@ -76,6 +77,7 @@
 		B26236CD1CE3072D0010C630 /* Lyft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lyft.swift; sourceTree = "<group>"; };
 		B26236CE1CE3072D0010C630 /* LyftAvailability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyftAvailability.swift; sourceTree = "<group>"; };
 		B26236CF1CE3072D0010C630 /* LyftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyftModel.swift; sourceTree = "<group>"; };
+		B26236D31CE309060010C630 /* LyftRides.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LyftRides.swift; sourceTree = "<group>"; };
 		B26CC1801CD08A0900B2198B /* ServerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerManager.swift; sourceTree = "<group>"; };
 		B26CC1821CD08C0E00B2198B /* PartiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesModel.swift; sourceTree = "<group>"; };
 		B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				B26236CF1CE3072D0010C630 /* LyftModel.swift */,
 				B26236CD1CE3072D0010C630 /* Lyft.swift */,
 				B26236CE1CE3072D0010C630 /* LyftAvailability.swift */,
+				B26236D31CE309060010C630 /* LyftRides.swift */,
 			);
 			path = Lyft;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				B26CC1851CD10ACB00B2198B /* PartiesTableViewController.swift in Sources */,
 				B26CC1811CD08A0900B2198B /* ServerManager.swift in Sources */,
 				B246FCA91CD5111000A0B42D /* MKPointAnnotation+WDCPointAnnotation.m in Sources */,
+				B26236D41CE309060010C630 /* LyftRides.swift in Sources */,
 				B2F381FF1CD1A7C700D5AE1F /* PartyTableViewCell.swift in Sources */,
 				B26CC1831CD08C0E00B2198B /* PartiesModel.swift in Sources */,
 				B26236D21CE3072D0010C630 /* LyftModel.swift in Sources */,
