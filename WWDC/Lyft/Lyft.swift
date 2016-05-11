@@ -112,7 +112,7 @@ class Lyft {
 
         var p = "https://api.lyft.com/v1" + path
         if let params = params as? [String: String] where type == .GET {
-            p += buildQueryString(fromDictionary: params)
+            p += urlQueryString( params: params)
         }
 
         if let url = NSURL(string: p) {
@@ -157,17 +157,15 @@ class Lyft {
         }
     }
 
-    static func buildQueryString(fromDictionary parameters: [String: String]) -> String {
-        var urlVars:[String] = []
+    // MARK: Helper functions
 
-        for (k, value) in parameters {
+    static func urlQueryString(params params: [String: String]) -> String {
+        var vars = [String]()
+        for (key, value) in params {
             if let encodedValue = value.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) where value != "" {
-                urlVars.append(k + "=" + encodedValue)
+                vars.append(key + "=" + encodedValue)
             }
         }
-
-        return urlVars.isEmpty ? "" : "?" + urlVars.joinWithSeparator("&")
+        return vars.isEmpty ? "" : "?" + vars.joinWithSeparator("&")
     }
-
-
 }
