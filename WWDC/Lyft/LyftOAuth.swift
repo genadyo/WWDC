@@ -38,6 +38,15 @@ extension Lyft {
         fetchAccessToken(nil)
     }
 
+    // Refreshing the access token
+    static func refreshToken(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
+
+        sharedInstance.completionHandler = completionHandler
+
+        fetchAccessToken(nil, refresh: true)
+    }
+
     // func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
     static func openURL(url: NSURL) -> Bool {
         guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return false }
