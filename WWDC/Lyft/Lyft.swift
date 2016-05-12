@@ -19,52 +19,13 @@ class Lyft {
     static let lyftAPIURL = "https://api.lyft.com"
     static let lyftAPIOAuthURL = "\(lyftAPIURL)/oauth"
     static let lyftAPIv1URL = "\(lyftAPIURL)/v1"
-    private var clientId: String?
-    private var clientSecret: String?
-    private var sandbox = false
+    internal var clientId: String?
+    internal var clientSecret: String?
+    internal var sandbox = false
+    internal var completionHandler: ((success: Bool, error: NSError?) -> ())?
     private var accessToken: String?
-    private var completionHandler: ((success: Bool, error: NSError?) -> ())?
 
-    // Initialize clientId & clientSecret
-    static func set(clientId clientId: String, clientSecret: String, sandbox: Bool? = nil) {
-        sharedInstance.clientId = clientId
-        sharedInstance.clientSecret = clientSecret
-        sharedInstance.sandbox = sandbox ?? false
-    }
-
-    // 3-Legged flow for accessing user-specific endpoints
-    static func userLogin(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
-        guard let clientId = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
-
-        let string = "\(lyftAPIOAuthURL)/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)"
-
-        sharedInstance.completionHandler = completionHandler
-
-        if let url = NSURL(string: string.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!) {
-            UIApplication.sharedApplication().openURL(url)
-        }
-    }
-
-    // Client Credentials (2-legged) flow for public endpoints
-    static func publicLogin(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
-        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
-
-        sharedInstance.completionHandler = completionHandler
-
-        fetchAccessToken(nil)
-    }
-
-    // func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
-    static func openURL(url: NSURL) -> Bool {
-        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return false }
-        guard let code = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == "code" }).first?.value else { return false }
-
-        fetchAccessToken(code)
-
-        return true
-    }
-
-    private static func fetchAccessToken(code: String?) {
+    internal static func fetchAccessToken(code: String?) {
         guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else { return }
 
         if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
@@ -168,7 +129,7 @@ class Lyft {
 
     // MARK: Helper functions
 
-    static func urlQueryString(params params: [String: String]) -> String {
+    private static func urlQueryString(params params: [String: String]) -> String {
         var vars = [String]()
         for (key, value) in params {
             if let encodedValue = value.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) where value != "" {
