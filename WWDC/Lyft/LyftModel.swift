@@ -154,7 +154,7 @@ struct Address {
     let ETASeconds: Int
     let time: String
 
-    init(lat: Float, lng: Float, address: String, ETASeconds: Int = 0, time: String = "") {
+    init(lat: Float, lng: Float, address: String = "", ETASeconds: Int = 0, time: String = "") {
         self.lat = lat
         self.lng = lng
         self.address = address
