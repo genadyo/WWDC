@@ -16,6 +16,9 @@ enum HTTPMethod: String {
 
 class Lyft {
     static let sharedInstance = Lyft()
+    static let lyftAPIURL = "https://api.lyft.com"
+    static let lyftAPIOAuthURL = "\(lyftAPIURL)/oauth"
+    static let lyftAPIv1URL = "\(lyftAPIURL)/v1"
     private var clientId: String?
     private var clientSecret: String?
     private var sandbox = false
@@ -25,15 +28,13 @@ class Lyft {
     static func set(clientId clientId: String, clientSecret: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
-        if let sandbox = sandbox {
-            sharedInstance.sandbox = sandbox
-        }
+        sharedInstance.sandbox = sandbox ?? false
     }
 
     static func login(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
 
-        let string = "https://api.lyft.com/oauth/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)"
+        let string = "\(lyftAPIOAuthURL)/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)"
 
         sharedInstance.completionHandler = completionHandler
 
@@ -42,8 +43,8 @@ class Lyft {
         }
     }
 
-    func openURL(url: NSURL) -> Bool {
-        guard let _ = clientId, _ = clientSecret else { return false }
+    static func openURL(url: NSURL) -> Bool {
+        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return false }
         guard let code = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == "code" }).first?.value else { return false }
 
         fetchAccessToken(code)
@@ -51,10 +52,10 @@ class Lyft {
         return true
     }
 
-    func fetchAccessToken(code: String) {
-        guard let clientId = clientId, clientSecret = clientSecret else { return }
+    static func fetchAccessToken(code: String) {
+        guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else { return }
 
-        if let url = NSURL(string: "https://api.lyft.com/oauth/token") {
+        if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
             sessionConfiguration.HTTPAdditionalHeaders = ["Content-Type": "application/json"]
@@ -68,7 +69,7 @@ class Lyft {
 
             // Auth
             let authString: String
-            if sandbox == true {
+            if sharedInstance.sandbox == true {
                 authString = "\(clientId):SANDBOX-\(clientSecret)"
             } else {
                 authString = "\(clientId):\(clientSecret)"
@@ -84,12 +85,12 @@ class Lyft {
                 urlRequest.HTTPBody = body
 
                 let session = NSURLSession(configuration: sessionConfiguration)
-                let task = session.dataTaskWithRequest(urlRequest) { [weak self] data, response, error in
+                let task = session.dataTaskWithRequest(urlRequest) { data, response, error in
                     if let data = data {
                         do {
                             if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject], accessToken = response["access_token"] as? String {
-                                self?.accessToken = accessToken
-                                self?.completionHandler?(success: true, error: nil)
+                                sharedInstance.accessToken = accessToken
+                                sharedInstance.completionHandler?(success: true, error: nil)
 
                             } else {
                                 print("No access_token")
@@ -111,7 +112,7 @@ class Lyft {
     static func request(type: HTTPMethod, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject]?, error: NSError?) -> ())?) {
         guard let accessToken = sharedInstance.accessToken else { return }
 
-        var p = "https://api.lyft.com/v1" + path
+        var p = lyftAPIv1URL + path
         if let params = params as? [String: String] where type == .GET {
             p += urlQueryString( params: params)
         }
