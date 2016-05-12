@@ -33,7 +33,7 @@ class Lyft {
     }
 
     // 3-Legged flow for accessing user-specific endpoints
-    static func login(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+    static func userLogin(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
 
         let string = "\(lyftAPIOAuthURL)/authorize?client_id=\(clientId)&response_type=code&scope=\(scope)&state=\(state)"
@@ -43,6 +43,15 @@ class Lyft {
         if let url = NSURL(string: string.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!) {
             UIApplication.sharedApplication().openURL(url)
         }
+    }
+
+    // Client Credentials (2-legged) flow for public endpoints
+    static func publicLogin(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
+
+        sharedInstance.completionHandler = completionHandler
+
+        fetchAccessToken(nil)
     }
 
     // func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
@@ -55,14 +64,14 @@ class Lyft {
         return true
     }
 
-    private static func fetchAccessToken(code: String) {
+    private static func fetchAccessToken(code: String?) {
         guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else { return }
 
         if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            sessionConfiguration.HTTPAdditionalHeaders = ["Content-Type": "application/json"]
             urlRequest.HTTPMethod = HTTPMethod.POST.rawValue
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
             // Auth
             let authString: String
@@ -77,7 +86,12 @@ class Lyft {
             }
 
             do {
-                let body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "authorization_code", "code": code], options: [])
+                let body: NSData
+                if let code = code {
+                    body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "authorization_code", "code": code], options: [])
+                } else {
+                    body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "client_credentials", "scope": "public"], options: [])
+                }
                 urlRequest.HTTPBody = body
 
                 let session = NSURLSession(configuration: sessionConfiguration)
@@ -115,8 +129,9 @@ class Lyft {
         if let url = NSURL(string: p) {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
-            sessionConfiguration.HTTPAdditionalHeaders = ["Content-Type": "application/json", "Authorization": "Bearer \(accessToken)"]
+            sessionConfiguration.HTTPAdditionalHeaders = ["Authorization": "Bearer \(accessToken)"]
             urlRequest.HTTPMethod = type.rawValue
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
             do {
                 if let params = params  where type == .POST || type == .PUT {
