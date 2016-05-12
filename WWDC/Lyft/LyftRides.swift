@@ -53,7 +53,8 @@ extension Lyft {
                     destinationAddress = destination["address"] as? String,
                     destinationLat = destination["lat"] as? Float,
                     destinationLng = destination["lng"] as? Float,
-                    status = response["status"] as? String,
+                    s = response["status"] as? String,
+                    status = StatusType(rawValue: s),
                     rideId = response["ride_id"] as? String  {
                     let origin = Address(lat: originLat, lng: originLng, address: originAddress)
                     let destination = Address(lat: destinationLat, lng: destinationLng, address: destinationAddress)
@@ -79,7 +80,8 @@ extension Lyft {
                     destinationAddress = destination["address"] as? String,
                     destinationLat = destination["lat"] as? Float,
                     destinationLng = destination["lng"] as? Float,
-                    status = response["status"] as? String,
+                    s = response["status"] as? String,
+                    status = StatusType(rawValue: s),
                     rideId = response["ride_id"] as? String  {
                     let origin = Address(lat: originLat, lng: originLng, address: originAddress)
                     let destination = Address(lat: destinationLat, lng: destinationLng, address: destinationAddress)
@@ -154,7 +156,8 @@ extension Lyft {
             if let response = response, rideHistory = response["ride_history"] as? [AnyObject] {
                 for r in rideHistory {
                     if let rideId = r["ride_id"] as? String,
-                        status = r["status"] as? String,
+                        s = r["status"] as? String,
+                        status = StatusType(rawValue: s),
                         rType = r["ride_type"] as? String,
                         rideType = RideType(rawValue: rType),
                         passenger = r["passenger"] as? [String: AnyObject],

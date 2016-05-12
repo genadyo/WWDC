@@ -15,6 +15,15 @@ enum RideType: String {
     case Plus = "lyft_plus"
 }
 
+enum StatusType: String {
+    case Pending = "pending"
+    case Accepted = "accepted"
+    case Arrived = "arrived"
+    case PickedUp = "pickedUp"
+    case DroppedOff = "droppedOff"
+    case Canceled = "canceled"
+}
+
 struct RideTypesQuery {
     let lat: Float
     let lng: Float
@@ -164,7 +173,7 @@ struct Passenger {
 
 struct Ride {
     let rideId: String
-    let status: String
+    let status: StatusType
     let origin: Address
     let destination: Address
     let passenger: Passenger
@@ -247,7 +256,7 @@ struct Vehicle {
 
 struct RideHistory {
     let rideId: String
-    let status: String
+    let status: StatusType
     let rideType: RideType
     let passenger: Passenger
     let driver: Driver
