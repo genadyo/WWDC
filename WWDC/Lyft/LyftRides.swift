@@ -28,7 +28,7 @@
 //
 //  }
 //
-//  Lyft.requestRidesHistory(ridesHistoryQuery: RidesHistoryQuery(startTime: "2015-12-01T21:04:22Z", endTime: "2015-12-04T21:04:22Z", limit: 10) { result, response, error in
+//  Lyft.requestRidesHistory(ridesHistoryQuery: RidesHistoryQuery(startTime: "2015-12-01T21:04:22Z", endTime: "2015-12-04T21:04:22Z", limit: "10")) { result, response, error in
 //
 //  }
 
@@ -44,7 +44,7 @@ extension Lyft {
         ) { response, error in
             if let response = response {
                 if let passenger = response["passenger"] as? [String: AnyObject],
-                    firstName = passenger["first_name"] as? String,
+                    passengerFirstName = passenger["first_name"] as? String,
                     origin = response["origin"] as? [String: AnyObject],
                     originAddress = origin["address"] as? String,
                     originLat = origin["lat"] as? Float,
@@ -57,13 +57,12 @@ extension Lyft {
                     rideId = response["ride_id"] as? String  {
                     let origin = Address(lat: originLat, lng: originLng, address: originAddress)
                     let destination = Address(lat: destinationLat, lng: destinationLng, address: destinationAddress)
-                    let passenger = Passenger(firstName: firstName)
+                    let passenger = Passenger(firstName: passengerFirstName)
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
-                } else {
-                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 
@@ -87,10 +86,9 @@ extension Lyft {
                     let passenger = Passenger(firstName: firstName)
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
-                } else {
-                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 
@@ -102,10 +100,9 @@ extension Lyft {
                     token = response["token"] as? String,
                     tokenDuration = response["token_duration"] as? Int {
                     completionHandler?(result: CancelConfirmationToken(amount: amount, currency: currency, token: token, tokenDuration: tokenDuration), response: response, error: nil)
-                } else {
-                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 
@@ -144,17 +141,88 @@ extension Lyft {
                     }
                     let price = Price(amount: priceAmount, currency: priceCurrency, description: priceDescription)
                     completionHandler?(result: RideReceipt(rideId: rideId, price: price, lineItems: l, charge: c, requestedAt: requestedAt), response: response, error: nil)
-                } else {
-                    completionHandler?(result: nil, response: response, error: error)
                 }
             }
+            completionHandler?(result: nil, response: response, error: error)
         }
     }
 
-    static func requestRidesHistory(ridesHistoryQuery ridesHistoryQuery: RidesHistoryQuery, completionHandler: ((result: AnyObject?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
+    static func requestRidesHistory(ridesHistoryQuery ridesHistoryQuery: RidesHistoryQuery, completionHandler: ((result: [RideHistory]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/rides", params: ["start_time": ridesHistoryQuery.startTime, "end_time": ridesHistoryQuery.endTime, "limit": ridesHistoryQuery.limit])
         { response, error in
-            completionHandler?(result: nil, response: response, error: error)
+            var ridesHistory = [RideHistory]()
+            if let response = response, rideHistory = response["ride_history"] as? [AnyObject] {
+                for r in rideHistory {
+                    if let rideId = r["ride_id"] as? String,
+                        status = r["status"] as? String,
+                        rType = r["ride_type"] as? String,
+                        rideType = RideType(rawValue: rType),
+                        passenger = r["passenger"] as? [String: AnyObject],
+                        passengerFirstName = passenger["first_name"] as? String,
+                        driver = r["driver"] as? [String: AnyObject],
+                        driverFirstName = driver["first_name"] as? String,
+                        driverPhoneNumber = driver["phone_number"] as? String,
+                        driverRating = driver["rating"] as? Float,
+                        driverImageURL = driver["image_url"] as? String,
+                        vehicle = r["vehicle"] as? [String: AnyObject],
+                        vehicleMake = vehicle["make"] as? String,
+                        vehicleModel = vehicle["model"] as? String,
+                        vehicleLicensePlate = vehicle["license_plate"] as? String,
+                        vehicleCode = vehicle["color"] as? String,
+                        vehicleImageURL = vehicle["image_url"] as? String,
+                        origin = r["origin"] as? [String: AnyObject],
+                        originLat = origin["lat"] as? Float,
+                        originLng = origin["lng"] as? Float,
+                        originAddress = origin["address"] as? String,
+                        originETASeconds = origin["eta_seconds"] as? Int,
+                        destination = r["destination"] as? [String: AnyObject],
+                        destinationLat = destination["lat"] as? Float,
+                        destinationLng = destination["lng"] as? Float,
+                        destinationAddress = destination["address"] as? String,
+                        destinationETASeconds = destination["eta_seconds"] as? Int,
+                        pickup = r["pickup"] as? [String: AnyObject],
+                        pickupLat = pickup["lat"] as? Float,
+                        pickupLng = pickup["lng"] as? Float,
+                        pickupAddress = pickup["address"] as? String,
+                        pickupTime = pickup["time"] as? String,
+                        dropoff = r["dropoff"] as? [String: AnyObject],
+                        dropoffLat = dropoff["lat"] as? Float,
+                        dropoffLng = dropoff["lng"] as? Float,
+                        dropoffAddress = dropoff["address"] as? String,
+                        dropoffTime = dropoff["time"] as? String,
+                        location = r["location"] as? [String: AnyObject],
+                        locationLat = location["lat"] as? Float,
+                        locationLng = location["lng"] as? Float,
+                        locationAddress = location["address"] as? String,
+                        primetimePercentage = r["primetime_percentage"] as? String,
+                        price = r["price"] as? [String: AnyObject],
+                        priceAmount = price["amount"] as? Int,
+                        priceCurrency = price["currency"] as? String,
+                        priceDescription = price["description"] as? String,
+                        lineItems = r["line_items"] as? [AnyObject],
+                        ETASeconds = r["eta_seconds"] as? Int,
+                        requestedAt = r["requested_at"] as? String {
+                        let passenger = Passenger(firstName: passengerFirstName)
+                        let driver = Driver(firstName: driverFirstName, phoneNumber: driverPhoneNumber, rating: driverRating, imageURL: driverImageURL)
+                        let vehicle = Vehicle(make: vehicleMake, model: vehicleModel, licensePlate: vehicleLicensePlate, color: vehicleCode, imageURL: vehicleImageURL)
+                        let origin = Address(lat: originLat, lng: originLng, address: originAddress, ETASeconds: originETASeconds)
+                        let destination = Address(lat: destinationLat, lng: destinationLng, address: destinationAddress, ETASeconds: destinationETASeconds)
+                        let pickup = Address(lat: pickupLat, lng: pickupLng, address: pickupAddress, time: pickupTime)
+                        let dropoff = Address(lat: dropoffLat, lng: dropoffLng, address: dropoffAddress, time: dropoffTime)
+                        let location = Address(lat: locationLat, lng: locationLng, address: locationAddress)
+                        let price = Price(amount: priceAmount, currency: priceCurrency, description: priceDescription)
+                        var l = [LineItem]()
+                        for lineItem in lineItems {
+                            if let amount = lineItem["amount"] as? Int, currency = lineItem["currency"] as? String, type = lineItem["type"] as? String {
+                                l.append(LineItem(amount: amount, currency: currency, type: type))
+                            }
+                        }
+                        let rideHistory = RideHistory(rideId: rideId, status: status, rideType: rideType, passenger: passenger, driver: driver, vehicle: vehicle, origin: origin, destination: destination, pickup: pickup, dropoff: dropoff, location: location, primetimePercentage: primetimePercentage, price: price, lineItems: l, ETAseconds: ETASeconds, requestedAt: requestedAt)
+                        ridesHistory.append(rideHistory)
+                    }
+                }
+            }
+            completionHandler?(result: ridesHistory, response: response, error: error)
         }
     }
 }

@@ -29,8 +29,8 @@ import Foundation
 extension Lyft {
     static func requestRideTypes(rideTypesQuery rideTypesQuery: RideTypesQuery, completionHandler: ((result: [RideTypesResponse]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/ridetypes", params: ["lat": "\(rideTypesQuery.lat)", "lng": "\(rideTypesQuery.lng)", "ride_type": rideTypesQuery.rideType.rawValue]) { response, error in
+            var rideTypesResponse = [RideTypesResponse]()
             if let response = response {
-                var rideTypesResponse = [RideTypesResponse]()
                 if let rideTypes = response["ride_types"] as? [AnyObject] {
                     for r in rideTypes {
                         if let r = r as? [String: AnyObject],
@@ -66,15 +66,15 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(result: rideTypesResponse, response: response, error: error)
             }
+            completionHandler?(result: rideTypesResponse, response: response, error: error)
         }
     }
 
     static func requestETA(etaQuery etaQuery: ETAQuery, completionHandler: ((result: [ETAEstimate]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/eta", params: ["lat": "\(etaQuery.lat)", "lng": "\(etaQuery.lng)", "ride_type": etaQuery.rideType.rawValue]) { response, error in
+            var etaEstimatesResponse = [ETAEstimate]()
             if let response = response {
-                var etaEstimatesResponse = [ETAEstimate]()
                 if let etaEstimates = response["eta_estimates"] as? [AnyObject] {
                     for e in etaEstimates {
                         if let e = e as? [String: AnyObject],
@@ -92,8 +92,8 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(result: etaEstimatesResponse, response: response, error: error)
             }
+            completionHandler?(result: etaEstimatesResponse, response: response, error: error)
         }
     }
 
@@ -105,8 +105,8 @@ extension Lyft {
             "end_lng": costQuery.endLng == 0 ? "" : "\(costQuery.endLng)",
             "ride_type": costQuery.rideType.rawValue]
         ) { response, error in
+            var costEstimateResponse = [CostEstimate]()
             if let response = response {
-                var costEstimateResponse = [CostEstimate]()
                 if let costEstimates = response["cost_estimates"] as? [AnyObject] {
                     for c in costEstimates {
                         if let c = c as? [String: AnyObject],
@@ -136,15 +136,15 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(result: costEstimateResponse, response: response, error: error)
             }
+            completionHandler?(result: costEstimateResponse, response: response, error: error)
         }
     }
 
     static func requestNearbyDrivers(nearbyDriversQuery nearbyDriversQuery: NearbyDriversQuery, completionHandler: ((result: [NearbyDrivers]?, response: [String: AnyObject]?, error: NSError?) -> ())?) {
         request(.GET, path: "/drivers", params: ["lat": "\(nearbyDriversQuery.lat)", "lng": "\(nearbyDriversQuery.lng)"]) { response, error in
+            var nearbyDriversResponse = [NearbyDrivers]()
             if let response = response {
-                var nearbyDriversResponse = [NearbyDrivers]()
                 if let nearbyDrivers = response["nearby_drivers"] as? [AnyObject] {
                     for n in nearbyDrivers {
                         if let driver = n["drivers"] as? [AnyObject] {
@@ -167,8 +167,8 @@ extension Lyft {
                         }
                     }
                 }
-                completionHandler?(result: nearbyDriversResponse, response: response, error: error)
             }
+            completionHandler?(result: nearbyDriversResponse, response: response, error: error)
         }
     }
 }

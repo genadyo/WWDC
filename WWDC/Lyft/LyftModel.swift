@@ -117,7 +117,19 @@ struct NearbyDrivers {
 
 struct Driver {
 //    let bearing: Int
+    let firstName: String
+    let phoneNumber: String
+    let rating: Float
+    let imageURL: String
     let locations: [Location]
+
+    init(locations: [Location] = [], firstName: String = "", phoneNumber: String = "", rating: Float = 0, imageURL: String = "") {
+        self.firstName = firstName
+        self.phoneNumber = phoneNumber
+        self.rating = rating
+        self.imageURL = imageURL
+        self.locations = locations
+    }
 }
 
 struct Location {
@@ -130,6 +142,16 @@ struct Address {
     let lat: Float
     let lng: Float
     let address: String
+    let ETASeconds: Int
+    let time: String
+
+    init(lat: Float, lng: Float, address: String, ETASeconds: Int = 0, time: String = "") {
+        self.lat = lat
+        self.lng = lng
+        self.address = address
+        self.ETASeconds = ETASeconds
+        self.time = time
+    }
 }
 
 struct Passenger {
@@ -206,11 +228,38 @@ struct RideReceipt {
 struct RidesHistoryQuery {
     let startTime: String
     let endTime: String
-    let limit: Int
+    let limit: String
 
-    init(startTime: String, endTime: String = "", limit: Int = 0) {
+    init(startTime: String, endTime: String = "", limit: String = "") {
         self.startTime = startTime
         self.endTime = endTime
         self.limit = limit
     }
+}
+
+struct Vehicle {
+    let make: String
+    let model: String
+    let licensePlate: String
+    let color: String
+    let imageURL: String
+}
+
+struct RideHistory {
+    let rideId: String
+    let status: String
+    let rideType: RideType
+    let passenger: Passenger
+    let driver: Driver
+    let vehicle: Vehicle
+    let origin: Address
+    let destination: Address
+    let pickup: Address
+    let dropoff: Address
+    let location: Address
+    let primetimePercentage: String
+    let price: Price
+    let lineItems: [LineItem]
+    let ETAseconds: Int
+    let requestedAt: String
 }
