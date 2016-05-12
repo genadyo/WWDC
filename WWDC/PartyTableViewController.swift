@@ -13,6 +13,7 @@ import Keys
 import Contacts
 import EventKitUI
 import Crashlytics
+import Lyft
 
 protocol PartyTableViewControllerDelegate {
     func reloadData()
@@ -154,11 +155,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: AnyObject) {
-        Lyft.login(scope: "rides.request rides.read") { success, error in
-            if success == true {
-                // promo
-            }
-        }
+        Lyft.openLyftRide(rideType: .Line, destination: Address(lat: Float(party.latitude), lng: Float(party.longitude)))
         Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
     }
 

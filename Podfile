@@ -6,6 +6,7 @@ target 'SFParties' do
     pod 'Crashlytics'
     pod 'OneSignal'
     pod 'PINRemoteImage'
+    pod 'Lyft'
 end
 
 plugin 'cocoapods-keys', {

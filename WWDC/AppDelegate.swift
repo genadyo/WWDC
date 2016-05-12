@@ -10,6 +10,7 @@ import UIKit
 import Fabric
 import Crashlytics
 import Keys
+import Lyft
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
