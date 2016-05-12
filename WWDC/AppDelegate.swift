@@ -51,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     }
 
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return Lyft.sharedInstance.openURL(url)
+        return Lyft.openURL(url)
     }
 
     // MARK: UISplitViewControllerDelegate

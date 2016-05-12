@@ -25,12 +25,14 @@ class Lyft {
     private var accessToken: String?
     private var completionHandler: ((success: Bool, error: NSError?) -> ())?
 
+    // Initialize clientId & clientSecret
     static func set(clientId clientId: String, clientSecret: String, sandbox: Bool? = nil) {
         sharedInstance.clientId = clientId
         sharedInstance.clientSecret = clientSecret
         sharedInstance.sandbox = sandbox ?? false
     }
 
+    // 3-Legged flow for accessing user-specific endpoints
     static func login(scope scope: String, state: String = "", completionHandler: ((success: Bool, error: NSError?) -> ())?) {
         guard let clientId = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
 
@@ -43,6 +45,7 @@ class Lyft {
         }
     }
 
+    // func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
     static func openURL(url: NSURL) -> Bool {
         guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return false }
         guard let code = NSURLComponents(URL: url, resolvingAgainstBaseURL: false)?.queryItems?.filter({ $0.name == "code" }).first?.value else { return false }
@@ -52,20 +55,14 @@ class Lyft {
         return true
     }
 
-    static func fetchAccessToken(code: String) {
+    private static func fetchAccessToken(code: String) {
         guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else { return }
 
         if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
             sessionConfiguration.HTTPAdditionalHeaders = ["Content-Type": "application/json"]
-
-            // Post
-            urlRequest.HTTPMethod = "POST"
-
-            // JSON
-            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-
+            urlRequest.HTTPMethod = HTTPMethod.POST.rawValue
 
             // Auth
             let authString: String
@@ -80,7 +77,6 @@ class Lyft {
             }
 
             do {
-                // Body
                 let body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "authorization_code", "code": code], options: [])
                 urlRequest.HTTPBody = body
 
@@ -90,21 +86,20 @@ class Lyft {
                         do {
                             if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject], accessToken = response["access_token"] as? String {
                                 sharedInstance.accessToken = accessToken
-                                sharedInstance.completionHandler?(success: true, error: nil)
-
+                                sharedInstance.completionHandler?(success: true, error: error)
                             } else {
-                                print("No access_token")
+                                sharedInstance.completionHandler?(success: false, error: NSError(domain: "No access_token", code: 502, userInfo: nil))
                             }
                         } catch {
-                            print("Response JSON Serialization Failed")
+                            sharedInstance.completionHandler?(success: false, error: NSError(domain: "Response JSON Serialization Failed", code: 503, userInfo: nil))
                         }
                     } else {
-                        print("data == nil")
+                        sharedInstance.completionHandler?(success: false, error: NSError(domain: "data == nil", code: 504, userInfo: nil))
                     }
                 }
                 task.resume()
             } catch {
-                print("Body JSON Serialization Failed")
+                sharedInstance.completionHandler?(success: false, error: NSError(domain: "Body JSON Serialization Failed", code: 505, userInfo: nil))
             }
         }
     }
@@ -114,19 +109,16 @@ class Lyft {
 
         var p = lyftAPIv1URL + path
         if let params = params as? [String: String] where type == .GET {
-            p += urlQueryString( params: params)
+            p += urlQueryString(params: params)
         }
 
         if let url = NSURL(string: p) {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
             sessionConfiguration.HTTPAdditionalHeaders = ["Content-Type": "application/json", "Authorization": "Bearer \(accessToken)"]
-
-            // Post
             urlRequest.HTTPMethod = type.rawValue
 
             do {
-                // Body
                 if let params = params  where type == .POST || type == .PUT {
                     let body = try NSJSONSerialization.dataWithJSONObject(params, options: [])
                     urlRequest.HTTPBody = body
@@ -136,25 +128,25 @@ class Lyft {
                 let task = session.dataTaskWithRequest(urlRequest) { data, response, error in
                     if let data = data {
                         if data.length == 0 {
-                            completionHandler?(response: [:], error: nil)
+                            completionHandler?(response: [:], error: error)
                         } else {
                             do {
                                 if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
-                                    completionHandler?(response: response, error: nil)
+                                    completionHandler?(response: response, error: error)
                                 } else {
-                                    print("No response")
+                                    completionHandler?(response: nil, error: NSError(domain: "No response", code: 502, userInfo: nil))
                                 }
                             } catch {
-                                print("Response JSON Serialization Failed")
+                                completionHandler?(response: nil, error: NSError(domain: "Response JSON Serialization Failed", code: 503, userInfo: nil))
                             }
                         }
                     } else {
-                        print("data == nil")
+                        completionHandler?(response: nil, error: NSError(domain: "data == nil", code: 504, userInfo: nil))
                     }
                 }
                 task.resume()
             } catch {
-                print("Body JSON Serialization Failed")
+                completionHandler?(response: nil, error: NSError(domain: "Body JSON Serialization Failed", code: 505, userInfo: nil))
             }
         }
     }
