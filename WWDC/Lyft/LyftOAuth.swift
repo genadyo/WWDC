@@ -47,6 +47,15 @@ extension Lyft {
         fetchAccessToken(nil, refresh: true)
     }
 
+    // Revoking the access token
+    static func revokeToken(completionHandler: ((success: Bool, error: NSError?) -> ())?) {
+        guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return }
+
+        sharedInstance.completionHandler = completionHandler
+
+        fetchAccessToken(nil, refresh: false, revoke: true)
+    }
+
     // func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool
     static func openURL(url: NSURL) -> Bool {
         guard let _ = sharedInstance.clientId, _ = sharedInstance.clientSecret else { return false }

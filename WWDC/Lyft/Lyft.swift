@@ -26,13 +26,20 @@ class Lyft {
     private var accessToken: String?
     var refreshToken: String?
 
-    internal static func fetchAccessToken(code: String?, refresh: Bool = false) {
+    internal static func fetchAccessToken(code: String?, refresh: Bool = false, revoke: Bool = false) {
         guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else {
             sharedInstance.completionHandler?(success: false, error: NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil))
             return
         }
 
-        if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
+        let u: String
+        if revoke == true {
+            u = "\(lyftAPIOAuthURL)/revoke_refresh_token"
+        } else {
+            u = "\(lyftAPIOAuthURL)/token"
+        }
+
+        if let url = NSURL(string: u) {
             let urlRequest = NSMutableURLRequest(URL: url)
             let sessionConfiguration = NSURLSessionConfiguration.defaultSessionConfiguration()
             urlRequest.HTTPMethod = HTTPMethod.POST.rawValue
@@ -56,6 +63,8 @@ class Lyft {
                     body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "authorization_code", "code": code], options: [])
                 } else if let refreshToken = sharedInstance.refreshToken where refresh == true {
                     body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "refresh_token", "refresh_token": refreshToken], options: [])
+                } else if let refreshToken = sharedInstance.refreshToken  where revoke == true {
+                    body = try NSJSONSerialization.dataWithJSONObject(["token": refreshToken], options: [])
                 } else {
                     body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "client_credentials", "scope": "public"], options: [])
                 }
