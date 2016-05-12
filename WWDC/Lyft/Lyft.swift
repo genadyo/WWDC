@@ -24,9 +24,13 @@ class Lyft {
     internal var sandbox = false
     internal var completionHandler: ((success: Bool, error: NSError?) -> ())?
     private var accessToken: String?
+    var refreshToken: String?
 
-    internal static func fetchAccessToken(code: String?) {
-        guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else { return }
+    internal static func fetchAccessToken(code: String?, refresh: Bool = false) {
+        guard let clientId = sharedInstance.clientId, clientSecret = sharedInstance.clientSecret else {
+            sharedInstance.completionHandler?(success: false, error: NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil))
+            return
+        }
 
         if let url = NSURL(string: "\(lyftAPIOAuthURL)/token") {
             let urlRequest = NSMutableURLRequest(URL: url)
@@ -50,6 +54,8 @@ class Lyft {
                 let body: NSData
                 if let code = code {
                     body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "authorization_code", "code": code], options: [])
+                } else if let refreshToken = sharedInstance.refreshToken where refresh == true {
+                    body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "refresh_token", "refresh_token": refreshToken], options: [])
                 } else {
                     body = try NSJSONSerialization.dataWithJSONObject(["grant_type": "client_credentials", "scope": "public"], options: [])
                 }
@@ -61,26 +67,35 @@ class Lyft {
                         do {
                             if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject], accessToken = response["access_token"] as? String {
                                 sharedInstance.accessToken = accessToken
+                                sharedInstance.refreshToken = response["refresh_token"] as? String
                                 sharedInstance.completionHandler?(success: true, error: error)
+                                return
                             } else {
                                 sharedInstance.completionHandler?(success: false, error: NSError(domain: "No access_token", code: 502, userInfo: nil))
+                                return
                             }
                         } catch {
                             sharedInstance.completionHandler?(success: false, error: NSError(domain: "Response JSON Serialization Failed", code: 503, userInfo: nil))
+                            return
                         }
                     } else {
                         sharedInstance.completionHandler?(success: false, error: NSError(domain: "data == nil", code: 504, userInfo: nil))
+                        return
                     }
                 }
                 task.resume()
             } catch {
                 sharedInstance.completionHandler?(success: false, error: NSError(domain: "Body JSON Serialization Failed", code: 505, userInfo: nil))
+                return
             }
         }
     }
 
     static func request(type: HTTPMethod, path: String, params: [String: AnyObject]?, completionHandler: ((response: [String: AnyObject]?, error: NSError?) -> ())?) {
-        guard let accessToken = sharedInstance.accessToken else { return }
+        guard let accessToken = sharedInstance.accessToken else {
+            completionHandler?(response: nil, error: NSError(domain: "No clientId and clientSecret", code: 500, userInfo: nil))
+            return
+        }
 
         var p = lyftAPIv1URL + path
         if let params = params as? [String: String] where type == .GET {
@@ -105,24 +120,30 @@ class Lyft {
                     if let data = data {
                         if data.length == 0 {
                             completionHandler?(response: [:], error: error)
+                            return
                         } else {
                             do {
                                 if let response = try NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String: AnyObject] {
                                     completionHandler?(response: response, error: error)
+                                    return
                                 } else {
                                     completionHandler?(response: nil, error: NSError(domain: "No response", code: 502, userInfo: nil))
+                                    return
                                 }
                             } catch {
                                 completionHandler?(response: nil, error: NSError(domain: "Response JSON Serialization Failed", code: 503, userInfo: nil))
+                                return
                             }
                         }
                     } else {
                         completionHandler?(response: nil, error: NSError(domain: "data == nil", code: 504, userInfo: nil))
+                        return
                     }
                 }
                 task.resume()
             } catch {
                 completionHandler?(response: nil, error: NSError(domain: "Body JSON Serialization Failed", code: 505, userInfo: nil))
+                return
             }
         }
     }

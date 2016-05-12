@@ -61,6 +61,7 @@ extension Lyft {
                     let passenger = Passenger(firstName: passengerFirstName)
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
+                    return
                 }
             }
             completionHandler?(result: nil, response: response, error: error)
@@ -88,6 +89,7 @@ extension Lyft {
                     let passenger = Passenger(firstName: firstName)
                     let ride = Ride(rideId: rideId, status: status, origin: origin, destination: destination, passenger: passenger)
                     completionHandler?(result: ride, response: response, error: nil)
+                    return
                 }
             }
             completionHandler?(result: nil, response: response, error: error)
@@ -102,6 +104,7 @@ extension Lyft {
                     token = response["token"] as? String,
                     tokenDuration = response["token_duration"] as? Int {
                     completionHandler?(result: CancelConfirmationToken(amount: amount, currency: currency, token: token, tokenDuration: tokenDuration), response: response, error: nil)
+                    return
                 }
             }
             completionHandler?(result: nil, response: response, error: error)
@@ -143,6 +146,7 @@ extension Lyft {
                     }
                     let price = Price(amount: priceAmount, currency: priceCurrency, description: priceDescription)
                     completionHandler?(result: RideReceipt(rideId: rideId, price: price, lineItems: l, charge: c, requestedAt: requestedAt), response: response, error: nil)
+                    return
                 }
             }
             completionHandler?(result: nil, response: response, error: error)
