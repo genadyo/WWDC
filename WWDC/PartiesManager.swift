@@ -28,7 +28,7 @@ class PartiesManager {
 
     lazy private(set) var parties: [[Party]] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON).0
+            return ServerManager.processJSON(JSON).parties
         } else {
             return []
         }
@@ -36,7 +36,7 @@ class PartiesManager {
 
     lazy private(set) var banners: [Banner] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON).1
+            return ServerManager.processJSON(JSON).banners
         } else {
             return []
         }
@@ -46,8 +46,8 @@ class PartiesManager {
         // redirect to https://gitcdn.link/repo/genadyo/WWDC/master/data/data.json
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
             if let results = results {
-                self?.parties = results.0
-                self?.banners = results.1
+                self?.parties = results.parties
+                self?.banners = results.banners
             }
             if let JSON = JSON as? [String: AnyObject] {
                 self?.JSON = JSON
