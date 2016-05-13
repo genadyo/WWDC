@@ -155,6 +155,42 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
     }
 
     @IBAction func openLyft(sender: AnyObject) {
+        let promotion = NSUserDefaults.standardUserDefaults().boolForKey("promotion")
+
+        if PartiesManager.sharedInstance.promotion == false || promotion == true {
+            openLyftRide()
+        } else {
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "promotion")
+
+            // Keys
+            let keys = SfpartiesKeys()
+
+            Lyft.userLogin(scope: "public") { [weak self] success, error in
+                if success == true {
+                    Lyft.request(.POST, path: keys.lyftPath(), params: [keys.lyftKey(): keys.lyftValue()]) { response, error in
+                        if let response = response where response.keys.count == 0 {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self?.openLyftRide()
+                            }
+                            Answers.logCustomEventWithName("Lyft Promotion Succeed", customAttributes: nil)
+                        } else {
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self?.openLyftRide()
+                            }
+                            Answers.logCustomEventWithName("Lyft Promotion Failed", customAttributes: nil)
+                        }
+                    }
+                } else {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self?.openLyftRide()
+                    }
+                    Answers.logCustomEventWithName("Lyft Login Failed", customAttributes: nil)
+                }
+            }
+        }
+    }
+
+    private func openLyftRide() {
         Lyft.openLyftRide(rideType: .Line, destination: Address(lat: Float(party.latitude), lng: Float(party.longitude)))
         Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
     }
