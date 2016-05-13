@@ -42,12 +42,21 @@ class PartiesManager {
         }
     }()
 
+    lazy private(set) var promotion: Bool = {
+        if let JSON = self.JSON {
+            return ServerManager.processJSON(JSON).promotion
+        } else {
+            return false
+        }
+    }()
+
     func load(completion: (() -> Void)?) {
         // redirect to https://gitcdn.link/repo/genadyo/WWDC/master/data/data.json
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
             if let results = results {
                 self?.parties = results.parties
                 self?.banners = results.banners
+                self?.promotion = results.promotion
             }
             if let JSON = JSON as? [String: AnyObject] {
                 self?.JSON = JSON

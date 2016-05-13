@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerManager {
-    static func load(url: String, completion: ((results: (parties: [[Party]], banners: [Banner])?, JSON: AnyObject?) -> Void)?) {
+    static func load(url: String, completion: ((results: (parties: [[Party]], banners: [Banner], promotion: Bool)?, JSON: AnyObject?) -> Void)?) {
         if let url = NSURL(string: url) {
             let request = NSURLRequest(URL: url, cachePolicy: .ReloadIgnoringLocalCacheData, timeoutInterval: 60.0)
             let session = NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
@@ -55,7 +55,7 @@ class ServerManager {
         return dateFormatter.stringFromDate(date)
     }
 
-    static func processJSON(JSON: AnyObject?) -> (parties: [[Party]], banners: [Banner]) {
+    static func processJSON(JSON: AnyObject?) -> (parties: [[Party]], banners: [Banner], promotion: Bool) {
         var allParties = [Party]()
         if let json = JSON as? [String: AnyObject], parties = json["parties"] as? [AnyObject] {
             for party in parties {
@@ -107,6 +107,11 @@ class ServerManager {
             }
         }
 
-        return (partiesForDay, banners)
+        var promotion = false
+        if let json = JSON as? [String: AnyObject], p = json["promotion"] as? Bool {
+            promotion = p
+        }
+
+        return (partiesForDay, banners, promotion)
     }
 }
