@@ -86,13 +86,13 @@ class ServerManager {
         var parties = [Party]()
         for party in allParties {
             if let lastDate = lastDate where NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.isDate(lastDate, inSameDayAsDate: party.startDate) == false {
-                partiesForDay.append(parties.sort({ $0.title < $1.title }))
+                partiesForDay.append(parties.sort({ $0.title > $1.title }))
                 parties = []
             }
             parties.append(party)
             lastDate = party.startDate
         }
-        partiesForDay.append(parties.sort({ $0.title < $1.title }))
+        partiesForDay.append(parties.sort({ $0.title > $1.title }))
 
         var banners = [Banner]()
         if let json = JSON as? [String: AnyObject], bns = json["banners"] as? [AnyObject] {
