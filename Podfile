@@ -15,6 +15,9 @@ plugin 'cocoapods-keys', {
     "Crashlytics",
     "Lyft",
     "LyftSecret",
+    "LyftPath",
+    "LyftKey",
+    "LyftValue",
     "OneSignal"
   ]
 }
