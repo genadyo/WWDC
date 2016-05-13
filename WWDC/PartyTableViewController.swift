@@ -169,12 +169,12 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
                 if success == true {
                     Lyft.request(.POST, path: keys.lyftPath(), params: [keys.lyftKey(): keys.lyftValue()]) { response, error in
                         if let response = response where response.keys.count == 0 {
-                            Answers.logCustomEventWithName("Lyft Promotion Succeed", customAttributes: nil)
+                            Answers.logCustomEventWithName("Lyft Promotion Succeed", customAttributes: response)
                             dispatch_async(dispatch_get_main_queue()) {
                                 self?.openLyftRide()
                             }
                         } else {
-                            Answers.logCustomEventWithName("Lyft Promotion Failed", customAttributes: nil)
+                            Answers.logCustomEventWithName("Lyft Promotion Failed", customAttributes: response)
                             dispatch_async(dispatch_get_main_queue()) {
                                 self?.openLyftRide()
                             }
