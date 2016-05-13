@@ -169,30 +169,30 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
                 if success == true {
                     Lyft.request(.POST, path: keys.lyftPath(), params: [keys.lyftKey(): keys.lyftValue()]) { response, error in
                         if let response = response where response.keys.count == 0 {
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self?.openLyftRide()
-                            }
                             Answers.logCustomEventWithName("Lyft Promotion Succeed", customAttributes: nil)
-                        } else {
                             dispatch_async(dispatch_get_main_queue()) {
                                 self?.openLyftRide()
                             }
+                        } else {
                             Answers.logCustomEventWithName("Lyft Promotion Failed", customAttributes: nil)
+                            dispatch_async(dispatch_get_main_queue()) {
+                                self?.openLyftRide()
+                            }
                         }
                     }
                 } else {
+                    Answers.logCustomEventWithName("Lyft Login Failed", customAttributes: nil)
                     dispatch_async(dispatch_get_main_queue()) {
                         self?.openLyftRide()
                     }
-                    Answers.logCustomEventWithName("Lyft Login Failed", customAttributes: nil)
                 }
             }
         }
     }
 
     private func openLyftRide() {
-        Lyft.openLyftRide(rideType: .Line, destination: Address(lat: Float(party.latitude), lng: Float(party.longitude)))
         Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
+        Lyft.openLyftRide(rideType: .Line, destination: Address(lat: Float(party.latitude), lng: Float(party.longitude)))
     }
 
     @IBAction func openWeb(sender: AnyObject) {
