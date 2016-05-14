@@ -79,20 +79,20 @@ class ServerManager {
             }
         }
 
-        allParties.sortInPlace({ $0.startDate.compare($1.startDate) == NSComparisonResult.OrderedAscending })
+        allParties.sortInPlace({ $0.startDate.compare($1.startDate) == .OrderedAscending })
 
         var lastDate: NSDate?
         var partiesForDay = [[Party]]()
         var parties = [Party]()
         for party in allParties {
             if let lastDate = lastDate where NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!.isDate(lastDate, inSameDayAsDate: party.startDate) == false {
-                partiesForDay.append(parties.sort({ $0.title > $1.title }))
+                partiesForDay.append(parties.sort({ $0.startDate.compare($1.startDate) == .OrderedSame ? $0.title < $1.title : $0.startDate.compare($1.startDate) == .OrderedAscending }))
                 parties = []
             }
             parties.append(party)
             lastDate = party.startDate
         }
-        partiesForDay.append(parties.sort({ $0.title > $1.title }))
+        partiesForDay.append(parties.sort({ $0.startDate.compare($1.startDate) == .OrderedSame ? $0.title < $1.title : $0.startDate.compare($1.startDate) == .OrderedAscending }))
 
         var banners = [Banner]()
         if let json = JSON as? [String: AnyObject], bns = json["banners"] as? [AnyObject] {
