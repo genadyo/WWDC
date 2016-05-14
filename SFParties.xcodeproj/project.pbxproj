@@ -402,7 +402,7 @@
 				PRODUCT_NAME = Parties;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "WWDC/SFParties-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -466,7 +466,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "so.sugar.SF$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Parties;
 				PROVISIONING_PROFILE = "dc813133-5d90-4e33-be09-3be9ee87837a";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
