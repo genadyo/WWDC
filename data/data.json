@@ -56,6 +56,34 @@
                     "longitude": -122.48313,
                     "url": "https://www.eventbrite.com/e/party-appstorey-the-untold-story-of-historys-greatest-computer-tickets-25419877538"
                 },{
+                    "objectId": "appstorey1",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/appstorey.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/appstorey.jpg",
+                    "title": "1Party — AppStorey",
+                    "startDate": "2016-06-15T20:00",
+                    "endDate": "2016-06-15T23:00",
+                    "details": "You know the computer. Tell your NeXTSTEP story to AppStorey at the AppStorey WWDC Party! This is your chance to learn about, or even contribute to the making of the AppStorey video documentary. We're going to set the record straight. Voice your unique point of view to the making of history's greatest copmuter, and help tell how this one copmuter made a collosal impact on today's mobile computing world. You were part of computer history. AppStorey T-shirts will be available to those who qualify for full or partial video interviews. Professional photographers, producers will be there to capture it all so dont miss out!",
+                    "address1": "Tommy's Mexican",
+                    "address2": "5929 Geary Blvd",
+                    "address3": "San Francisco, CA 94121",
+                    "latitude": 37.77987,
+                    "longitude": -122.48313,
+                    "url": "https://www.eventbrite.com/e/party-appstorey-the-untold-story-of-historys-greatest-computer-tickets-25419877538"
+                },{
+                    "objectId": "appstorey2",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/appstorey.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/appstorey.jpg",
+                    "title": "2Party — AppStorey",
+                    "startDate": "2016-06-15T20:00",
+                    "endDate": "2016-06-15T23:00",
+                    "details": "You know the computer. Tell your NeXTSTEP story to AppStorey at the AppStorey WWDC Party! This is your chance to learn about, or even contribute to the making of the AppStorey video documentary. We're going to set the record straight. Voice your unique point of view to the making of history's greatest copmuter, and help tell how this one copmuter made a collosal impact on today's mobile computing world. You were part of computer history. AppStorey T-shirts will be available to those who qualify for full or partial video interviews. Professional photographers, producers will be there to capture it all so dont miss out!",
+                    "address1": "Tommy's Mexican",
+                    "address2": "5929 Geary Blvd",
+                    "address3": "San Francisco, CA 94121",
+                    "latitude": 37.77987,
+                    "longitude": -122.48313,
+                    "url": "https://www.eventbrite.com/e/party-appstorey-the-untold-story-of-historys-greatest-computer-tickets-25419877538"
+                },{
                     "objectId": "linkedin",
                     "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/linkedin.png",
                     "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/linkedin.jpg",
