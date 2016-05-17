@@ -76,6 +76,12 @@
                     "375": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_375.png",
                     "414": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/Caltrain_414.png",
                     "url": "https://itunes.apple.com/app/apple-store/id1077039589?pt=493817&ct=parties&mt=8"
+                },{
+                    "objectId": "BART",
+                    "320": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/BART_320.png",
+                    "375": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/BART_375.png",
+                    "414": "https://gitcdn.link/repo/genadyo/WWDC/master/data/banners/BART_414.png",
+                    "url": "https://itunes.apple.com/us/app/bart-schedule-and-planner/id1111913549?mt=8"
                 }],
     "promotion": true
 }
