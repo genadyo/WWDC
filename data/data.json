@@ -98,9 +98,9 @@
                     "longitude": -122.39216,
                     "url": "http://www.meetup.com/swift-language/events/231196358/"
                 },{
-                    "objectId": "nshipster",
-                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/realm.png",
-                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/realm.jpg",
+                    "objectId": "hipster",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/hipster.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/hipster.jpg",
                     "title": "NSHipster Pub Quiz!",
                     "startDate": "2016-06-14T18:30",
                     "endDate": "2016-06-14T21:00",
