@@ -97,6 +97,34 @@
                     "latitude": 37.78002,
                     "longitude": -122.39216,
                     "url": "http://www.meetup.com/swift-language/events/231196358/"
+                },{
+                    "objectId": "nshipster",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/realm.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/realm.jpg",
+                    "title": "NSHipster Pub Quiz!",
+                    "startDate": "2016-06-14T18:30",
+                    "endDate": "2016-06-14T21:00",
+                    "details": "PLEASE NOTE:  The event is first-come, first-served – only the first 200 will be admitted. RSVPing is required but does not guarantee entry. \n\nWe wish we had enough space for everyone, but we can only safely have so many people inside at once.\n\nTo make it fair for those who RSVP, we will be checking names at the door. Thanks! \n\n\n\nJoin NSHipster at Realm HQ for the eighth annual edition of the NSHipster Pub Quiz! \n\n\n\nWhat?\n\nJoin us for the eighth edition of the NSHipster Pub Quiz! You'll answer four rounds of ten questions each, challenging your knowledge of Objective-C, Swift, and Cocoa, along with all things Apple, from the prosaic to the arcane. Come with a team or figure it out when you get there – in either case, space is limited, so RSVP now!\n\nCome by Realm HQ for delicious food and drinks starting at 6:30. The quiz starts once everyone has teamed up and settled in, around 7:30. Stick around afterwards to gloat or commiserate, or just to catch up with your fellow NSHipsters.\n\nAll ages are welcome! We will have plenty of non-alcoholic drinks in addition to beer. You must be 21 or older to drink alcohol.\n\n\n\nWhere?\n\n• Realm is located at 148 Townsend between 2nd and 3rd.\n\n• An easy 15 minute walk from Moscone down 3rd St. (Map from Moscone)\n\n• A 5 minute walk from the King Street Caltrain station.  \n\n\n\nWhen?\n\n6:30pm: Doors, food, beer + range of non-alcoholic drinks \n\n7:30pm: Brain-wrenching quiz \n\n\n\nWho:\n\nYour host Nate Cook, a couple hundred (!!!) fiendish competitors, and the gracious folks at Realm.",
+                    "address1": "Realm",
+                    "address2": "148 Townsend St",
+                    "address3": "San Francisco, CA 94107",
+                    "latitude": 37.78002,
+                    "longitude": -122.39216,
+                    "url": "http://www.meetup.com/realm-sf/events/231250478/"
+                },{
+                    "objectId": "beard",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/beard.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/beard.jpg",
+                    "title": "Beard Bash 2016",
+                    "startDate": "2016-06-13T20:00",
+                    "endDate": "2016-06-13T23:00",
+                    "details": "Join Jim Dalrymple and iMore for an incredible night of music from The Department of Rock and headliners, Airplane Mode.\n\nYou must bring your RSVP to the venue in order to get entry into the party. You must be 21 because we will be serving free beer and wine throughout the night.\n\nPlease arrive early. Having an RSVP does not guarantee entry into the event.\n\nMany thanks to our sponsors, Pixelmator, MacPaw, Hover, and Microsoft, for making this party a reality!",
+                    "address1": "The Mezzanine",
+                    "address2": "444 Jessie Street",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.7824,
+                    "longitude": -122.408,
+                    "url": "https://ti.to/jim-dalrymple/beard-bash-2016"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
