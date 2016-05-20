@@ -125,6 +125,20 @@
                     "latitude": 37.7824,
                     "longitude": -122.408,
                     "url": "https://ti.to/jim-dalrymple/beard-bash-2016"
+                },{
+                    "objectId": "breakpoints",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/breakpoints.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/breakpoints.jpg",
+                    "title": "James Dempsey and the Breakpoints LIVE near WWDC",
+                    "startDate": "2016-06-15T19:00",
+                    "endDate": "2016-06-15T23:00",
+                    "details": "Join the WWDCGirls and James Dempsey and the Breakpoints for an evening of mingling and music to benefit App Camp For Girls!\n\nDoors open at 7:00 for the WWDCGirls cocktail hour with plenty of time to meet and mingle.\nThe music starts at 8:30 when James Dempsey and the Breakpoints take the stage to perform a full concert of humorous nerdy songs including favorites from their #5 Billboard-charting comedy album, Backtrace.\nThere will be an open bar all evening, with top-shelf liquors, beer and wine flowing from 7:00 - 11:00 pm.\nIt's our goal to raise $20,000 to support App Camp For Girls at this event. Your generous donation will go directly toward funding this year's programming and future growth.\nThis event is open to everyone 21 years of age and older.",
+                    "address1": "The Mezzanine",
+                    "address2": "444 Jessie Street",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.7824,
+                    "longitude": -122.408,
+                    "url": "https://www.classy.org/san-francisco/events/james-dempsey-breakpoints-live-near-wwdca-wwdcgirls-benefit-for-app-camp-for-girls-presented-by-capital-one/e79759"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
