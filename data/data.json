@@ -139,6 +139,20 @@
                     "latitude": 37.7824,
                     "longitude": -122.408,
                     "url": "https://www.classy.org/san-francisco/events/james-dempsey-breakpoints-live-near-wwdca-wwdcgirls-benefit-for-app-camp-for-girls-presented-by-capital-one/e79759"
+                },{
+                    "objectId": "yelp",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/yelp.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/yelp.jpg",
+                    "title": "Yelp WWDC 2016 After Party",
+                    "startDate": "2016-06-15T18:30",
+                    "endDate": "2016-06-15T21:30",
+                    "details": "Join us for our 4th annual WWDC after party! We'll being enjoying drinks and appetizers throughout the night. \nAgenda: \n6:30 PM - Doors Open \n8:00 PM - Doors Close\n9:30 PM - Event Ends",
+                    "address1": "Yelp, Floor 8",
+                    "address2": "140 New Montgomery Street",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.78668,
+                    "longitude": -122.39988,
+                    "url": "https://www.eventbrite.com/e/yelp-wwdc-2016-after-party-tickets-25552967614"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
