@@ -153,6 +153,20 @@
                     "latitude": 37.78668,
                     "longitude": -122.39988,
                     "url": "https://www.eventbrite.com/e/yelp-wwdc-2016-after-party-tickets-25552967614"
+                },{
+                    "objectId": "flurry",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/flurry.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/flurry.jpg",
+                    "title": "Official WWDC iParty",
+                    "startDate": "2016-06-15T22:30",
+                    "endDate": "2016-06-16T00:30",
+                    "details": "Can we buy you a drink?\nMark your calendars - It's going down! Flurry & Testlio's Official WWDC iParty kicks off on Wednesday, June 15th at 10:30 PM, and we want you to be there. Infusion Lounge (124 Ellis Street) is hosting the heavy hitters in mobile at this exclusive event. Space is extremely limited so please RSVP to be added to the waitlist and we’ll reach out with confirmation.",
+                    "address1": "Infusion Lounge",
+                    "address2": "124 Ellis Street",
+                    "address3": "San Francisco, CA 94102",
+                    "latitude": 37.78560,
+                    "longitude": -122.40852,
+                    "url": "https://wwdc2016.splashthat.com"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
