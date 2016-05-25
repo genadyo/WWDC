@@ -195,6 +195,20 @@
                     "latitude": 37.78340,
                     "longitude": -122.40717,
                     "url": "https://www.eventbrite.com.au/e/2016-reveal-wwdc-meetup-tickets-25643699997"
+                },{
+                    "objectId": "lyft",
+                    "icon": "",
+                    "logo": "",
+                    "title": "WWDC Lyft Happy Hour",
+                    "startDate": "2016-06-14T18:00",
+                    "endDate": "2016-06-14T21:00",
+                    "details": "Come join us at Lyft's new HQ for a WWDC Happy Hour! We'll have food/drinks to enjoy and lots of time to mingle, make new friends, and hear a little bit more about iOS at Lyft.",
+                    "address1": "185 Berry Street",
+                    "address2": "Lobby #4",
+                    "address3": "San Francisco, CA 94107",
+                    "latitude": 37.776609,
+                    "longitude": -122.392121,
+                    "url": "https://www.eventbrite.com/e/wwdc-lyft-happy-hour-tickets-25652918570"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
