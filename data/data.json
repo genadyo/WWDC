@@ -171,7 +171,7 @@
                     "objectId": "girls",
                     "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/girls.png",
                     "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/girls.jpg",
-                    "title": "Women at WWDC Lunch ",
+                    "title": "Women at WWDC Lunch",
                     "startDate": "2016-06-14T12:00",
                     "endDate": "2016-06-14T14:00",
                     "details": "Join us for our annual lunch! Get together, meet fellow Women at WWDC, and enjoy some good food.\nThis year we are working together with Sound Off to raise money for grants to fellow women speakers at Cocoa conferences. 100% of your optional contributions will go towards this cause!\nFood and drink are fully paid for by our sponsors; come hungry and ready to network! We're serving a light lunch including vegetarian and other options.\nDon't have a WWDC badge? No problem! We want you to come anyway! Know of anyone who would enjoy this? Please pass it along!\nThis event is only open to individuals who identify as women in a way that is significant to them.\nJoin us on Wednesday June 15th for James Dempsey and the Breakpoints LIVE - benefitting App Camp For Girls, which is open to everyone age 21 and over. Follow @wwdcgirls on Twitter for other event announcements.\nThis event is covered by our Code of Conduct: http://www.wwdcgirls.com/code-of-conduct/",
@@ -181,6 +181,20 @@
                     "latitude": 37.78394,
                     "longitude": -122.40302,
                     "url": "https://www.eventbrite.com/e/women-at-wwdc-lunch-sponsored-by-atp-postmates-asynchrony-walmartlabs-tickets-25638412181"
+                },{
+                    "objectId": "reveal",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/reveal.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/reveal.jpg",
+                    "title": "2016 Reveal WWDC Meetup",
+                    "startDate": "2016-06-12T19:30",
+                    "endDate": "2016-06-12T22:45",
+                    "details": "We're kicking off WWDC with a Reveal meetup! Chat with the developers of Reveal and get a glimpse of what we have in store for the next major release.\nJoin us at the S&R Lounge in Hotel Zetta, just a short walk from Moscone. Get there early for the first round of drinks on us.",
+                    "address1": "S&R Lounge",
+                    "address2": "55 5th St",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.78340,
+                    "longitude": -122.40717,
+                    "url": "https://www.eventbrite.com.au/e/2016-reveal-wwdc-meetup-tickets-25643699997"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
