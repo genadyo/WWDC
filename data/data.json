@@ -251,6 +251,20 @@
                     "latitude": 37.78340,
                     "longitude": -122.40717,
                     "url": "https://www.eventbrite.com/e/after-hours-wwdc-event-the-photo-app-developer-mind-meld-social-tickets-25646987831"
+                },{
+                    "objectId": "climate",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/climate.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/climate.jpg",
+                    "title": "WWDC Happy Hour",
+                    "startDate": "2016-06-14T16:00",
+                    "endDate": "2016-06-14T19:00",
+                    "details": "Apple's Worldwide Developer's conference is coming up next month and most of the event is taking place at the Moscone center just across the street from our San Francisco office.\nAs a way of showing our appreciation of the iOS developer community, Climate is hosting a happy hour on Tuesday of the conference (June 14th).\nDetails about the event are below — please mark your calendars and if you know of others who are attending the conference (or who are following along via the live stream), please invite them to join us.\nIn addition to drinks and food, there will also be a Women's Networking Breakout led by Preeti Kaur.\nHappy Hour Details:\nWhen: Tuesday, June 14th from 4-6:30 PM; details:\nDoors open: 4 pm\nQuick intro to Climate: 5 pm\nWomen’s networking hour: 5:15-6:15 PM\nStart wrapping up: 6:30 PM\nWhere: Climate SF office: 201 3rd St, 11th Floor, San Francisco\nExternal guests should claim a free ticket on EventBrite (link here) so we can make sure we don't exceed our capacity",
+                    "address1": "Suite 1100 11th Floor",
+                    "address2": "201 3rd St",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.78507,
+                    "longitude": -122.39987,
+                    "url": "https://www.eventbrite.com/e/wwdc-happy-hour-climate-corp-tickets-25613404382"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
