@@ -265,6 +265,20 @@
                     "latitude": 37.78507,
                     "longitude": -122.39987,
                     "url": "https://www.eventbrite.com/e/wwdc-happy-hour-climate-corp-tickets-25613404382"
+                },{
+                    "objectId": "design",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/design.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/design.jpg",
+                    "title": "Designer Meetup",
+                    "startDate": "2016-06-15T18:00",
+                    "endDate": "2016-06-15T23:00",
+                    "details": "AN EVENT HOSTED BY NYLAS, SKETCH & DESIGN DETAILS\n\nJoin us for a night hosted by Nylas with the fine folks from Sketch and Design Details at the gorgeous Nylas San Francisco office during WWDC week! \n\nSocialize with some great folks, skilled designers and enjoy fantastic goodies, drinks and snacks. We'll have a limited stock of some design swag!",
+                    "address1": "Nylas HQ",
+                    "address2": "695 Minna St",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.77706,
+                    "longitude": -122.41238,
+                    "url": "https://nvite.com/DubDubDsgn"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
