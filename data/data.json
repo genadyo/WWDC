@@ -281,18 +281,18 @@
                     "url": "https://nvite.com/DubDubDsgn"
                 },{
                     "objectId": "ms",
-                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/ms.png",
-                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/ms.jpg",
-                    "title": "Xamarin & Microsoft WWDC Party",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/microsoft.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/microsoft.jpg",
+                    "title": "Microsoft & Xamarin WWDC Party",
                     "startDate": "2016-06-13T16:30",
                     "endDate": "2016-06-13T20:30",
-                    "details": "Welcome to the Afterparty \nCome and join Xamarin and Microsoft after the WWDC 2016 State of the Union. We’ll be grabbing food, getting a drink and chatting about iOS. \n\nYou'll have the chance to see the Test Cloud Wall in action and indulge in the Xamarin Playground. Tinker with the latest robotics, including Sphero and Robugtix; fly Parrot drones or just sit back and relax in one of our massage chairs.\n \nWho should attend? \nAll iOS and OS X devs are welcome even if you're not attending WWDC.  \n\nWin one of three prizes valued at over $300 each* \nSimply check in at the door and you'll be entered into our drawing to win your choice of an Apple Watch Sport or an Xbox One! \n*(1 winner announced every hour). \n\nWe hope to see you there!",
+                    "details": "Come join Microsoft and Xamarin after the WWDC 2016 State of the Union. We're located just around the corner from the Bill Graham Civic Auditorium in the Twitter building. We'll have plenty of food and drinks and you'll be entered to win one of three prizes valued at over $300 each (Apple Watch or Xbox One). Come discuss iOS with the developers of Outlook, Office, HockeyApp, SwiftKey, MileIQ, and many, many more.",
                     "address1": "Twitter HQ, 3rd Floor",
                     "address2": "1355 Market Street",
                     "address3": "San Francisco, CA 94103",
                     "latitude": 37.77678,
                     "longitude": -122.41688,
-                    "url": "http://www.eventbrite.com/e/xamarin-microsoft-wwdc-party-registration-25605890909"
+                    "url": "https://wwdcparty.ms"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
