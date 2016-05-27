@@ -293,6 +293,20 @@
                     "latitude": 37.77678,
                     "longitude": -122.41688,
                     "url": "https://wwdcparty.ms"
+                },{
+                    "objectId": "nest",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/nest.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/nest.jpg",
+                    "title": "Nest WWDC Mixer",
+                    "startDate": "2016-06-14T17:30",
+                    "endDate": "2016-06-14T19:30",
+                    "details": "Nest, the leading connected home brand, is hosting a mixer on Tuesday, June 14th at Thirsty Bear Brewing Co.- just a short walk from the Moscone Center. Whether you are local or visiting for WWDC, we invite you to stop by and meet our team, including Nest VP of Apps and Services, Nik Sathe.\nDoors will open at 5:00pm. Appetizers and drinks will be served. \nOnly one ticket per person, thank you!",
+                    "address1": "ThirstyBear Brewing Company",
+                    "address2": "661 Howard Street",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.78548,
+                    "longitude": -122.39960,
+                    "url": "https://www.eventbrite.com/e/nest-wwdc-mixer-tickets-25742455377"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
