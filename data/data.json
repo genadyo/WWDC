@@ -307,6 +307,20 @@
                     "latitude": 37.78548,
                     "longitude": -122.39960,
                     "url": "https://www.eventbrite.com/e/nest-wwdc-mixer-tickets-25742455377"
+                },{
+                    "objectId": "mapbox",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/mapbox.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/mapbox.jpg",
+                    "title": "Kick Off WWDC with Mapbox",
+                    "startDate": "2016-06-14T17:30",
+                    "endDate": "2016-06-14T20:30",
+                    "details": "We're kicking off WWDC on June 14th, and you're invited to take part in the festivities! Hear about the latest mobile developments from the Mapbox team over food and drinks!",
+                    "address1": "Mapbox SF Office",
+                    "address2": "149 9th Street 404",
+                    "address3": "San Francisco CA 94103",
+                    "latitude": 37.77577,
+                    "longitude": -122.41370,
+                    "url": "https://wwdcmapbox.splashthat.com"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
