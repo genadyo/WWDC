@@ -321,6 +321,20 @@
                     "latitude": 37.77577,
                     "longitude": -122.41370,
                     "url": "https://wwdcmapbox.splashthat.com"
+                },{
+                    "objectId": "thoughtbot",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/thoughtbot.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/thoughtbot.jpg",
+                    "title": "WWDC 2016 Breakfast",
+                    "startDate": "2016-06-14T07:30",
+                    "endDate": "2016-06-14T08:30",
+                    "details": "What's in it for me?\nCome have a hearty pre-WWDC breakfast courtesy of thoughtbot before heading down to Moscone! Say hello to other early rising developers & designers while sipping on mimosas.",
+                    "address1": "thoughtbot, Suite 700",
+                    "address2": "85 2nd Street",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.78851,
+                    "longitude": -122.39994,
+                    "url": "https://wwdc-2016-breakfast.confetti.events"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
