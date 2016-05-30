@@ -335,6 +335,20 @@
                     "latitude": 37.78851,
                     "longitude": -122.39994,
                     "url": "https://wwdc-2016-breakfast.confetti.events"
+                },{
+                    "objectId": "cocoapods",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/cocoapods.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/cocoapods.jpg",
+                    "title": "State of the Union 2016",
+                    "startDate": "2016-06-13T18:15",
+                    "endDate": "2016-06-13T20:15",
+                    "details": "2016 has been a big year for CocoaPods, come join us at our State of the Union.",
+                    "address1": "Twilio, Third Floor",
+                    "address2": "645 Harrison Street",
+                    "address3": "San Francisco, CA 94107",
+                    "latitude": 37.76182,
+                    "longitude": -122.39859,
+                    "url": "https://sotu.cocoapods.org"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
