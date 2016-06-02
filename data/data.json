@@ -349,6 +349,20 @@
                     "latitude": 37.76182,
                     "longitude": -122.39859,
                     "url": "https://sotu.cocoapods.org"
+                },{
+                    "objectId": "macindie",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/macindie.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/macindie.jpg",
+                    "title": "sfMacIndie 10th Anniversary!",
+                    "startDate": "2016-06-12T17:00",
+                    "endDate": "2016-06-12T21:00",
+                    "details": "The premier networking event that kicks off WWDC.",
+                    "address1": "Jillian's",
+                    "address2": "175 4th Street",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.77493,
+                    "longitude": -122.41942,
+                    "url": "http://sfmacindie.com"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
