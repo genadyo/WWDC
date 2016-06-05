@@ -363,6 +363,20 @@
                     "latitude": 37.77493,
                     "longitude": -122.41942,
                     "url": "http://sfmacindie.com"
+                },{
+                    "objectId": "watchos",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/watchos.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/watchos.jpg",
+                    "title": "watchOS 3 Features Day",
+                    "startDate": "2016-06-18T09:30",
+                    "endDate": "2016-06-18T19:00",
+                    "details": "We had fun last year at the Apple Watch Hackathon. This year during WWDC, we're going to have another event. It will be slightly different. \n\n\n\nOpen source coding day.  \n\nEveryone will work in teams to build a single feature showcase of watchOS 3. These will all be combined into an app where you can select each teams’ work from a list. This is ambitious. It'll be like the WatchKit catalog except whole features, not mere interface elements. The combined app will be released as open source so that the wider world can learn how to do all the cool new things in watchOS. We'll all work from the watchOS 3 Features project on GitHub.\n\nDesigners welcome.\n\nThis is the fun part. The interface should look rad. We'll need screen mockups, icons, cartoon characters -- the works. If you're a designer, show off your work on this cutting edge platform.\n\nWhat to expect.\n\nThis is the awesome video capturing last year’s event:\n\n\n\nLearn.\n\nExcited about this event? Get your head in the game by reading watchOS 2 by Tutorials. The book is packed with everything you need to know to be an expert. Study that to learn all the ins and outs of watchOS.\n\nFood.\n\nCurrently I have no sponsors for this event so we'll have to bring our own food and eat out. There are several restaurants in the area.\n\nSponsors.\n\nSpeaking of which, get your company's name in front of designers and developers.\n\nVenue.\n\nSandbox Suites South Park has graciously donated their space to us. It has presentation area, work area, and meeting rooms. That's a great setup for this type of event. That said, there is limited space at our venue. I'm going to put the RSVP limit at 100. If you're not going to actively participate, please sit this one out so that we have enough room for the participants.\n\nVolunteer.\n\nThis will be a productive day. If you want to be a part of the action, but haven't been practicing code and design, come volunteer. ",
+                    "address1": "Sandbox Suites",
+                    "address2": "404 Bryant St",
+                    "address3": "San Francisco, CA 94107",
+                    "latitude": 37.78297,
+                    "longitude": -122.39419,
+                    "url": "http://www.meetup.com/apple-watch/events/231075936/"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
