@@ -380,7 +380,7 @@
                 },{
                     "objectId": "buddy",
                     "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/buddy.png",
-                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/buddy.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/buddy.jpg",
                     "title": "Buddybuild Happy Hour",
                     "startDate": "2016-06-13T18:00",
                     "endDate": "2016-06-13T20:00",
@@ -390,7 +390,7 @@
                     "address3": "San Francisco, CA 94103",
                     "latitude": 37.78241,
                     "longitude": -122.40538,
-                    "url": "http://www.eventbrite.com/e/buddybuild-wwdc-happy-hour-tickets-25852081271?aff=WWDCPartiesapp"
+                    "url": "http://www.eventbrite.com/e/buddybuild-wwdc-happy-hour-tickets-25852081271"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
