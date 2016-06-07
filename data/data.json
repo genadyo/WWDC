@@ -405,6 +405,20 @@
                     "latitude": 37.77831,
                     "longitude": -122.40852,
                     "url": "https://squareioseng.splashthat.com"
+                },{
+                    "objectId": "tiki",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/tiki.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/tiki.jpg",
+                    "title": "Tiki Tuesday",
+                    "startDate": "2016-06-14T21:00",
+                    "endDate": "2016-06-14T23:00",
+                    "details": "",
+                    "address1": "Pagan Idol",
+                    "address2": "375 Bush Street",
+                    "address3": "San Francisco CA 94104",
+                    "latitude": 37.79072,
+                    "longitude": -122.40359,
+                    "url": "http://tikituesday.party"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
