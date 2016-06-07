@@ -447,6 +447,20 @@
                     "latitude": 37.78731,
                     "longitude": -122.39937,
                     "url": "https://button-wwdc.splashthat.com"
+                },{
+                    "objectId": "trello",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/trello.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/trello.jpg",
+                    "title": "WWDC iOS Panel ft. Zendesk, Trello, Slack, & Branch",
+                    "startDate": "2016-06-13T18:30",
+                    "endDate": "2016-06-13T20:30",
+                    "details": "Attending WWDC? Not attending but closely watching? Either way, join us at Zendesk HQ on Monday June 13th as we bring together an awesome panel to discuss how Zendesk, Slack, Trello, & Branch view 'Being a Good iOS Citizen'. The discussion will cover topics around how these engineers see developing for a mobile ecosystem where integration with hardware (Watch), AI (Siri SDK?), and other native and mobile apps matters. \nNote: Space is limited and registered attendees will be admitted on a first come, first serve basis. Must be 21+ years old to attend.\nSchedule:\n6:30-7:00 - Networking, Drinks, & Food\n7:00-7:45 - Panel featuring Zendesk, Slack, Trello and Branch \n7:45-8:00 - Q&A\n8:00-8:30 - More Networking, Drinks & Food\nPanelists:\n- Pierre-Alain Bouchard, Mobile Development Manager @ Zendesk\n- Don Frehulfer, Sr. iOS engineer @ Trello\n- Stas Zhukovskiy, Evangelist @ Branch\n- TBA @ Slack\n& Moderated by Hamid Palo, Director of Product Partnerships @ Trello",
+                    "address1": "Zendesk",
+                    "address2": "1019 Market Street",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.78156,
+                    "longitude": -122.41043,
+                    "url": "https://www.eventbrite.com/e/wwdc-ios-panel-ft-zendesk-trello-slack-branch-tickets-25911185052"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
