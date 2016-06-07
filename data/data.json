@@ -461,6 +461,20 @@
                     "latitude": 37.78156,
                     "longitude": -122.41043,
                     "url": "https://www.eventbrite.com/e/wwdc-ios-panel-ft-zendesk-trello-slack-branch-tickets-25911185052"
+                },{
+                    "objectId": "medium",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/medium.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/medium.jpg",
+                    "title": "WWDC Watch Party",
+                    "startDate": "2016-06-13T09:30",
+                    "endDate": "2016-06-13T13:00",
+                    "details": "Come join the Medium iOS team watch the WWDC Keynote! \n\nWe will be watching the live stream from 10am-noon in the Medium office, and will provide coffee and breakfast starting at 9:30am. Afterwards, we will provide lunch so we can discuss all of the announcements. \n\n9:30-10: Coffee / Snacks / Mingle\n\n10-12pm Watch Keynote\n\n12-1pm: Lunch / etc\n\nyou’ll be watching the live stream anyways, so come watch with us ;)",
+                    "address1": "Medium HQ, 9th Floor",
+                    "address2": "760 Market St",
+                    "address3": "San Francisco, CA 94102",
+                    "latitude": 37.78650,
+                    "longitude": -122.40530,
+                    "url": "https://nvite.com/MediumEngWWDC/aafa"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
