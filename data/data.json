@@ -378,13 +378,13 @@
                     "longitude": -122.39419,
                     "url": "http://www.meetup.com/apple-watch/events/231075936/"
                 },{
-                     "objectId": "buddybuild",
-                    "icon": "",
-                    "logo": "",
-                    "title": "Buddybuild Happy Hour (at Slack HQ)!",
+                    "objectId": "buddy",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/buddy.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/buddy.png",
+                    "title": "Buddybuild Happy Hour",
                     "startDate": "2016-06-13T18:00",
                     "endDate": "2016-06-13T20:00",
-                    "details": "Join the buddybuild team and check out the SlackHQ office for a WWDC happy hour! \n\nWe'll have free food / drinks, t-shirts and other goodies to give away, and will help you setup your first mobile CI build!\n\nMix, mingle, discuss the latest Apple news, and leave with your app up and running on buddybuild!"
+                    "details": "Join the buddybuild team and check out the SlackHQ office for a WWDC happy hour! \n\nWe'll have free food / drinks, t-shirts and other goodies to give away, and will help you setup your first mobile CI build!\n\nMix, mingle, discuss the latest Apple news, and leave with your app up and running on buddybuild!",
                     "address1": "Slack HQ",
                     "address2": "155 5th St.",
                     "address3": "San Francisco, CA 94103",
