@@ -419,6 +419,20 @@
                     "latitude": 37.79072,
                     "longitude": -122.40359,
                     "url": "http://tikituesday.party"
+                },{
+                    "objectId": "talkshow",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/talkshow.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/talkshow.jpg",
+                    "title": "The Talk Show Live From WWDC 2016",
+                    "startDate": "2016-06-14T18:00",
+                    "endDate": "2016-06-14T21:00",
+                    "details": "The annual live audience episode of America’s favorite three-star podcast, at the end of the second day of WWDC. John Gruber will be joined by a cavalcade of special guest stars, or perhaps just one special guest star, or maybe it’ll just be an hour-long monologue.",
+                    "address1": "Mezzanine",
+                    "address2": "444 Jessie St",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.7824,
+                    "longitude": -122.408,
+                    "url": "https://ti.to/daringfireball/the-talk-show-wwdc-2016"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
