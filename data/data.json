@@ -411,7 +411,7 @@
                     "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/tiki.jpg",
                     "title": "Tiki Tuesday",
                     "startDate": "2016-06-14T21:00",
-                    "endDate": "2016-06-14T23:00",
+                    "endDate": "2016-06-15T00:00",
                     "details": "",
                     "address1": "Pagan Idol",
                     "address2": "375 Bush Street",
@@ -433,6 +433,20 @@
                     "latitude": 37.7824,
                     "longitude": -122.408,
                     "url": "https://ti.to/daringfireball/the-talk-show-wwdc-2016"
+                },{
+                    "objectId": "button",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/button.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/button.jpg",
+                    "title": "Button WWDC Selfie Soirée",
+                    "startDate": "2016-06-15T20:00",
+                    "endDate": "2016-06-16T00:00",
+                    "details": "Join Button on Wednesday evening for our 2nd annual selfie soirée of extensive proportions. \n \nWe'll be at nearby 111 Minna Gallery, with an open bar, Del Popolo pizza, great music, and - most importantly - selfie backdrops to rival the likes of Apple's desktop backgrounds.\n \nLeft your selfie stick at home? Don't worry, we'll have plenty on hand. \n \n#ButtonSelfieSoiree\n\nFeaturing DJ Kelly\nSF's own, spinning all night",
+                    "address1": "111 Minna Gallery - Zappa Room",
+                    "address2": "111 Minna Street",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.78731,
+                    "longitude": -122.39937,
+                    "url": "https://button-wwdc.splashthat.com"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
