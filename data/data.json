@@ -391,6 +391,20 @@
                     "latitude": 37.78241,
                     "longitude": -122.40538,
                     "url": "http://www.eventbrite.com/e/buddybuild-wwdc-happy-hour-tickets-25852081271"
+                },{
+                    "objectId": "square",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/square.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/square.jpg",
+                    "title": "iOS Engineering at Square",
+                    "startDate": "2016-06-14T17:30",
+                    "endDate": "2016-06-14T21:00",
+                    "details": "Square’s iOS engineering team invites you to join us for an evening of lightning talks, plus food and drinks with your fellow iOS engineers during WWDC.\n\nJoin us at The Box SF, an 8 minute walk from Moscone West.\n \n Doors open at 5:30pm, talks start at 6:00pm.\nCheck-in will close during talks and re-open from 7:00 - 8:00pm\nDrinks & bites from 7:00pm to 9:00pm.\n \nNote – All attendees must be respectful and adhere to the JSConf Code of Conduct. Thanks!",
+                    "address1": "The Box SF",
+                    "address2": "1069 Howard Street",
+                    "address3": "San Francisco CA 94103",
+                    "latitude": 37.77831,
+                    "longitude": -122.40852,
+                    "url": "https://squareioseng.splashthat.com"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
