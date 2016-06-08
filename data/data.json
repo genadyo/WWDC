@@ -475,6 +475,20 @@
                     "latitude": 37.78650,
                     "longitude": -122.40530,
                     "url": "https://nvite.com/MediumEngWWDC/aafa"
+                },{
+                    "objectId": "uber",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/uber.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/uber.jpg",
+                    "title": "WWDC Uber Happy Hour",
+                    "startDate": "2016-06-15T18:30",
+                    "endDate": "2016-06-15T21:00",
+                    "details": "Please drop by for a casual Uber hosted happy hour between 6:30p and 9p on 6/15 to meet and mingle with fellow WWDC attendees along with iOS engineers from Uber.  \nWe will have a special fireside chat with Jeff Holden, Uber's Chief Product Officer and the creator of Amazon Prime.  \nFood and drinks will be provided.\nHope to see you there!",
+                    "address1": "Uber, 6th Floor",
+                    "address2": "555 Market Street",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.77493,
+                    "longitude": -122.41942,
+                    "url": "https://www.eventbrite.com/e/wwdc-uber-happy-hour-tickets-25734121450"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
