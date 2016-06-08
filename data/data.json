@@ -489,6 +489,20 @@
                     "latitude": 37.77493,
                     "longitude": -122.41942,
                     "url": "https://www.eventbrite.com/e/wwdc-uber-happy-hour-tickets-25734121450"
+                },{
+                    "objectId": "eero",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/eero.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/eero.jpg",
+                    "title": "eero WWDC/AltConf Party",
+                    "startDate": "2016-06-16T12:00",
+                    "endDate": "2016-06-16T15:00",
+                    "details": "Come eat, drink, and be merry with the eero engineering team! We'll be celebrating across the way from WWDC & AltConf and would love to meet you!\n\nWe'll have free food, drinks, and a chance to win an eero 3-pack! We'll also have a photobooth, charging station, eero swag, and the eero team to answer any of your questions!\n\nMake sure to bring your WWDC or AltConf badge for entry and we'll see you soon!",
+                    "address1": "Jillian's",
+                    "address2": "175 4th Street",
+                    "address3": "San Francisco, CA 94103",
+                    "latitude": 37.78394,
+                    "longitude": -122.40302,
+                    "url": "https://www.eventbrite.com/e/eero-wwdcaltconf-party-raffle-for-eero-3-pack-tickets-25942549865"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
