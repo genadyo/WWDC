@@ -524,13 +524,27 @@
                     "title": "Macworld's WWDC Happy Hour",
                     "startDate": "2016-06-15T16:00",
                     "endDate": "2016-06-15T18:00",
-                    "details": "Please join us for Macworld's WWDC Happy Hour, Wednesday, June 15, from 4 to 6pm. Bring your shades as we gather on the sunny fifth floor terrace of our office on 2nd and Bryant, a short walk from Moscone. We'll have a delicious Korean fusion taco bar by HRD, plenty of drinks, a photo booth, and gift bags from our amazing sponsor, VMware Fusion 8. Can't wait to see you there! ",
+                    "details": "Please join us for Macworld's WWDC Happy Hour, Wednesday, June 15, from 4 to 6pm. Bring your shades as we gather on the sunny fifth floor terrace of our office on 2nd and Bryant, a short walk from Moscone. We'll have a delicious Korean fusion taco bar by HRD, plenty of drinks, a photo booth, and gift bags from our amazing sponsor, VMware Fusion 8. Can't wait to see you there!",
                     "address1": "Macworld, 5th floor",
                     "address2": "501 2nd St",
                     "address3": "San Francisco, CA 94107",
                     "latitude": 37.76182,
                     "longitude": -122.39859,
                     "url": "https://www.eventbrite.com/e/macworlds-wwdc-happy-hour-sponsored-by-vmware-tickets-25920634315"
+                },{
+                    "objectId": "swift",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/swift.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/swift.jpg",
+                    "title": "Swift open source meet-up 2016",
+                    "startDate": "2016-06-14T19:00",
+                    "endDate": "2016-06-15T00:00",
+                    "details": "",
+                    "address1": "IBM Bluemix Garage",
+                    "address2": "543 Howard St",
+                    "address3": "San Francisco, CA 94105",
+                    "latitude": 37.78757,
+                    "longitude": -122.39657,
+                    "url": "https://ti.to/swift-oss/wwdc-2016"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
