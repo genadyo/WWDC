@@ -531,6 +531,20 @@
                     "latitude": 37.78757,
                     "longitude": -122.39657,
                     "url": "https://ti.to/swift-oss/wwdc-2016"
+                },{
+                    "objectId": "layer",
+                    "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/layer.png",
+                    "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/layer.jpg",
+                    "title": "WWDC 2016 Layer Happy Hour",
+                    "startDate": "2016-06-15T17:30",
+                    "endDate": "2016-06-15T19:30",
+                    "details": "Layer invites you to join us for happy hour on Wednesday night from 5:30 - 7:30pm. Swing by our office for beer, wine, and an array of tasty bites. Come talk iOS messaging shop or just mingle with a group of interesting and lively folks. Looking forward to seeing you (and your guest) at our happy hour. Cheers!",
+                    "address1": "Layer, 2nd Floor",
+                    "address2": "655 4th Street",
+                    "address3": "San Francisco, CA 94107",
+                    "latitude": 37.77774,
+                    "longitude": -122.39544,
+                    "url": "https://www.eventbrite.com/e/wwdc-2016-layer-happy-hour-tickets-26048275092"
                 }],
     "banners":  [{
                     "objectId": "caltrain",
