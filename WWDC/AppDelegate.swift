@@ -10,32 +10,29 @@ import UIKit
 import Fabric
 import Crashlytics
 import Keys
-import Lyft
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     var window: UIWindow?
     var oneSignal: OneSignal?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Keys
-        let keys = SfpartiesKeys()
+        let keys = SFPartiesKeys()
 
         // Push Notifications
-        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+//        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//        application.registerUserNotificationSettings(settings)
+//        application.registerForRemoteNotifications()
 
         // One Signal
-        oneSignal =  OneSignal(launchOptions: launchOptions, appId: keys.oneSignal(), handleNotification: nil)
+//        oneSignal =  OneSignal(launchOptions: launchOptions, appId: keys.oneSignal(), handleNotification: nil)
 
         // Crashlytics
-        Fabric.with([Crashlytics.startWithAPIKey(keys.crashlytics())])
-
-        Lyft.set(clientId: keys.lyft(), clientSecret: keys.lyftSecret())
+        Fabric.with([Crashlytics.start(withAPIKey: keys.crashlytics)])
 
         // Default time
-        NSTimeZone.setDefaultTimeZone(NSTimeZone(name: "PST")!)
+//        NSTimeZone.setDefaultTimeZone(NSTimeZone(identifier: "PST")!)
 
         // Global Tint Color (Xcode Bug #1)
         UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
@@ -43,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Delegate
         if let splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UISplitViewController {
             splitViewController.delegate = self
-            splitViewController.preferredDisplayMode = .AllVisible
+            splitViewController.preferredDisplayMode = .allVisible
             window?.rootViewController = splitViewController
             window?.makeKeyAndVisible()
         }
@@ -51,25 +48,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return true
     }
 
-    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return Lyft.openURL(url)
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
+        return true
     }
 
     // MARK: UISplitViewControllerDelegate
 
-    func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
-        if secondaryViewController.isKindOfClass(UINavigationController) {
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        if secondaryViewController.isKind(of: UINavigationController.self) {
             return false
         } else {
             return true
         }
     }
 
-    func splitViewController(splitViewController: UISplitViewController, separateSecondaryViewControllerFromPrimaryViewController primaryViewController: UIViewController) -> UIViewController? {
-        if primaryViewController.isKindOfClass(UINavigationController) {
+    func splitViewController(_ splitViewController: UISplitViewController, separateSecondaryFrom primaryViewController: UIViewController) -> UIViewController? {
+        if primaryViewController.isKind(of: UINavigationController.self) {
             let nvc = primaryViewController as! UINavigationController
             if nvc.topViewController is PartiesTableViewController {
-                return UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("noparty")
+                return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "noparty")
             }
         }
 

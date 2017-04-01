@@ -10,7 +10,7 @@ import UIKit
 import CoreLocation
 
 protocol PartiesTableViewControllerDelegate {
-    func load(completion: (() -> Void)?)
+    func load(_ completion: (() -> Void)?)
 }
 
 class PartiesTableViewController: UITableViewController, PartyTableViewControllerDelegate, UIViewControllerPreviewingDelegate {
@@ -22,30 +22,30 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     var delegate: PartiesTableViewControllerDelegate?
 
-    private var parties = PartiesManager.sharedInstance.parties
+    fileprivate var parties = PartiesManager.sharedInstance.parties
 
-    override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
         // Peek & Pop
-        if traitCollection.forceTouchCapability == .Available {
-            registerForPreviewingWithDelegate(self, sourceView: view)
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
         }
     }
 
-    @IBAction func refresh(sender: UIRefreshControl?) {
+    @IBAction func refresh(_ sender: UIRefreshControl?) {
         delegate?.load() {
             sender?.endRefreshing()
         }
     }
 
-    func buttonClicked(sender: UIButton) {
-        performSegueWithIdentifier("map", sender: sender)
+    func buttonClicked(_ sender: UIButton) {
+        performSegue(withIdentifier: "map", sender: sender)
     }
 
     // MARK: UITableViewDataSource
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         if selectedSegmentIndex == 1 && parties.count == 0 {
             return 1
         } else {
@@ -53,7 +53,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if selectedSegmentIndex == 1 && parties.count == 0 {
             return 1
         } else {
@@ -61,29 +61,29 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if selectedSegmentIndex == 1 && parties.count == 0 {
-            return tableView.dequeueReusableCellWithIdentifier("empty", forIndexPath: indexPath)
+            return tableView.dequeueReusableCell(withIdentifier: "empty", for: indexPath)
         } else {
-            let cell = tableView.dequeueReusableCellWithIdentifier("party", forIndexPath: indexPath) as! PartyTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "party", for: indexPath) as! PartyTableViewCell
             cell.party = parties[indexPath.section][indexPath.row]
-            cell.separatorView.hidden = parties[indexPath.section].count == indexPath.row+1
+            cell.separatorView.isHidden = parties[indexPath.section].count == indexPath.row+1
             return cell
         }
     }
 
     // MARK: UITableViewDelegate
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if selectedSegmentIndex == 1 && parties.count == 0 {
             let navigationControllerHeight = navigationController?.navigationBar.frame.size.height ?? 0
-            return UIScreen.mainScreen().bounds.size.height-navigationControllerHeight-UIApplication.sharedApplication().statusBarFrame.size.height
+            return UIScreen.main.bounds.size.height-navigationControllerHeight-UIApplication.shared.statusBarFrame.size.height
         } else {
             return 75
         }
     }
 
-    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if selectedSegmentIndex == 1 && parties.count == 0 {
             return 0
         } else {
@@ -91,43 +91,43 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var view = UIView()
         if !(selectedSegmentIndex == 1 && parties.count == 0) && parties.count > section && parties[section].count > 0 {
-            view = UIView(frame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 40.0))
-            view.autoresizingMask = .FlexibleWidth
+            view = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.size.width, height: 40.0))
+            view.autoresizingMask = .flexibleWidth
 
-            let bgView = UIView(frame: CGRectMake(0.0, 0.0, tableView.frame.size.width, 40.0))
-            bgView.autoresizingMask = .FlexibleWidth
+            let bgView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: tableView.frame.size.width, height: 40.0))
+            bgView.autoresizingMask = .flexibleWidth
             bgView.backgroundColor = UIColor(red: 247.0/255.0, green: 247.0/255.0, blue: 247.0/255.0, alpha: 1.0)
             view.addSubview(bgView)
 
-            let label = UILabel(frame: CGRectMake(8.0, 0.0, tableView.frame.size.width-22.0*2, 40.0))
-            label.autoresizingMask = .FlexibleRightMargin
-            label.font = UIFont.systemFontOfSize(15.0, weight: UIFontWeightRegular)
+            let label = UILabel(frame: CGRect(x: 8.0, y: 0.0, width: tableView.frame.size.width-22.0*2, height: 40.0))
+            label.autoresizingMask = .flexibleRightMargin
+            label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightRegular)
             label.text = parties[section][0].date
             label.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
             view.addSubview(label)
 
             let mapImageView = UIImageView(image: UIImage(named: "map"))
-            mapImageView.autoresizingMask = .FlexibleLeftMargin
-            mapImageView.frame = CGRectMake(tableView.frame.size.width-33.0, 6.0, 20.0, 28.0)
+            mapImageView.autoresizingMask = .flexibleLeftMargin
+            mapImageView.frame = CGRect(x: tableView.frame.size.width-33.0, y: 6.0, width: 20.0, height: 28.0)
             view.addSubview(mapImageView)
 
-            let button = UIButton(type: .Custom)
-            button.autoresizingMask = .FlexibleWidth
+            let button = UIButton(type: .custom)
+            button.autoresizingMask = .flexibleWidth
             button.frame = view.frame
-            button.addTarget(self, action: #selector(PartiesTableViewController.buttonClicked(_:)), forControlEvents: .TouchDown)
+            button.addTarget(self, action: #selector(PartiesTableViewController.buttonClicked(_:)), for: .touchDown)
             button.tag = section
             view.addSubview(button)
         }
         return view
     }
 
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
 
-        performSegueWithIdentifier("party", sender: indexPath)
+        performSegue(withIdentifier: "party", sender: indexPath)
     }
 
     // MARK: PartyTableViewControllerDelegate
@@ -135,7 +135,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     func reloadData() {
         if selectedSegmentIndex == 0 {
             parties = PartiesManager.sharedInstance.parties
-            tableView.scrollEnabled = true
+            tableView.isScrollEnabled = true
         } else {
             var pparties = [[Party]]()
             for p in PartiesManager.sharedInstance.parties {
@@ -145,31 +145,31 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
                 }
             }
             parties = pparties
-            tableView.scrollEnabled = parties.count > 0
+            tableView.isScrollEnabled = parties.count > 0
         }
         tableView.reloadData()
     }
 
     // MARK: UIViewControllerPreviewingDelegate
 
-    func previewingContext(previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = tableView.indexPathForRowAtPoint(location), cell = tableView.cellForRowAtIndexPath(indexPath) as? PartyTableViewCell, nvc = storyboard?.instantiateViewControllerWithIdentifier("partyNVC") as? PartyNavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController where tableView.bounds.contains(tableView.rectForRowAtIndexPath(indexPath)) else { return nil }
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location), let cell = tableView.cellForRow(at: indexPath) as? PartyTableViewCell, let nvc = storyboard?.instantiateViewController(withIdentifier: "partyNVC") as? PartyNavigationController, let vc = nvc.viewControllers[0] as? PartyTableViewController, tableView.bounds.contains(tableView.rectForRow(at: indexPath)) else { return nil }
         previewingContext.sourceRect = cell.frame
         vc.party = parties[indexPath.section][indexPath.row]
         return nvc
     }
 
-    func previewingContext(previewingContext: UIViewControllerPreviewing, commitViewController viewControllerToCommit: UIViewController) {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         navigationController?.pushViewController(viewControllerToCommit, animated: false)
     }
 
     // MARK: Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let nvc = segue.destinationViewController as? PartyNavigationController, vc = nvc.viewControllers[0] as? PartyTableViewController, indexPath = sender as? NSIndexPath where segue.identifier == "party" {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nvc = segue.destination as? PartyNavigationController, let vc = nvc.viewControllers[0] as? PartyTableViewController, let indexPath = sender as? IndexPath, segue.identifier == "party" {
             vc.delegate = self
             vc.party = parties[indexPath.section][indexPath.row]
-        } else if let nvc = segue.destinationViewController as? UINavigationController, vc = nvc.viewControllers[0] as? MapDayViewController, button = sender as? UIButton where segue.identifier == "map" {
+        } else if let nvc = segue.destination as? UINavigationController, let vc = nvc.viewControllers[0] as? MapDayViewController, let button = sender as? UIButton, segue.identifier == "map" {
             vc.navigationItem.title = parties[button.tag][0].date
             vc.parties = parties[button.tag]
         }

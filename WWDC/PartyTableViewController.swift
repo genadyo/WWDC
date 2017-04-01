@@ -13,7 +13,6 @@ import Keys
 import Contacts
 import EventKitUI
 import Crashlytics
-import Lyft
 
 protocol PartyTableViewControllerDelegate {
     func reloadData()
@@ -27,7 +26,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var logoImageView: UIImageView! {
         didSet {
-            logoImageView.pin_setImageFromURL(party.logo)
+            logoImageView.pin_setImage(from: party.logo)
         }
     }
 
@@ -39,7 +38,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var detailsLabel: UILabel! {
         didSet {
-            let font = UIFont.systemFontOfSize(15.0, weight: UIFontWeightLight)
+            let font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 20.0
             paragraphStyle.maximumLineHeight = 20.0
@@ -93,20 +92,12 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
             address3Label.text = party.address3
         }
     }
-
-    @IBOutlet weak var lyftButton: UIButton! {
-        didSet {
-            if UI_USER_INTERFACE_IDIOM() == .Pad {
-                lyftButton.hidden = true
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Going/Old
-        goingButton.selected = party.isGoing
+        goingButton.isSelected = party.isGoing
         party.isOld = true
         delegate?.reloadData()
 
@@ -115,116 +106,75 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         tableView.rowHeight = UITableViewAutomaticDimension
     }
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = super.tableView(tableView, cellForRowAtIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
         if indexPath.row == 6 { // Xcode Bug #2
             cell.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
         }
         return cell
     }
 
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 
-    @IBAction func updateGoing(sender: UIButton) {
+    @IBAction func updateGoing(_ sender: UIButton) {
         party.isGoing = !party.isGoing
-        goingButton.selected = party.isGoing
+        goingButton.isSelected = party.isGoing
         delegate?.reloadData()
     }
 
-    @IBAction func openMaps(sender: AnyObject) {
+    @IBAction func openMaps(_ sender: AnyObject) {
         let coordinate = CLLocationCoordinate2DMake(party.latitude, party.longitude)
 
         var addressDictionary = [String: AnyObject]()
-        addressDictionary[CNPostalAddressCountryKey] = "United States"
-        addressDictionary[CNPostalAddressStreetKey] = party.address2
-        let address3Split = party.address3.componentsSeparatedByString(", ")
+        addressDictionary[CNPostalAddressCountryKey] = "United States" as AnyObject
+        addressDictionary[CNPostalAddressStreetKey] = party.address2 as AnyObject
+        let address3Split = party.address3.components(separatedBy: ", ")
         if address3Split.count == 2 {
-            addressDictionary[CNPostalAddressCityKey] = address3Split[0]
-            let address3SplitSplit = address3Split[1].componentsSeparatedByString(" ")
+            addressDictionary[CNPostalAddressCityKey] = address3Split[0] as AnyObject
+            let address3SplitSplit = address3Split[1].components(separatedBy: " ")
             if address3SplitSplit.count == 2 {
-                addressDictionary[CNPostalAddressStateKey] = address3SplitSplit[0]
-                addressDictionary[CNPostalAddressPostalCodeKey] = address3SplitSplit[1]
+                addressDictionary[CNPostalAddressStateKey] = address3SplitSplit[0] as AnyObject
+                addressDictionary[CNPostalAddressPostalCodeKey] = address3SplitSplit[1] as AnyObject
             }
         }
 
         let item = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary: addressDictionary))
         item.name = party.title
-        item.openInMapsWithLaunchOptions([MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsMapTypeKey: MKMapType.Standard.rawValue])
+        item.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeWalking, MKLaunchOptionsMapTypeKey: MKMapType.standard.rawValue])
     }
 
-    @IBAction func openLyft(sender: AnyObject) {
-        let promotion = NSUserDefaults.standardUserDefaults().boolForKey("promotion")
-
-        if PartiesManager.sharedInstance.promotion == false || promotion == true {
-            openLyftRide()
-        } else {
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "promotion")
-
-            // Keys
-            let keys = SfpartiesKeys()
-
-            Lyft.userLogin(scope: "public") { [weak self] success, error in
-                if success == true {
-                    Lyft.request(.POST, path: keys.lyftPath(), params: [keys.lyftKey(): keys.lyftValue()]) { response, error in
-                        if let response = response where response.keys.count == 0 {
-                            Answers.logCustomEventWithName("Lyft Promotion Succeed", customAttributes: response)
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self?.openLyftRide()
-                            }
-                        } else {
-                            Answers.logCustomEventWithName("Lyft Promotion Failed", customAttributes: response)
-                            dispatch_async(dispatch_get_main_queue()) {
-                                self?.openLyftRide()
-                            }
-                        }
-                    }
-                } else {
-                    Answers.logCustomEventWithName("Lyft Login Failed", customAttributes: nil)
-                    dispatch_async(dispatch_get_main_queue()) {
-                        self?.openLyftRide()
-                    }
-                }
-            }
-        }
-    }
-
-    private func openLyftRide() {
-        Answers.logCustomEventWithName("Lyft", customAttributes: ["objectId": party.objectId])
-        Lyft.openLyftRide(rideType: .Line, destination: Address(lat: Float(party.latitude), lng: Float(party.longitude)))
-    }
-
-    @IBAction func openWeb(sender: AnyObject) {
-        let safariViewController = SFSafariViewController(URL: party.url)
+    @IBAction func openWeb(_ sender: AnyObject) {
+        let safariViewController = SFSafariViewController(url: party.url)
         safariViewController.delegate = self
-        presentViewController(safariViewController, animated: true, completion: nil)
+        present(safariViewController, animated: true, completion: nil)
     }
     
-    @IBAction func openCal(sender: UITapGestureRecognizer) {
+    @IBAction func openCal(_ sender: UITapGestureRecognizer) {
         let eventStore = EKEventStore()
-        let authorizationStatus = EKEventStore.authorizationStatusForEntityType(.Event)
-        let needsToRequestAccessToEventStore = authorizationStatus == .NotDetermined
+        let authorizationStatus = EKEventStore.authorizationStatus(for: .event)
+        let needsToRequestAccessToEventStore = authorizationStatus == .notDetermined
 
         if needsToRequestAccessToEventStore == true {
-            eventStore.requestAccessToEntityType(.Event) { [weak self] granted, error in
+            eventStore.requestAccess(to: .event) { [weak self] granted, error in
                 if granted == true {
                     self?.addEvent()
-                } else if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
-                    UIApplication.sharedApplication().openURL(url)
+                } else if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
         } else {
-            let granted = authorizationStatus == .Authorized
+            let granted = authorizationStatus == .authorized
             if granted == true {
                 addEvent()
-            } else if let url = NSURL(string: UIApplicationOpenSettingsURLString) {
-                UIApplication.sharedApplication().openURL(url)
+            } else if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
 
-    private func addEvent() {
+    fileprivate func addEvent() {
         let eventStore = EKEventStore()
         let event = EKEvent(eventStore: eventStore)
 
@@ -233,7 +183,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         event.startDate = party.startDate
         event.endDate = party.endDate
         event.location = "\(party.address1) \(party.address2) \(party.address3)"
-        event.URL = party.url
+        event.url = party.url
         event.notes = party.details
 
         // addController
@@ -241,29 +191,29 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         addController.eventStore = eventStore
         addController.event = event
         addController.editViewDelegate = self
-        presentViewController(addController, animated: true, completion: nil)
+        present(addController, animated: true, completion: nil)
     }
 
     // MARK: SFSafariViewControllerDelegate
 
-    func safariViewControllerDidFinish(controller: SFSafariViewController) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 
     // MARK: EKEventEditViewDelegate
 
-    func eventEditViewController(controller: EKEventEditViewController, didCompleteWithAction action: EKEventEditViewAction) {
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         switch action {
-        case .Saved:
+        case .saved:
             do {
                 if let event = controller.event {
-                    try controller.eventStore.saveEvent(event, span: .ThisEvent)
+                    try controller.eventStore.save(event, span: .thisEvent)
                 }
             } catch { }
             break;
         default:
             break;
         }
-        controller.dismissViewControllerAnimated(true, completion: nil)
+        controller.dismiss(animated: true, completion: nil)
     }
 }

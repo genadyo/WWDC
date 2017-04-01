@@ -11,46 +11,46 @@ import Foundation
 class PartiesManager {
     static let sharedInstance = PartiesManager()
 
-    private var JSON: [String: AnyObject]? {
+    fileprivate var JSON: [String: AnyObject]? {
         get {
-            if let JSON = NSUserDefaults.standardUserDefaults().objectForKey("results") as? [String: AnyObject] {
+            if let JSON = UserDefaults.standard.object(forKey: "results") as? [String: AnyObject] {
                 return JSON
             } else {
                 return nil
             }
         }
         set {
-            let userDefaults = NSUserDefaults.standardUserDefaults()
-            userDefaults.setObject(newValue, forKey: "results")
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(newValue, forKey: "results")
             userDefaults.synchronize()
         }
     }
 
-    lazy private(set) var parties: [[Party]] = {
+    lazy fileprivate(set) var parties: [[Party]] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON).parties
+            return ServerManager.processJSON(JSON as AnyObject).parties
         } else {
             return []
         }
     }()
 
-    lazy private(set) var banners: [Banner] = {
+    lazy fileprivate(set) var banners: [Banner] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON).banners
+            return ServerManager.processJSON(JSON as AnyObject).banners
         } else {
             return []
         }
     }()
 
-    lazy private(set) var promotion: Bool = {
+    lazy fileprivate(set) var promotion: Bool = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON).promotion
+            return ServerManager.processJSON(JSON as AnyObject).promotion
         } else {
             return false
         }
     }()
 
-    func load(completion: (() -> Void)?) {
+    func load(_ completion: (() -> Void)?) {
         // redirect to https://gitcdn.link/repo/genadyo/WWDC/master/data/data.json
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
             if let results = results {

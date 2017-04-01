@@ -14,16 +14,16 @@ class PartyTableViewCell: UITableViewCell {
         didSet {
             if let party = party {
                 iconImageView.image = nil
-                iconImageView.pin_setImageFromURL(party.icon)
+                iconImageView.pin_setImage(from: party.icon)
                 hoursLabel.text = party.hours
-                goingImageView.hidden = !party.isGoing
-                badgeView.hidden = party.isOld
+                goingImageView.isHidden = !party.isGoing
+                badgeView.isHidden = party.isOld
                 titleLabel.text = party.title
             }
         }
     }
 
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
 
         badgeView.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)

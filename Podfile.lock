@@ -1,12 +1,11 @@
 PODS:
-  - Crashlytics (3.7.0):
+  - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
-  - Fabric (1.6.7)
+  - Fabric (1.6.11)
   - FLAnimatedImage (1.0.12)
   - Keys (1.0.0)
-  - Lyft (0.0.6)
-  - OneSignal (1.13.2)
-  - PINCache (2.2.2)
+  - OneSignal (2.5.0)
+  - PINCache (2.3)
   - PINRemoteImage (2.1.4):
     - PINRemoteImage/FLAnimatedImage (= 2.1.4)
   - PINRemoteImage/Core (2.1.4):
@@ -18,7 +17,6 @@ PODS:
 DEPENDENCIES:
   - Crashlytics
   - Keys (from `Pods/CocoaPodsKeys`)
-  - Lyft
   - OneSignal
   - PINRemoteImage
 
@@ -27,15 +25,14 @@ EXTERNAL SOURCES:
     :path: Pods/CocoaPodsKeys
 
 SPEC CHECKSUMS:
-  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
-  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  Lyft: dd0ba5ce5c1139c0182febafa274513deaea5a23
-  OneSignal: 15b94fa760a6754908f11ef92da6ec945923fa2c
-  PINCache: 078426d356ab95ef875e9e62e5c35a2ea3333c28
+  OneSignal: e0aca144fbf1be69e870419cea52e8fdbcb25808
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
 
-PODFILE CHECKSUM: 9f754562a42ea1f6ee8de721cd724f2d389c6939
+PODFILE CHECKSUM: b7e63c1f25a8576003a1c00c8de85ba4e2fe3f20
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.0

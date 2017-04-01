@@ -1,4 +1,4 @@
-platform :ios, '9.0'
+platform :ios, '10.0'
 inhibit_all_warnings!
 use_frameworks!
 
@@ -6,18 +6,12 @@ target 'SFParties' do
     pod 'Crashlytics'
     pod 'OneSignal'
     pod 'PINRemoteImage'
-    pod 'Lyft'
 end
 
 plugin 'cocoapods-keys', {
   :project => "SFParties",
   :keys => [
     "Crashlytics",
-    "Lyft",
-    "LyftSecret",
-    "LyftPath",
-    "LyftKey",
-    "LyftValue",
     "OneSignal"
   ]
 }
