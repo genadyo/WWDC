@@ -734,7 +734,7 @@ Title2</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate on the App Store" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQV-NN-GAO">
-                                                    <rect key="frame" x="39" y="19" width="182" height="21.5"/>
+                                                    <rect key="frame" x="43" y="19" width="182" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -742,7 +742,7 @@ Title2</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="JQV-NN-GAO" secondAttribute="centerY" id="A5E-sR-w7t"/>
-                                                <constraint firstItem="JQV-NN-GAO" firstAttribute="leading" secondItem="kmI-x7-rwb" secondAttribute="trailing" constant="8" id="G5i-uh-b72"/>
+                                                <constraint firstItem="JQV-NN-GAO" firstAttribute="leading" secondItem="kmI-x7-rwb" secondAttribute="trailing" constant="12" id="G5i-uh-b72"/>
                                                 <constraint firstItem="kmI-x7-rwb" firstAttribute="leading" secondItem="ZaD-8Q-dMB" secondAttribute="leading" constant="15" id="N1q-Rq-5Uw"/>
                                                 <constraint firstItem="JQV-NN-GAO" firstAttribute="leading" secondItem="ZaD-8Q-dMB" secondAttribute="leadingMargin" id="fGL-uM-BgA"/>
                                                 <constraint firstItem="kmI-x7-rwb" firstAttribute="centerY" secondItem="ZaD-8Q-dMB" secondAttribute="centerY" id="hCC-O9-gay"/>
@@ -769,7 +769,7 @@ Title2</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8g-ve-rbT">
-                                                    <rect key="frame" x="39" y="19" width="58.5" height="21.5"/>
+                                                    <rect key="frame" x="43" y="19" width="58.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -777,7 +777,7 @@ Title2</string>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vvr-ul-Gcs" firstAttribute="centerY" secondItem="FMG-bg-9qU" secondAttribute="centerY" id="IWY-Sf-tXz"/>
-                                                <constraint firstItem="D8g-ve-rbT" firstAttribute="leading" secondItem="vvr-ul-Gcs" secondAttribute="trailing" constant="8" id="Who-5J-Raj"/>
+                                                <constraint firstItem="D8g-ve-rbT" firstAttribute="leading" secondItem="vvr-ul-Gcs" secondAttribute="trailing" constant="12" id="Who-5J-Raj"/>
                                                 <constraint firstItem="vvr-ul-Gcs" firstAttribute="leading" secondItem="FMG-bg-9qU" secondAttribute="leading" constant="15" id="Y5L-zQ-p7d"/>
                                                 <constraint firstAttribute="centerY" secondItem="D8g-ve-rbT" secondAttribute="centerY" id="zj1-9T-W0e"/>
                                             </constraints>
@@ -798,7 +798,7 @@ Title2</string>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback &amp; Suggestions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5X-nv-ePy">
-                                                    <rect key="frame" x="39" y="19" width="206" height="21.5"/>
+                                                    <rect key="frame" x="43" y="19" width="206" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -807,7 +807,7 @@ Title2</string>
                                             <constraints>
                                                 <constraint firstItem="X4v-mr-nkc" firstAttribute="centerY" secondItem="ulN-kB-uVW" secondAttribute="centerY" id="4Oh-fD-Ccr"/>
                                                 <constraint firstItem="X4v-mr-nkc" firstAttribute="leading" secondItem="ulN-kB-uVW" secondAttribute="leading" constant="15" id="8kb-Wk-wkp"/>
-                                                <constraint firstItem="r5X-nv-ePy" firstAttribute="leading" secondItem="X4v-mr-nkc" secondAttribute="trailing" constant="8" id="Ofy-7e-hue"/>
+                                                <constraint firstItem="r5X-nv-ePy" firstAttribute="leading" secondItem="X4v-mr-nkc" secondAttribute="trailing" constant="12" id="Ofy-7e-hue"/>
                                                 <constraint firstAttribute="centerY" secondItem="r5X-nv-ePy" secondAttribute="centerY" id="qsU-3m-dzc"/>
                                             </constraints>
                                         </tableViewCellContentView>
