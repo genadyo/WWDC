@@ -44,8 +44,12 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera permission is required to send images to ${PRODUCT_NAME}</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Parties needs your current location to show Parties nearby</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Photo library permission is required to send images to ${PRODUCT_NAME}</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

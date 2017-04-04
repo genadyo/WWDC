@@ -9,8 +9,9 @@
 import UIKit
 import MessageUI
 import SafariServices
+import Smooch
 
-class AboutTableViewController: UITableViewController, MFMailComposeViewControllerDelegate {
+class AboutTableViewController: UITableViewController {
     fileprivate func openTwitter(_ username: String) {
         let urls = ["tweetbot://current/user_profile/\(username)", "twitterrific://current/profile?screen_name=\(username)", "twitter://user?screen_name=\(username)"]
         for url in urls {
@@ -55,43 +56,7 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
             } else if indexPath.row == 1 {
                 openTwitter("genadyo")
             } else if indexPath.row == 2 {
-                if MFMailComposeViewController.canSendMail() == true {
-                    let mailComposeViewController = MFMailComposeViewController()
-                    mailComposeViewController.mailComposeDelegate = self
-                    mailComposeViewController.setToRecipients(["genady@okrain.com"])
-                    mailComposeViewController.setSubject("Parties for WWDC")
-
-                    var body = "<br><br><br><br><br><br><br><br><br><hr>"
-
-                    if let infoDictionary = Bundle.main.infoDictionary {
-                        if let version = infoDictionary["CFBundleShortVersionString"] as? String {
-                            body += "App Version: " + version + "<br>"
-                        }
-
-                        if let build = infoDictionary["CFBundleVersion"] as? String {
-                            body += "App Build: " + build + "<br>"
-                        }
-                    }
-
-                    var systemInfo = [UInt8](repeating: 0, count: MemoryLayout<utsname>.size)
-                    let model = systemInfo.withUnsafeMutableBufferPointer { (body: inout UnsafeMutableBufferPointer<UInt8>) -> String? in
-//                        if uname(UnsafeMutablePointer(body.baseAddress)) != 0 {
-//                            return nil
-//                        }
-                        return String(cString: UnsafePointer((body.baseAddress?.advanced(by: Int(_SYS_NAMELEN*4)))!))
-                    }
-                    if let model = model {
-                        body += "Device Model: " + model + "<br>"
-                    }
-
-                    body += "Device Version: " + UIDevice.current.systemVersion
-
-                    body += "<hr>"
-
-                    mailComposeViewController.setMessageBody(body, isHTML: true)
-
-                    present(mailComposeViewController, animated: true, completion: nil)
-                }
+                Smooch.show()
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
@@ -102,11 +67,5 @@ class AboutTableViewController: UITableViewController, MFMailComposeViewControll
                 openURL("https://github.com/pinterest/PINRemoteImage")
             }
         }
-    }
-
-    // MARK: MFMailComposeViewControllerDelegate
-    
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        dismiss(animated: true, completion: nil)
     }
 }

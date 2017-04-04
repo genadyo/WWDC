@@ -10,29 +10,30 @@ import UIKit
 import Fabric
 import Crashlytics
 import Keys
+import Smooch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
     var window: UIWindow?
-    var oneSignal: OneSignal?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Keys
         let keys = SFPartiesKeys()
 
-        // Push Notifications
-//        let settings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-//        application.registerUserNotificationSettings(settings)
-//        application.registerForRemoteNotifications()
-
         // One Signal
-//        oneSignal =  OneSignal(launchOptions: launchOptions, appId: keys.oneSignal(), handleNotification: nil)
+        OneSignal.initWithLaunchOptions(launchOptions, appId: keys.oneSignal, handleNotificationReceived: { notification in
+            
+        }, handleNotificationAction: { result in
+
+        }, settings: [kOSSettingsKeyAutoPrompt : true])
+
+        Smooch.initWith(SKTSettings(appToken: keys.smooch))
 
         // Crashlytics
         Fabric.with([Crashlytics.start(withAPIKey: keys.crashlytics)])
 
         // Default time
-//        NSTimeZone.setDefaultTimeZone(NSTimeZone(identifier: "PST")!)
+        NSTimeZone.default = TimeZone(identifier: "PST")!
 
         // Global Tint Color (Xcode Bug #1)
         UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)

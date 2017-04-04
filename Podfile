@@ -5,6 +5,7 @@ use_frameworks!
 target 'SFParties' do
     pod 'Crashlytics'
     pod 'OneSignal'
+    pod 'Smooch'
     pod 'PINRemoteImage'
 end
 
@@ -12,7 +13,8 @@ plugin 'cocoapods-keys', {
   :project => "SFParties",
   :keys => [
     "Crashlytics",
-    "OneSignal"
+    "OneSignal",
+    "Smooch"
   ]
 }
 

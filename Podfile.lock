@@ -4,7 +4,7 @@ PODS:
   - Fabric (1.6.11)
   - FLAnimatedImage (1.0.12)
   - Keys (1.0.0)
-  - OneSignal (2.5.0)
+  - OneSignal (2.5.1)
   - PINCache (2.3)
   - PINRemoteImage (2.1.4):
     - PINRemoteImage/FLAnimatedImage (= 2.1.4)
@@ -13,12 +13,14 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
+  - Smooch (5.5.2)
 
 DEPENDENCIES:
   - Crashlytics
   - Keys (from `Pods/CocoaPodsKeys`)
   - OneSignal
   - PINRemoteImage
+  - Smooch
 
 EXTERNAL SOURCES:
   Keys:
@@ -29,10 +31,11 @@ SPEC CHECKSUMS:
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Keys: 9c35bf00f612ee1d48556f4a4b9b4551e224e90f
-  OneSignal: e0aca144fbf1be69e870419cea52e8fdbcb25808
+  OneSignal: b8e3d70a393e78b07da7849448345ae1055b0561
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
+  Smooch: 6d244fb98b8e25a84ae0a522011058d708e0e288
 
-PODFILE CHECKSUM: b7e63c1f25a8576003a1c00c8de85ba4e2fe3f20
+PODFILE CHECKSUM: 509f559eb68cf1218618436eb25636cff7e4eccf
 
 COCOAPODS: 1.2.0

@@ -28,8 +28,6 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
         segmentedControl.selectedSegmentIndex = UserDefaults.standard.integer(forKey: "selectedSegmentIndex")
         partiesTableViewController?.selectedSegmentIndex = segmentedControl.selectedSegmentIndex
 
-//        loadBanner()
-
         if let partiesTableViewController = partiesTableViewController, let refreshControl = partiesTableViewController.refreshControl {
             partiesTableViewController.tableView.contentOffset = CGPoint(x: 0, y: -refreshControl.frame.size.height)
         }
@@ -42,23 +40,6 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
             locationManager.requestWhenInUseAuthorization()
         }
     }
-
-//    func loadBanner() {
-//        if PartiesManager.sharedInstance.banners.count > 0 {
-//            _ = PartiesManager.sharedInstance.banners[Int(arc4random_uniform(UInt32(PartiesManager.sharedInstance.banners.count)))]
-////            PINRemoteImageManager.shared().downloadImage(with: banner.imageURL) { [weak self] result in
-////                DispatchQueue.main.async {
-////                    if let image = result.image {
-////                        self?.banner = banner
-////                        self?.bannerButton.setImage(image, for: UIControlState())
-////                    }
-////                }
-////            }
-//            bannerButton.isHidden = false
-//        } else {
-//            bannerButton.isHidden = true
-//        }
-//    }
 
     @IBAction func updateSegment(_ sender: UISegmentedControl) {
         partiesTableViewController?.selectedSegmentIndex = sender.selectedSegmentIndex
@@ -78,9 +59,6 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
 
     func load(_ completion: (() -> Void)?) {
         PartiesManager.sharedInstance.load() { [weak self] in
-//            if self?.banner == nil {
-//                self?.loadBanner()
-//            }
             self?.partiesTableViewController?.reloadData()
             completion?()
         }
