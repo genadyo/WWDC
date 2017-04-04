@@ -66,8 +66,10 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             return tableView.dequeueReusableCell(withIdentifier: "empty", for: indexPath)
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "party", for: indexPath) as! PartyTableViewCell
-            cell.party = parties[indexPath.section][indexPath.row]
+            let party = parties[indexPath.section][indexPath.row]
+            cell.party = party
             cell.separatorView.isHidden = parties[indexPath.section].count == indexPath.row+1
+            cell.contentView.alpha = Date() > party.endDate ? 0.3 : 1.0
             return cell
         }
     }
@@ -103,6 +105,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             view.addSubview(bgView)
 
             let label = UILabel(frame: CGRect(x: 8.0, y: 0.0, width: tableView.frame.size.width-22.0*2, height: 40.0))
+            label.alpha = Date() > parties[section][0].endDate ? 0.3 : 1.0
             label.autoresizingMask = .flexibleRightMargin
             label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightRegular)
             label.text = parties[section][0].date
@@ -110,6 +113,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             view.addSubview(label)
 
             let mapImageView = UIImageView(image: UIImage(named: "map"))
+            mapImageView.alpha = Date() > parties[section][0].endDate ? 0.3 : 1.0
             mapImageView.autoresizingMask = .flexibleLeftMargin
             mapImageView.frame = CGRect(x: tableView.frame.size.width-33.0, y: 6.0, width: 20.0, height: 28.0)
             view.addSubview(mapImageView)
