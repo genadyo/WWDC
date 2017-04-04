@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerManager {
-    static func load(_ url: String, completion: ((_ results: (parties: [[Party]], banners: [Banner], promotion: Bool)?, _ JSON: AnyObject?) -> Void)?) {
+    static func load(_ url: String, completion: ((_ results: [[Party]]?, _ JSON: AnyObject?) -> Void)?) {
         if let url = URL(string: url) {
             let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 60.0)
             let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -55,7 +55,7 @@ class ServerManager {
         return dateFormatter.string(from: date)
     }
 
-    static func processJSON(_ JSON: AnyObject?) -> (parties: [[Party]], banners: [Banner], promotion: Bool) {
+    static func processJSON(_ JSON: AnyObject?) -> [[Party]] {
         var allParties = [Party]()
         if let json1 = JSON as? [String: AnyObject], let parties = json1["parties"] as? [AnyObject] {
             for party in parties {
@@ -94,24 +94,6 @@ class ServerManager {
         }
         partiesForDay.append(parties)
 
-        var banners = [Banner]()
-        if let json2 = JSON as? [String: AnyObject], let bns = json2["banners"] as? [AnyObject] {
-            for banner in bns {
-                if let b = banner as? [String: AnyObject],
-                    let imageurl = b["\(Int(UIScreen.main.bounds.width))"] as? String, let imageURL = URL(string: imageurl),
-                    let url = b["url"] as? String, let u = URL(string: url),
-                    let objectId = b["objectId"] as? String
-                {
-                    banners.append(Banner(objectId: objectId, imageURL: imageURL, url: u))
-                }
-            }
-        }
-
-        var promotion = false
-        if let json = JSON as? [String: AnyObject], let p = json["promotion"] as? Bool {
-            promotion = p
-        }
-
-        return (partiesForDay, banners, promotion)
+        return partiesForDay
     }
 }

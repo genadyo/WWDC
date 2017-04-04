@@ -43,6 +43,20 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         performSegue(withIdentifier: "map", sender: sender)
     }
 
+    private func scrollToTop() {
+        guard parties.count > 0 else { return }
+
+        for i in 0..<parties.count {
+            let dayParties = parties[i]
+            if let index = dayParties.index(where: { Date() < $0.startDate }), index > 0 {
+                tableView.scrollToRow(at: IndexPath(row: index, section: i), at: .top, animated: true)
+                return
+            }
+        }
+
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+    }
+
     // MARK: UITableViewDataSource
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -152,6 +166,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             tableView.isScrollEnabled = parties.count > 0
         }
         tableView.reloadData()
+        scrollToTop()
     }
 
     // MARK: UIViewControllerPreviewingDelegate

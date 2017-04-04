@@ -28,25 +28,9 @@ class PartiesManager {
 
     lazy fileprivate(set) var parties: [[Party]] = {
         if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON as AnyObject).parties
+            return ServerManager.processJSON(JSON as AnyObject)
         } else {
             return []
-        }
-    }()
-
-    lazy fileprivate(set) var banners: [Banner] = {
-        if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON as AnyObject).banners
-        } else {
-            return []
-        }
-    }()
-
-    lazy fileprivate(set) var promotion: Bool = {
-        if let JSON = self.JSON {
-            return ServerManager.processJSON(JSON as AnyObject).promotion
-        } else {
-            return false
         }
     }()
 
@@ -54,9 +38,7 @@ class PartiesManager {
         // redirect to https://gitcdn.link/repo/genadyo/WWDC/master/data/data.json
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
             if let results = results {
-                self?.parties = results.parties
-                self?.banners = results.banners
-                self?.promotion = results.promotion
+                self?.parties = results
             }
             if let JSON = JSON as? [String: AnyObject] {
                 self?.JSON = JSON
