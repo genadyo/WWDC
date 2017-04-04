@@ -197,16 +197,16 @@ Title 2</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxE-Tx-QxF">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QxE-Tx-QxF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="QxE-Tx-QxF" secondAttribute="trailing" id="6Eb-Fk-BPP"/>
+                            <constraint firstAttribute="bottom" secondItem="QxE-Tx-QxF" secondAttribute="bottom" id="YRV-Ht-ym5"/>
                             <constraint firstItem="QxE-Tx-QxF" firstAttribute="top" secondItem="gwC-pl-VSv" secondAttribute="top" id="bfV-6L-3u2"/>
                             <constraint firstItem="QxE-Tx-QxF" firstAttribute="leading" secondItem="gwC-pl-VSv" secondAttribute="leading" id="gKT-QV-Rcu"/>
-                            <constraint firstItem="y3C-xX-PpT" firstAttribute="top" secondItem="QxE-Tx-QxF" secondAttribute="bottom" id="oZu-YL-uSM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="YMD-o9-PJ2"/>
@@ -217,7 +217,7 @@ Title 2</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdy-On-Tm9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="278"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="277.51124437781112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="AMf-BF-KKg">
