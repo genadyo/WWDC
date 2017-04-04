@@ -43,7 +43,7 @@ struct Party {
         }
     }
 
-    fileprivate func getVar(_ name: String) -> Bool {
+    func getVar(_ name: String) -> Bool {
         if let dict = UserDefaults.standard.object(forKey: name) as? [String: Bool], let val = dict[objectId] {
             return val
         } else {
@@ -51,7 +51,7 @@ struct Party {
         }
     }
 
-    fileprivate func setVar(_ name: String, bool: Bool) {
+    func setVar(_ name: String, bool: Bool) {
         let userDefaults = UserDefaults.standard
         if var dict = UserDefaults.standard.object(forKey: name) as? [String: Bool] {
             dict[objectId] = bool
@@ -61,10 +61,4 @@ struct Party {
         }
         userDefaults.synchronize()
     }
-}
-
-struct Banner {
-    let objectId: String
-    let imageURL: URL
-    let url: URL
 }

@@ -11,14 +11,12 @@ import PINRemoteImage
 import Crashlytics
 
 class PartiesViewController: UIViewController, PartiesTableViewControllerDelegate {
-    var banner: Banner?
     var partiesTableViewController: PartiesTableViewController?
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var partiesView: UIView!
-    @IBOutlet weak var bannerButton: UIButton!
 
-    fileprivate let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +44,6 @@ class PartiesViewController: UIViewController, PartiesTableViewControllerDelegat
         let userDefaults = UserDefaults.standard
         userDefaults.set(sender.selectedSegmentIndex, forKey: "selectedSegmentIndex")
         userDefaults.synchronize()
-    }
-
-    @IBAction func openBanner(_ sender: UIButton) {
-        if let url = banner?.url, let objectId = banner?.objectId {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            Answers.logCustomEvent(withName: "Banner", customAttributes: ["objectId": objectId])
-        }
     }
 
     // MARK: PartiesTableViewControllerDelegate

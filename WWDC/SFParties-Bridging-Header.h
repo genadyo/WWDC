@@ -6,5 +6,4 @@
 //  Copyright © 2016 Sugar So Studio. All rights reserved.
 //
 
-#import <OneSignal/OneSignal.h>
 #import "MKPointAnnotation+WDCPointAnnotation.h"

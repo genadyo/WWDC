@@ -11,6 +11,7 @@ import Fabric
 import Crashlytics
 import Keys
 import Smooch
+import OneSignal
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -25,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             
         }, handleNotificationAction: { result in
 
-        }, settings: [kOSSettingsKeyAutoPrompt : true])
+        }, settings: [kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInAppAlerts: true])
 
         Smooch.initWith(SKTSettings(appToken: keys.smooch))
 

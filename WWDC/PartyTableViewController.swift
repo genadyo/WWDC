@@ -174,7 +174,7 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         }
     }
 
-    fileprivate func addEvent() {
+    func addEvent() {
         let eventStore = EKEventStore()
         let event = EKEvent(eventStore: eventStore)
 

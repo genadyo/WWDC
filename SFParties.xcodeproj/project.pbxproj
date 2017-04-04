@@ -75,6 +75,7 @@
 		B26CC1821CD08C0E00B2198B /* PartiesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesModel.swift; sourceTree = "<group>"; };
 		B26CC1841CD10ACB00B2198B /* PartiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesTableViewController.swift; sourceTree = "<group>"; };
 		B26CC1861CD10B8500B2198B /* PartiesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartiesManager.swift; sourceTree = "<group>"; };
+		B26DFD0D1E93EE7900C8D6FE /* Parties.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Parties.entitlements; path = ../Parties.entitlements; sourceTree = "<group>"; };
 		B2732EE719D9CB3E0074CC87 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		B2732EE919D9CB450074CC87 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B2B3C36C1CD54A220026DDF8 /* PartyNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartyNavigationController.swift; sourceTree = "<group>"; };
@@ -184,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				B246FCAA1CD5120300A0B42D /* SFParties-Bridging-Header.h */,
+				B26DFD0D1E93EE7900C8D6FE /* Parties.entitlements */,
 				B2D4AEEB19276A1E00C5B0E8 /* SFParties-Info.plist */,
 			);
 			name = "Supporting Files";
@@ -461,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parties.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -493,6 +496,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Parties.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (

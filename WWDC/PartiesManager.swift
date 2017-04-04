@@ -11,7 +11,7 @@ import Foundation
 class PartiesManager {
     static let sharedInstance = PartiesManager()
 
-    fileprivate var JSON: [String: AnyObject]? {
+    var JSON: [String: AnyObject]? {
         get {
             if let JSON = UserDefaults.standard.object(forKey: "results") as? [String: AnyObject] {
                 return JSON
@@ -26,7 +26,7 @@ class PartiesManager {
         }
     }
 
-    lazy fileprivate(set) var parties: [[Party]] = {
+    lazy var parties: [[Party]] = {
         if let JSON = self.JSON {
             return ServerManager.processJSON(JSON as AnyObject)
         } else {

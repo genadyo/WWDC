@@ -43,6 +43,8 @@
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Calendar permission is required to add the event</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera permission is required to send images to ${PRODUCT_NAME}</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

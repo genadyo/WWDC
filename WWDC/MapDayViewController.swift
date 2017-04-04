@@ -10,19 +10,22 @@ import UIKit
 import MapKit
 
 class MapDayViewController: UIViewController, MKMapViewDelegate {
-    var parties: [Party]!
+    var parties = [Party]()
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            loadMap()
+
+            mapView.delegate = self
+            mapView.showAnnotations(mapView.annotations, animated: false)
+            mapView.camera.altitude *= 2
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
-        loadMap()
-        mapView.delegate = self
-        mapView.showAnnotations(mapView.annotations, animated: false)
-        mapView.camera.altitude *= 2
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +34,7 @@ class MapDayViewController: UIViewController, MKMapViewDelegate {
         loadMap()
     }
 
-    fileprivate func loadMap() {
+    func loadMap() {
         mapView.removeAnnotations(mapView.annotations)
         for (partyIndex, party) in parties.enumerated() {
             let annotation = MKPointAnnotation()

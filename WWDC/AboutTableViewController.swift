@@ -11,7 +11,7 @@ import SafariServices
 import Smooch
 
 class AboutTableViewController: UITableViewController {
-    fileprivate func openTwitter(_ username: String) {
+    func openTwitter(_ username: String) {
         let urls = ["tweetbot://current/user_profile/\(username)", "twitterrific://current/profile?screen_name=\(username)", "twitter://user?screen_name=\(username)"]
         for url in urls {
             if let url = URL(string: url), UIApplication.shared.canOpenURL(url) {
@@ -19,11 +19,10 @@ class AboutTableViewController: UITableViewController {
                 return
             }
         }
-
         openURL("https://twitter.com/\(username)")
     }
 
-    fileprivate func openURL(_ string: String) {
+    func openURL(_ string: String) {
         if let url = URL(string: string) {
             let safariViewController = SFSafariViewController(url: url)
             present(safariViewController, animated: true, completion: nil)
@@ -35,7 +34,7 @@ class AboutTableViewController: UITableViewController {
     }
 
     @IBAction func share(_ sender: AnyObject) {
-        let text = "Parties for WWDC"
+        let text = "Never miss a cool party with Parties for WWDC 🎉"
         if let url = URL(string: "https://itunes.apple.com/us/app/parties-for-wwdc/id879924066?ls=1&mt=8") {
             let activityItems = [text, url] as [Any]
             let activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)

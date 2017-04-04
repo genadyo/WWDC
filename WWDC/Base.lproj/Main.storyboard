@@ -122,38 +122,29 @@ Title 2</string>
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="504"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bAe-Ve-cCx">
-                                            <rect key="frame" x="192" y="187" width="217" height="131"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="Adz-gd-FB5">
+                                            <rect key="frame" x="191" y="186" width="216.5" height="131"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blankState" translatesAutoresizingMaskIntoConstraints="NO" id="OVN-r5-H61">
-                                                    <rect key="frame" x="52" y="0.0" width="112" height="88"/>
+                                                    <rect key="frame" x="52.5" y="0.0" width="112" height="88"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="112" id="C3D-X2-3hp"/>
                                                         <constraint firstAttribute="height" constant="88" id="EPt-nc-bLV"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark events &quot;Going&quot; in order to see them here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="216.5" translatesAutoresizingMaskIntoConstraints="NO" id="yvP-m9-7hI">
-                                                    <rect key="frame" x="0.0" y="95" width="217" height="36"/>
+                                                    <rect key="frame" x="0.0" y="95" width="216.5" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.67358243465423584" green="0.67356222867965698" blue="0.67357367277145386" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstItem="OVN-r5-H61" firstAttribute="centerX" secondItem="bAe-Ve-cCx" secondAttribute="centerX" id="1EX-JS-Q1d"/>
-                                                <constraint firstAttribute="centerX" secondItem="yvP-m9-7hI" secondAttribute="centerX" id="D45-5c-U2U"/>
-                                                <constraint firstAttribute="bottom" secondItem="yvP-m9-7hI" secondAttribute="bottom" id="ZmF-S1-KSE"/>
-                                                <constraint firstAttribute="height" constant="131" id="fhJ-bF-nM0"/>
-                                                <constraint firstAttribute="width" constant="217" id="rU9-v3-vvE"/>
-                                                <constraint firstItem="OVN-r5-H61" firstAttribute="top" secondItem="bAe-Ve-cCx" secondAttribute="top" id="t9e-aa-FFD"/>
-                                            </constraints>
-                                        </view>
+                                        </stackView>
                                     </subviews>
                                     <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="centerX" secondItem="bAe-Ve-cCx" secondAttribute="centerX" id="a0c-KT-Y7c"/>
-                                        <constraint firstAttribute="centerY" secondItem="bAe-Ve-cCx" secondAttribute="centerY" id="llR-rV-ecZ"/>
+                                        <constraint firstItem="Adz-gd-FB5" firstAttribute="centerX" secondItem="NJM-gR-Nbv" secondAttribute="centerX" id="jFU-8Z-frN"/>
+                                        <constraint firstItem="Adz-gd-FB5" firstAttribute="centerY" secondItem="NJM-gR-Nbv" secondAttribute="centerY" id="jem-cz-6y7"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
