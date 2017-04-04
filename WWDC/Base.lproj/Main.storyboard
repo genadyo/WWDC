@@ -691,7 +691,7 @@ Title2</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BRq-sp-E9p" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="IGj-ZW-1Zg">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="IGj-ZW-1Zg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
@@ -783,21 +783,21 @@ Title2</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="htb-Oc-HVf">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="viY-Mk-XJz">
                                         <rect key="frame" x="0.0" y="175.5" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htb-Oc-HVf" id="ltL-vs-zFt">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="viY-Mk-XJz" id="ulN-kB-uVW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="rUL-A9-ThX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelope" translatesAutoresizingMaskIntoConstraints="NO" id="X4v-mr-nkc">
                                                     <rect key="frame" x="15" y="24" width="16" height="12"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="12" id="gcx-w5-g9m"/>
-                                                        <constraint firstAttribute="width" constant="16" id="jCw-pJ-qNb"/>
+                                                        <constraint firstAttribute="height" constant="12" id="LUp-a6-nQV"/>
+                                                        <constraint firstAttribute="width" constant="16" id="jYp-Z0-QOU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback &amp; Suggestions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9g-3L-iAG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feedback &amp; Suggestions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5X-nv-ePy">
                                                     <rect key="frame" x="39" y="19" width="206" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -805,10 +805,10 @@ Title2</string>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="w9g-3L-iAG" firstAttribute="leading" secondItem="rUL-A9-ThX" secondAttribute="trailing" constant="8" id="2ri-v6-9qU"/>
-                                                <constraint firstItem="rUL-A9-ThX" firstAttribute="leading" secondItem="ltL-vs-zFt" secondAttribute="leading" constant="15" id="6hl-Jh-mRE"/>
-                                                <constraint firstAttribute="centerY" secondItem="w9g-3L-iAG" secondAttribute="centerY" id="tQe-81-nnP"/>
-                                                <constraint firstItem="rUL-A9-ThX" firstAttribute="centerY" secondItem="ltL-vs-zFt" secondAttribute="centerY" id="xxm-QV-8cM"/>
+                                                <constraint firstItem="X4v-mr-nkc" firstAttribute="centerY" secondItem="ulN-kB-uVW" secondAttribute="centerY" id="4Oh-fD-Ccr"/>
+                                                <constraint firstItem="X4v-mr-nkc" firstAttribute="leading" secondItem="ulN-kB-uVW" secondAttribute="leading" constant="15" id="8kb-Wk-wkp"/>
+                                                <constraint firstItem="r5X-nv-ePy" firstAttribute="leading" secondItem="X4v-mr-nkc" secondAttribute="trailing" constant="8" id="Ofy-7e-hue"/>
+                                                <constraint firstAttribute="centerY" secondItem="r5X-nv-ePy" secondAttribute="centerY" id="qsU-3m-dzc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -901,7 +901,7 @@ Title2</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jNu-Vl-JpO" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="a1I-bt-NXh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a1I-bt-NXh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
