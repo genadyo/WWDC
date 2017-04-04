@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MessageUI
 import SafariServices
 import Smooch
 
@@ -17,6 +16,7 @@ class AboutTableViewController: UITableViewController {
         for url in urls {
             if let url = URL(string: url), UIApplication.shared.canOpenURL(url) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                return
             }
         }
 
@@ -50,7 +50,7 @@ class AboutTableViewController: UITableViewController {
 
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                if let url = URL(string: "itms-apps://itunes.apple.com/app/id879924066"), UIApplication.shared.canOpenURL(url) {
+                if let url = URL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=879924066&pageNumber=0&sortOrdering=1&onlyLatestVersion=true&action=write-review"), UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             } else if indexPath.row == 1 {

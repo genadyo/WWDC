@@ -6,7 +6,7 @@
 //  Copyright © 2016 Okrain. All rights reserved.
 //
 
-#import <MapKit/MapKit.h>
+@import MapKit;
 
 @interface MKPointAnnotation (WDCPointAnnotation)
 @property (strong, nonatomic) NSNumber *partyIndex;
