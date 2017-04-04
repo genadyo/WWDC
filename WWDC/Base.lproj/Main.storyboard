@@ -29,10 +29,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-jz-91p">
-                                            <rect key="frame" x="4" y="5" width="66" height="66"/>
+                                            <rect key="frame" x="4" y="4" width="66" height="66"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="66" id="ea2-Rn-0pY"/>
-                                                <constraint firstAttribute="height" constant="66" id="hWF-4p-5jy"/>
+                                                <constraint firstAttribute="width" priority="999" constant="66" id="ea2-Rn-0pY"/>
+                                                <constraint firstAttribute="height" priority="999" constant="66" id="hWF-4p-5jy"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mz-oL-S4e">
@@ -89,11 +89,12 @@ Title 2</string>
                                         <constraint firstAttribute="bottom" secondItem="7YG-7O-CyH" secondAttribute="bottom" id="K5t-6V-b4T"/>
                                         <constraint firstAttribute="trailing" secondItem="7YG-7O-CyH" secondAttribute="trailing" id="Mjo-J5-Jai"/>
                                         <constraint firstItem="7YG-7O-CyH" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="7" id="PAd-yt-i9P"/>
-                                        <constraint firstAttribute="centerY" secondItem="wSf-jz-91p" secondAttribute="centerY" id="PPx-ER-Htj"/>
+                                        <constraint firstItem="7YG-7O-CyH" firstAttribute="top" secondItem="wSf-jz-91p" secondAttribute="bottom" constant="4" id="Tvp-cA-spg"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="8" id="WiB-GQ-j7E"/>
                                         <constraint firstItem="wSf-jz-91p" firstAttribute="leading" secondItem="piH-pi-Tot" secondAttribute="leading" constant="4" id="aiF-dg-pP2"/>
                                         <constraint firstItem="wlh-qb-aJT" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="8" id="fUu-qW-xb2"/>
                                         <constraint firstAttribute="trailing" secondItem="yP0-Ed-Kd9" secondAttribute="trailing" constant="16" id="iEk-qa-Xlc"/>
+                                        <constraint firstItem="wSf-jz-91p" firstAttribute="top" secondItem="piH-pi-Tot" secondAttribute="top" constant="4" id="jPU-Kt-VhE"/>
                                         <constraint firstItem="tl9-99-CA5" firstAttribute="width" secondItem="9Mz-oL-S4e" secondAttribute="width" id="liP-wT-dat"/>
                                         <constraint firstAttribute="trailing" secondItem="wlh-qb-aJT" secondAttribute="trailing" constant="20" id="mVp-zi-oZO"/>
                                         <constraint firstItem="yP0-Ed-Kd9" firstAttribute="leading" secondItem="tl9-99-CA5" secondAttribute="trailing" constant="9" id="mZw-U3-WUF"/>

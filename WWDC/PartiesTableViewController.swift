@@ -24,6 +24,12 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     fileprivate var parties = PartiesManager.sharedInstance.parties
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        scrollToTop()
+    }
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
 
@@ -90,15 +96,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     // MARK: UITableViewDelegate
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if selectedSegmentIndex == 1 && parties.count == 0 {
-            let navigationControllerHeight = navigationController?.navigationBar.frame.size.height ?? 0
-            return UIScreen.main.bounds.size.height-navigationControllerHeight-UIApplication.shared.statusBarFrame.size.height
-        } else {
-            return 75
-        }
-    }
-
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if selectedSegmentIndex == 1 && parties.count == 0 {
             return 0
@@ -119,7 +116,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             view.addSubview(bgView)
 
             let label = UILabel(frame: CGRect(x: 8.0, y: 0.0, width: tableView.frame.size.width-22.0*2, height: 40.0))
-            label.alpha = Date() > parties[section][0].endDate ? 0.3 : 1.0
+            label.alpha = Date() > parties[section].last!.endDate ? 0.3 : 1.0
             label.autoresizingMask = .flexibleRightMargin
             label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightRegular)
             label.text = parties[section][0].date
@@ -127,7 +124,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             view.addSubview(label)
 
             let mapImageView = UIImageView(image: UIImage(named: "map"))
-            mapImageView.alpha = Date() > parties[section][0].endDate ? 0.3 : 1.0
+            mapImageView.alpha = Date() > parties[section].last!.endDate ? 0.3 : 1.0
             mapImageView.autoresizingMask = .flexibleLeftMargin
             mapImageView.frame = CGRect(x: tableView.frame.size.width-33.0, y: 6.0, width: 20.0, height: 28.0)
             view.addSubview(mapImageView)
@@ -166,7 +163,6 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
             tableView.isScrollEnabled = parties.count > 0
         }
         tableView.reloadData()
-        scrollToTop()
     }
 
     // MARK: UIViewControllerPreviewingDelegate
