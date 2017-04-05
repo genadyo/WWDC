@@ -72,9 +72,10 @@ class ServerManager {
                     let address3 = p["address3"] as? String,
                     let latitude = p["latitude"] as? Double,
                     let longitude = p["longitude"] as? Double,
-                    let url = p["url"] as? String, let u = URL(string: url)
+                    let url = p["url"] as? String, let u = URL(string: url),
+                    let promoted = p["promoted"] as? Bool
                 {
-                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: startDate, endDate: endDate, details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: u, date: dateForDate(startDate), hours: hourForDate(startDate) + " to " + hourForDate(endDate)))
+                    allParties.append(Party(objectId: objectId, icon: iconURL, logo: logoURL, title: title, startDate: startDate, endDate: endDate, details: details, address1: address1, address2: address2, address3: address3, latitude: latitude, longitude: longitude, url: u, date: dateForDate(startDate), hours: hourForDate(startDate) + " to " + hourForDate(endDate), promoted: promoted))
                 }
             }
         }

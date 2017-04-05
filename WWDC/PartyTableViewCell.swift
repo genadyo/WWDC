@@ -19,6 +19,16 @@ class PartyTableViewCell: UITableViewCell {
                 goingImageView.isHidden = !party.isGoing
                 badgeView.isHidden = party.isOld
                 titleLabel.text = party.title
+
+                if party.promoted == true {
+                    backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+                    titleLabel.textColor = .white
+                    hoursLabel.textColor = UIColor(white: 1.0, alpha: 0.9)
+                } else {
+                    backgroundColor = .white
+                    titleLabel.textColor = .black
+                    hoursLabel.textColor = UIColor(red: 171.0/255.0, green: 171.0/255.0, blue: 171.0/255.0, alpha: 1.0)
+                }
             }
         }
     }
@@ -26,7 +36,11 @@ class PartyTableViewCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
 
-        badgeView.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+        if party?.promoted == true {
+            badgeView.backgroundColor = .white
+        } else {
+            badgeView.backgroundColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
+        }
     }
 
     @IBOutlet weak var iconImageView: UIImageView!

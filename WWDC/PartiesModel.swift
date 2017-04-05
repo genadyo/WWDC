@@ -24,6 +24,7 @@ struct Party {
     let url: URL
     let date: String
     let hours: String
+    let promoted: Bool
 
     var isGoing: Bool {
         get {
