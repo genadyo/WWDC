@@ -13,7 +13,7 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
-  - Smooch (5.5.2)
+  - Smooch (5.6.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -34,7 +34,7 @@ SPEC CHECKSUMS:
   OneSignal: b8e3d70a393e78b07da7849448345ae1055b0561
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
-  Smooch: 6d244fb98b8e25a84ae0a522011058d708e0e288
+  Smooch: da8dc119dd584fe2e6826f5879f62801887f600c
 
 PODFILE CHECKSUM: 509f559eb68cf1218618436eb25636cff7e4eccf
 

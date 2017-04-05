@@ -21,13 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Keys
         let keys = SFPartiesKeys()
 
-        // One Signal
+        // OneSignal
         OneSignal.initWithLaunchOptions(launchOptions, appId: keys.oneSignal, handleNotificationReceived: { notification in
             
         }, handleNotificationAction: { result in
 
         }, settings: [kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInAppAlerts: true])
 
+        // Smooch
         Smooch.initWith(SKTSettings(appToken: keys.smooch))
 
         // Crashlytics
