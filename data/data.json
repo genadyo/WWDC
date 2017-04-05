@@ -2,8 +2,8 @@
   "parties": [
     {
       "objectId": "talkshow2017",
-      "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/talkshow.png",
-      "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/talkshow.jpg",
+      "icon": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/icons/talkshow.png",
+      "logo": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/logos/talkshow.jpg",
       "title": "The Talk Show with John Gruber Live",
       "startDate": "2017-06-06T18:00",
       "endDate": "2017-06-06T21:00",
@@ -18,8 +18,8 @@
     },
     {
       "objectId": "beard2017",
-      "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/beard.png",
-      "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/beard2017.jpg",
+      "icon": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/icons/beard.png",
+      "logo": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/logos/beard2017.jpg",
       "title": "Beard Bash 2017 at WWDC",
       "startDate": "2017-06-05T20:00",
       "endDate": "2017-06-05T00:00",
@@ -34,8 +34,8 @@
     },
     {
       "objectId": "breakpoints2017",
-      "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/breakpoints.png",
-      "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/breakpoints2017.jpg",
+      "icon": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/icons/breakpoints.png",
+      "logo": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/logos/breakpoints2017.jpg",
       "title": "James Dempsey and the Breakpoints",
       "startDate": "2017-06-07T20:00",
       "endDate": "2017-06-07T00:00",
