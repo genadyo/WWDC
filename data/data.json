@@ -1,7 +1,7 @@
 {
   "parties": [
     {
-      "objectId": "talkshow",
+      "objectId": "talkshow2017",
       "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/talkshow.png",
       "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/talkshow.jpg",
       "title": "The Talk Show with John Gruber Live",
@@ -14,6 +14,22 @@
       "latitude": 37.33068,
       "longitude": -121.88694,
       "url": "http://daringfireball.net/thetalkshow/",
+      "promoted": false
+    },
+    {
+      "objectId": "beard2017",
+      "icon": "https://gitcdn.link/repo/genadyo/WWDC/master/data/icons/beard.png",
+      "logo": "https://gitcdn.link/repo/genadyo/WWDC/master/data/logos/beard2017.jpg",
+      "title": "Beard Bash 2017 at WWDC",
+      "startDate": "2017-06-05T20:00",
+      "endDate": "2017-06-05T00:00",
+      "details": "Why is it called the Beard Bash?\n\nQuite simple because I have a big beard and it seemed like a fun name.\n\nDo I need a beard to attend?\n\nLOL, no. The party is open to developers in town during WWDC, although space is limited.\n\nWhy do you have a party?\n\nI’ve been doing this party for the last six years as a way to say thanks to developers for all the hard work they do. It’s a night where they don’t have to worry about anything, just having a good time.\n\nWill there be music?\n\nOh yes! We have a band play every year. This will be a concert party with great music!\n\nDo I need a ticket?\n\nYes. Tickets are free, but you will need to RSVP in order to attend the party. The process is very simple—we will make an announcement on how to RSVP as we get closer to WWDC.\n\nCan I bring a friend?\n\nIf your friend registers for a ticket, sure 🙂\n\nWill alcohol be served?\n\nYes, beer (lots of Heineken) and wine will be free. Mixed drinks can be purchased. There will also be non-alcoholic beverages available.\n\nDo I need to be 21 years old to attend?\n\nNo, this is an all ages party. If you would like to drink, you will need to show your ID to get a wrist band.\n\nWhere and when will the party be held?\n\nThe party is being held at the City National Civic Center in San Jose—directly across the street from WWDC. The event will be on \nMonday, June 5, 2017 from 8 pm -12 am.\n\nIs the party sponsored?\n\nYes we have a number of companies that sponsor the party. There are limited sponsorship spots available, but if you are interested please email me directly.",
+      "address1": "City National Civic Center",
+      "address2": "135 West San Carlos St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3306455,
+      "longitude": -121.8917505,
+      "url": "http://www.loopinsight.com/beard-bash-2017-at-wwdc/",
       "promoted": false
     }
   ]
