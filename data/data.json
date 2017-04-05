@@ -13,7 +13,8 @@
       "address3": "San Jose, CA 95113",
       "latitude": 37.33068,
       "longitude": -121.88694,
-      "url": "http://daringfireball.net/thetalkshow/"
+      "url": "http://daringfireball.net/thetalkshow/",
+      "promoted": true
     }
   ]
 }
