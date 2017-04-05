@@ -64,11 +64,11 @@
                                             <rect key="frame" x="78" y="8" width="484" height="41"/>
                                             <string key="text">Title
 Title 2</string>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="heightClass=compact">
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             </variation>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7YG-7O-CyH">
