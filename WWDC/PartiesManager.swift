@@ -35,7 +35,7 @@ class PartiesManager {
     }()
 
     func load(_ completion: (() -> Void)?) {
-        // redirect to https://cdn.rawgit.com/genadyo/WWDC/master/data/data.json
+        // redirect to https://raw.githubusercontent.com/genadyo/WWDC/master/data/data.json
         ServerManager.load("https://caltrain.okrain.com/parties") { [weak self] results, JSON in
             if let results = results {
                 self?.parties = results
