@@ -47,6 +47,22 @@
       "longitude": -121.8917505,
       "url": "http://jamesdempsey.net/splash/jdbp2017",
       "promoted": false
+    },
+    {
+      "objectId": "relay2017",
+      "icon": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/icons/relay.png",
+      "logo": "https://cdn.rawgit.com/genadyo/WWDC/2b79fa6d/data/logos/relay20172017.jpg",
+      "title": "WWDC 2017 - San Jose Relay FM Meetup",
+      "startDate": "2017-06-05T19:00",
+      "endDate": "2017-06-05T21:30",
+      "details": "Come hangout with Relay FM on Monday, June 5 at the San Jose Museum of Quilts and Textiles. The event runs from 7:00 - 9:30 PM. We will be serving several different local craft beers and SUPER FANCY Italian sodas. The event is open to all ages, but be sure to have your ID if you want a beer.",
+      "address1": "San Jose Museum of Quilts and Textiles",
+      "address2": "520 S 1st St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3281374,
+      "longitude": -121.8865947,
+      "url": "https://ti.to/relayfm/relay-fm-meetup-wwdc-2017",
+      "promoted": false
     }
   ]
 }
