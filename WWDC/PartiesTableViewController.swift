@@ -44,7 +44,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
         for i in 0..<parties.count {
             let partiesForDay = parties[i]
-            if let index = partiesForDay.index(where: { $0.startDate > Date() }), index > 0 {
+            if let index = partiesForDay.index(where: { $0.startDate > Date() }) {
                 tableView.scrollToRow(at: IndexPath(row: index, section: i), at: .top, animated: true)
                 return
             }
