@@ -61,8 +61,10 @@ class AboutTableViewController: UITableViewController {
             if indexPath.row == 0 {
                 openURL("https://github.com/orta/cocoapods-keys")
             } else if indexPath.row == 1 {
-                openURL("https://useiconic.com/open/")
+                openURL("https://github.com/joeldev/JLRoutes")
             } else if indexPath.row == 2 {
+                openURL("https://useiconic.com/open/")
+            } else if indexPath.row == 3 {
                 openURL("https://github.com/pinterest/PINRemoteImage")
             }
         }

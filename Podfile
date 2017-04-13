@@ -7,6 +7,7 @@ target 'SFParties' do
     pod 'OneSignal'
     pod 'Smooch'
     pod 'PINRemoteImage'
+    pod 'JLRoutes'
 end
 
 plugin 'cocoapods-keys', {

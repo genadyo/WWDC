@@ -12,6 +12,7 @@ import Crashlytics
 import Keys
 import Smooch
 import OneSignal
+import JLRoutes
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -40,6 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         // Global Tint Color (Xcode Bug #1)
         UIView.appearance().tintColor = UIColor(red: 106.0/255.0, green: 118.0/255.0, blue: 220.0/255.0, alpha: 1.0)
 
+        // Routes
+        RoutesManager.sharedInstance.setup()
+
         // Delegate
         if let splitViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() as? UISplitViewController {
             splitViewController.delegate = self
@@ -51,8 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         return true
     }
 
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any]) -> Bool {
-        return true
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return JLRoutes.routeURL(url)
     }
 
     // MARK: UISplitViewControllerDelegate
