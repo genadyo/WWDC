@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
             
         }, handleNotificationAction: { result in
 
-        }, settings: [kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInAppAlerts: true])
+        }, settings: [kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInFocusDisplayOption: OSNotificationDisplayType.notification.rawValue])
 
         // Smooch
         Smooch.initWith(SKTSettings(appToken: keys.smooch))
