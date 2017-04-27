@@ -79,6 +79,22 @@
       "longitude": -121.8881887,
       "url": "https://ti.to/airplanemode/wwdc",
       "promoted": false
+    },
+    {
+      "objectId": "atp2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/atp.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/atp.jpg",
+      "title": "Accidental Tech Podcast Live",
+      "startDate": "2017-06-05T17:00",
+      "endDate": "2017-06-05T19:00",
+      "details": "Accidental Tech Podcast Live @ AltConf, June 5th - 5pm\nMonday June 5th, 2017 5-7pm. Limited availability for this one-off event - reserve your spot today!",
+      "address1": "San Jose Marriott",
+      "address2": "301 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3304071,
+      "longitude": -121.8904105,
+      "url": "http://altconf.com/#tickets",
+      "promoted": false
     }
   ]
 }
