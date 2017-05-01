@@ -95,6 +95,22 @@
       "longitude": -121.8904105,
       "url": "http://altconf.com/#tickets",
       "promoted": false
+    },
+    {
+      "objectId": "thoughtbot2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/thoughtbot.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/thoughtbot.jpg",
+      "title": "Apple WWDC Keynote Breakfast & Viewing",
+      "startDate": "2017-06-05T09:30",
+      "endDate": "2017-06-05T12:00",
+      "details": "Come have a hearty breakfast and watch the WWDC Keynote courtesy of thoughtbot before heading down to San Jose! Say hello to other early rising developers & designers while sipping on mimosas.\nThis event is open to everyone, regardless of whether or not you snagged a ticket to WWDC. AltConf attendees and hungry iOS developers are welcome!",
+      "address1": "thoughtbot Inc.",
+      "address2": "85 2nd St. #700",
+      "address3": "San Francisco, CA 94105",
+      "latitude": 37.7885126,
+      "longitude": -122.4021288,
+      "url": "https://www.eventbrite.com/e/apple-wwdc-keynote-breakfast-viewing-tickets-33864978061?aff=es2",
+      "promoted": false
     }
   ]
 }
