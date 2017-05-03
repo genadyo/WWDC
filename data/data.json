@@ -109,8 +109,24 @@
       "address3": "San Francisco, CA 94105",
       "latitude": 37.7885126,
       "longitude": -122.4021288,
-      "url": "https://www.eventbrite.com/e/apple-wwdc-keynote-breakfast-viewing-tickets-33864978061?aff=es2",
+      "url": "https://www.eventbrite.com/e/apple-wwdc-keynote-breakfast-viewing-tickets-33864978061",
       "promoted": false
+    },
+    {
+      "objectId": "buddy2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/buddy.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/buddy2017.jpg",
+      "title": "buddybeers: WWDC Edition",
+      "startDate": "2017-06-06T17:00",
+      "endDate": "2017-06-06T20:00",
+      "details": "Join the buddybuild team at Paper Plane SJ for a special WWDC edition of buddybeers!\nMix, mingle, and discuss the latest Apple news with your fellow app developers over a cocktail, pint (or two)!\nThere'll be complimentary food / drinks, special edition t-shirts and other goodies to give away, and we'll help you setup your first mobile CI build for your app!\nSpace is limited, so reserve your spot today! \n\n\nBuddybuild is a continuous integration, deployment and user insights platform built specifically for mobile development teams.\n\nThis happy hour is hosted in collaboration with Parties for WWDC - the aggregator of developer parties happening in San Jose during WWDC 2017.\nDownload the app and swing by buddybeers to meet the creator!",
+      "address1": "Paper Plane",
+      "address2": "72 South 1st St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3350561,
+      "longitude": -121.8915525,
+      "url": "https://www.eventbrite.ca/e/buddybeers-wwdc-edition-tickets-33829080691",
+      "promoted": true
     }
   ]
 }
