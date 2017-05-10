@@ -126,7 +126,7 @@
       "latitude": 37.3350561,
       "longitude": -121.8915525,
       "url": "https://www.eventbrite.com/e/buddybeers-wwdc-edition-tickets-33829080691",
-      "promoted": true
+      "promoted": false
     },
     {
       "objectId": "comedy2017",
@@ -158,6 +158,38 @@
       "latitude": 37.3352879,
       "longitude": -121.8936552,
       "url": "https://selfiesoiree.splashthat.com",
+      "promoted": false
+    },
+    {
+      "objectId": "buddyfood12017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/buddy2017.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/bbfood.jpg",
+      "title": "buddybuild breakfast",
+      "startDate": "2017-06-06T08:00",
+      "endDate": "2017-06-06T10:00",
+      "details": "To help fuel developers through the many sessions, meetups, conferences and happy hours during the week of WWDC, buddybuild is serving free breakfast burritos for the iOS community!\nOn the mornings of June 6th and 7th, the buddybuild team will be parked near the convention center handing out breakfast burritos and sandwiches for attendees of WWDC, AltConf and Cocoaconf Next Door.\nFor WWDC: attendees simply need to show their badge at the food truck for a free buddybuild breakfast of their choice.\nFor AltConf, and CocoaConf Next Door: attendees can pick up a buddybuild breakfast ticket at their conference's registration.*\nClick 'Register' to help us plan how many burritos we should prepare!\n*TICKETS ARE LIMITED, AND BURRITOS WILL BE ON A FIRST-COME, FIRST-SERVED BASIS",
+      "address1": "S. Market St.",
+      "address2": "San Carlos St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.332078,
+      "longitude": -121.8889483,
+      "url": "https://www.eventbrite.com/e/buddybuild-breakfast-tickets-33838657335",
+      "promoted": false
+    },
+    {
+      "objectId": "buddyfood22017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/buddy2017.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/bbfood.jpg",
+      "title": "buddybuild breakfast",
+      "startDate": "2017-06-07T08:00",
+      "endDate": "2017-06-07T10:00",
+      "details": "To help fuel developers through the many sessions, meetups, conferences and happy hours during the week of WWDC, buddybuild is serving free breakfast burritos for the iOS community!\nOn the mornings of June 6th and 7th, the buddybuild team will be parked near the convention center handing out breakfast burritos and sandwiches for attendees of WWDC, AltConf and Cocoaconf Next Door.\nFor WWDC: attendees simply need to show their badge at the food truck for a free buddybuild breakfast of their choice.\nFor AltConf, and CocoaConf Next Door: attendees can pick up a buddybuild breakfast ticket at their conference's registration.*\nClick 'Register' to help us plan how many burritos we should prepare!\n*TICKETS ARE LIMITED, AND BURRITOS WILL BE ON A FIRST-COME, FIRST-SERVED BASIS",
+      "address1": "S. Market St.",
+      "address2": "San Carlos St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.332078,
+      "longitude": -121.8889483,
+      "url": "https://www.eventbrite.com/e/buddybuild-breakfast-tickets-33838657335",
       "promoted": false
     }
   ]
