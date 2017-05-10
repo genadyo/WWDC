@@ -143,6 +143,22 @@
       "longitude": -121.888292,
       "url": "http://sanjose.improv.com/comedian/tw-artistinfo/James+Veitch/",
       "promoted": false
+    },
+    {
+      "objectId": "button2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/button.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/button.jpg",
+      "title": "Selfie Soiree",
+      "startDate": "2017-06-07T20:00",
+      "endDate": "2017-06-08T00:00",
+      "details": "Episode III: Return Of The Soirée,\n \nJoin Button on Wednesday evening for our 3rd annual selfie soirée of extensive proportions. \n \nWe'll be nearby WWDC at 2 South Market Street, with an open bar including specialty cocktails, amazing food, great music, and - most importantly - selfie backdrops to rival the likes of Apple's iPhone backgrounds.\n \nLeft your selfie stick at home? Don't worry, we'll have plenty on hand, but all you iPhone 7 folks -- we thought lightning only strikes once, but the cables fooled us again. Bring your own adaptor to ensure you can snap selfies.\n \n#SelfieSoiree",
+      "address1": "The GlassHouse",
+      "address2": "2 South Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3352879,
+      "longitude": -121.8936552,
+      "url": "https://selfiesoiree.splashthat.com",
+      "promoted": false
     }
   ]
 }
