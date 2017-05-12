@@ -191,6 +191,22 @@
       "longitude": -121.8889483,
       "url": "https://www.eventbrite.com/e/buddybuild-breakfast-tickets-33838657335",
       "promoted": false
+    },
+    {
+      "objectId": "firebase",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/firebase.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/firebase.jpg",
+      "title": "Firebase + Fabric Party @WWDC17",
+      "startDate": "2017-06-05T20:00",
+      "endDate": "2017-06-05T23:00",
+      "details": "Heading to WWDC?\nJoin the Firebase + Fabric team to celebrate app development\n \n@ Forager Tasting Room & Eatery\n8pm - 11pm  |  Monday, June 5 \n\nFirebase+Fabric party\nThe Venue\n\nChic with friendly vibe. Just two blocks away from McEnery Center.\n\nFirebase+Fabric party\nThe Community\n\nCome relax, hang out with top developers and try our signature cocktails - on us.\n\nFirebase+Fabric party\nThe Experience\n\nEnjoy the music, conversations and other fun experiences we've planned.\n\nWhen & Where\n\nMonday June 5 | 8pm - 11pm\n420 South 1st St, San Jose, CA 95172\nADD TO Google Calendar | iCalendar\n\nWe love developers and we're thrilled to celebrate with you this year. Demand for this event is high, so make sure you request an invite asap!*",
+      "address1": "Forager Tasting Room & Eatery",
+      "address2": "420 South 1st St.",
+      "address3": "San Jose, CA 95172",
+      "latitude": 37.3299007,
+      "longitude": -121.8876418,
+      "url": "https://events.withgoogle.com/firebase-fabric-wwdc-party/",
+      "promoted": false
     }
   ]
 }
