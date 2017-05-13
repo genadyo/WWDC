@@ -207,6 +207,22 @@
       "longitude": -121.8876418,
       "url": "https://events.withgoogle.com/firebase-fabric-wwdc-party/",
       "promoted": false
+    },
+    {
+      "objectId": "setapp",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/setapp.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/setapp.jpg",
+      "title": "Setapp and Paddle WWDC 2017 Party",
+      "startDate": "2017-06-05T17:45",
+      "endDate": "2017-06-05T21:45",
+      "details": "Two main things are going down in San Jose this year: there’s a Developers conference and an epic party by Setapp. We joined forces with our friends at Paddle to throw the best event for developers of the season and we just had to find the perfect spot for it.\nSetapp is all about how the Mac world should be, about the future of tech and what we can do to drive it closer. We needed a space station at least. At the same time, Paddle as an e-commerce and billing giant were pushing for a prestigious and comfortable place. We looked hard and then it hit us: our perfectly comfortable spot that cradles the future was right there, in the glorious Museum of Technology and Innovation in San Jose.\nWe have the whole upper lever with all the exhibits to ourselves. Which means Virtual Reality, Robot and BioDesigns, and the rest of the futuristic tech at your service to explore. There are also going to be quite a few top tech journalists and an amazing developer community. Food and drinks to refill your energy tank, great people to have memorable talks, and a couple of robots in the backgrounds. Sounds pretty neat.",
+      "address1": "Tech Museum (Upper level)",
+      "address2": "201 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.331629,
+      "longitude": -121.8923151,
+      "url": "https://www.eventbrite.com/e/setapp-and-paddle-wwdc-2017-party-tickets-34567152283",
+      "promoted": false
     }
   ]
 }
