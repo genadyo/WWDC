@@ -226,8 +226,8 @@
     },
     {
       "objectId": "realm22017",
-      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/realm2017f.png",
-      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/realm2017f.jpg",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/realm2017.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/realm2017.jpg",
       "title": "WWDC Keynote Viewing Party + Bingo",
       "startDate": "2017-06-05T09:30",
       "endDate": "2017-06-05T12:00",
@@ -242,7 +242,7 @@
     },
     {
       "objectId": "realm12017",
-      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/realm2017f.png",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/realm2017.png",
       "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/realm2017f.jpg",
       "title": "WWDC 2017 Swift Panel",
       "startDate": "2017-06-06T18:00",
