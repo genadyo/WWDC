@@ -305,22 +305,6 @@
       "promoted": false
     },
     {
-      "objectId": "sap2017",
-      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/sap.png",
-      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/sap.jpg",
-      "title": "SAP CodeJam",
-      "startDate": "2017-06-07T09:00",
-      "endDate": "2017-06-07T18:00",
-      "details": "How?\n\nEvery hour on the hour our experts will be hosting 45-min hands-on sessions to help you get started with the SDK.\n\nWhat? \n\nThe SAP Cloud Platform SDK for iOS enables you to quickly develop native apps with Swift, that tap into the services and functions available in the SAP Cloud Platform.\n\nWhy?\n\nBecause 76% of the world’s business transactions go through an SAP system and now you can reinvent business processes and workflows with apps that leverage iOS tech and seamless integration with SAP.",
-      "address1": "Hyatt Place (Meeting Place II)",
-      "address2": "282 Almaden Blvd.",
-      "address3": "San Jose, CA 95113",
-      "latitude": 37.3302372,
-      "longitude": -121.893494,
-      "url": "https://www.sap.com/developer/events/codejam.html",
-      "promoted": false
-    },
-    {
       "objectId": "ibm12017",
       "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/ibm.png",
       "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/ibm.jpg",
