@@ -257,14 +257,14 @@
       "promoted": false
     },
     {
-      "objectId": “swiftcoders2017",
+      "objectId": "swiftcoders2017",
       "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/swiftcoder-icon.png",
       "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/swiftcoder-logo.jpg",
-      "title": “SwiftCoders Meet & Greet”,
+      "title": "SwiftCoders Meet & Greet",
       "startDate": "2017-06-07T12:00",
       "endDate": "2017-06-07T13:30",
-      "details": “Hosted by Garric Nahapetian, Raghav Mangrola, and Steven Berard. Come meet past guests of The SwiftCoders Podcast, leaders of our Learn Swift group of meet ups, as well as fellow SwiftCoder community members. You've heard their stories, now meet them in person, thank them for inspiring you along your journey, and learn more tips and tricks. Interested in starting a Learn Swift meet up in your community? Come speak with our leaders to find out the how, what, and why of starting and leading your own Learn Swift meet up.",
-      "address1": "Community Space, AltConf, San Jose Marriott“,
+      "details": "Hosted by Garric Nahapetian, Raghav Mangrola, and Steven Berard. Come meet past guests of The SwiftCoders Podcast, leaders of our Learn Swift group of meet ups, as well as fellow SwiftCoder community members. You've heard their stories, now meet them in person, thank them for inspiring you along your journey, and learn more tips and tricks. Interested in starting a Learn Swift meet up in your community? Come speak with our leaders to find out the how, what, and why of starting and leading your own Learn Swift meet up.",
+      "address1": "Community Space, AltConf, San Jose Marriott",
       "address2": "301 S Market St.",
       "address3": "San Jose, CA",
       "latitude": 37.3304113,
