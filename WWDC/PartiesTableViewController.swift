@@ -24,8 +24,8 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     var parties = PartiesManager.sharedInstance.parties
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 
         scrollToTop()
     }
