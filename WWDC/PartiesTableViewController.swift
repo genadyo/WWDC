@@ -29,7 +29,10 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        scrollToTop()
+        if wasScrolled == false {
+            wasScrolled = true
+            scrollToTop()
+        }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
@@ -42,9 +45,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     func scrollToTop() {
-        guard parties.count > 0, wasScrolled == false else { return }
-
-        wasScrolled = true
+        guard parties.count > 0 else { return }
 
         for i in 0..<parties.count {
             let partiesForDay = parties[i]
