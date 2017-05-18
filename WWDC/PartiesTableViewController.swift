@@ -24,6 +24,8 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
 
     var parties = PartiesManager.sharedInstance.parties
 
+    var wasScrolled = false
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
@@ -40,7 +42,9 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
     }
 
     func scrollToTop() {
-        guard parties.count > 0 else { return }
+        guard parties.count > 0, wasScrolled == false else { return }
+
+        wasScrolled = true
 
         for i in 0..<parties.count {
             let partiesForDay = parties[i]
