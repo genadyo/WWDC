@@ -44,9 +44,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCalendarsUsageDescription</key>
-	<string>Calendar permission is required to add parties</string>
+	<string>Calendar permission is required to add parties to the calendar</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera permission is required to send images to ${PRODUCT_NAME}</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Contacts permission is required to add parties to the calendar</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>${PRODUCT_NAME} needs your current location to show parties nearby</string>
 	<key>NSPhotoLibraryUsageDescription</key>
