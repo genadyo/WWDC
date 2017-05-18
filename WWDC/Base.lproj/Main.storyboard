@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q5S-P0-aDl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Q5S-P0-aDl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +28,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-jz-91p">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wSf-jz-91p">
                                             <rect key="frame" x="4" y="4" width="66" height="66"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" priority="999" constant="66" id="ea2-Rn-0pY"/>
@@ -476,21 +476,21 @@ Title2</string>
                                             <outletCollection property="gestureRecognizers" destination="0pR-or-51a" appends="YES" id="BMV-9V-G5f"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="192" id="pMU-HH-BgM">
-                                        <rect key="frame" x="0.0" y="634" width="600" height="192"/>
+                                    <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="190" id="pMU-HH-BgM">
+                                        <rect key="frame" x="0.0" y="634" width="600" height="190"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pMU-HH-BgM" id="TuZ-Rl-ead">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="192"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MMY-Hj-xPU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="192"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                                     <gestureRecognizers/>
                                                 </mapView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajf-PO-39T">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="192"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="192" id="zVd-rE-z8Z"/>
+                                                        <constraint firstAttribute="height" priority="999" constant="190" id="zVd-rE-z8Z"/>
                                                     </constraints>
                                                     <state key="normal">
                                                         <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -515,7 +515,7 @@ Title2</string>
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="77" id="uwO-ac-6zh">
-                                        <rect key="frame" x="0.0" y="826" width="600" height="77"/>
+                                        <rect key="frame" x="0.0" y="824" width="600" height="77"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uwO-ac-6zh" id="TmW-O5-gJW">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="77"/>
@@ -566,7 +566,7 @@ Title2</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="61" id="9bP-Ow-ToB">
-                                        <rect key="frame" x="0.0" y="903" width="600" height="61"/>
+                                        <rect key="frame" x="0.0" y="901" width="600" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9bP-Ow-ToB" id="lOt-gd-zsV">
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="61"/>
