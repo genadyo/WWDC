@@ -13,6 +13,7 @@ import Keys
 import Contacts
 import EventKitUI
 import Crashlytics
+import StoreKit
 
 protocol PartyTableViewControllerDelegate {
     func reloadData()
@@ -104,6 +105,10 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         // Self sizing cells
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
+
+        if #available(iOS 10.3, *) {
+            SKStoreReviewController.requestReview()
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
