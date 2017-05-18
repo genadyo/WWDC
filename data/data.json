@@ -335,6 +335,22 @@
       "longitude": -121.893494,
       "url": "https://developer.ibm.com/swift/events/wwdc-altconf-workshop-free/",
       "promoted": false
+    },
+    {
+      "objectId": "sjmacindie2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/sjmacindie.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/sjmacindie.jpg",
+      "title": "sjMacIndie",
+      "startDate": "2017-06-04T17:00",
+      "endDate": "2017-06-04T21:00",
+      "details": "sjMacIndie is the premier networking event that kicks off WWDC. It is for independent iOS and Mac developers, designers, WWDC and AltConf attendees and anyone else who's interested. It will be a great opportunity to connect and network!",
+      "address1": "Location TBD",
+      "address2": "San Jose",
+      "address3": "United States",
+      "latitude": 37.3304071,
+      "longitude": -121.8904105,
+      "url": "http://sfmacindie.com",
+      "promoted": false
     }
   ]
 }
