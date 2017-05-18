@@ -5,14 +5,14 @@ Parties for WWDC
 
 ## Parties for iPhone:
 <p align="center">
-  <img src="/Assets/iPhone 6/screen1.png?raw=true" alt="Parties for iOS" width="300"/>
-  <img src="/Assets/iPhone 6/screen2.png?raw=true" alt="Parties for iOS" width="300"/>
+  <img src="/Assets/iPhone/screen1.png?raw=true" alt="Parties for iOS" width="300"/>
+  <img src="/Assets/iPhone/screen2.png?raw=true" alt="Parties for iOS" width="300"/>
 </p>
 
 ## Info:
-Parties for WWDC is an aggregator of developers parties happening in San Francisco mostly exclusively for participators of WWDC 2016. 
+Parties for WWDC is an aggregator of developers parties happening in San Jose mostly exclusively for participators of WWDC 2017. 
 
-Hottest startups and technology companies in Silicon Valley are organizing parties for developers who participate WWDC 2016. 
+Hottest startups and technology companies in Silicon Valley are organizing parties for developers who participate WWDC 2017. 
 
 You can view the parties on map, register and mark parties you’re going to take part in. 
 
