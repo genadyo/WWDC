@@ -351,6 +351,22 @@
       "longitude": -121.8904105,
       "url": "http://sfmacindie.com",
       "promoted": false
+    },
+    {
+      "objectId": "testlio2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/testlio.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/testlio.jpg",
+      "title": "WWDC Happy Hour",
+      "startDate": "2017-06-07T19:00",
+      "endDate": "2017-06-07T22:00",
+      "details": "Mark your calendars! After a long day at WWDC, what is a better way to celebrate than with some classic cocktails and small bites. Join us at Haberdasher, just around the corner from WWDC.\n\nSpace is limited so please RSVP soon for the wait-list so we can get you into the coolest spot in town. ",
+      "address1": "Haberdasher",
+      "address2": "43 W San Salvador St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3299002,
+      "longitude": -121.8887347,
+      "url": "https://wwdchappyhour.splashthat.com",
+      "promoted": false
     }
   ]
 }
