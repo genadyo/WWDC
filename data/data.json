@@ -383,6 +383,22 @@
       "longitude": -121.8915525,
       "url": "https://mapboxwwdc17.splashthat.com",
       "promoted": false
+    },
+    {
+      "objectId": "ibm32017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/ibm.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/ibm.jpg",
+      "title": "Server Side Swift Meetup",
+      "startDate": "2017-06-06T20:00",
+      "endDate": "2017-06-06T22:00",
+      "details": "Join 100 of your Server Side Swift peers and the Swift@IBM team for an informal meetup on the topic of Server Side Swift, Tuesday evening of the Apple WWDC event, in the AltConf facilities. There is a limit of 100 attendees for this event so get signed up soon. We will have adult beverages and snacks available at no cost.\nWe hope to see you there!\nThe Swift@IBM team.",
+      "address1": "San Jose Marriott",
+      "address2": "301 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3304071,
+      "longitude": -121.8904105,
+      "url": "https://www.eventbrite.com/e/server-side-swift-meetup-hosted-by-ibm-registration-34088085381",
+      "promoted": false
     }
   ]
 }
