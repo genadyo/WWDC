@@ -367,6 +367,22 @@
       "longitude": -121.8887347,
       "url": "https://wwdchappyhour.splashthat.com",
       "promoted": false
+    },
+    {
+      "objectId": "mapbox2017",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/mapbox2017.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/mapbox2017.jpg",
+      "title": "Mapbox WWDC 2017",
+      "startDate": "2017-06-05T17:30",
+      "endDate": "2017-06-05T20:30",
+      "details": "Come grab a drink at our 6th annual WWDC kickoff event on Monday, June 5th. Our team will be hanging out at Paper Plane, ready to share the latest developments in maps for mobile.\n\nCan't wait to see you there!",
+      "address1": "Paper Plane",
+      "address2": "72 South 1st St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3350561,
+      "longitude": -121.8915525,
+      "url": "https://mapboxwwdc17.splashthat.com",
+      "promoted": false
     }
   ]
 }
