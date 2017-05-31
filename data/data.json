@@ -399,6 +399,22 @@
       "longitude": -121.8904105,
       "url": "https://www.eventbrite.com/e/server-side-swift-meetup-hosted-by-ibm-registration-34088085381",
       "promoted": false
+    },
+    {
+      "objectId": "github",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/github.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/github.jpg",
+      "title": "WWDC Networking Social",
+      "startDate": "2017-06-06T19:00",
+      "endDate": "2017-06-06T22:00",
+      "details": "We're inviting all developers, designers, creators, and hackers to join GitHub in our first ever networking event celebrating WWDC. Whether you're a part of WWDC, or attending AltConf, CocoaConf, or Layers drop by and check out our celebration.\nWe'll be at Forager Tasting Room and Eatery from 7pm to 10pm. Hang out and discuss the latest Apple news, network with peers, and have some fun after a long day.\nWe’ll supply some small bites, beer, wine, music, and Octocat stickers.\nPlease note: This is a 21+ event so please bring a valid photo ID. We recommend showing up early to avoid disappointment (we certainly wouldn't be the first WWDC party to reach capacity quickly).",
+      "address1": "Forager Tasting Room & Eatery",
+      "address2": "420 South 1st St.",
+      "address3": "San Jose, CA 95172",
+      "latitude": 37.3299007,
+      "longitude": -121.8876418,
+      "url": "https://www.eventbrite.com/e/wwdc-networking-social-tickets-34830653422",
+      "promoted": false
     }
   ]
 }
