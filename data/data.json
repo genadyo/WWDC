@@ -132,7 +132,7 @@
       "objectId": "comedy2017",
       "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/comedy2.png",
       "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/comedy.jpg",
-      "title": "Your WWDC Comedy Fix",
+      "title": "James Veitch: standup comedy",
       "startDate": "2017-06-06T20:00",
       "endDate": "2017-06-06T22:00",
       "details": "James Veitch\n \nAn evening of geeky comedy about life, love and enabling bluetooth.\n \nResponsible for the fastest ever TED Talk to reach over two million views in the history of TED, UK comedian, musician and writer James Veitch has become renowned for his unashamedly nerdy and hilarious digital content. \n \nA former Apple Store Genius, Veitch’s comedy is high-tech: picking apart, parodying (and pranking) the fast-advancing and perplexing technology we live with. His live shows have explored technology, retro-gaming, and finding love through troubleshooting theory. \n \nHe had sold-out runs at the Edinburgh Fringe in 2014, 2015 and at Soho Theatre in 2016 with his first three shows, Dot Con, Game Face and Genius Bar and has written and performed two viral hit seasons of his show Scamalot with Mashable. He’s performed across the UK, the U.S. and Scandinavia and his best selling book, Dot Con, based upon the show, was published in 2015. \n \n“Near-constant belly laughs” The Scotsman\n“I laughed my ass off” The New York Times\n“One to watch” The Independent\n”Tears-down-the-face funny” The Sunday Herald",
@@ -248,11 +248,11 @@
       "startDate": "2017-06-06T18:00",
       "endDate": "2017-06-06T21:00",
       "details": "Join Chris Lattner, Jesse Squires, Kamilah Taylor and Kevin Ballard as Realm's JP Simard moderates this panel-style discussion on everything Swift.\n\nIMPORTANT: Capacity for this event is limited. RSVPs are required to attend this event, we'll only have capacity for the first 100 people at the door by 6pm.\n\nSchedule\n\n* 6pm: Doors open! Mix & mingle among your fellow Swifters. Drinks and light snacks provided.\n* 7pm: Panel + Q&A\n* Afterwards: Stay and chat with our panelists, mix and mingle some more.\n\nLocation: We will be announcing the location as we get closer to the event - RSVP, and stay tuned we'll let you know.\n\nVideo: A livestream of the event will be available and we'll be publishing the video shortly after the event.\n\nThis panel is presented by Realm, a platform to build reactive apps, realtime collaborative features, and offline-first experiences.",
-      "address1": "Location TBD",
-      "address2": "San Jose",
-      "address3": "United States",
-      "latitude": 37.3304071,
-      "longitude": -121.8904105,
+      "address1": "The Westin Hotel",
+      "address2": "302 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3305747,
+      "longitude": -121.8901839,
       "url": "https://www.eventbrite.com/e/wwdc-2017-swift-panel-tickets-34611623297",
       "promoted": false
     },
@@ -414,6 +414,22 @@
       "latitude": 37.3299007,
       "longitude": -121.8876418,
       "url": "https://www.eventbrite.com/e/wwdc-networking-social-tickets-34830653422",
+      "promoted": false
+    },
+    {
+      "objectId": "envoy",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/envoy.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/envoy.jpg",
+      "title": "Dub Dub and Donuts",
+      "startDate": "2017-06-05T09:30",
+      "endDate": "2017-06-05T12:00",
+      "details": "Whether you've got a ticket to WWDC or not, come join us in an Envoy tradition!\nWe've been doing Dub Dub and Donuts privately for the last few years, but we're opening up our office (with a nice big projector screen and sound system!) to our fellow Apple enthusiasts for a morning chock full of new Apple technology, scarved demos, and (hopefully) U2. We've got donuts, coffee, mimosas, and wifi!\nCome by! You'll hang out with some of the Envoy engineering team, fellow Mac and iOS developers, designers, and early adopters who will probably be installing macOS 10.13 alpha before the event even ends. Don't watch the keynote alone!\nWhen:\nDoors open at 9:30am for mingling and refreshments. Keynote kicks off at 10:00am!\nArriving at Envoy\nWhen you arrive, press the button on the intercom and we'll let you in. Then just take the stairs to the 2nd floor, sign in, and proceed up to the 3rd floor.\nGetting here\nPublic transportation\nWe recommend taking BART to the Montgomery Station or Muni 10-Townsend to 2nd & Bryant. Walk down 3rd Street. We're at the corner of 3rd and Bryant.\nBiking\nWe offer on-site bike parking for visitors. Enter with your bike through the front entrance.\nUber + Lyft\nOur office is on the left-hand-side of Bryant street, right past the 3rd street intersection.\nQuestions?\nFeel free to email me at wr@envoy.com.",
+      "address1": "Envoy",
+      "address2": "488 Bryant St.",
+      "address3": "San Francisco, CA 94107",
+      "latitude": 37.7817523,
+      "longitude": -122.397894,
+      "url": "https://www.eventbrite.com/e/dub-dub-and-donuts-wwdc-keynote-screening-tickets-35030656637",
       "promoted": false
     }
   ]
