@@ -431,6 +431,22 @@
       "longitude": -122.397894,
       "url": "https://www.eventbrite.com/e/dub-dub-and-donuts-wwdc-keynote-screening-tickets-35030656637",
       "promoted": false
+    },
+    {
+      "objectId": "swiftconf",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/swiftconf.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/swiftconf.jpg",
+      "title": "SwiftConf Drinkup @ WWDC!",
+      "startDate": "2017-06-08T18:00",
+      "endDate": "2017-06-08T23:30",
+      "details": "Still in town for WWDC on friday evening? Have you seen there's nothing organized anymore? Want to ask a question, meet the speakers & organizers? Join us. We have a limited Budget, so only about the 50 first persons will have a free beer, but we really think it's lame that there's nothing on the friday so that's our community beers!\nWe'll announce the exact location where it happens soon! Check out back — somewhere near the convention center.",
+      "address1": "TBD",
+      "address2": "San Jose",
+      "address3": "San Jose, CA",
+      "latitude": 37.7817523,
+      "longitude": -122.397894,
+      "url": "https://www.eventbrite.com/e/swiftconf-drinkup-wwdc-tickets-2773249865",
+      "promoted": false
     }
   ]
 }
