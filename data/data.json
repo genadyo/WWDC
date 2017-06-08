@@ -447,6 +447,22 @@
       "longitude": -122.397894,
       "url": "https://www.eventbrite.com/e/swiftconf-drinkup-wwdc-tickets-2773249865",
       "promoted": false
+    },
+    {
+      "objectId": "blackbox",
+      "icon": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/icons/blackbox.png",
+      "logo": "https://raw.githubusercontent.com/genadyo/WWDC/master/data/logos/blackbox.jpg",
+      "title": "Come touch the Blackbox!",
+      "startDate": "2017-06-08T17:00",
+      "endDate": "2017-06-08T17:30",
+      "details": "Why? Blackbox would not be where it is today or even possible without you, the iOS community that \"raised me\" and this little big creation. Come get a laptop decal and let's see how many people can touch this mystical device at once… Maybe it's a meta puzzle.",
+      "address1": "Plaza de César Chávez",
+      "address2": "San Jose",
+      "address3": "CA",
+      "latitude": 37.332282,
+      "longitude": -121.889733,
+      "url": "http://blackboxpuzzles.com/wwdc",
+      "promoted": false
     }
   ]
 }
