@@ -9,7 +9,6 @@
 import UIKit
 import Fabric
 import Crashlytics
-import Keys
 import Smooch
 import OneSignal
 import JLRoutes
@@ -30,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         }, settings: [kOSSettingsKeyAutoPrompt: true, kOSSettingsKeyInFocusDisplayOption: OSNotificationDisplayType.notification.rawValue])
 
         // Smooch
-        Smooch.initWith(SKTSettings(appToken: keys.smooch))
+        Smooch.initWith(SKTSettings(appId: keys.smooch))
 
         // Crashlytics
         Fabric.with([Crashlytics.start(withAPIKey: keys.crashlytics)])

@@ -62,7 +62,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
         }
     }
 
-    func buttonClicked(_ sender: UIButton) {
+    @objc func buttonClicked(_ sender: UIButton) {
         performSegue(withIdentifier: "map", sender: sender)
     }
 
@@ -132,7 +132,7 @@ class PartiesTableViewController: UITableViewController, PartyTableViewControlle
                 label.alpha = Date() > lastEndDate ? 0.3 : 1.0
             }
             label.autoresizingMask = .flexibleRightMargin
-            label.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightRegular)
+            label.font = UIFont.systemFont(ofSize: 15.0, weight: .regular)
             label.text = parties[section].first?.date
             label.textColor = UIColor(red: 117.0/255.0, green: 117.0/255.0, blue: 117.0/255.0, alpha: 1.0)
             view.addSubview(label)

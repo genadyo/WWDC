@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import SafariServices
-import Keys
 import Contacts
 import EventKitUI
 import Crashlytics
@@ -39,13 +38,13 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
 
     @IBOutlet weak var detailsLabel: UILabel! {
         didSet {
-            let font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightLight)
+            let font = UIFont.systemFont(ofSize: 15.0, weight: .light)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 20.0
             paragraphStyle.maximumLineHeight = 20.0
             paragraphStyle.minimumLineHeight = 20.0
             let color = UIColor(red: 146.0/255.0, green: 146.0/255.0, blue: 146.0/255.0, alpha: 1.0)
-            let attributedDetails = NSMutableAttributedString(string: party.details, attributes: [NSFontAttributeName: font, NSParagraphStyleAttributeName: paragraphStyle, NSForegroundColorAttributeName: color])
+            let attributedDetails = NSMutableAttributedString(string: party.details, attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle: paragraphStyle, NSAttributedStringKey.foregroundColor: color])
             detailsLabel.attributedText = attributedDetails;
         }
     }
