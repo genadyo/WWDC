@@ -105,11 +105,9 @@ class PartyTableViewController: UITableViewController, SFSafariViewControllerDel
         tableView.estimatedRowHeight = 100.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        if #available(iOS 10.3, *) {
-            if let buildString = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String, let build = Int(buildString), build > UserDefaults.standard.integer(forKey: "lastReviewBuild") {
-                UserDefaults.standard.set(build, forKey: "lastReviewBuild")
-                SKStoreReviewController.requestReview()
-            }
+        if let buildString = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String, let build = Int(buildString), build > UserDefaults.standard.integer(forKey: "lastReviewBuild") {
+            UserDefaults.standard.set(build, forKey: "lastReviewBuild")
+            SKStoreReviewController.requestReview()
         }
     }
 
