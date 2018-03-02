@@ -10,9 +10,9 @@ Parties for WWDC
 </p>
 
 ## Info:
-Parties for WWDC is an aggregator of developers parties happening in San Jose mostly exclusively for participators of WWDC 2017. 
+Parties for WWDC is an aggregator of developers parties happening in San Jose mostly exclusively for participators of WWDC 2018. 
 
-Hottest startups and technology companies in Silicon Valley are organizing parties for developers who participate WWDC 2017. 
+Hottest startups and technology companies in Silicon Valley are organizing parties for developers who participate WWDC 2018. 
 
 You can view the parties on map, register and mark parties you’re going to take part in. 
 
