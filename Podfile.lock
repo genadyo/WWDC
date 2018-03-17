@@ -4,7 +4,7 @@ PODS:
   - Fabric (1.7.5)
   - FLAnimatedImage (1.0.12)
   - JLRoutes (2.1)
-  - OneSignal (2.7.2)
+  - OneSignal (2.8.1)
   - PINCache (2.3)
   - PINRemoteImage (2.1.4):
     - PINRemoteImage/FLAnimatedImage (= 2.1.4)
@@ -13,7 +13,7 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
-  - Smooch (6.7.0)
+  - Smooch (6.7.1)
 
 DEPENDENCIES:
   - Crashlytics
@@ -27,10 +27,10 @@ SPEC CHECKSUMS:
   Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
-  OneSignal: 02166aa47052b5c339a4231d6ee0bb8cbaf4f9be
+  OneSignal: 7dfd61c1ea88571ddf772c53c7ae45407c5eb2f7
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
-  Smooch: f5e52f91deda910ae8116e162bd4432c8f6cf5f1
+  Smooch: bdf27d8a198e68c2c1fecdca413a915b76bd040b
 
 PODFILE CHECKSUM: 000da537ae92fb7f9bbf9ae912dd889e7560a1d4
 
