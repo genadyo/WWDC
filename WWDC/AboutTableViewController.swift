@@ -49,7 +49,7 @@ class AboutTableViewController: UITableViewController {
 
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                if let url = URL(string: "itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=879924066&pageNumber=0&sortOrdering=1&onlyLatestVersion=true&action=write-review"), UIApplication.shared.canOpenURL(url) {
+                if let url = URL(string: "itms-apps://itunes.apple.com/app/id879924066?action=write-review"), UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             } else if indexPath.row == 1 {
@@ -59,12 +59,10 @@ class AboutTableViewController: UITableViewController {
             }
         } else if indexPath.section == 1 {
             if indexPath.row == 0 {
-                openURL("https://github.com/orta/cocoapods-keys")
-            } else if indexPath.row == 1 {
                 openURL("https://github.com/joeldev/JLRoutes")
-            } else if indexPath.row == 2 {
+            } else if indexPath.row == 1 {
                 openURL("https://useiconic.com/open/")
-            } else if indexPath.row == 3 {
+            } else if indexPath.row == 2 {
                 openURL("https://github.com/pinterest/PINRemoteImage")
             }
         }
