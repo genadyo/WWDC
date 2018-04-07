@@ -60,6 +60,36 @@
       "longitude": -121.8904105,
       "url": "http://altconf.com",
       "promoted": false
+    },{
+      "objectId": "nods2018-1",
+      "icon": "http://genady.okrain.com/parties/icons/nods2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/nods2018.jpg",
+      "title": "Night of Dim Sum 2018",
+      "startDate": "2018-06-04T19:30",
+      "endDate": "2018-06-04T21:30",
+      "details": "Night of Dim Sum is a night of all-you-can-eat food at Din Tai Fung! Located just a couple of miles from downtown San Jose in the Westfield Valley Fair Mall (colocated with an Apple Store and a LEGO store), Din Tai Fung is internationally known as one of the world's best Shanghai dumpling restaurants.",
+      "address1": "Din Tai Fung",
+      "address2": "2855 Stevens Creek Blvd.",
+      "address3": "Santa Clara, CA 95050",
+      "latitude": 37.3263,
+      "longitude": -121.9443,
+      "url": "http://nightofdimsum.com",
+      "promoted": false
+    },{
+      "objectId": "nods2018-2",
+      "icon": "http://genady.okrain.com/parties/icons/nods2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/nods2018.jpg",
+      "title": "Night of Dim Sum 2018",
+      "startDate": "2018-06-07T19:30",
+      "endDate": "2018-06-07T21:30",
+      "details": "Night of Dim Sum is a night of all-you-can-eat food at Din Tai Fung! Located just a couple of miles from downtown San Jose in the Westfield Valley Fair Mall (colocated with an Apple Store and a LEGO store), Din Tai Fung is internationally known as one of the world's best Shanghai dumpling restaurants.",
+      "address1": "Din Tai Fung",
+      "address2": "2855 Stevens Creek Blvd.",
+      "address3": "Santa Clara, CA 95050",
+      "latitude": 37.3263,
+      "longitude": -121.9443,
+      "url": "http://second.nightofdimsum.com",
+      "promoted": false
     }
   ]
 }
