@@ -90,6 +90,36 @@
       "longitude": -121.9443,
       "url": "http://second.nightofdimsum.com",
       "promoted": false
+    },{
+      "objectId": "altconf2018-atpfm-live",
+      "icon": "http://genady.okrain.com/parties/icons/altconf2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/altconf2018.jpg",
+      "title": "Podcast Festival - ATP Live at AltConf",
+      "startDate": "2018-06-04T17:30",
+      "endDate": "2018-06-04T19:00",
+      "details": "Watch ATP being recorded live.",
+      "address1": "San Jose Marriott",
+      "address2": "301 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3304071,
+      "longitude": -121.8904105,
+      "url": "https://medium.com/altconf/guess-whos-back-c7a7517de60c",
+      "promoted": false
+    },{
+      "objectId": "altconf2018-relayfm-live",
+      "icon": "http://genady.okrain.com/parties/icons/altconf2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/altconf2018.jpg",
+      "title": "Podcast Festival - Relay FM Live at AltConf",
+      "startDate": "2018-06-04T17:30",
+      "endDate": "2018-06-04T19:00",
+      "details": "Watch Relay FM record a live podcast.",
+      "address1": "San Jose Marriott",
+      "address2": "301 S Market St.",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.3304071,
+      "longitude": -121.8904105,
+      "url": "http://www.extras.relay.fm/blog/2018/3/13/relay-fm-live-at-wwdc-2018",
+      "promoted": false
     }
   ]
 }
