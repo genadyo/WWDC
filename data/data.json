@@ -191,17 +191,17 @@
     {
       "objectId": "loop2018",
       "icon": "http://genady.okrain.com/parties/icons/beard.png",
-      "logo": "http://genady.okrain.com/parties/logos/beard2017.jpg",
+      "logo": "http://genady.okrain.com/parties/logos/beard2018.jpg",
       "title": "The Loop Bash",
       "startDate": "2018-06-04T20:00",
       "endDate": "2018-06-05T00:00",
-      "details": "I’m pleased to announce The Loop Bash will take place again this year at Apple’s Worldwide Developers Conference. The Party will be held at The \nz, a nightclub around the corner from the San Jose Convention Center, on June 4, 2018 from 8:00 pm to 12:00 am.\n\nWe will have live music at the event too. The Houserockers, one of the best bands in the Bay Area, will be on hand to help you rock the night away.\n\nBeer and wine will be provided for free during the party hours and you can buy mixed drinks if you would rather have those types of drinks.\n\nTickets for the party are free, but you will need to RSVP in order to get into the event. I’ll make an announcement on how to RSVP for the party as we get closer to WWDC. Once you register for The Loop Bash, your ticket can be stored in your Apple Wallet—just show up and your ticket will be scanned at the door. Having a ticket does not guarantee entry into the party, but we always do our best to get everyone in.\n\nI can’t wait to see you all there!",
+      "details": "Join Jim Dalrymple, MacStadium, Pixelmator, and MacPaw for an incredible night of music from The Houserockers on the first night of WWDC.\n\nThe party is being held at The Ritz, San Jose's top nightclub, which is just one block from WWDC, on Monday, June 4, 2018, from 8:00 pm to 12:00 am.\n\nYou must bring your RSVP to the venue in order to get entry into the party. You also must be 21 because we will be serving free beer and wine throughout the night. Other alcoholic beverages will be available to purchase at the venue.\n\nPlease arrive early. Having an RSVP does not guarantee entry into the event.\n\nMany thanks to our sponsors, MacStadium, Pixelmator, and MacPaw for making this party a reality!",
       "address1": "The Ritz",
       "address2": "400 South 1st St.",
       "address3": "San Jose, CA 95113",
       "latitude": 37.33,
       "longitude": -121.8881887,
-      "url": "http://www.loopinsight.com/2018/03/22/the-loop-bash-at-wwdc-2018/",
+      "url": "https://ti.to/jim-dalrymple/the-loop-bash",
       "promoted": false
     }
   ]
