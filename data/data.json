@@ -235,6 +235,22 @@
       "longitude": -121.8904105,
       "url": "http://meetu.ps/e/Fk96f/zf1k9/a",
       "promoted": false   
+    },
+    {   
+      "objectId": "setapp2018",   
+      "icon": "http://genady.okrain.com/parties/icons/setapp.png",    
+      "logo": "http://genady.okrain.com/parties/logos/setapp.jpg",    
+      "title": "Setapp and Paddle WWDC 2018 Party",   
+      "startDate": "2018-06-04T18:00",    
+      "endDate": "2018-06-04T22:00",    
+      "details": "For this year’s WWDC on June 4th, we’ve got something very special planned! Setapp and Paddle are teaming up to host an unmissable party in San Jose.\n\nSetapp is transforming the Mac world, looking to bring the future of Mac apps ever closer.\n\nPaddle is building the platform for all Mac developers to run and grow their businesses.\n\nWe’ve invited top tech journalists and our friends and colleagues from across the developer community to come and share this special evening with us.\n\nPromising food and drinks to boost your energy, great people, and memorable conversation, as well as a few robots just for good measure, we think this all sounds pretty neat.\n\nHope to see you there! Simply contact us if you want to join us.",   
+      "address1": "Tech Museum",    
+      "address2": "201 S Market St.",   
+      "address3": "San Jose, CA 95113",   
+      "latitude": 37.331629,    
+      "longitude": -121.8923151,    
+      "url": "https://paddle.com/blog/wwdc-2018-paddle-setapp-party/",   
+      "promoted": false   
     }
   ]
 }
