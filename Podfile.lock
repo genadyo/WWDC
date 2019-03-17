@@ -1,10 +1,10 @@
 PODS:
-  - Crashlytics (3.10.1):
-    - Fabric (~> 1.7.5)
-  - Fabric (1.7.5)
+  - Crashlytics (3.12.0):
+    - Fabric (~> 1.9.0)
+  - Fabric (1.9.0)
   - FLAnimatedImage (1.0.12)
   - JLRoutes (2.1)
-  - OneSignal (2.8.1)
+  - OneSignal (2.9.5)
   - PINCache (2.3)
   - PINRemoteImage (2.1.4):
     - PINRemoteImage/FLAnimatedImage (= 2.1.4)
@@ -13,7 +13,7 @@ PODS:
   - PINRemoteImage/FLAnimatedImage (2.1.4):
     - FLAnimatedImage (>= 1.0)
     - PINRemoteImage/Core
-  - Smooch (6.7.1)
+  - Smooch (6.12.0)
 
 DEPENDENCIES:
   - Crashlytics
@@ -22,16 +22,27 @@ DEPENDENCIES:
   - PINRemoteImage
   - Smooch
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
+    - FLAnimatedImage
+    - JLRoutes
+    - OneSignal
+    - PINCache
+    - PINRemoteImage
+    - Smooch
+
 SPEC CHECKSUMS:
-  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
-  Fabric: ae7146a5f505ea370a1e44820b4b1dc8890e2890
+  Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
+  Fabric: f988e33c97f08930a413e08123064d2e5f68d655
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   JLRoutes: d755245322b94227662ea3e43492fdca94e05c5b
-  OneSignal: 7dfd61c1ea88571ddf772c53c7ae45407c5eb2f7
+  OneSignal: ccdeb961882f8668305e5b694e2cb7cb325fc907
   PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
   PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
-  Smooch: bdf27d8a198e68c2c1fecdca413a915b76bd040b
+  Smooch: cae9192fec23cc9380b4dae117b6cf38c48e8eff
 
 PODFILE CHECKSUM: 000da537ae92fb7f9bbf9ae912dd889e7560a1d4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1
