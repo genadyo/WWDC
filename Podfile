@@ -16,4 +16,7 @@ post_install do |installer|
       config.build_settings['ENABLE_BITCODE'] = 'NO'
     end
   end
+  installer.pods_project.build_configuration_list.build_configurations.each do |configuration|
+    configuration.build_settings['VALID_ARCHS'] = 'arm64'
+  end
 end
