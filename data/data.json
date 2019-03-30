@@ -15,6 +15,21 @@
       "longitude": -121.88646,
       "url": "https://hammertheatre.vbotickets.com/event/Relay_FM_Connected_Podcast/33940",
       "promoted": false
+    },{
+      "objectId": "accidental-tech-podcast",
+      "icon": "http://genady.okrain.com/parties/icons/atp.png",
+      "logo": "http://genady.okrain.com/parties/logos/atp.jpg",
+      "title": "Accidental Tech Podcast",
+      "startDate": "2019-06-03T18:00",
+      "endDate": "2019-06-03T20:00",
+      "details": "Acc Tech",
+      "address1": "Hammer Theatre Center",
+      "address2": "101 Paseo de San Antonio",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.33372,
+      "longitude": -121.88646,
+      "url": "https://hammertheatre.vbotickets.com/event/accidental_tech_podcast/33939",
+      "promoted": false
     }
   ]
 }
