@@ -142,6 +142,21 @@
       "longitude": -121.88646,
       "url": "https://www.eventbrite.com/e/automators-wwdc-meetup-tickets-59398376142",
       "promoted": false
+    },{   
+      "objectId": "vapor2019",    
+      "icon": "http://genady.okrain.com/parties/icons/vapor.png",   
+      "logo": "http://genady.okrain.com/parties/logos/vapor.jpg",   
+      "title": "Vapor @ WWDC19",   
+      "startDate": "2019-06-04T19:00",    
+      "endDate": "2019-06-04T22:00",    
+      "details": "A meetup to talk about all things server-side Swift and Vapor for those attending WWDC, AltConf or nearby!\n\nLocation is TBD (apparently there’s some basketball final on that’s making booking somewhere difficult for now), but worst case we’ll just all descend on San Pedro Square!\n\nLooking forward to seeing all of you again!",   
+      "address1": "The Old Wagon Saloon & Grill",    
+      "address2": "73 N. San Pedro St",   
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.336435,
+      "longitude": -121.8940059,
+      "url": "http://meetu.ps/e/GLQHF/zf1k9/c",
+      "promoted": false   
     }
   ]
 }
