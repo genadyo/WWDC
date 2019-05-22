@@ -2,6 +2,22 @@
   "parties": [
 
     {
+      "objectId": "livenearwwdc2019",
+      "icon": "http://genady.okrain.com/parties/icons/breakpoints2019.png",
+      "logo": "http://genady.okrain.com/parties/logos/breakpoints2019.png",
+      "title": "James Dempsey and the Breakpoints Live near WWDC",
+      "startDate": "2019-06-05T019:0",
+      "endDate": "2019-06-05T23:00",
+      "details": "Join James Dempsey and the Breakpoints for an evening of mingling and music to benefit the mission of App Camp For Girls! Now in its eighth year, the annual James Dempsey and the Breakpoints show has become a WWDC week tradition.",
+      "address1": "The Ritz",
+      "address2": "400 S First St",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.329991,
+      "longitude": -121.8863502,
+      "url": "https://livenearwwdc.com",
+      "promoted": false
+    },
+    {
       "objectId": "dundubrun2019-1",
       "icon": "http://genady.okrain.com/parties/icons/dubdubrun.png",
       "logo": "http://genady.okrain.com/parties/logos/dubdubrun.jpg",
