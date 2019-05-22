@@ -173,6 +173,21 @@
       "longitude": -121.8940059,
       "url": "http://meetu.ps/e/GLQHF/zf1k9/c",
       "promoted": false   
+    },{   
+      "objectId": "CallforCode_IBMReception",    
+      "icon": "http://genady.okrain.com/parties/icons/CallforCode_2019RGB_Blue60.png",   
+      "logo": "http://genady.okrain.com/parties/logos/CallforCode_2019RGB_Blue60.jpg",   
+      "title": "Call for Code Reception @ WWDC19",   
+      "startDate": "2019-06-05T18:30",    
+      "endDate": "2019-06-05T20:30",    
+      "details": "End your day at Apple’s Worldwide Developer’s Conference at IBM’s Call for Code Reception, and discover how you and your peers can make a difference in solving society’s most pressing issues.\n\nLocation is TBD (apparently there’s some basketball final on that’s making booking somewhere difficult for now), but worst case we’ll just all descend on San Pedro Square!\n\nLooking forward to seeing all of you again!",   
+      "address1": "The Continental Bar",    
+      "address2": "349 South First St",   
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.33552,
+      "longitude": -121.8902,
+      "url": "http://ibm.biz/Call4Code-SJ",
+      "promoted": false   
     }
   ]
 }
