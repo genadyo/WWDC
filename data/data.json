@@ -2,6 +2,22 @@
   "parties": [
 
     {
+      "objectId": "sjmacindie2019",
+      "icon": "http://genady.okrain.com/parties/icons/sjmacindie.png",
+      "logo": "http://genady.okrain.com/parties/logos/sjmacindie.jpg",
+      "title": "sjMacIndie 2019",
+      "startDate": "2019-06-02T17:00",
+      "endDate": "2019-06-02T21:00",
+      "details": "sjMacIndie is the premier networking event that kicks off WWDC. It is for independent macOS and iOS developers, designers, and anyone else who's interested.",
+      "address1": "Forager",
+      "address2": "420 South 1st Street",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.329810,
+      "longitude": -121.885630,
+      "url": "http://sfmacindie.com",
+      "promoted": false
+    },
+    {
       "objectId": "loopbash2019",
       "icon": "http://genady.okrain.com/parties/icons/loop.png",
       "logo": "http://genady.okrain.com/parties/logos/looplogo.png",
