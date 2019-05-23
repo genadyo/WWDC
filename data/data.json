@@ -2,6 +2,22 @@
   "parties": [
 
     {
+      "objectId": "loopbash2019",
+      "icon": "http://genady.okrain.com/parties/icons/loop.png",
+      "logo": "http://genady.okrain.com/parties/logos/looplogo.png",
+      "title": "The Loop Bash at WWDC 2019",
+      "startDate": "2019-06-03020:00",
+      "endDate": "2019-06-03T23:59",
+      "details": "Join Jim Dalrymple and our exclusive sponsor Salesforce for an incredible night of music from The Houserockers on the first night of WWDC.",
+      "address1": "The Ritz",
+      "address2": "400 S First St",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.329991,
+      "longitude": -121.8863502,
+      "url": "https://ti.to/jim-dalrymple/the-loop-bash-at-wwdc",
+      "promoted": false
+    },
+    {
       "objectId": "coresushi2019",
       "icon": "http://genady.okrain.com/parties/icons/coresushi.png",
       "logo": "http://genady.okrain.com/parties/logos/coresushi.png",
