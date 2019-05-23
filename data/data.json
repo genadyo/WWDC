@@ -2,6 +2,38 @@
   "parties": [
 
     {
+      "objectId": "dimsum2019-1",
+      "icon": "http://genady.okrain.com/parties/icons/nods2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/nods2019.jpg",
+      "title": "Night of Dim Sum 2019",
+      "startDate": "2019-06-03T19:00",
+      "endDate": "2019-06-03T22:00",
+      "details": "Join us for a night of all-you-can-eat dim sum! Located just a couple of miles from downtown San Jose in the Westfield Valley Fair Mall (where there is also an Apple Store and a LEGO store), Din Tai Fung is internationally known as one of the world's best Shanghai dumpling restaurants.",
+      "address1": "Din Tai Fung",
+      "address2": "2855 Stevens Creek Boulevard",
+      "address3": "Santa Clara, CA 95050",
+      "latitude": 37.326465,
+      "longitude": -121.943994,
+      "url": "https://www.eventbrite.com/e/night-of-dim-sum-2019-tickets-54087628553",
+      "promoted": false
+    },
+    {
+      "objectId": "dimsum2019-2",
+      "icon": "http://genady.okrain.com/parties/icons/nods2018.png",
+      "logo": "http://genady.okrain.com/parties/logos/nods2019.jpg",
+      "title": "Night of Dim Sum 2019",
+      "startDate": "2019-06-06T19:00",
+      "endDate": "2019-06-06T22:00",
+      "details": "Join us for a night of all-you-can-eat dim sum! Located just a couple of miles from downtown San Jose in the Westfield Valley Fair Mall (where there is also an Apple Store and a LEGO store), Din Tai Fung is internationally known as one of the world's best Shanghai dumpling restaurants.",
+      "address1": "Din Tai Fung",
+      "address2": "2855 Stevens Creek Boulevard",
+      "address3": "Santa Clara, CA 95050",
+      "latitude": 37.326465,
+      "longitude": -121.943994,
+      "url": "https://www.eventbrite.com/e/night-of-dim-sum-2019-tickets-54087628553",
+      "promoted": false
+    },
+    {
       "objectId": "sjmacindie2019",
       "icon": "http://genady.okrain.com/parties/icons/sjmacindie.png",
       "logo": "http://genady.okrain.com/parties/logos/sjmacindie.jpg",
