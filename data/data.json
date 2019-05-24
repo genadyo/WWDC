@@ -2,6 +2,38 @@
   "parties": [
 
     {
+      "objectId": "ballgame2019",
+      "icon": "http://genady.okrain.com/parties/icons/ballgame.png",
+      "logo": "http://genady.okrain.com/parties/logos/ballgame.jpg",
+      "title": "Take Dub Dub Out To The Ballgame",
+      "startDate": "2019-06-05T18:00",
+      "endDate": "2019-06-05T22:00",
+      "details": "Do you like hanging out at loud bars yelling at people 2 feet from your face? Me either. That is no way to discuss the intricacies of Marzipan. But that’s what it’s like at most of the WWDC parties and the bars downtown. Would you rather sit outside, patio-style, and watch a ballgame while you mingle with other WWDC folks? We’ve got a spot reserved on the VIP deck down the 3rd baseline.",
+      "address1": "San Jose Giants Excite Ballpark",
+      "address2": "588 East Alma Avenue",
+      "address3": "San Jose, CA 95112",
+      "latitude": 37.321527,
+      "longitude": -121.862186,
+      "url": "https://www.eventbrite.com/e/take-dub-dub-out-to-the-ballgame-tickets-62330675729",
+      "promoted": false
+    },
+    {
+      "objectId": "frys2019",
+      "icon": "http://genady.okrain.com/parties/icons/frys.jpg",
+      "logo": "http://genady.okrain.com/parties/logos/frys.jpg",
+      "title": "Walk To Fry's Electronics",
+      "startDate": "2019-06-02T15:00",
+      "endDate": "2019-06-02T18:00",
+      "details": "Join fellow WWDC attendees for a walk to Fry's Electronics.  Fry's is a one of a kind consumer electronics store with many stores having a theme.  San Jose has a Mayan Temple theme.",
+      "address1": "Fry's Electronics",
+      "address2": "550 E Brokaw Rd",
+      "address3": "San Jose, California 95112",
+      "latitude": 37.380744,
+      "longitude": -121.907682,
+      "url": "https://walktofrys.com/",
+      "promoted": false
+    },
+    {
       "objectId": "dimsum2019-1",
       "icon": "http://genady.okrain.com/parties/icons/nods2018.png",
       "logo": "http://genady.okrain.com/parties/logos/nods2019.jpg",
