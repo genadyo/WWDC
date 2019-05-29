@@ -392,6 +392,21 @@
       "longitude": -121.889347,
       "url": "https://www.eventbrite.com/e/wwdc-breakfast-burritos-with-embrace-tickets-62308195490?ref=eios",
       "promoted": false   
+    },{   
+      "objectId": "fiestakit2019",    
+      "icon": "http://genady.okrain.com/parties/icons/fiestakit-icon.png",
+      "logo": "http://genady.okrain.com/parties/logos/fiestakit-logo.png",
+      "title": "FiestaKit 2019",
+      "startDate": "2019-06-07T19:00",
+      "endDate": "2019-06-07T23:00",    
+      "details": "Discover What's New in FiestaKit this year!\n\nJoin us at Asadero, a Mexican BBQ fusion restaurant and craft brew house in nearby Santa Clara, for an evening of fun. We're taking over the entire venue!\n\nRelax and unwind after a busy week. Enjoy an open bar with craft beer, wine, and frozen margaritas, all included. A delicious taco & bowl bar (with meat and vegetarian options) and nonalcoholic drinks are included, too.",
+      "address1": "Asadero",
+      "address2": "2323 The Alameda",
+      "address3": "Santa Clara, CA 95050",
+      "latitude": 37.344858,
+      "longitude": -121.933627,
+      "url": "https://ti.to/fox-den-parties/fiestakit-2019",
+      "promoted": false   
     }
   ]
 }
