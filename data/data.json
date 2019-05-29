@@ -65,6 +65,22 @@
       "promoted": false
     },
     {
+      "objectId": "nami2019",
+      "icon": "http://genady.okrain.com/parties/icons/nami.jpg",
+      "logo": "http://genady.okrain.com/parties/logos/nami.jpg",
+      "title": "Nami ML Party @ WWDC 2019",
+      "startDate": "2019-06-03T21:00",
+      "endDate": "2019-06-04T00:00",
+      "details": "From the founders of Push IO, Dan & Joe have been in stealth working on something new... Be the first to see what we've been working on, an entirely new platform to help app developers.",
+      "address1": "Haberdasher",
+      "address2": "43 W San Salvador St,",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.329891,
+      "longitude": -121.886407,
+      "url": "https://www.eventbrite.com/e/nami-ml-party-wwdc-2019-tickets-59906886109",
+      "promoted": false
+    },
+    {
       "objectId": "ballgame2019",
       "icon": "http://genady.okrain.com/parties/icons/ballgame.png",
       "logo": "http://genady.okrain.com/parties/logos/ballgame.jpg",
