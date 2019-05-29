@@ -407,6 +407,21 @@
       "longitude": -121.933627,
       "url": "https://ti.to/fox-den-parties/fiestakit-2019",
       "promoted": false   
+    },{   
+      "objectId": "ladiesatwwdc2019",    
+      "icon": "http://genady.okrain.com/parties/icons/ladiesatwwdc-icon.png",
+      "logo": "http://genady.okrain.com/parties/logos/ladiesatwwdc.jpg",
+      "title": "Ladies At WWDC",
+      "startDate": "2019-06-06T17:00",
+      "endDate": "2019-06-06T20:00",    
+      "details": "Enjoy an evening of fun networking, delicious appetizers, awesome swag, and one-of-a-kind cocktails with your fellow women-in-tech during WWDC.",
+      "address1": "Social Lady Bar and Restaurant",
+      "address2": "73 E San Fernando St",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.335170,
+      "longitude": -121.887614,
+      "url": "https://ti.to/iOS-meetups/ladies-at-wwdc",
+      "promoted": false   
     }
   ]
 }
