@@ -393,6 +393,21 @@
       "longitude": -121.889347,
       "url": "https://www.eventbrite.com/e/wwdc-breakfast-burritos-with-embrace-tickets-62308195490?ref=eios",
       "promoted": false   
+    },{   
+      "objectId": "embraceio2019",    
+      "icon": "http://genady.okrain.com/parties/icons/embraceio.png",
+      "logo": "http://genady.okrain.com/parties/logos/embrace.jpg",
+      "title": "WWDC Breakfast Burritos with Embrace!",
+      "startDate": "2019-06-05T08:00",
+      "endDate": "2019-06-05T10:00",    
+      "details": "Complimentary breakfast burritos served to hungry attendees of WWDC & AltConf!\n\nTo help fuel developers through the many sessions, meetups, conferences and happy hours during the week of WWDC, Embrace is serving free breakfast burritos for the iOS community!\n\nOn the mornings of June 4th and 5th, the Embrace team will be parked near the convention center handing out breakfast burritos for hungry attendees of WWDC and AltConf.",
+      "address1": "McEnery Convention Center",
+      "address2": "150 West San Carlos Street",
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.330299,
+      "longitude": -121.889347,
+      "url": "https://www.eventbrite.com/e/wwdc-breakfast-burritos-with-embrace-tickets-62308195490?ref=eios",
+      "promoted": false   
     }
   ]
 }
