@@ -422,6 +422,21 @@
       "longitude": -121.887614,
       "url": "https://ti.to/iOS-meetups/ladies-at-wwdc",
       "promoted": false   
+    },{   
+      "objectId": "rightpoint2019",    
+      "icon": "http://genady.okrain.com/parties/icons/rightpoint-icon.jpg",
+      "logo": "http://genady.okrain.com/parties/logos/rightpoint-logo.png",
+      "title": "Rightpoint AltConf Happy Hour",
+      "startDate": "2019-06-04T15:30",
+      "endDate": "2019-06-04T17:00",    
+      "details": "Come have a drink and meet some of the Rightpoint staff - talk to our Oakland office iOS Developers! We are hiring!!",
+      "address1": "San Jose Marriott",
+      "address2": "301 South Market Street",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.330463,
+      "longitude": -121.888149,
+      "url": "https://www.eventbrite.com/e/rightpoint-altconf-happy-hour-registration-62540419077?aff=parties",
+      "promoted": false   
     }
   ]
 }
