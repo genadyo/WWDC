@@ -363,6 +363,36 @@
       "longitude": -121.8902,
       "url": "http://ibm.biz/Call4Code-SJ",
       "promoted": false   
+    },{   
+      "objectId": "homekit2019",    
+      "icon": "http://genady.okrain.com/parties/icons/homekit.png",   
+      "logo": "http://genady.okrain.com/parties/logos/homekit.png",   
+      "title": "HomeKit Meetup",
+      "startDate": "2019-06-04T21:00",    
+      "endDate": "2019-06-04T22:00",    
+      "details": "Are you a developer working on HomeKit hardware, firmware, or apps? Maybe just a user who is interested in HomeKit. We are getting folks together in San Jose to hang out and have a beer and talk smart home. We will meet up outside in the back of Original Gravity Public House around 9 for about an hour, they close at 10PM on Tuesdays. If folks want to continue we can find another bar to go to afterwords.\n\nAdam & Leo from ConnectSense will have some stickers, pins and other swag to hand out. If you want to bring something to share with the group feel free.",
+      "address1": "Original Gravity Public House",
+      "address2": "66 South 1st Street",
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.335085,
+      "longitude": -121.889693,
+      "url": "https://www.eventbrite.com/e/homekit-meetup-no-wwdc-badge-needed-tickets-62508713244?ref=estw",
+      "promoted": false   
+    },{   
+      "objectId": "embraceio2019",    
+      "icon": "http://genady.okrain.com/parties/icons/embraceio.png",
+      "logo": "http://genady.okrain.com/parties/logos/embrace.jpg",
+      "title": "WWDC Breakfast Burritos with Embrace!",
+      "startDate": "2019-06-04T08:00",
+      "endDate": "2019-06-04T10:00",    
+      "details": "Complimentary breakfast burritos served to hungry attendees of WWDC & AltConf!\n\nTo help fuel developers through the many sessions, meetups, conferences and happy hours during the week of WWDC, Embrace is serving free breakfast burritos for the iOS community!\n\nOn the mornings of June 4th and 5th, the Embrace team will be parked near the convention center handing out breakfast burritos for hungry attendees of WWDC and AltConf.",
+      "address1": "McEnery Convention Center",
+      "address2": "150 West San Carlos Street",
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.330299,
+      "longitude": -121.889347,
+      "url": "https://www.eventbrite.com/e/wwdc-breakfast-burritos-with-embrace-tickets-62308195490?ref=eios",
+      "promoted": false   
     }
   ]
 }
