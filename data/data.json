@@ -1,6 +1,22 @@
 {
   "parties": [
     {
+      "objectId": "macgeekgab2019",
+      "icon": "http://genady.okrain.com/parties/icons/macgeekgab.png",
+      "logo": "http://genady.okrain.com/parties/logos/macgeekgab.png",
+      "title": "Mac Geek Gab / Gig Gab / Small Business Show WWDC Meetup",
+      "startDate": "2019-06-05T16:00",
+      "endDate": "2019-06-05T17:30",
+      "details": "Dave Hamilton will be in San Jose for WWDC and altConf so let's all just hang out and say hello on Wednesday afternoon! Everyone's welcome, including listeners of Mac Geek Gab, Gig Gab, and Small Business Show. Rumor has it that Paul Kent of Gig Gab will be there, too!",
+      "address1": "San Pedro Square Market Building",
+      "address2": "87 N San Pedro St",
+      "address3": "San Jose, CA 95110",
+      "latitude": 37.336729,
+      "longitude": -121.894172,
+      "url": "https://www.eventbrite.com/e/mac-geek-gab-gig-gab-small-business-show-wwdc-meetup-tickets-62709476733",
+      "promoted": false
+    },
+    {
       "objectId": "wework2019",
       "icon": "http://genady.okrain.com/parties/icons/wework.png",
       "logo": "http://genady.okrain.com/parties/logos/wework.jpg",
