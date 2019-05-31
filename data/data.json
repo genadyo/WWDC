@@ -1,6 +1,38 @@
 {
   "parties": [
     {
+      "objectId": "wework2019",
+      "icon": "http://genady.okrain.com/parties/icons/wework.png",
+      "logo": "http://genady.okrain.com/parties/logos/wework.png",
+      "title": "WWDC19 WeWork Labs Founders Happy Hour",
+      "startDate": "2019-06-05T17:30",
+      "endDate": "2019-06-05T19:00",
+      "details": "As a partner to entrepreneurs all over the world, WeWork Labs empowers early-stage startups to put their vision in motion through a tailored approach to mentorship, programming, community building, and innovation. Join us to learn more about the program and meet our team over great conversation, food and drinks!",
+      "address1": "WeWork, River Park Towers",
+      "address2": "333 West San Carlos Street, 6th Floor",
+      "address3": "San Jose, CA 95110",
+      "latitude": 37.328668,
+      "longitude": -121.893448,
+      "url": "https://wwdc19weworklabsfoundershappyh.splashthat.com",
+      "promoted": false
+    },
+    {
+      "objectId": "setapp2019",
+      "icon": "http://genady.okrain.com/parties/icons/setapp.png",
+      "logo": "http://genady.okrain.com/parties/logos/setapp.jpg",
+      "title": "Setapp and Paddle's WWDC 2019 Party at The Tech Museum of Innovation",
+      "startDate": "2019-06-03T18:00",
+      "endDate": "2019-06-03T22:00",
+      "details": "Join Setapp and Paddle for our 2019 WWDC Party at The Tech Museum of Innovation.\nWWDC is getting near and as always Setapp is joining forces with Paddle to celebrate the future of tech. We have an incredible event planned out for you in the heart of San Jose at the Tech Museum of Innovation on June 3rd.\nSetapp is a new era of app discovery on the Mac market with more than 140 applications on board, and Paddle is the go-to platform for all Mac developers looking to run and grow their business. Our values and plans complement each other and we couldn't be more excited to host this event together.",
+      "address1": "The Tech Museum of Innovation in San Jose (Lower Level)",
+      "address2": "201 S Market St",
+      "address3": "San Jose, CA 95113",
+      "latitude": 37.331697,
+      "longitude": -121.889871,
+      "url": "https://www.eventbrite.com/e/setapp-and-paddles-wwdc-2019-party-at-the-tech-museum-of-innovation-tickets-61806183960",
+      "promoted": false
+    },
+    {
       "objectId": "testlio2019",
       "icon": "http://genady.okrain.com/parties/icons/testlio.png",
       "logo": "http://genady.okrain.com/parties/logos/testlio.jpg",
@@ -414,12 +446,12 @@
       "title": "Ladies At WWDC",
       "startDate": "2019-06-06T17:00",
       "endDate": "2019-06-06T20:00",    
-      "details": "Enjoy an evening of fun networking, delicious appetizers, awesome swag, and one-of-a-kind cocktails with your fellow women-in-tech during WWDC.",
-      "address1": "Social Lady Bar and Restaurant",
-      "address2": "73 E San Fernando St",
+      "details": "Enjoy an evening of fun networking, delicious appetizers, awesome swag, and themed cocktails with your fellow women-in-tech during WWDC.",
+      "address1": "Scott's Seafood",
+      "address2": "185 Park Ave",
       "address3": "San Jose, CA 95113",
-      "latitude": 37.335170,
-      "longitude": -121.887614,
+      "latitude": 37.331482,
+      "longitude": -121.891575,
       "url": "https://ti.to/iOS-meetups/ladies-at-wwdc",
       "promoted": false   
     }
