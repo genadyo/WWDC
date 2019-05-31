@@ -1,6 +1,22 @@
 {
   "parties": [
     {
+      "objectId": "wework2019",
+      "icon": "http://genady.okrain.com/parties/icons/wework.png",
+      "logo": "http://genady.okrain.com/parties/logos/wework.png",
+      "title": "WWDC19 WeWork Labs Founders Happy Hour",
+      "startDate": "2019-06-05T17:30",
+      "endDate": "2019-06-05T19:00",
+      "details": "As a partner to entrepreneurs all over the world, WeWork Labs empowers early-stage startups to put their vision in motion through a tailored approach to mentorship, programming, community building, and innovation. Join us to learn more about the program and meet our team over great conversation, food and drinks!",
+      "address1": "WeWork, River Park Towers",
+      "address2": "333 West San Carlos Street, 6th Floor",
+      "address3": "San Jose, CA 95110",
+      "latitude": 37.328668,
+      "longitude": -121.893448,
+      "url": "https://wwdc19weworklabsfoundershappyh.splashthat.com",
+      "promoted": false
+    },
+    {
       "objectId": "setapp2019",
       "icon": "http://genady.okrain.com/parties/icons/setapp.png",
       "logo": "http://genady.okrain.com/parties/logos/setapp.jpg",
