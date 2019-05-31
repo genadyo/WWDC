@@ -430,12 +430,12 @@
       "title": "Ladies At WWDC",
       "startDate": "2019-06-06T17:00",
       "endDate": "2019-06-06T20:00",    
-      "details": "Enjoy an evening of fun networking, delicious appetizers, awesome swag, and one-of-a-kind cocktails with your fellow women-in-tech during WWDC.",
-      "address1": "Social Lady Bar and Restaurant",
-      "address2": "73 E San Fernando St",
+      "details": "Enjoy an evening of fun networking, delicious appetizers, awesome swag, and themed cocktails with your fellow women-in-tech during WWDC.",
+      "address1": "Scott's Seafood",
+      "address2": "185 Park Ave",
       "address3": "San Jose, CA 95113",
-      "latitude": 37.335170,
-      "longitude": -121.887614,
+      "latitude": 37.331482,
+      "longitude": -121.891575,
       "url": "https://ti.to/iOS-meetups/ladies-at-wwdc",
       "promoted": false   
     }
