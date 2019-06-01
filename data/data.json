@@ -1,6 +1,22 @@
 {
   "parties": [
     {
+      "objectId": "activbody2019",
+      "icon": "http://genady.okrain.com/parties/icons/activbody.png",
+      "logo": "http://genady.okrain.com/parties/logos/activbody.png",
+      "title": "Activbody's Special Event at WWDC",
+      "startDate": "2019-06-04T18:30",
+      "endDate": "2019-06-04T20:30",
+      "details": "Activbody would like to invite the world’s most innovative developers to blow more than minds.\n🌟Come make history with the company that is Reinventing Fitness™ and defining Healthy Screen Time™.\nJoin us at our WWDC party where we will be unveiling our first ever SDK.",
+      "address1": "The Blue Chip",
+      "address2": "325 S 1st St",
+      "address3": "San Jose, CA 95110",
+      "latitude": 37.3309892,
+      "longitude": -121.8875931,
+      "url": "https://www.meetup.com/Activbody-events/events/261902922/",
+      "promoted": false
+    },
+    {
       "objectId": "macgeekgab2019",
       "icon": "http://genady.okrain.com/parties/icons/macgeekgab.png",
       "logo": "http://genady.okrain.com/parties/logos/macgeekgab.png",
