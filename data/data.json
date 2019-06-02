@@ -485,6 +485,21 @@
       "longitude": -121.888149,
       "url": "https://www.eventbrite.com/e/rightpoint-altconf-happy-hour-registration-62540419077?aff=parties",
       "promoted": false   
+    },{
+      "objectId": "twilioGather2019",
+      "icon": "http://genady.okrain.com/parties/icons/twilio.jpg",
+      "logo": "http://genady.okrain.com/parties/logos/twilio2019.png",
+      "title": "Twilio <Gather/> 2019",
+      "startDate": "2019-06-05T18:30",
+      "endDate": "2019-06-05T21:00",
+      "details": "Gather with your friends from Twilio during Apple’s Worldwide Developer’s Conference. Twilio Champion, Clement, and Dev. Evangelist Lizzie will be in attendance to talk all things Twilio. Whether you're a small start-up to a large enterprise, we can't wait to see what you build! There is no cost to attend, but space is limited, so save your spot today. And Enjoy your WWDC !",
+      "address1": "Loft Bar and Bistro",
+      "address2": "90 South Second Street",
+      "address3": "San Jose, CA, 95113",
+      "latitude": 37.33501,
+      "longitude": -121.88827,
+      "url": "https://twiliowwdc19.splashthat.com",
+      "promoted": false
     }
   ]
 }
